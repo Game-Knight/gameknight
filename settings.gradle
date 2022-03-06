@@ -1,3 +1,4 @@
 include ':backend'
 include ':app'
 rootProject.name = "CS_356_App"
+include ':shared'
