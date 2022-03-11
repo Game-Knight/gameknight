@@ -1,4 +1,4 @@
-package com.cs_356.backend;
+package Startup;
 
 public class MyClass
 {
