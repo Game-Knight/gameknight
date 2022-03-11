@@ -1,9 +1,9 @@
 package Startup;
 
-public class MyClass
-{
-    public static void main( String... args ) throws Exception
-    {
+import Utils.EncryptionUtils;
+
+public class MyClass {
+    public static void main( String... args ) throws Exception {
         System.out.println("Hello World");
     }
 }

@@ -2,7 +2,7 @@ package DataAccess.DAO.Interfaces;
 
 import java.util.List;
 
-import DataAccess.DAO.DataAccessException;
+import Exceptions.DataAccessException;
 import Entities.User;
 
 public interface IUserDAO {

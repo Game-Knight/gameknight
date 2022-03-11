@@ -1,4 +1,4 @@
-package DataAccess.DAO;
+package Exceptions;
 
 public class DataAccessException extends Exception {
 

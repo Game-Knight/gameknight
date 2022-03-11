@@ -1,7 +1,7 @@
-package DataAccess.DAO;
+package DataAccess.DAO.Factories;
 
-import DataAccess.DAO.InMemory.InMemoryDAOFactory;
-import DataAccess.DAO.Interfaces.IDAOFactory;
+import DataAccess.DAO.Factories.InMemoryDAOFactory;
+import DataAccess.DAO.Factories.IDAOFactory;
 
 public class DAOFactorySingleton {
 

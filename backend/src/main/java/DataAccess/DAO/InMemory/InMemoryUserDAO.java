@@ -2,7 +2,7 @@ package DataAccess.DAO.InMemory;
 
 import java.util.List;
 
-import DataAccess.DAO.DataAccessException;
+import Exceptions.DataAccessException;
 import DataAccess.DAO.Interfaces.IUserDAO;
 import Entities.User;
 

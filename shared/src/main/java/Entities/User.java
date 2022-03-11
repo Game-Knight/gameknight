@@ -7,7 +7,7 @@ import Utils.EntityUtils;
 
 public class User implements Serializable {
 
-    private String phoneNumber;
+    private String phoneNumber; // though not very secure, this can act as the username and user id
     private String firstName;
     private String lastName;
     private String passwordSalt;
