@@ -55,4 +55,10 @@ public class BoardGame implements Serializable {
     public void setBorrowed(boolean borrowed) {
         this.borrowed = borrowed;
     }
+
+    @Override
+    public String toString() {
+        return "Id: " + this.id + "\nTitle: " + this.title + "\nDescription: " + this.description +
+                "\nImage URL: " + this.imageUrl + "\nBorrowed: " + this.borrowed + "\n";
+    }
 }

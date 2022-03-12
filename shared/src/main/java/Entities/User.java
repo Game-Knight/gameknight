@@ -68,4 +68,10 @@ public class User implements Serializable {
             setPasswordHash(entry.getValue());
         }
     }
+
+    @Override
+    public String toString() {
+        return "First Name: " + this.firstName + "\nLast Name: " + this.lastName +
+                "\nPhone Number (used as id): " + this.phoneNumber + "\n";
+    }
 }

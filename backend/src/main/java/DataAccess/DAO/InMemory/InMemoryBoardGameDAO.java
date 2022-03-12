@@ -2,6 +2,7 @@ package DataAccess.DAO.InMemory;
 
 import java.util.List;
 
+import DataAccess.DataGeneration.InMemoryDB;
 import Exceptions.DataAccessException;
 import DataAccess.DAO.Interfaces.IBoardGameDAO;
 import Entities.BoardGame;
@@ -9,7 +10,7 @@ import Entities.BoardGame;
 public class InMemoryBoardGameDAO implements IBoardGameDAO {
     @Override
     public BoardGame getBoardGameById(String id) throws DataAccessException {
-        return null;
+        return InMemoryDB.getInstance().boardGameTable.get(id);
     }
 
     @Override
