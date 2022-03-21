@@ -1,5 +1,6 @@
 package DataAccess.DAO.InMemory;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import DataAccess.DataGeneration.InMemoryDB;
@@ -15,7 +16,11 @@ public class InMemoryBoardGameDAO implements IBoardGameDAO {
 
     @Override
     public List<BoardGame> getBoardGamesByIds(List<String> ids, int offset) throws DataAccessException {
-        return null;
+        List<BoardGame> boardGames = new ArrayList<>();
+        for (String id : ids) {
+            boardGames.add(InMemoryDB.getInstance().boardGameTable.get(id));
+        }
+        return boardGames;
     }
 
     @Override

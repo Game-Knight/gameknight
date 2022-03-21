@@ -4,16 +4,12 @@ import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 
-import java.io.File;
-import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.Iterator;
 import java.util.List;
 
 import Entities.BoardGame;
-import Entities.Friendship;
 import Entities.GameNight;
 import Entities.Ownership;
 import Entities.User;
@@ -27,7 +23,6 @@ public class InMemoryDB {
     private static InMemoryDB dbInstance = null;
 
     public HashMap<String, BoardGame> boardGameTable;
-    public List<Friendship> friendshipTable;
     public HashMap<String, GameNight> gameNightByIdTable;
     public HashMap<String, GameNight> gameNightByOwnerTable;
     public List<Ownership> ownershipTable;
@@ -37,7 +32,6 @@ public class InMemoryDB {
         initBoardGameTable();
         initUserTable();
 
-        friendshipTable = new ArrayList<>();
         gameNightByIdTable = new HashMap<>();
         gameNightByOwnerTable = new HashMap<>();
         ownershipTable = new ArrayList<>();
