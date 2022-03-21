@@ -5,7 +5,6 @@ import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
 
 import DataAccess.DAO.InMemory.InMemoryBoardGameDAO;
-import Entities.BoardGame;
 import Requests.AddBoardGameRequest;
 import Responses.AddBoardGameResponse;
 

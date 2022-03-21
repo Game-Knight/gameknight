@@ -1,10 +1,14 @@
 package Services;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
+import org.json.simple.JSONObject;
+import org.json.simple.parser.JSONParser;
 
 import java.io.InputStream;
+import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
+import java.net.MalformedURLException;
 import java.net.URL;
+import java.nio.charset.StandardCharsets;
 
 import DataAccess.DAO.Factories.DAOFactorySingleton;
 import DataAccess.DAO.Interfaces.IBoardGameDAO;
@@ -16,14 +20,28 @@ public class AddBoardGameService implements IAddBoardGameService {
     @Override
     public AddBoardGameResponse addBoardGame(AddBoardGameRequest request) {
         try {
-            String upc = request.getUpc();
-            URL url = new URL("https://api.upcdatabase.org/product/" + upc);
-            HttpURLConnection connection = (HttpURLConnection) url.openConnection();
-            connection.setRequestProperty("Authorization: Basic", SharedConstants.UPC_API_KEY);
-            InputStream responseStream = connection.getInputStream();
+            URL upcURL = getUPCDatabaseURL(request.getUpc());
+            HttpURLConnection upcConnection = (HttpURLConnection) upcURL.openConnection();
+            InputStream upcResponseStream = upcConnection.getInputStream();
 
-            ObjectMapper mapper = new ObjectMapper();
-            // APOD apod = mapper.readValue(responseStream, APOD.class);
+            JSONParser upcJsonParser = new JSONParser();
+            JSONObject upcJsonObject = (JSONObject) upcJsonParser.parse(
+                    new InputStreamReader(upcResponseStream, StandardCharsets.UTF_8)
+            );
+
+            String title = (String) upcJsonObject.get("title");
+            String brand = (String) upcJsonObject.get("brand");
+
+            URL atlasURL = getBoardGameAtlasURL(brand);
+            HttpURLConnection atlasConnection = (HttpURLConnection) atlasURL.openConnection();
+            InputStream atlasResponseStream = atlasConnection.getInputStream();
+
+            JSONParser atlasJsonParser = new JSONParser();
+            JSONObject atlasJsonObject = (JSONObject) atlasJsonParser.parse(
+                    new InputStreamReader(atlasResponseStream, StandardCharsets.UTF_8)
+            );
+
+            System.out.println(atlasJsonObject.toJSONString());
         }
         catch (Exception ex) {
             return new AddBoardGameResponse(false, ex.getMessage());
@@ -34,5 +52,18 @@ public class AddBoardGameService implements IAddBoardGameService {
 
     public IBoardGameDAO getBoardGameDAO() {
         return DAOFactorySingleton.getInstance().makeBoardGameDAO();
+    }
+
+    private URL getUPCDatabaseURL(String upc) throws MalformedURLException {
+        String baseURL = "https://api.upcdatabase.org/product/";
+        String apiKey = "?apikey=" + SharedConstants.UPC_API_KEY;
+        return new URL(baseURL + upc + apiKey);
+    }
+
+    private URL getBoardGameAtlasURL(String searchTerm) throws MalformedURLException {
+        String baseURL = "https://api.boardgameatlas.com/api/search";
+        String search = "?name=" + searchTerm;
+        String clientId = "&pretty=true&client_id=" + SharedConstants.ATLAS_CLIENT_ID;
+        return new URL(baseURL + search + clientId);
     }
 }
