@@ -1,0 +1,4150 @@
+[
+{
+   "thumbnail": "https://cf.geekdo-images.com/W3Bsga_uLP9kO91gZ7H8yw__thumb/img/8a9HeqFydO7Uun_le9bXWPnidcA=/fit-in/200x150/filters:strip_icc()/pic2419375.jpg",
+   "image": "https://cf.geekdo-images.com/W3Bsga_uLP9kO91gZ7H8yw__original/img/xV7oisd3RQ8R-k18cdWAYthHXsA=/0x0/filters:format(jpeg)/pic2419375.jpg",
+   "name": {
+      "_type": "primary",
+      "_sortindex": "1",
+      "_value": "Catan"
+   },
+   "description": "In CATAN (formerly The Settlers of Catan), players try to be the dominant force on the island of Catan by building settlements, cities, and roads. On each turn dice are rolled to determine what resources the island produces. Players build by spending resources (sheep, wheat, wood, brick and ore) that are depicted by these resource cards; each land type, with the exception of the unproductive desert, produces a specific resource: hills produce brick, forests produce wood, mountains produce ore, fields produce wheat, and pastures produce sheep.&#10;&#10;Setup includes randomly placing large hexagonal tiles (each showing a resource or the desert) in a honeycomb shape and surrounding them with water tiles, some of which contain ports of exchange. Number disks, which will correspond to die rolls (two 6-sided dice are used), are placed on each resource tile. Each player is given two settlements (think: houses) and roads (sticks) which are, in turn, placed on intersections and borders of the resource tiles. Players collect a hand of resource cards based on which hex tiles their last-placed house is adjacent to. A robber pawn is placed on the desert tile.&#10;&#10;A turn consists of possibly playing a development card, rolling the dice, everyone (perhaps) collecting resource cards based on the roll and position of houses (or upgraded cities&mdash;think: hotels) unless a 7 is rolled, turning in resource cards (if possible and desired) for improvements, trading cards at a port, and trading resource cards with other players. If a 7 is rolled, the active player moves the robber to a new hex tile and steals resource cards from other players who have built structures adjacent to that tile.&#10;&#10;Points are accumulated by building settlements and cities, having the longest road and the largest army (from some of the development cards), and gathering certain development cards that simply award victory points. When a player has gathered 10 points (some of which may be held in secret), he announces his total and claims the win.&#10;&#10;CATAN has won multiple awards and is one of the most popular games in recent history due to its amazing ability to appeal to experienced gamers as well as those new to the hobby.&#10;&#10;Die Siedler von Catan was originally published by KOSMOS and has gone through multiple editions. It was licensed by Mayfair and has undergone four editions as The Settlers of Catan. In 2015, it was formally renamed CATAN to better represent itself as the core and base game of the CATAN series. It has been re-published in two travel editions, portable edition and compact edition, as a special gallery edition (replaced in 2009 with a family edition), as an anniversary wooden edition, as a deluxe 3D collector's edition, in the basic Simply Catan, as a beginner version, and with an entirely new theme in Japan and Asia as Settlers of Catan: Rockman Edition. Numerous spin-offs and expansions have also been made for the game.&#10;&#10;",
+   "yearpublished": {
+      "_value": "1995"
+   },
+   "minplayers": {
+      "_value": "3"
+   },
+   "maxplayers": {
+      "_value": "4"
+   },
+   "playingtime": {
+      "_value": "120"
+   },
+   "minplaytime": {
+      "_value": "60"
+   },
+   "maxplaytime": {
+      "_value": "120"
+   },
+   "minage": {
+      "_value": "10"
+   },
+   "link": [
+      {
+         "_type": "boardgamecompilation",
+         "_id": "17419",
+         "_value": "CATAN 3D Collector's Edition"
+      },
+      {
+         "_type": "boardgamecompilation",
+         "_id": "298278",
+         "_value": "Catan: 25 Jahre Jubiläums-Edition"
+      },
+      {
+         "_type": "boardgamecompilation",
+         "_id": "305668",
+         "_value": "Catan: 25th Anniversary Edition"
+      },
+      {
+         "_type": "boardgamecompilation",
+         "_id": "338697",
+         "_value": "CATAN: 3D Edition"
+      },
+      {
+         "_type": "boardgamecompilation",
+         "_id": "182880",
+         "_value": "Catan: Big Box"
+      },
+      {
+         "_type": "boardgamecompilation",
+         "_id": "191710",
+         "_value": "Catan: Big Box"
+      },
+      {
+         "_type": "boardgamecompilation",
+         "_id": "269980",
+         "_value": "Catan: Big Box"
+      },
+      {
+         "_type": "boardgamecompilation",
+         "_id": "265030",
+         "_value": "Catan: Big Box Jubileumeditie"
+      },
+      {
+         "_type": "boardgamecompilation",
+         "_id": "152959",
+         "_value": "The Settlers of Catan (containing 5/6 player expansion)"
+      },
+      {
+         "_type": "boardgamedesigner",
+         "_id": "11",
+         "_value": "Klaus Teuber"
+      },
+      {
+         "_type": "boardgameartist",
+         "_id": "12036",
+         "_value": "Volkan Baga"
+      },
+      {
+         "_type": "boardgameartist",
+         "_id": "12382",
+         "_value": "Tanja Donner"
+      },
+      {
+         "_type": "boardgameartist",
+         "_id": "13034",
+         "_value": "Pete Fenlon"
+      },
+      {
+         "_type": "boardgameartist",
+         "_id": "5442",
+         "_value": "Jason Hawkins"
+      },
+      {
+         "_type": "boardgameartist",
+         "_id": "26874",
+         "_value": "Michaela Kienle"
+      },
+      {
+         "_type": "boardgameartist",
+         "_id": "4959",
+         "_value": "Harald Lieske"
+      },
+      {
+         "_type": "boardgameartist",
+         "_id": "11825",
+         "_value": "Michael Menzel"
+      },
+      {
+         "_type": "boardgameartist",
+         "_id": "24191",
+         "_value": "Marion Pott"
+      },
+      {
+         "_type": "boardgameartist",
+         "_id": "25612",
+         "_value": "Matt Schwabel"
+      },
+      {
+         "_type": "boardgameartist",
+         "_id": "11883",
+         "_value": "Franz Vohwinkel"
+      },
+      {
+         "_type": "boardgameartist",
+         "_id": "12063",
+         "_value": "Stephen Graham Walsh"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "37",
+         "_value": "KOSMOS"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "267",
+         "_value": "999 Games"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "4304",
+         "_value": "Albi"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "157",
+         "_value": "Asmodee"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "7340",
+         "_value": "Astrel Games"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "6784",
+         "_value": "Bergsala Enigma (Enigma)"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "46980",
+         "_value": "Brädspel.se"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "7162",
+         "_value": "Brain Games"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "9068",
+         "_value": "Broadway Toys LTD"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "4358",
+         "_value": "Capcom Co., Ltd."
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "31418",
+         "_value": "Catan Studio"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "4335",
+         "_value": "Competo / Marektoy"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "496",
+         "_value": "danspil"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "41",
+         "_value": "Descartes Editeur"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "2366",
+         "_value": "Devir"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "26990",
+         "_value": "Dexy Co"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "116",
+         "_value": "Eurogames"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "5657",
+         "_value": "Filosofia Éditions"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "4617",
+         "_value": "Galakta"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "5530",
+         "_value": "Giochi Uniti"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "21640",
+         "_value": "GP Games"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "858",
+         "_value": "Grow Jogos e Brinquedos"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "23382",
+         "_value": "HaKubia"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "4417",
+         "_value": "Hanayama"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "18852",
+         "_value": "Hobby World"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "8822",
+         "_value": "Ideal Board Games"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "31372",
+         "_value": "Igroljub"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "29036",
+         "_value": "IntelliGames.BG"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "5020",
+         "_value": "Ísöld ehf."
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "6214",
+         "_value": "Kaissa Chess & Games"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "8291",
+         "_value": "Korea Boardgames Co., Ltd."
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "2654",
+         "_value": "L&M Games"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "5597",
+         "_value": "Laser plus"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "3218",
+         "_value": "Lautapelit.fi"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "3533",
+         "_value": "Logojogos"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "10",
+         "_value": "Mayfair Games"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "24886",
+         "_value": "Ninive Games"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "2528",
+         "_value": "Paper Iyagi"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "22",
+         "_value": "Piatnik"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "8313",
+         "_value": "Smart Ltd"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "44204",
+         "_value": "Spilbræt.dk"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "9235",
+         "_value": "Stupor Mundi"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "48279",
+         "_value": "SuperHeated Neurons"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "9234",
+         "_value": "Swan Panasia Co., Ltd."
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "42",
+         "_value": "Tilsit"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "18477",
+         "_value": "Top Toys"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "13481",
+         "_value": "TRY SOFT"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "14078",
+         "_value": "Vennerød Forlag AS"
+      }
+   ],
+   "_type": "boardgame",
+   "_id": "13"
+},
+{
+   "thumbnail": "https://cf.geekdo-images.com/S5GzB_f2Re3kEDoSxqG5Ew__thumb/img/kJ1JQ_d9xEZ00sJ1dLvwyQYiQUA=/fit-in/200x150/filters:strip_icc()/pic213515.jpg",
+   "image": "https://cf.geekdo-images.com/S5GzB_f2Re3kEDoSxqG5Ew__original/img/K49MN0Ij_tZOgDK4znCUJGu6aU4=/0x0/filters:format(jpeg)/pic213515.jpg",
+   "name": {
+      "_type": "primary",
+      "_sortindex": "1",
+      "_value": "Apples to Apples"
+   },
+   "description": "The party game Apples to Apples consists of two decks of cards: Things and Descriptions. Each round, the active player draws a Description card (which features an adjective like &quot;Hairy&quot; or &quot;Smarmy&quot;) from the deck, then the other players each secretly choose the Thing card in hand that best matches that description and plays it face-down on the table. The active player then reveals these cards and chooses the Thing card that, in his opinion, best matches the Description card, which he awards to whoever played that Thing card. This player becomes the new active player for the next round.&#10;&#10;Once a player has won a pre-determined number of Description cards, that player wins.&#10;&#10;Note: &quot;Party Box&quot; editions include all cards from Apples to Apples: Expansion Set #1 and Apples to Apples: Expansion Set #2&#10;&#10;",
+   "yearpublished": {
+      "_value": "1999"
+   },
+   "minplayers": {
+      "_value": "4"
+   },
+   "maxplayers": {
+      "_value": "10"
+   },
+   "playingtime": {
+      "_value": "30"
+   },
+   "minplaytime": {
+      "_value": "30"
+   },
+   "maxplaytime": {
+      "_value": "30"
+   },
+   "minage": {
+      "_value": "12"
+   },
+   "link": [
+      {
+         "_type": "boardgamedesigner",
+         "_id": "7034",
+         "_value": "Matthew Kirby"
+      },
+      {
+         "_type": "boardgamedesigner",
+         "_id": "294",
+         "_value": "Mark Alan Osterhaus"
+      },
+      {
+         "_type": "boardgameartist",
+         "_id": "6815",
+         "_value": "John Kovalic"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "4752",
+         "_value": "Beverly Enterprises, Inc."
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "10964",
+         "_value": "Excalibur Electronics"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "5833",
+         "_value": "Holiday Games"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "93",
+         "_value": "Mattel, Inc."
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "48",
+         "_value": "Out of the Box Publishing"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "39",
+         "_value": "Pegasus Spiele"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "964",
+         "_value": "Tactic"
+      }
+   ],
+   "_type": "boardgame",
+   "_id": "74"
+},
+{
+   "thumbnail": "https://cf.geekdo-images.com/Oem1TTtSgxOghRFCoyWRPw__thumb/img/5cltSV60oVvjL3Ag_KTJbmTdU6w=/fit-in/200x150/filters:strip_icc()/pic4916782.jpg",
+   "image": "https://cf.geekdo-images.com/Oem1TTtSgxOghRFCoyWRPw__original/img/Nu3eXPyOkhtnR3hhpUrtgqRMAfs=/0x0/filters:format(jpeg)/pic4916782.jpg",
+   "name": {
+      "_type": "primary",
+      "_sortindex": "1",
+      "_value": "Risk"
+   },
+   "description": "Possibly the most popular, mass market war game.  The goal is conquest of the world.&#10;&#10;Each player's turn consists of:&#10;- gaining reinforcements through number of territories held, control of every territory on each continent, and turning sets of bonus cards.&#10;-  Attacking other players using a simple combat rule of comparing the highest dice rolled for each side.  Players may attack as often as desired.  If one enemy territory is successfully taken, the player is awarded with a  bonus card.&#10;-  Moving a group of armies to another adjacent territory.&#10;&#10;",
+   "yearpublished": {
+      "_value": "1959"
+   },
+   "minplayers": {
+      "_value": "2"
+   },
+   "maxplayers": {
+      "_value": "6"
+   },
+   "playingtime": {
+      "_value": "120"
+   },
+   "minplaytime": {
+      "_value": "120"
+   },
+   "maxplaytime": {
+      "_value": "120"
+   },
+   "minage": {
+      "_value": "10"
+   },
+   "link": [
+      {
+         "_type": "boardgamecompilation",
+         "_id": "154432",
+         "_value": "Risk & Castle Risk"
+      },
+      {
+         "_type": "boardgamecompilation",
+         "_id": "159985",
+         "_value": "Spaß am Erfolg: Karriere, Das Millionenspiel, Risiko"
+      },
+      {
+         "_type": "boardgamedesigner",
+         "_id": "116",
+         "_value": "Albert Lamorisse"
+      },
+      {
+         "_type": "boardgamedesigner",
+         "_id": "1047",
+         "_value": "Michael I. Levin"
+      },
+      {
+         "_type": "boardgameartist",
+         "_id": "3",
+         "_value": "(Uncredited)"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "3320",
+         "_value": "(Unknown)"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "404",
+         "_value": "Alga"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "4922",
+         "_value": "Barnes & Noble"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "4680",
+         "_value": "Borras Plana S.A."
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "46980",
+         "_value": "Brädspel.se"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "1935",
+         "_value": "Carlit"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "1772",
+         "_value": "Clipper"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "253",
+         "_value": "Editrice Giochi"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "13103",
+         "_value": "El Greco"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "858",
+         "_value": "Grow Jogos e Brinquedos"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "6566",
+         "_value": "Guau"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "51",
+         "_value": "Hasbro"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "8245",
+         "_value": "Juegos Crone"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "2627",
+         "_value": "Majora"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "920",
+         "_value": "Miro Company"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "6876",
+         "_value": "Nilco S.A."
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "417",
+         "_value": "Palitoy Ltd."
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "28",
+         "_value": "Parker Brothers"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "38",
+         "_value": "Schmidt Spiele"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "4933",
+         "_value": "Smeets & Schippers"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "1322",
+         "_value": "Tomy"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "95",
+         "_value": "Waddingtons"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "59",
+         "_value": "Winning Moves Games (USA)"
+      }
+   ],
+   "_type": "boardgame",
+   "_id": "181"
+},
+{
+   "thumbnail": "https://cf.geekdo-images.com/mVmmntn2oQd0PfFrWBvwIQ__thumb/img/RUmuGCB40FQH0en0R2nrcsSO7DE=/fit-in/200x150/filters:strip_icc()/pic404651.jpg",
+   "image": "https://cf.geekdo-images.com/mVmmntn2oQd0PfFrWBvwIQ__original/img/11jrKPiOVTNl5NwX83KGtTZEq40=/0x0/filters:format(jpeg)/pic404651.jpg",
+   "name": {
+      "_type": "primary",
+      "_sortindex": "1",
+      "_value": "Scrabble"
+   },
+   "description": "In this classic word game, players use their seven drawn letter-tiles to form words on the gameboard.  Each word laid out earns points based on the commonality of the letters used, with certain board spaces giving bonuses.  But a word can only be played if it uses at least one already-played tile or adds to an already-played word.  This leads to slightly tactical play, as potential words are rejected because they would give an opponent too much access to the better bonus spaces.&#10;&#10;Skip-a-cross was licensed by Selchow &amp; Righter and manufactured by Cadaco. Both games have identical rules but Skip-a-cross has tiles and racks made of cardboard instead of wood. The game was also published because not enough Scrabble games were manufactured to meet the demand.&#10;&#10;",
+   "yearpublished": {
+      "_value": "1948"
+   },
+   "minplayers": {
+      "_value": "2"
+   },
+   "maxplayers": {
+      "_value": "4"
+   },
+   "playingtime": {
+      "_value": "90"
+   },
+   "minplaytime": {
+      "_value": "90"
+   },
+   "maxplaytime": {
+      "_value": "90"
+   },
+   "minage": {
+      "_value": "10"
+   },
+   "link": [
+      {
+         "_type": "boardgamecompilation",
+         "_id": "160001",
+         "_value": "Family Game Night Book and Game Set: Scrabble, Clue, Sorry, Yahtzee"
+      },
+      {
+         "_type": "boardgamecompilation",
+         "_id": "147369",
+         "_value": "Scrabble and Yahtzee"
+      },
+      {
+         "_type": "boardgamecompilation",
+         "_id": "237073",
+         "_value": "Twin Play Classics: Monopoly and Scrabble"
+      },
+      {
+         "_type": "boardgamedesigner",
+         "_id": "143",
+         "_value": "Alfred Mosher Butts"
+      },
+      {
+         "_type": "boardgameartist",
+         "_id": "3",
+         "_value": "(Uncredited)"
+      },
+      {
+         "_type": "boardgameartist",
+         "_id": "67649",
+         "_value": "C. Leslie Crandall"
+      },
+      {
+         "_type": "boardgameartist",
+         "_id": "46983",
+         "_value": "Michael Graves"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "3320",
+         "_value": "(Unknown)"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "404",
+         "_value": "Alga"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "4922",
+         "_value": "Barnes & Noble"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "4680",
+         "_value": "Borras Plana S.A."
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "389",
+         "_value": "Brio AB"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "553",
+         "_value": "Cadaco"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "6189",
+         "_value": "Cappelen"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "50342",
+         "_value": "Casa Estanciero S.R.L."
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "654",
+         "_value": "CEFA (Celulosa Fabril S. A.)"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "847",
+         "_value": "Chieftain Products"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "2919",
+         "_value": "Damm / Egmont"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "1765",
+         "_value": "Dino Toys s. r. o."
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "4612",
+         "_value": "Drechsler"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "1731",
+         "_value": "Estrela"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "4089",
+         "_value": "Falomir Juegos"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "200",
+         "_value": "Fundex"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "51",
+         "_value": "Hasbro"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "4721",
+         "_value": "Holdson"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "3540",
+         "_value": "Joker"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "8245",
+         "_value": "Juegos Crone"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "335",
+         "_value": "Jumbo"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "9634",
+         "_value": "KADABRA"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "8291",
+         "_value": "Korea Boardgames Co., Ltd."
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "2090",
+         "_value": "Kuvataide"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "17882",
+         "_value": "Labo-Mix"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "93",
+         "_value": "Mattel, Inc."
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "9006",
+         "_value": "Max Ploys"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "20",
+         "_value": "Milton Bradley"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "2368",
+         "_value": "Murfett"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "32395",
+         "_value": "NeoTroy Games"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "634",
+         "_value": "The Op"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "28",
+         "_value": "Parker Brothers"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "486",
+         "_value": "Paul Lamond Games Ltd"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "22",
+         "_value": "Piatnik"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "3994",
+         "_value": "Playmix"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "4858",
+         "_value": "Production & Marketing Company"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "34",
+         "_value": "Ravensburger"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "44714",
+         "_value": "Refax Oy"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "34674",
+         "_value": "ren ehf."
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "16091",
+         "_value": "Schowanek"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "359",
+         "_value": "Selchow & Righter"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "1318",
+         "_value": "Sio"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "288",
+         "_value": "Spear's Games"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "17229",
+         "_value": "Spectrum Games Corporation"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "12557",
+         "_value": "Spil hf."
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "30088",
+         "_value": "Super Impulse"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "8667",
+         "_value": "SYU Creation"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "45308",
+         "_value": "Tinderbox Games"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "1052",
+         "_value": "ToyCo"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "26123",
+         "_value": "T. R. Urban & Co."
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "59",
+         "_value": "Winning Moves Games (USA)"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "24099",
+         "_value": "Winning Solutions (WS Game Company)"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "5613",
+         "_value": "Xalingo Brinquedos"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "30657",
+         "_value": "YOHAN"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "11953",
+         "_value": "Zontik Games"
+      }
+   ],
+   "_type": "boardgame",
+   "_id": "320"
+},
+{
+   "thumbnail": "https://cf.geekdo-images.com/LeaLDlTTmeN639MfuflcMw__thumb/img/CSPEyoFAcA3WwtzDekp3Mfepcek=/fit-in/200x150/filters:strip_icc()/pic2286966.jpg",
+   "image": "https://cf.geekdo-images.com/LeaLDlTTmeN639MfuflcMw__original/img/fusGQFpm4srwqhM8CDlEDzh0NyQ=/0x0/filters:format(jpeg)/pic2286966.jpg",
+   "name": {
+      "_type": "primary",
+      "_sortindex": "1",
+      "_value": "Rummikub"
+   },
+   "description": "The game is based on the traditional middle-eastern game of Okey. First created in the 1930s and sold in hand-produced versions until the late 1970s.&#10;&#10;Similar to the Rummy that you play with cards - you try to get rid of all your tiles by forming numbers into runs of 3 tiles or more, or 3 to 4 of a kind. The colors of the numbers on the tiles are like card suits. This game may start rather uneventfully, but when the players start putting more and more tiles in play, the options for your upcoming turns can become more complex, challenging, and exciting (from areyougame.com).&#10;&#10;",
+   "yearpublished": {
+      "_value": "1977"
+   },
+   "minplayers": {
+      "_value": "2"
+   },
+   "maxplayers": {
+      "_value": "4"
+   },
+   "playingtime": {
+      "_value": "60"
+   },
+   "minplaytime": {
+      "_value": "60"
+   },
+   "maxplaytime": {
+      "_value": "60"
+   },
+   "minage": {
+      "_value": "8"
+   },
+   "link": [
+      {
+         "_type": "boardgamedesigner",
+         "_id": "634",
+         "_value": "Ephraim Hertzano"
+      },
+      {
+         "_type": "boardgameartist",
+         "_id": "3",
+         "_value": "(Uncredited)"
+      },
+      {
+         "_type": "boardgameartist",
+         "_id": "28290",
+         "_value": "Micha Hertzano"
+      },
+      {
+         "_type": "boardgameartist",
+         "_id": "581",
+         "_value": "Michael Rüttinger"
+      },
+      {
+         "_type": "boardgameartist",
+         "_id": "77657",
+         "_value": "Sławek Wiechowski"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "3320",
+         "_value": "(Unknown)"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "404",
+         "_value": "Alga"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "8495",
+         "_value": "Aquamarine Games (COMPUDID)"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "1997",
+         "_value": "Arxon"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "16355",
+         "_value": "Bello Games New York, Inc."
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "6784",
+         "_value": "Bergsala Enigma (Enigma)"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "6285",
+         "_value": "Bookmark Verlag"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "30795",
+         "_value": "Brain Games Germany"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "389",
+         "_value": "Brio AB"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "9068",
+         "_value": "Broadway Toys LTD"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "553",
+         "_value": "Cadaco"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "225",
+         "_value": "Cardinal"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "1935",
+         "_value": "Carlit"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "111",
+         "_value": "Casper"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "5314",
+         "_value": "Cayro, the games"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "932",
+         "_value": "CBS Electronics"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "311",
+         "_value": "Clementoni"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "38835",
+         "_value": "Coneways"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "792",
+         "_value": "Crown & Andrews Ltd."
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "485",
+         "_value": "Dal Negro"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "496",
+         "_value": "danspil"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "2400",
+         "_value": "Desyllas Games"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "3082",
+         "_value": "Dujardin"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "3138",
+         "_value": "Espenlaub"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "4089",
+         "_value": "Falomir Juegos"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "11188",
+         "_value": "Fame Products"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "21925",
+         "_value": "Fjarðarfell"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "2896",
+         "_value": "Fortuna Games"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "390",
+         "_value": "Fun Connection"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "9396",
+         "_value": "Game Design"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "454",
+         "_value": "Goliath Games"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "858",
+         "_value": "Grow Jogos e Brinquedos"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "47384",
+         "_value": "H. I. T. INDUSTRIES, LTD."
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "6603",
+         "_value": "Hansa Toy Co."
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "51",
+         "_value": "Hasbro"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "6262",
+         "_value": "HEMA"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "14270",
+         "_value": "Hertzano Ltd."
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "153",
+         "_value": "Ideal"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "3997",
+         "_value": "Intelli"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "3540",
+         "_value": "Joker"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "335",
+         "_value": "Jumbo"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "6214",
+         "_value": "Kaissa Chess & Games"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "405",
+         "_value": "Kärnan"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "14304",
+         "_value": "Kawada, Co. Ltd"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "13486",
+         "_value": "Kingstone International"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "2721",
+         "_value": "Kod Kod"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "8291",
+         "_value": "Korea Boardgames Co., Ltd."
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "16053",
+         "_value": "Lamda Limited"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "16399",
+         "_value": "Lastentuotetukku KY"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "2727",
+         "_value": "Lemada Light Industries"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "6791",
+         "_value": "Lifetime Educational Games"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "10925",
+         "_value": "M & G Pacific Toys, Inc"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "43387",
+         "_value": "Mar Lúdico"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "4611",
+         "_value": "Masudaya Corp"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "17039",
+         "_value": "MB Juegos"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "11107",
+         "_value": "Nordic Games GmbH"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "304",
+         "_value": "Noris Spiele"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "40462",
+         "_value": "Orangutan Games"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "28",
+         "_value": "Parker Brothers"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "2188",
+         "_value": "Pavilion"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "648",
+         "_value": "Peri Spiele"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "649",
+         "_value": "Perner Produktions GmbH"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "22",
+         "_value": "Piatnik"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "668",
+         "_value": "Playtoy Industries"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "115",
+         "_value": "Pressman Toy Corp."
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "34",
+         "_value": "Ravensburger"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "4668",
+         "_value": "Schmidt International"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "38",
+         "_value": "Schmidt Spiele"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "359",
+         "_value": "Selchow & Righter"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "4622",
+         "_value": "Selecta Spel en Hobby"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "9319",
+         "_value": "Shelbud Products Corp."
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "288",
+         "_value": "Spear's Games"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "1905",
+         "_value": "Spin Master Ltd."
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "2625",
+         "_value": "Sterling Games"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "7355",
+         "_value": "Studio100"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "964",
+         "_value": "Tactic"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "21894",
+         "_value": "TM Toys"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "26551",
+         "_value": "TOMA Sp. z o.o."
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "1322",
+         "_value": "Tomy"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "39561",
+         "_value": "Toy Club"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "95",
+         "_value": "Waddingtons"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "7997",
+         "_value": "Weico Produkte GmbH"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "5700",
+         "_value": "Western Publishing Company"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "7506",
+         "_value": "Wood Expressions"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "35425",
+         "_value": "Yangxin Industrial Company Limited"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "46566",
+         "_value": "놀이속의세상"
+      }
+   ],
+   "_type": "boardgame",
+   "_id": "811"
+},
+{
+   "thumbnail": "https://cf.geekdo-images.com/z6tNBDWK-fmZB6dHGML3Gg__thumb/img/j_78tIWNelVnffQS8nQi-AEf7kk=/fit-in/200x150/filters:strip_icc()/pic6685757.jpg",
+   "image": "https://cf.geekdo-images.com/z6tNBDWK-fmZB6dHGML3Gg__original/img/D4RHkuoqJFWClN2LJ-Rer8kRz6E=/0x0/filters:format(jpeg)/pic6685757.jpg",
+   "name": {
+      "_type": "primary",
+      "_sortindex": "1",
+      "_value": "Phase 10"
+   },
+   "description": "A rummy-type card game where players compete to be the first to finish completing all ten phases.  Phases include collecting runs of numbers, collecting certain number of a given color cards, etc.  The first player to finish completing the 10th phase wins.  In case of ties, the player with the fewest number of points wins.&#10;&#10;",
+   "yearpublished": {
+      "_value": "1982"
+   },
+   "minplayers": {
+      "_value": "2"
+   },
+   "maxplayers": {
+      "_value": "6"
+   },
+   "playingtime": {
+      "_value": "45"
+   },
+   "minplaytime": {
+      "_value": "45"
+   },
+   "maxplaytime": {
+      "_value": "45"
+   },
+   "minage": {
+      "_value": "8"
+   },
+   "link": [
+      {
+         "_type": "boardgamecompilation",
+         "_id": "315730",
+         "_value": "Phase 10 Bonus Pack"
+      },
+      {
+         "_type": "boardgamecompilation",
+         "_id": "337824",
+         "_value": "UNO Bundle Collector Tin"
+      },
+      {
+         "_type": "boardgamedesigner",
+         "_id": "537",
+         "_value": "Ken Johnson"
+      },
+      {
+         "_type": "boardgameartist",
+         "_id": "3",
+         "_value": "(Uncredited)"
+      },
+      {
+         "_type": "boardgameartist",
+         "_id": "37332",
+         "_value": "Lüders & Baran"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "200",
+         "_value": "Fundex"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "3046",
+         "_value": "K&K International"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "93",
+         "_value": "Mattel, Inc."
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "74",
+         "_value": "ASS Altenburger Spielkarten"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "389",
+         "_value": "Brio AB"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "21",
+         "_value": "Canada Games"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "111",
+         "_value": "Casper"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "792",
+         "_value": "Crown & Andrews Ltd."
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "253",
+         "_value": "Editrice Giochi"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "11",
+         "_value": "F.X. Schmid"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "7031",
+         "_value": "Global Partner"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "8291",
+         "_value": "Korea Boardgames Co., Ltd."
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "5936",
+         "_value": "Modiano"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "34",
+         "_value": "Ravensburger"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "1061",
+         "_value": "Ruibal Hermanos S.A."
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "964",
+         "_value": "Tactic"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "112",
+         "_value": "Target Games"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "55",
+         "_value": "U.S. Games Systems, Inc."
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "32781",
+         "_value": "Winning Moves UK Ltd."
+      }
+   ],
+   "_type": "boardgame",
+   "_id": "1258"
+},
+{
+   "thumbnail": "https://cf.geekdo-images.com/owlmDA10KegcwPaapY5auw__thumb/img/73FO0H7pORdum5ZexMXyrjLhpVU=/fit-in/200x150/filters:strip_icc()/pic5146918.png",
+   "image": "https://cf.geekdo-images.com/owlmDA10KegcwPaapY5auw__original/img/JJ5Pw1-6M7GUZ7OhFxEybSaryiM=/0x0/filters:format(png)/pic5146918.png",
+   "name": {
+      "_type": "primary",
+      "_sortindex": "1",
+      "_value": "Clue"
+   },
+   "description": "For versions of Clue that feature the new character Dr. Orchid, please use this Clue page.&#10;&#10;The classic detective game!  In Clue, players move from room to room in a mansion to solve the mystery of: who done it, with what, and where?  Players are dealt character, weapon, and location cards after the top card from each card type is secretly placed in the confidential file in the middle of the board.  Players must move to a room and then make an accusation against a character saying they did it in that room with a specific weapon.  The player to the left must show one of any cards accused to the accuser if in that player's hand.  Through deductive reasoning each player must figure out which character, weapon, and location are in the secret file.  To do this, each player must uncover what cards are in other players hands by making more and more accusations.  Once a player knows what cards the other players are holding, they will know what cards are in the secret file.  A great game for those who enjoy reasoning and thinking things out.&#10;&#10;Note: There are some early versions of Clue which are labeled as 2-6 players.&#10;&#10;",
+   "yearpublished": {
+      "_value": "1949"
+   },
+   "minplayers": {
+      "_value": "2"
+   },
+   "maxplayers": {
+      "_value": "6"
+   },
+   "playingtime": {
+      "_value": "45"
+   },
+   "minplaytime": {
+      "_value": "45"
+   },
+   "maxplaytime": {
+      "_value": "45"
+   },
+   "minage": {
+      "_value": "8"
+   },
+   "link": [
+      {
+         "_type": "boardgamecompilation",
+         "_id": "159081",
+         "_value": "Clue / Parcheesi"
+      },
+      {
+         "_type": "boardgamecompilation",
+         "_id": "160001",
+         "_value": "Family Game Night Book and Game Set: Scrabble, Clue, Sorry, Yahtzee"
+      },
+      {
+         "_type": "boardgamecompilation",
+         "_id": "332581",
+         "_value": "Twin Play Classics: Clue and Sorry"
+      },
+      {
+         "_type": "boardgamedesigner",
+         "_id": "660",
+         "_value": "Anthony E. Pratt"
+      },
+      {
+         "_type": "boardgameartist",
+         "_id": "108382",
+         "_value": "Peter Dobbin"
+      },
+      {
+         "_type": "boardgameartist",
+         "_id": "30281",
+         "_value": "René Goscinny"
+      },
+      {
+         "_type": "boardgameartist",
+         "_id": "28100",
+         "_value": "Matt Groening"
+      },
+      {
+         "_type": "boardgameartist",
+         "_id": "85463",
+         "_value": "Rune Johansson"
+      },
+      {
+         "_type": "boardgameartist",
+         "_id": "108378",
+         "_value": "Stephen Millingen"
+      },
+      {
+         "_type": "boardgameartist",
+         "_id": "15438",
+         "_value": "Drew Struzan"
+      },
+      {
+         "_type": "boardgameartist",
+         "_id": "30280",
+         "_value": "Albert Uderzo"
+      },
+      {
+         "_type": "boardgameartist",
+         "_id": "41500",
+         "_value": "Urs Waldvogel"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "51",
+         "_value": "Hasbro"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "3922",
+         "_value": "John Waddington Ltd."
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "4",
+         "_value": "(Self-Published)"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "3320",
+         "_value": "(Unknown)"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "404",
+         "_value": "Alga"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "3626",
+         "_value": "Basic Fun, Inc."
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "4680",
+         "_value": "Borras Plana S.A."
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "5768",
+         "_value": "Brohm-Parker-Spiele"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "1935",
+         "_value": "Carlit"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "8786",
+         "_value": "CentroCoop"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "1772",
+         "_value": "Clipper"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "2919",
+         "_value": "Damm / Egmont"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "7217",
+         "_value": "Editions ATLAS"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "253",
+         "_value": "Editrice Giochi"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "46638",
+         "_value": "Eleven Force"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "1731",
+         "_value": "Estrela"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "9401",
+         "_value": "Funskool Games"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "13707",
+         "_value": "HanbitSoft"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "3540",
+         "_value": "Joker"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "8245",
+         "_value": "Juegos Crone"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "2721",
+         "_value": "Kod Kod"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "8291",
+         "_value": "Korea Boardgames Co., Ltd."
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "7017",
+         "_value": "Magic Toys"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "2627",
+         "_value": "Majora"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "920",
+         "_value": "Miro Company"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "6876",
+         "_value": "Nilco S.A."
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "634",
+         "_value": "The Op"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "2120",
+         "_value": "Oy Fenno-Alga Ab"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "28",
+         "_value": "Parker Brothers"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "4653",
+         "_value": "Parker Spiele"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "38",
+         "_value": "Schmidt Spiele"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "4933",
+         "_value": "Smeets & Schippers"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "30098",
+         "_value": "Spółdzielnia Rzemieślnicza \"Otwock\""
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "95",
+         "_value": "Waddingtons"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "15619",
+         "_value": "Winning Eleven Productions"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "23872",
+         "_value": "Winning Moves Australia Pty Ltd"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "9466",
+         "_value": "Winning Moves France"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "59",
+         "_value": "Winning Moves Games (USA)"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "26208",
+         "_value": "Winning Moves Germany"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "32781",
+         "_value": "Winning Moves UK Ltd."
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "24099",
+         "_value": "Winning Solutions (WS Game Company)"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "11953",
+         "_value": "Zontik Games"
+      }
+   ],
+   "_type": "boardgame",
+   "_id": "1294"
+},
+{
+   "thumbnail": "https://cf.geekdo-images.com/9nGoBZ0MRbi6rdH47sj2Qg__thumb/img/ezXcyEsHhS9iRxmuGe8SmiLLXlM=/fit-in/200x150/filters:strip_icc()/pic5786795.jpg",
+   "image": "https://cf.geekdo-images.com/9nGoBZ0MRbi6rdH47sj2Qg__original/img/bA8irydTCNlE38QSzM9EhcUIuNU=/0x0/filters:format(jpeg)/pic5786795.jpg",
+   "name": {
+      "_type": "primary",
+      "_sortindex": "1",
+      "_value": "Monopoly"
+   },
+   "yearpublished": {
+      "_value": "1935"
+   },
+   "minplayers": {
+      "_value": "2"
+   },
+   "maxplayers": {
+      "_value": "8"
+   },
+   "playingtime": {
+      "_value": "180"
+   },
+   "minplaytime": {
+      "_value": "60"
+   },
+   "maxplaytime": {
+      "_value": "180"
+   },
+   "minage": {
+      "_value": "8"
+   },
+   "link": [
+      {
+         "_type": "boardgamecompilation",
+         "_id": "237073",
+         "_value": "Twin Play Classics: Monopoly and Scrabble"
+      },
+      {
+         "_type": "boardgamedesigner",
+         "_id": "3",
+         "_value": "(Uncredited)"
+      },
+      {
+         "_type": "boardgamedesigner",
+         "_id": "1268",
+         "_value": "Charles Darrow"
+      },
+      {
+         "_type": "boardgamedesigner",
+         "_id": "3109",
+         "_value": "Elizabeth J. Magie (Phillips)"
+      },
+      {
+         "_type": "boardgameartist",
+         "_id": "50283",
+         "_value": "Edison Girard"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "3312",
+         "_value": "Åhlén & Åkerlund"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "404",
+         "_value": "Alga"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "16840",
+         "_value": "Altap"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "74",
+         "_value": "ASS Altenburger Spielkarten"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "45423",
+         "_value": "Aurimagic"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "4922",
+         "_value": "Barnes & Noble"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "4680",
+         "_value": "Borras Plana S.A."
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "389",
+         "_value": "Brio AB"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "5768",
+         "_value": "Brohm-Parker-Spiele"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "1935",
+         "_value": "Carlit"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "1772",
+         "_value": "Clipper"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "2919",
+         "_value": "Damm / Egmont"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "8287",
+         "_value": "deSka"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "4612",
+         "_value": "Drechsler"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "253",
+         "_value": "Editrice Giochi"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "32180",
+         "_value": "Edwards Dunlop And Company Limited"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "13292",
+         "_value": "Epoch Co., Ltd."
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "1731",
+         "_value": "Estrela"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "6689",
+         "_value": "Franz Schmidt"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "9401",
+         "_value": "Funskool Games"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "4527",
+         "_value": "General Mills"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "4417",
+         "_value": "Hanayama"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "51",
+         "_value": "Hasbro"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "36781",
+         "_value": "Inspiration tv network"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "28605",
+         "_value": "JinLiLai"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "661",
+         "_value": "John Sands Pty Ltd"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "3922",
+         "_value": "John Waddington Ltd."
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "3540",
+         "_value": "Joker"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "48507",
+         "_value": "Kasco Industries"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "127",
+         "_value": "Klee"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "8291",
+         "_value": "Korea Boardgames Co., Ltd."
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "2090",
+         "_value": "Kuvataide"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "14602",
+         "_value": "Leaping Dog"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "2627",
+         "_value": "Majora"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "17039",
+         "_value": "MB Juegos"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "50626",
+         "_value": "Metrotoy"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "6892",
+         "_value": "MIKA"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "920",
+         "_value": "Miro Company"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "32395",
+         "_value": "NeoTroy Games"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "6876",
+         "_value": "Nilco S.A."
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "21926",
+         "_value": "Nýja leikfangagerðin"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "634",
+         "_value": "The Op"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "2120",
+         "_value": "Oy Fenno-Alga Ab"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "28",
+         "_value": "Parker Brothers"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "4653",
+         "_value": "Parker Spiele"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "11720",
+         "_value": "Remoundo"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "38",
+         "_value": "Schmidt Spiele"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "4933",
+         "_value": "Smeets & Schippers"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "42",
+         "_value": "Tilsit"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "4645",
+         "_value": "Toltoys"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "95",
+         "_value": "Waddingtons"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "59",
+         "_value": "Winning Moves Games (USA)"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "24099",
+         "_value": "Winning Solutions (WS Game Company)"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "11953",
+         "_value": "Zontik Games"
+      }
+   ],
+   "_type": "boardgame",
+   "_id": "1406"
+},
+{
+   "thumbnail": "https://cf.geekdo-images.com/SU-OL7XWn7BOiSYevyTThw__thumb/img/5dxRomuxNxzw01ZYNnIK-f_Ai4o=/fit-in/200x150/filters:strip_icc()/pic981505.jpg",
+   "image": "https://cf.geekdo-images.com/SU-OL7XWn7BOiSYevyTThw__original/img/JeM6Gys8GmsTTRXcukfk92YtIcA=/0x0/filters:format(jpeg)/pic981505.jpg",
+   "name": {
+      "_type": "primary",
+      "_sortindex": "1",
+      "_value": "UNO"
+   },
+   "description": "Players race to empty their hands and catch opposing players with cards left in theirs, which score points. In turns, players attempt to play a card by matching its color, number, or word to the topmost card on the discard pile. If unable to play, players draw a card from the draw pile, and if still unable to play, they pass their turn. Wild and special cards spice things up a bit.&#10;&#10;UNO is a commercial version of Crazy Eights, a public domain card game played with a standard deck of playing cards.&#10;&#10;This entry includes all themed versions of UNO that do not include new cards.&#10;&#10;",
+   "yearpublished": {
+      "_value": "1971"
+   },
+   "minplayers": {
+      "_value": "2"
+   },
+   "maxplayers": {
+      "_value": "10"
+   },
+   "playingtime": {
+      "_value": "30"
+   },
+   "minplaytime": {
+      "_value": "30"
+   },
+   "maxplaytime": {
+      "_value": "30"
+   },
+   "minage": {
+      "_value": "6"
+   },
+   "link": [
+      {
+         "_type": "boardgamecompilation",
+         "_id": "314892",
+         "_value": "5 Alive / Uno"
+      },
+      {
+         "_type": "boardgamecompilation",
+         "_id": "337824",
+         "_value": "UNO Bundle Collector Tin"
+      },
+      {
+         "_type": "boardgamecompilation",
+         "_id": "349555",
+         "_value": "UNO Stacko Travel Size Bonus Pak"
+      },
+      {
+         "_type": "boardgamedesigner",
+         "_id": "1046",
+         "_value": "Merle Robbins"
+      },
+      {
+         "_type": "boardgameartist",
+         "_id": "3",
+         "_value": "(Uncredited)"
+      },
+      {
+         "_type": "boardgameartist",
+         "_id": "139040",
+         "_value": "Shepard Fairey"
+      },
+      {
+         "_type": "boardgameartist",
+         "_id": "129264",
+         "_value": "Keith Haring"
+      },
+      {
+         "_type": "boardgameartist",
+         "_id": "3030",
+         "_value": "Kinetic"
+      },
+      {
+         "_type": "boardgameartist",
+         "_id": "43644",
+         "_value": "Jeff Kinney"
+      },
+      {
+         "_type": "boardgameartist",
+         "_id": "134272",
+         "_value": "Warleson Oliveira"
+      },
+      {
+         "_type": "boardgameartist",
+         "_id": "1046",
+         "_value": "Merle Robbins"
+      },
+      {
+         "_type": "boardgameartist",
+         "_id": "52757",
+         "_value": "Orlando Villagran"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "3320",
+         "_value": "(Unknown)"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "8",
+         "_value": "AMIGO"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "6103",
+         "_value": "AS Manufacturas"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "74",
+         "_value": "ASS Altenburger Spielkarten"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "4680",
+         "_value": "Borras Plana S.A."
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "21",
+         "_value": "Canada Games"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "1772",
+         "_value": "Clipper"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "2919",
+         "_value": "Damm / Egmont"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "2400",
+         "_value": "Desyllas Games"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "22428",
+         "_value": "Ensky"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "200",
+         "_value": "Fundex"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "14533",
+         "_value": "Gebr. Ludwigs oHG"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "103",
+         "_value": "Gibsons"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "13103",
+         "_value": "El Greco"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "858",
+         "_value": "Grow Jogos e Brinquedos"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "8400",
+         "_value": "Homax"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "117",
+         "_value": "International Games"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "8291",
+         "_value": "Korea Boardgames Co., Ltd."
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "93",
+         "_value": "Mattel, Inc."
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "6876",
+         "_value": "Nilco S.A."
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "39939",
+         "_value": "Österreichische Post"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "1061",
+         "_value": "Ruibal Hermanos S.A."
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "1138",
+         "_value": "Sababa Toys, Inc."
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "30088",
+         "_value": "Super Impulse"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "95",
+         "_value": "Waddingtons"
+      }
+   ],
+   "_type": "boardgame",
+   "_id": "2223"
+},
+{
+   "thumbnail": "https://cf.geekdo-images.com/VosGBqkOjkhgC2QFS1o3_g__thumb/img/PNwWrQIQNo757BtoW6Hniy3P-cw=/fit-in/200x150/filters:strip_icc()/pic212893.jpg",
+   "image": "https://cf.geekdo-images.com/VosGBqkOjkhgC2QFS1o3_g__original/img/ZIc1p75HIEOIwtKy9ZIHsP2l0zQ=/0x0/filters:format(jpeg)/pic212893.jpg",
+   "name": {
+      "_type": "primary",
+      "_sortindex": "1",
+      "_value": "Sequence"
+   },
+   "description": "Sequence is a board and card game. The board shows all the cards (except for the Jacks) of two (2) standard 52-card decks, laid in a 10 x 10 pattern. The four corners are free spaces and count for all players equally.&#10;&#10;The players compete to create rows, columns or diagonals of 5 connected checkers placed on the cards that the player has laid down. Two-eyed Jacks are wild, while one-eyed Jacks allow an opponent's checker to be removed. The game ends when someone has reached a specified number of connections.&#10;&#10;",
+   "yearpublished": {
+      "_value": "1982"
+   },
+   "minplayers": {
+      "_value": "2"
+   },
+   "maxplayers": {
+      "_value": "12"
+   },
+   "playingtime": {
+      "_value": "30"
+   },
+   "minplaytime": {
+      "_value": "10"
+   },
+   "maxplaytime": {
+      "_value": "30"
+   },
+   "minage": {
+      "_value": "7"
+   },
+   "link": [
+      {
+         "_type": "boardgamedesigner",
+         "_id": "5820",
+         "_value": "Doug Reuter"
+      },
+      {
+         "_type": "boardgameartist",
+         "_id": "40607",
+         "_value": "Zetor"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "564",
+         "_value": "Jax, Ltd."
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "3320",
+         "_value": "(Unknown)"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "6784",
+         "_value": "Bergsala Enigma (Enigma)"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "12573",
+         "_value": "Eskifell hf."
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "454",
+         "_value": "Goliath Games"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "8439",
+         "_value": "Happy Baobab"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "27973",
+         "_value": "I on U"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "43387",
+         "_value": "Mar Lúdico"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "11107",
+         "_value": "Nordic Games GmbH"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "28",
+         "_value": "Parker Brothers"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "4653",
+         "_value": "Parker Spiele"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "1511",
+         "_value": "Ventura Games"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "9466",
+         "_value": "Winning Moves France"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "26208",
+         "_value": "Winning Moves Germany"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "32781",
+         "_value": "Winning Moves UK Ltd."
+      }
+   ],
+   "_type": "boardgame",
+   "_id": "2375"
+},
+{
+   "thumbnail": "https://cf.geekdo-images.com/ZWJg0dCdrWHxVnc0eFXK8w__thumb/img/a9rsFV6KR0aun8GobhRU16aU8Kc=/fit-in/200x150/filters:strip_icc()/pic38668.jpg",
+   "image": "https://cf.geekdo-images.com/ZWJg0dCdrWHxVnc0eFXK8w__original/img/LgzEsQlF3xkSEQLoorc8ntiYiIY=/0x0/filters:format(jpeg)/pic38668.jpg",
+   "name": {
+      "_type": "primary",
+      "_sortindex": "1",
+      "_value": "Ticket to Ride"
+   },
+   "description": "With elegantly simple gameplay, Ticket to Ride can be learned in under 15 minutes. Players collect cards of various types of train cars they then use to claim railway routes in North America. The longer the routes, the more points they earn. Additional points come to those who fulfill Destination Tickets &ndash; goal cards that connect distant cities; and to the player who builds the longest continuous route.&#10;&#10;&quot;The rules are simple enough to write on a train ticket &ndash; each turn you either draw more cards, claim a route, or get additional Destination Tickets,&quot; says Ticket to Ride author, Alan R. Moon. &quot;The tension comes from being forced to balance greed &ndash; adding more cards to your hand, and fear &ndash; losing a critical route to a competitor.&quot;&#10;&#10;Ticket to Ride continues in the tradition of Days of Wonder's big format board games featuring high-quality illustrations and components including: an oversize board map of North America, 225 custom-molded train cars, 144 illustrated cards, and wooden scoring markers.&#10;&#10;Since its introduction and numerous subsequent awards, Ticket to Ride has become the BoardGameGeek epitome of a &quot;gateway game&quot; -- simple enough to be taught in a few minutes, and with enough action and tension to keep new players involved and in the game for the duration.&#10;&#10;Part of the Ticket to Ride series.&#10;&#10;",
+   "yearpublished": {
+      "_value": "2004"
+   },
+   "minplayers": {
+      "_value": "2"
+   },
+   "maxplayers": {
+      "_value": "5"
+   },
+   "playingtime": {
+      "_value": "60"
+   },
+   "minplaytime": {
+      "_value": "30"
+   },
+   "maxplaytime": {
+      "_value": "60"
+   },
+   "minage": {
+      "_value": "8"
+   },
+   "link": [
+      {
+         "_type": "boardgamecompilation",
+         "_id": "160069",
+         "_value": "Ticket to Ride: 10th Anniversary"
+      },
+      {
+         "_type": "boardgamedesigner",
+         "_id": "9",
+         "_value": "Alan R. Moon"
+      },
+      {
+         "_type": "boardgameartist",
+         "_id": "12519",
+         "_value": "Cyrille Daujean"
+      },
+      {
+         "_type": "boardgameartist",
+         "_id": "11886",
+         "_value": "Julien Delval"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "1027",
+         "_value": "Days of Wonder"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "23043",
+         "_value": "ADC Blackfire Entertainment"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "47848",
+         "_value": "Asmodee China"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "934",
+         "_value": "Bandai"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "6784",
+         "_value": "Bergsala Enigma (Enigma)"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "34501",
+         "_value": "Boardgame Space"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "2973",
+         "_value": "Edge Entertainment"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "15605",
+         "_value": "Galápagos Jogos"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "5530",
+         "_value": "Giochi Uniti"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "8439",
+         "_value": "Happy Baobab"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "18852",
+         "_value": "Hobby World"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "8291",
+         "_value": "Korea Boardgames Co., Ltd."
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "3218",
+         "_value": "Lautapelit.fi"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "11107",
+         "_value": "Nordic Games GmbH"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "7466",
+         "_value": "Rebel Sp. z o.o."
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "33998",
+         "_value": "Siam Board Games"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "9234",
+         "_value": "Swan Panasia Co., Ltd."
+      }
+   ],
+   "_type": "boardgame",
+   "_id": "9209"
+},
+{
+   "thumbnail": "https://cf.geekdo-images.com/S3ybV1LAp-8SnHIXLLjVqA__thumb/img/oqViRj6nVxK3m36NluTxU1PZkrk=/fit-in/200x150/filters:strip_icc()/pic1534148.jpg",
+   "image": "https://cf.geekdo-images.com/S3ybV1LAp-8SnHIXLLjVqA__original/img/IsrvRLpUV1TEyZsO5rC-btXaPz0=/0x0/filters:format(jpeg)/pic1534148.jpg",
+   "name": {
+      "_type": "primary",
+      "_sortindex": "1",
+      "_value": "Pandemic"
+   },
+   "description": "In Pandemic, several virulent diseases have broken out simultaneously all over the world! The players are disease-fighting specialists whose mission is to treat disease hotspots while researching cures for each of four plagues before they get out of hand.&#10;&#10;The game board depicts several major population centers on Earth. On each turn, a player can use up to four actions to travel between cities, treat infected populaces, discover a cure, or build a research station. A deck of cards provides the players with these abilities, but sprinkled throughout this deck are Epidemic! cards that accelerate and intensify the diseases' activity. A second, separate deck of cards controls the &quot;normal&quot; spread of the infections.&#10;&#10;Taking a unique role within the team, players must plan their strategy to mesh with their specialists' strengths in order to conquer the diseases. For example, the Operations Expert can build research stations which are needed to find cures for the diseases and which allow for greater mobility between cities; the Scientist needs only four cards of a particular disease to cure it instead of the normal five&mdash;but the diseases are spreading quickly and time is running out. If one or more diseases spreads beyond recovery or if too much time elapses, the players all lose. If they cure the four diseases, they all win!&#10;&#10;The 2013 edition of Pandemic includes two new characters&mdash;the Contingency Planner and the Quarantine Specialist&mdash;not available in earlier editions of the game.&#10;&#10;Pandemic is the first game in the Pandemic series.&#10;&#10;",
+   "yearpublished": {
+      "_value": "2008"
+   },
+   "minplayers": {
+      "_value": "2"
+   },
+   "maxplayers": {
+      "_value": "4"
+   },
+   "playingtime": {
+      "_value": "45"
+   },
+   "minplaytime": {
+      "_value": "45"
+   },
+   "maxplaytime": {
+      "_value": "45"
+   },
+   "minage": {
+      "_value": "8"
+   },
+   "link": [
+      {
+         "_type": "boardgamedesigner",
+         "_id": "378",
+         "_value": "Matt Leacock"
+      },
+      {
+         "_type": "boardgameartist",
+         "_id": "9731",
+         "_value": "Josh Cappel"
+      },
+      {
+         "_type": "boardgameartist",
+         "_id": "33088",
+         "_value": "Christian Hanisch"
+      },
+      {
+         "_type": "boardgameartist",
+         "_id": "11935",
+         "_value": "Régis Moulun"
+      },
+      {
+         "_type": "boardgameartist",
+         "_id": "14057",
+         "_value": "Chris Quilliams"
+      },
+      {
+         "_type": "boardgameartist",
+         "_id": "16910",
+         "_value": "Tom Thiel"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "538",
+         "_value": "Z-Man Games"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "23043",
+         "_value": "ADC Blackfire Entertainment"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "4304",
+         "_value": "Albi"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "157",
+         "_value": "Asmodee"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "42032",
+         "_value": "Asmodee Italia"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "15889",
+         "_value": "Asterion Press"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "6784",
+         "_value": "Bergsala Enigma (Enigma)"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "34501",
+         "_value": "Boardgame Space"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "7162",
+         "_value": "Brain Games"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "2366",
+         "_value": "Devir"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "5657",
+         "_value": "Filosofia Éditions"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "15605",
+         "_value": "Galápagos Jogos"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "8820",
+         "_value": "Gém Klub Kft."
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "23382",
+         "_value": "HaKubia"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "1391",
+         "_value": "Hobby Japan"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "6275",
+         "_value": "HomoLudicus"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "15983",
+         "_value": "Jolly Thinkers"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "6214",
+         "_value": "Kaissa Chess & Games"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "8291",
+         "_value": "Korea Boardgames Co., Ltd."
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "5812",
+         "_value": "Lacerta"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "3218",
+         "_value": "Lautapelit.fi"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "9325",
+         "_value": "Lifestyle Boardgames Ltd"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "7992",
+         "_value": "MINDOK"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "11107",
+         "_value": "Nordic Games GmbH"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "29085",
+         "_value": "Paladium Games"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "39",
+         "_value": "Pegasus Spiele"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "4696",
+         "_value": "Quined White Goblin Games"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "7466",
+         "_value": "Rebel Sp. z o.o."
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "33998",
+         "_value": "Siam Board Games"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "3888",
+         "_value": "Stratelibri"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "8759",
+         "_value": "Wargames Club Publishing"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "4932",
+         "_value": "White Goblin Games"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "35809",
+         "_value": "Zhiyanjia"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "44209",
+         "_value": "Ігромаг"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "10739",
+         "_value": "Взрослые дети"
+      }
+   ],
+   "_type": "boardgame",
+   "_id": "30549"
+},
+{
+   "thumbnail": "https://cf.geekdo-images.com/oc3u6OQpJkf9TvDw4iI9xA__thumb/img/Otc-6MFf-HC9ep-82ub2B2rID78=/fit-in/200x150/filters:strip_icc()/pic4991936.jpg",
+   "image": "https://cf.geekdo-images.com/oc3u6OQpJkf9TvDw4iI9xA__original/img/Hh2zbSnLEARMlNg0OzImf2-5FIw=/0x0/filters:format(jpeg)/pic4991936.jpg",
+   "name": {
+      "_type": "primary",
+      "_sortindex": "1",
+      "_value": "Telestrations"
+   },
+   "description": "From the publisher's press release:&#10;&#10;&quot;Each player begins by sketching a TELESTRATIONS word dictated by the roll of a die. The old fashioned sand timer may limit the amount of time they get to execute their sketch, but it certainly doesn't limit creativity! Time's up! All players, all at the same time, pass their sketch to the next player, who must guess what's been drawn. Players then simultaneously pass their guess -- which hopefully matches the original word (or does it??) -- to the next player who must try to draw the word they see -- and so on.&quot;&#10;&quot;Telestrations contains eight erasable sketchbooks and markers, a die, a 90 second sand-timer and 2,400 words to choose from.&quot;&#10;Inspired by the public domain game Eat Poop You Cat .&#10;Similar games are Mutabo and  Mini-Mutabo .&#10;&#10;",
+   "yearpublished": {
+      "_value": "2009"
+   },
+   "minplayers": {
+      "_value": "4"
+   },
+   "maxplayers": {
+      "_value": "8"
+   },
+   "playingtime": {
+      "_value": "30"
+   },
+   "minplaytime": {
+      "_value": "30"
+   },
+   "maxplaytime": {
+      "_value": "30"
+   },
+   "minage": {
+      "_value": "12"
+   },
+   "link": [
+      {
+         "_type": "boardgamedesigner",
+         "_id": "3",
+         "_value": "(Uncredited)"
+      },
+      {
+         "_type": "boardgameartist",
+         "_id": "3",
+         "_value": "(Uncredited)"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "403",
+         "_value": "Användbart Litet Företag"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "42032",
+         "_value": "Asmodee Italia"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "9068",
+         "_value": "Broadway Toys LTD"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "4335",
+         "_value": "Competo / Marektoy"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "792",
+         "_value": "Crown & Andrews Ltd."
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "2400",
+         "_value": "Desyllas Games"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "454",
+         "_value": "Goliath Games"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "153",
+         "_value": "Ideal"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "8291",
+         "_value": "Korea Boardgames Co., Ltd."
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "23031",
+         "_value": "Magellan"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "10970",
+         "_value": "MESAboardgames"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "634",
+         "_value": "The Op"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "31036",
+         "_value": "Plasto"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "28648",
+         "_value": "Randolph"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "7466",
+         "_value": "Rebel Sp. z o.o."
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "33998",
+         "_value": "Siam Board Games"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "27490",
+         "_value": "WOW! What a World of Entertainment AB"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "22609",
+         "_value": "テンデイズゲームズ(TendaysGames)"
+      }
+   ],
+   "_type": "boardgame",
+   "_id": "46213"
+},
+{
+   "thumbnail": "https://cf.geekdo-images.com/_a-Xq2n7TvLGN3Gk9qT4XQ__thumb/img/H4qXO2afhRlb54LsMkQieBXSGWM=/fit-in/200x150/filters:strip_icc()/pic402657.jpg",
+   "image": "https://cf.geekdo-images.com/_a-Xq2n7TvLGN3Gk9qT4XQ__original/img/esdUNZxotQ6U-45H_CoTLoaNuNw=/0x0/filters:format(jpeg)/pic402657.jpg",
+   "name": {
+      "_type": "primary",
+      "_sortindex": "1",
+      "_value": "Unauthorized Production"
+   },
+   "description": "This is a placeholder for game versions that are unauthorized productions of games.  Specifically, this is not for items where a publisher has taken a product and has created a different publication of the same game without permission (e.g. Jungle Jam and Jungle Speed) but rather where a bootleg or unauthorized version of a game has been created that is visually similar to an existing product.&#10;&#10;",
+   "yearpublished": {
+      "_value": "2014"
+   },
+   "minplayers": {
+      "_value": "2"
+   },
+   "maxplayers": {
+      "_value": "8"
+   },
+   "playingtime": {
+      "_value": "20"
+   },
+   "minplaytime": {
+      "_value": "20"
+   },
+   "maxplaytime": {
+      "_value": "20"
+   },
+   "minage": {
+      "_value": "0"
+   },
+   "link": [
+      {
+         "_type": "boardgamepublisher",
+         "_id": "3320",
+         "_value": "(Unknown)"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "1052",
+         "_value": "ToyCo"
+      }
+   ],
+   "_type": "boardgame",
+   "_id": "76085"
+},
+{
+   "thumbnail": "https://cf.geekdo-images.com/MWhSY_GOe2-bmlQ2rntSVg__thumb/img/vuR_0PCX1w2EkjO_LbchOHZPOwU=/fit-in/200x150/filters:strip_icc()/pic2016054.jpg",
+   "image": "https://cf.geekdo-images.com/MWhSY_GOe2-bmlQ2rntSVg__original/img/ayAAWBK1rAEumARNmROsOtvqW-4=/0x0/filters:format(jpeg)/pic2016054.jpg",
+   "name": {
+      "_type": "primary",
+      "_sortindex": "1",
+      "_value": "Coup"
+   },
+   "description": "You are head of a family in an Italian city-state, a city run by a weak and corrupt court. You need to manipulate, bluff and bribe your way to power. Your object is to destroy the influence of all the other families, forcing them into exile. Only one family will survive...&#10;&#10;In Coup, you want to be the last player with influence in the game, with influence being represented by face-down character cards in your playing area.&#10;&#10;Each player starts the game with two coins and two influence &ndash; i.e., two face-down character cards; the fifteen card deck consists of three copies of five different characters, each with a unique set of powers:&#10;&#10;&#10;     Duke: Take three coins from the treasury. Block someone from taking foreign aid.&#10;     Assassin: Pay three coins and try to assassinate another player's character.&#10;     Contessa: Block an assassination attempt against yourself.&#10;     Captain: Take two coins from another player, or block someone from stealing coins from you.&#10;     Ambassador: Draw two character cards from the Court (the deck), choose which (if any) to exchange with your face-down characters, then return two. Block someone from stealing coins from you.&#10;&#10;&#10;On your turn, you can take any of the actions listed above, regardless of which characters you actually have in front of you, or you can take one of three other actions:&#10;&#10;&#10;     Income: Take one coin from the treasury.&#10;     Foreign aid: Take two coins from the treasury.&#10;     Coup: Pay seven coins and launch a coup against an opponent, forcing that player to lose an influence. (If you have ten coins or more, you must take this action.)&#10;&#10;&#10;When you take one of the character actions &ndash; whether actively on your turn, or defensively in response to someone else's action &ndash; that character's action automatically succeeds unless an opponent challenges you. In this case, if you can't (or don't) reveal the appropriate character, you lose an influence, turning one of your characters face-up. Face-up characters cannot be used, and if both of your characters are face-up, you're out of the game.&#10;&#10;If you do have the character in question and choose to reveal it, the opponent loses an influence, then you shuffle that character into the deck and draw a new one, perhaps getting the same character again and perhaps not.&#10;&#10;The last player to still have influence &ndash; that is, a face-down character &ndash; wins the game!&#10;&#10;A new &amp; optional character called the Inquisitor has been added (currently, the only English edition with the Inquisitor included is the Kickstarter Version from Indie Boards &amp; Cards. Copies in stores may not be the Kickstarter versions and may only be the base game). The Inquisitor character cards may be used to replace the Ambassador cards.&#10;&#10;&#10;     Inquisitor: Draw one character card from the Court deck and choose whether or not to exchange it with one of your face-down characters. OR Force an opponent to show you one of their character cards (their choice which). If you wish it, you may then force them to draw a new card from the Court deck. They then shuffle the old card into the Court deck. Block someone from stealing coins from you.&#10;&#10;&#10;",
+   "yearpublished": {
+      "_value": "2012"
+   },
+   "minplayers": {
+      "_value": "2"
+   },
+   "maxplayers": {
+      "_value": "6"
+   },
+   "playingtime": {
+      "_value": "15"
+   },
+   "minplaytime": {
+      "_value": "15"
+   },
+   "maxplaytime": {
+      "_value": "15"
+   },
+   "minage": {
+      "_value": "13"
+   },
+   "link": [
+      {
+         "_type": "boardgamecompilation",
+         "_id": "306656",
+         "_value": "Coup + Reforma"
+      },
+      {
+         "_type": "boardgamecompilation",
+         "_id": "158408",
+         "_value": "Coup: Deluxe Edition"
+      },
+      {
+         "_type": "boardgamedesigner",
+         "_id": "64108",
+         "_value": "Rikki Tahta"
+      },
+      {
+         "_type": "boardgameartist",
+         "_id": "126130",
+         "_value": "Behnam Balali"
+      },
+      {
+         "_type": "boardgameartist",
+         "_id": "14650",
+         "_value": "Luis Francisco"
+      },
+      {
+         "_type": "boardgameartist",
+         "_id": "81815",
+         "_value": "Stephanie Gustafsson"
+      },
+      {
+         "_type": "boardgameartist",
+         "_id": "64109",
+         "_value": "Andrew Higgins"
+      },
+      {
+         "_type": "boardgameartist",
+         "_id": "68154",
+         "_value": "Alexandr Kiselev"
+      },
+      {
+         "_type": "boardgameartist",
+         "_id": "98541",
+         "_value": "Prapach Lapamnuaysap"
+      },
+      {
+         "_type": "boardgameartist",
+         "_id": "74048",
+         "_value": "Tomasz Larek"
+      },
+      {
+         "_type": "boardgameartist",
+         "_id": "38447",
+         "_value": "Jarek Nocoń"
+      },
+      {
+         "_type": "boardgameartist",
+         "_id": "12172",
+         "_value": "Guillermo H. Nuñez"
+      },
+      {
+         "_type": "boardgameartist",
+         "_id": "88679",
+         "_value": "Alejo Vigliani"
+      },
+      {
+         "_type": "boardgameartist",
+         "_id": "90478",
+         "_value": "Uros Vuckovic"
+      },
+      {
+         "_type": "boardgameartist",
+         "_id": "72369",
+         "_value": "Weberson Santiago"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "10290",
+         "_value": "Indie Boards & Cards"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "23600",
+         "_value": "La Mame Games"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "3320",
+         "_value": "(Unknown)"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "41026",
+         "_value": "After 5 Games"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "157",
+         "_value": "Asmodee"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "9068",
+         "_value": "Broadway Toys LTD"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "29797",
+         "_value": "El Dragón Azul"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "26380",
+         "_value": "FoxGames"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "24298",
+         "_value": "FunBox Jogos"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "264",
+         "_value": "Heidelberger Spieleverlag"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "25022",
+         "_value": "Igrato"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "6214",
+         "_value": "Kaissa Chess & Games"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "40841",
+         "_value": "Land of Beautiful Mind (سرزمین ذهن زیبا)"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "35035",
+         "_value": "Mandala Jogos"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "32395",
+         "_value": "NeoTroy Games"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "9881",
+         "_value": "New Games Order, LLC"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "21053",
+         "_value": "REXhry"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "33998",
+         "_value": "Siam Board Games"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "25973",
+         "_value": "Zacatrus"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "22609",
+         "_value": "テンデイズゲームズ(TendaysGames)"
+      }
+   ],
+   "_type": "boardgame",
+   "_id": "131357"
+},
+{
+   "thumbnail": "https://cf.geekdo-images.com/F_KDEu0GjdClml8N7c8Imw__thumb/img/yl8iXxSNwguMeg3KkmfFO9SMVVc=/fit-in/200x150/filters:strip_icc()/pic2582929.jpg",
+   "image": "https://cf.geekdo-images.com/F_KDEu0GjdClml8N7c8Imw__original/img/gcX_EfjsRpB5fI4Ug4XV73G4jGI=/0x0/filters:format(jpeg)/pic2582929.jpg",
+   "name": {
+      "_type": "primary",
+      "_sortindex": "1",
+      "_value": "Codenames"
+   },
+   "description": "Codenames is an easy party game to solve puzzles. &#10;The game is divided into red and blue, each side has a team leader, the team leader's goal is to lead their team to the final victory. &#10;At the beginning of the game, there will be 25 cards on the table with different words. Each card has a corresponding position, representing different colors. &#10;Only the team leader can see the color of the card. The team leader should prompt according to the words, let his team members find out the cards of their corresponding colors, and find out all the cards of their own colors to win.&#10;&#10;",
+   "yearpublished": {
+      "_value": "2015"
+   },
+   "minplayers": {
+      "_value": "2"
+   },
+   "maxplayers": {
+      "_value": "8"
+   },
+   "playingtime": {
+      "_value": "15"
+   },
+   "minplaytime": {
+      "_value": "15"
+   },
+   "maxplaytime": {
+      "_value": "15"
+   },
+   "minage": {
+      "_value": "14"
+   },
+   "link": [
+      {
+         "_type": "boardgamecompilation",
+         "_id": "272910",
+         "_value": "Codenames: Malaysia Edition"
+      },
+      {
+         "_type": "boardgamedesigner",
+         "_id": "789",
+         "_value": "Vlaada Chvátil"
+      },
+      {
+         "_type": "boardgameartist",
+         "_id": "12402",
+         "_value": "Stéphane Gantiez"
+      },
+      {
+         "_type": "boardgameartist",
+         "_id": "28450",
+         "_value": "Tomáš Kučerovský"
+      },
+      {
+         "_type": "boardgameartist",
+         "_id": "114458",
+         "_value": "Filip Murmak"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "7345",
+         "_value": "Czech Games Edition"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "157",
+         "_value": "Asmodee"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "6784",
+         "_value": "Bergsala Enigma (Enigma)"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "34501",
+         "_value": "Boardgame Space"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "7162",
+         "_value": "Brain Games"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "9068",
+         "_value": "Broadway Toys LTD"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "10768",
+         "_value": "Cranio Creations"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "38045",
+         "_value": "Cuaca Cerah Games"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "2366",
+         "_value": "Devir"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "23205",
+         "_value": "DiceTree Games"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "22560",
+         "_value": "Fantasmagoria"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "36981",
+         "_value": "Feelindigo"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "29194",
+         "_value": "GaGa Games"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "8820",
+         "_value": "Gém Klub Kft."
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "22763",
+         "_value": "Golden Egg Games"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "264",
+         "_value": "Heidelberger Spieleverlag"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "1391",
+         "_value": "Hobby Japan"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "8923",
+         "_value": "IELLO"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "6214",
+         "_value": "Kaissa Chess & Games"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "40841",
+         "_value": "Land of Beautiful Mind (سرزمین ذهن زیبا)"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "25203",
+         "_value": "Lex Games"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "7992",
+         "_value": "MINDOK"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "22973",
+         "_value": "More Fun Co., Ltd."
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "11107",
+         "_value": "Nordic Games GmbH"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "30552",
+         "_value": "One Moment Games"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "31904",
+         "_value": "Ponva d.o.o."
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "36366",
+         "_value": "Pridemage Games"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "7466",
+         "_value": "Rebel Sp. z o.o."
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "48279",
+         "_value": "SuperHeated Neurons"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "9215",
+         "_value": "TWOPLUS Games"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "4932",
+         "_value": "White Goblin Games"
+      }
+   ],
+   "_type": "boardgame",
+   "_id": "178900"
+},
+{
+   "thumbnail": "https://cf.geekdo-images.com/rAQ3hIXoH6xDcj41v9iqCg__thumb/img/xA2T7PiwN3Z8pwAksicoCOA1tf0=/fit-in/200x150/filters:strip_icc()/pic5164305.jpg",
+   "image": "https://cf.geekdo-images.com/rAQ3hIXoH6xDcj41v9iqCg__original/img/7oKwNUYakx3-vHUBLHWVuFNKfl4=/0x0/filters:format(jpeg)/pic5164305.jpg",
+   "name": {
+      "_type": "primary",
+      "_sortindex": "1",
+      "_value": "Secret Hitler"
+   },
+   "description": "Secret Hitler is a dramatic game of political intrigue and betrayal set in 1930s Germany. Each player is randomly and secretly assigned to be a liberal or a fascist, and one player is Secret Hitler. The fascists coordinate to sow distrust and install their cold-blooded leader; the liberals must find and stop the Secret Hitler before it's too late. The liberal team always has a majority.&#10;&#10;At the beginning of the game, players close their eyes, and the fascists reveal themselves to one another. Secret Hitler keeps his eyes closed, but puts his thumb up so the fascists can see who he is. The fascists learn who Hitler is, but Hitler doesn't know who his fellow fascists are, and the liberals don't know who anyone is.&#10;&#10;Each round, players elect a President and a Chancellor who will work together to enact a law from a random deck. If the government passes a fascist law, players must try to figure out if they were betrayed or simply unlucky. Secret Hitler also features government powers that come into play as fascism advances. The fascists will use those powers to create chaos unless liberals can pull the nation back from the brink of war.&#10;&#10;The objective of the liberal team is to pass five liberal policies or assassinate Secret Hitler. The objective of the fascist team is to pass six fascist policies or elect Secret Hitler chancellor after three fascist policies have passed.&#10;&#10;",
+   "yearpublished": {
+      "_value": "2016"
+   },
+   "minplayers": {
+      "_value": "5"
+   },
+   "maxplayers": {
+      "_value": "10"
+   },
+   "playingtime": {
+      "_value": "45"
+   },
+   "minplaytime": {
+      "_value": "45"
+   },
+   "maxplaytime": {
+      "_value": "45"
+   },
+   "minage": {
+      "_value": "13"
+   },
+   "link": [
+      {
+         "_type": "boardgamedesigner",
+         "_id": "87375",
+         "_value": "Mike Boxleiter"
+      },
+      {
+         "_type": "boardgamedesigner",
+         "_id": "87376",
+         "_value": "Tommy Maranges"
+      },
+      {
+         "_type": "boardgamedesigner",
+         "_id": "20341",
+         "_value": "Max Temkin"
+      },
+      {
+         "_type": "boardgameartist",
+         "_id": "75735",
+         "_value": "Mackenzie Schubert"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "34112",
+         "_value": "Goat Wolf & Cabbage"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "4",
+         "_value": "(Self-Published)"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "14966",
+         "_value": "Print & Play Productions"
+      }
+   ],
+   "_type": "boardgame",
+   "_id": "188834"
+},
+{
+   "thumbnail": "https://cf.geekdo-images.com/0d1EaMVmAiIBROI2QstFSQ__thumb/img/J-thZd7Pbbh1CE8QHcvEE4w8FBE=/fit-in/200x150/filters:strip_icc()/pic3596681.jpg",
+   "image": "https://cf.geekdo-images.com/0d1EaMVmAiIBROI2QstFSQ__original/img/udyeiYgfDrEymxhfgtqODm0GwwA=/0x0/filters:format(jpeg)/pic3596681.jpg",
+   "name": {
+      "_type": "primary",
+      "_sortindex": "1",
+      "_value": "Codenames: Duet"
+   },
+   "yearpublished": {
+      "_value": "2017"
+   },
+   "minplayers": {
+      "_value": "2"
+   },
+   "maxplayers": {
+      "_value": "2"
+   },
+   "playingtime": {
+      "_value": "30"
+   },
+   "minplaytime": {
+      "_value": "15"
+   },
+   "maxplaytime": {
+      "_value": "30"
+   },
+   "minage": {
+      "_value": "11"
+   },
+   "link": [
+      {
+         "_type": "boardgamedesigner",
+         "_id": "789",
+         "_value": "Vlaada Chvátil"
+      },
+      {
+         "_type": "boardgamedesigner",
+         "_id": "68016",
+         "_value": "Scot Eaton"
+      },
+      {
+         "_type": "boardgameartist",
+         "_id": "28450",
+         "_value": "Tomáš Kučerovský"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "7345",
+         "_value": "Czech Games Edition"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "157",
+         "_value": "Asmodee"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "6784",
+         "_value": "Bergsala Enigma (Enigma)"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "7162",
+         "_value": "Brain Games"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "10768",
+         "_value": "Cranio Creations"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "2366",
+         "_value": "Devir"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "23205",
+         "_value": "DiceTree Games"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "22560",
+         "_value": "Fantasmagoria"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "29194",
+         "_value": "GaGa Games"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "8820",
+         "_value": "Gém Klub Kft."
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "22763",
+         "_value": "Golden Egg Games"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "264",
+         "_value": "Heidelberger Spieleverlag"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "1391",
+         "_value": "Hobby Japan"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "8923",
+         "_value": "IELLO"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "6214",
+         "_value": "Kaissa Chess & Games"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "25203",
+         "_value": "Lex Games"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "7992",
+         "_value": "MINDOK"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "30552",
+         "_value": "One Moment Games"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "7466",
+         "_value": "Rebel Sp. z o.o."
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "4932",
+         "_value": "White Goblin Games"
+      }
+   ],
+   "_type": "boardgame",
+   "_id": "224037"
+},
+{
+   "thumbnail": "https://cf.geekdo-images.com/tz19PfklMdAdjxV9WArraA__thumb/img/debo694HgBaIBeNGyxu1ELUbQGA=/fit-in/200x150/filters:strip_icc()/pic3718275.jpg",
+   "image": "https://cf.geekdo-images.com/tz19PfklMdAdjxV9WArraA__original/img/eFRt3o7W6YltnrkqpiSOKr2rKCw=/0x0/filters:format(jpeg)/pic3718275.jpg",
+   "name": {
+      "_type": "primary",
+      "_sortindex": "1",
+      "_value": "Azul"
+   },
+   "description": "Introduced by the Moors, azulejos (originally white and blue ceramic tiles) were fully embraced by the Portuguese when their king Manuel I, on a visit to the Alhambra palace in Southern Spain, was mesmerized by the stunning beauty of the Moorish decorative tiles. The king, awestruck by the interior beauty of the Alhambra, immediately ordered that his own palace in Portugal be decorated with similar wall tiles. As a tile-laying artist, you have been challenged to embellish the walls of the Royal Palace of Evora.&#10;&#10;In the game Azul, players take turns drafting colored tiles from suppliers to their player board. Later in the round, players score points based on how they've placed their tiles to decorate the palace. Extra points are scored for specific patterns and completing sets; wasted supplies harm the player's score. The player with the most points at the end of the game wins.&#10;&#10;",
+   "yearpublished": {
+      "_value": "2017"
+   },
+   "minplayers": {
+      "_value": "2"
+   },
+   "maxplayers": {
+      "_value": "4"
+   },
+   "playingtime": {
+      "_value": "45"
+   },
+   "minplaytime": {
+      "_value": "30"
+   },
+   "maxplaytime": {
+      "_value": "45"
+   },
+   "minage": {
+      "_value": "8"
+   },
+   "link": [
+      {
+         "_type": "boardgamedesigner",
+         "_id": "42",
+         "_value": "Michael Kiesling"
+      },
+      {
+         "_type": "boardgameartist",
+         "_id": "74074",
+         "_value": "Philippe Guérin"
+      },
+      {
+         "_type": "boardgameartist",
+         "_id": "14057",
+         "_value": "Chris Quilliams"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "38363",
+         "_value": "Next Move Games"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "34188",
+         "_value": "Plan B Games"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "157",
+         "_value": "Asmodee"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "9068",
+         "_value": "Broadway Toys LTD"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "40415",
+         "_value": "Divercentro"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "15605",
+         "_value": "Galápagos Jogos"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "8820",
+         "_value": "Gém Klub Kft."
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "4785",
+         "_value": "Ghenos Games"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "1391",
+         "_value": "Hobby Japan"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "9634",
+         "_value": "KADABRA"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "6214",
+         "_value": "Kaissa Chess & Games"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "8291",
+         "_value": "Korea Boardgames Co., Ltd."
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "5812",
+         "_value": "Lacerta"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "7992",
+         "_value": "MINDOK"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "40462",
+         "_value": "Orangutan Games"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "39",
+         "_value": "Pegasus Spiele"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "48279",
+         "_value": "SuperHeated Neurons"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "39774",
+         "_value": "Tower Tactic Games"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "9215",
+         "_value": "TWOPLUS Games"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "1466",
+         "_value": "Zvezda"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "50230",
+         "_value": "Бельвіль"
+      }
+   ],
+   "_type": "boardgame",
+   "_id": "230802"
+},
+{
+   "thumbnail": "https://cf.geekdo-images.com/yLZJCVLlIx4c7eJEWUNJ7w__thumb/img/VNToqgS2-pOGU6MuvIkMPKn_y-s=/fit-in/200x150/filters:strip_icc()/pic4458123.jpg",
+   "image": "https://cf.geekdo-images.com/yLZJCVLlIx4c7eJEWUNJ7w__original/img/cI782Zis9cT66j2MjSHKJGnFPNw=/0x0/filters:format(jpeg)/pic4458123.jpg",
+   "name": {
+      "_type": "primary",
+      "_sortindex": "1",
+      "_value": "Wingspan"
+   },
+   "description": "Wingspan is&nbsp;a competitive, medium-weight, card-driven, engine-building board game from Stonemaier Games. It's designed by Elizabeth Hargrave and features over 170 birds illustrated by Beth Sobel, Natalia Rojas, and Ana Maria Martinez.&#10;&#10;You are bird enthusiasts&mdash;researchers, bird watchers, ornithologists, and collectors&mdash;seeking to discover and attract the best birds to your network of wildlife preserves. Each bird extends a chain of powerful combinations in one of your habitats (actions). These habitats  focus on several key aspects of growth:&#10;&#10;&#10;     Gain food tokens via custom dice in a birdfeeder dice tower&#10;     Lay eggs using egg miniatures in a variety of colors&#10;     Draw from hundreds of unique bird cards and play them&#10;&#10;&#10;The winner is the player with the most points after 4 rounds.&#10;&#10;If you enjoy Terraforming Mars and Gizmos, we think this game will take flight at your table.&#10;&#10;&mdash;description from the publisher&#10;&#10;From the 7th printing on, the base game box includes Wingspan: Swift-Start Promo Pack.&#10;&#10;",
+   "yearpublished": {
+      "_value": "2019"
+   },
+   "minplayers": {
+      "_value": "1"
+   },
+   "maxplayers": {
+      "_value": "5"
+   },
+   "playingtime": {
+      "_value": "70"
+   },
+   "minplaytime": {
+      "_value": "40"
+   },
+   "maxplaytime": {
+      "_value": "70"
+   },
+   "minage": {
+      "_value": "10"
+   },
+   "link": [
+      {
+         "_type": "boardgamedesigner",
+         "_id": "111338",
+         "_value": "Elizabeth Hargrave"
+      },
+      {
+         "_type": "boardgameartist",
+         "_id": "113749",
+         "_value": "Ana Maria Martinez Jaramillo"
+      },
+      {
+         "_type": "boardgameartist",
+         "_id": "113748",
+         "_value": "Natalia Rojas"
+      },
+      {
+         "_type": "boardgameartist",
+         "_id": "71164",
+         "_value": "Beth Sobel"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "23202",
+         "_value": "Stonemaier Games"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "267",
+         "_value": "999 Games"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "38809",
+         "_value": "Angry Lion Games"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "3475",
+         "_value": "Arclight"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "50565",
+         "_value": "Bluebird Games"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "7162",
+         "_value": "Brain Games"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "6194",
+         "_value": "Delta Vision Publishing"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "40415",
+         "_value": "Divercentro"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "22380",
+         "_value": "Feuerland Spiele"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "4785",
+         "_value": "Ghenos Games"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "46884",
+         "_value": "Green Elephant Games"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "6214",
+         "_value": "Kaissa Chess & Games"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "8291",
+         "_value": "Korea Boardgames Co., Ltd."
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "3218",
+         "_value": "Lautapelit.fi"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "34801",
+         "_value": "Lavka Games"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "29242",
+         "_value": "Ludofy Creative"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "30677",
+         "_value": "Maldito Games"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "5400",
+         "_value": "Matagot"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "7992",
+         "_value": "MINDOK"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "32395",
+         "_value": "NeoTroy Games"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "36366",
+         "_value": "Pridemage Games"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "7466",
+         "_value": "Rebel Sp. z o.o."
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "44241",
+         "_value": "Regatul Jocurilor"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "33998",
+         "_value": "Siam Board Games"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "36763",
+         "_value": "Surfin' Meeple China"
+      },
+      {
+         "_type": "boardgamepublisher",
+         "_id": "44209",
+         "_value": "Ігромаг"
+      }
+   ],
+   "_type": "boardgame",
+   "_id": "266192"
+}
+]

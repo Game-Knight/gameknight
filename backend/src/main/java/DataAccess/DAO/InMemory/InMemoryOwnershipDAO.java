@@ -10,4 +10,9 @@ public class InMemoryOwnershipDAO implements IOwnershipDAO {
     public List<String> getBoardGameIdsByOwner(String ownerId, int offset) throws DataAccessException {
         return null;
     }
+
+    @Override
+    public void addOwnership(String ownerId, String boardGameId) throws DataAccessException {
+
+    }
 }

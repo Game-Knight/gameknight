@@ -6,4 +6,5 @@ import Exceptions.DataAccessException;
 
 public interface IOwnershipDAO {
     List<String> getBoardGameIdsByOwner(String ownerId, int offset) throws DataAccessException;
+    void addOwnership(String ownerId, String boardGameId) throws DataAccessException;
 }

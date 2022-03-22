@@ -13,5 +13,4 @@ public interface IUserDAO {
     boolean addUser(User user) throws DataAccessException;
     boolean updateUser(String id, User user) throws DataAccessException;
     boolean deleteUser(String id) throws DataAccessException;
-    void clearUsersTable();
 }

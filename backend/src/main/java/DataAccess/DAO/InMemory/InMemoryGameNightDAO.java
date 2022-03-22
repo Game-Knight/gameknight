@@ -31,9 +31,4 @@ public class InMemoryGameNightDAO implements IGameNightDAO {
     public boolean deleteGameNight(String id) throws DataAccessException {
         return false;
     }
-
-    @Override
-    public void clearGameNightTable() {
-
-    }
 }

@@ -1,40 +1,42 @@
 package DataAccess.DataGeneration;
 
-import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
-import org.json.simple.parser.JSONParser;
 
-import java.io.FileReader;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
+import java.util.Random;
 
+import DataAccess.DataGeneration.JSON.JsonKeys;
+import DataAccess.DataGeneration.JSON.JsonUtils;
 import Entities.BoardGame;
-import Entities.GameNight;
 import Entities.Ownership;
 import Entities.User;
 import Exceptions.DataAccessException;
 
 public class InMemoryDB {
 
-    private static final String BOARD_GAME_DATA_PATH = "./backend/src/main/java/DataAccess/DataGeneration/board-game-data.json";
-    private static final String USER_DATA_PATH = "./backend/src/main/java/DataAccess/DataGeneration/user-data.json";
+    private static final String BOARD_GAME_DATA_PATH = "./backend/src/main/java/DataAccess/DataGeneration/JSON/board-game-data.json";
+    private static final String USER_DATA_PATH = "./backend/src/main/java/DataAccess/DataGeneration/JSON/user-data.json";
+    private static final String UPC_DATA_PATH = "./backend/src/main/java/DataAccess/DataGeneration/JSON/board-game-upc.json";
+
+    private static final int MAX_GAMES_PER_USER = 20;
 
     private static InMemoryDB dbInstance = null;
 
     public HashMap<String, BoardGame> boardGameTable;
-    public HashMap<String, GameNight> gameNightByIdTable;
-    public HashMap<String, GameNight> gameNightByOwnerTable;
-    public List<Ownership> ownershipTable;
+    public HashMap<String, String> upcToBoardGameTable;
     public HashMap<String, User> userTable;
+
+    public List<Ownership> ownershipTable;
 
     private InMemoryDB() throws DataAccessException {
         initBoardGameTable();
+        initUPCToBoardGameTable();
         initUserTable();
 
-        gameNightByIdTable = new HashMap<>();
-        gameNightByOwnerTable = new HashMap<>();
-        ownershipTable = new ArrayList<>();
+        initOwnershipTable();
     }
 
     public static InMemoryDB getInstance() throws DataAccessException {
@@ -48,48 +50,65 @@ public class InMemoryDB {
     private void initBoardGameTable() throws DataAccessException {
         boardGameTable = new HashMap<>();
 
-        List<JSONObject> rawBoardGames = getJSONObjectsFromFile(BOARD_GAME_DATA_PATH);
+        List<JSONObject> rawBoardGames = JsonUtils.getJSONObjectsFromFile(BOARD_GAME_DATA_PATH);
         for (JSONObject rawBoardGame : rawBoardGames) {
-            JSONObject rawBoardGameInfo = (JSONObject) ((JSONArray) rawBoardGame.get("items")).get(0);
+            BoardGame boardGame = new BoardGame(
+                    (String) rawBoardGame.get(JsonKeys.BGG_ID),
+                    (String) rawBoardGame.get(JsonKeys.THUMBNAIL),
+                    (String) rawBoardGame.get(JsonKeys.IMAGE),
+                    JsonUtils.getInnerObjectStringValue(rawBoardGame, JsonKeys.NAME),
+                    (String) rawBoardGame.get(JsonKeys.DESCRIPTION),
+                    JsonUtils.getInnerObjectIntValue(rawBoardGame, JsonKeys.YEAR_PUBLISHED),
+                    JsonUtils.getInnerObjectIntValue(rawBoardGame, JsonKeys.MIN_PLAYERS),
+                    JsonUtils.getInnerObjectIntValue(rawBoardGame, JsonKeys.MAX_PLAYERS),
+                    JsonUtils.getInnerObjectIntValue(rawBoardGame, JsonKeys.PLAYING_TIME),
+                    JsonUtils.getInnerObjectIntValue(rawBoardGame, JsonKeys.MIN_PLAY_TIME),
+                    JsonUtils.getInnerObjectIntValue(rawBoardGame, JsonKeys.MAX_PLAY_TIME),
+                    JsonUtils.getInnerObjectIntValue(rawBoardGame, JsonKeys.MIN_AGE)
+            );
 
-            String title = (String) rawBoardGameInfo.get("title");
-            String description = (String) rawBoardGameInfo.get("description");
-            String imageUrl = (String) ((JSONArray) rawBoardGameInfo.get("images")).get(0);
-
-            BoardGame boardGame = new BoardGame(title, description, imageUrl);
             boardGameTable.put(boardGame.getId(), boardGame);
+        }
+    }
+
+    private void initUPCToBoardGameTable() throws DataAccessException {
+        upcToBoardGameTable = new HashMap<>();
+
+        List<JSONObject> rawUPCData = JsonUtils.getJSONObjectsFromFile(UPC_DATA_PATH);
+        for (JSONObject rawUPC : rawUPCData) {
+            String upc = (String) rawUPC.get(JsonKeys.UPC);
+            String bggId = (String) rawUPC.get(JsonKeys.UPC_BGG_ID);
+
+            upcToBoardGameTable.put(upc, bggId);
         }
     }
 
     private void initUserTable() throws DataAccessException {
         userTable = new HashMap<>();
 
-        List<JSONObject> rawUsers = getJSONObjectsFromFile(USER_DATA_PATH);
+        List<JSONObject> rawUsers = JsonUtils.getJSONObjectsFromFile(USER_DATA_PATH);
         for (JSONObject rawUser : rawUsers) {
-            String firstName = (String) rawUser.get("firstName");
-            String lastName = (String) rawUser.get("lastName");
-            String phoneNumber = (String) rawUser.get("phoneNumber");
-            String password = (String) rawUser.get("password");
+            String firstName = (String) rawUser.get(JsonKeys.FIRST_NAME);
+            String lastName = (String) rawUser.get(JsonKeys.LAST_NAME);
+            String phoneNumber = (String) rawUser.get(JsonKeys.PHONE_NUMBER);
+            String password = (String) rawUser.get(JsonKeys.PASSWORD);
 
             User user = new User(phoneNumber, firstName, lastName, password);
             userTable.put(user.getPhoneNumber(), user);
         }
     }
 
-    private List<JSONObject> getJSONObjectsFromFile(String filePath) throws DataAccessException {
-        try {
-            JSONParser parser = new JSONParser();
-            JSONArray jsonArray = (JSONArray) parser.parse(new FileReader(filePath));
+    private void initOwnershipTable() {
+        ownershipTable = new ArrayList<>();
 
-            List<JSONObject> jsonObjects = new ArrayList<>();
-            for (Object jsonObject : jsonArray) {
-                jsonObjects.add((JSONObject) jsonObject);
+        List<String> boardGameIds = new ArrayList<>(boardGameTable.keySet());
+        for (Map.Entry<String, User> userEntry : userTable.entrySet()) {
+            Random rand = new Random();
+            int numGamesForUser = rand.nextInt(MAX_GAMES_PER_USER);
+            for (int i = 0; i < numGamesForUser; i++) {
+                String randomBoardGameId = boardGameIds.get(rand.nextInt(boardGameIds.size()));
+                ownershipTable.add(new Ownership(userEntry.getKey(), randomBoardGameId));
             }
-
-            return jsonObjects;
-        }
-        catch (Exception ex) {
-            throw new DataAccessException("Unable to extract objects from JSON data file: " + ex.getMessage());
         }
     }
 }

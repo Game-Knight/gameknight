@@ -11,5 +11,4 @@ public interface IGameNightDAO {
     boolean addGameNight(GameNight gameNight) throws DataAccessException;
     boolean updateGameNight(String id, GameNight gameNight) throws DataAccessException;
     boolean deleteGameNight(String id) throws DataAccessException;
-    void clearGameNightTable();
 }
