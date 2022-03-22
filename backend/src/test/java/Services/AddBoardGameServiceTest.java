@@ -5,6 +5,7 @@ import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
 
 import DataAccess.DAO.InMemory.InMemoryBoardGameDAO;
+import DataAccess.DAO.InMemory.InMemoryUPCToBoardGameDAO;
 import Requests.AddBoardGameRequest;
 import Responses.AddBoardGameResponse;
 
@@ -17,10 +18,10 @@ public class AddBoardGameServiceTest {
 
     @BeforeEach
     public void setUpTests() {
-        InMemoryBoardGameDAO dao = Mockito.spy(InMemoryBoardGameDAO.class);
+        InMemoryUPCToBoardGameDAO dao = Mockito.spy(InMemoryUPCToBoardGameDAO.class);
 
         service = Mockito.spy(AddBoardGameService.class);
-        Mockito.when(service.getBoardGameDAO()).thenReturn(dao);
+        Mockito.when(service.getUPCToBoardGameDAO()).thenReturn(dao);
     }
 
     @Test

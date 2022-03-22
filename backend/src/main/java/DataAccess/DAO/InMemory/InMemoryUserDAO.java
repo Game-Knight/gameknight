@@ -42,9 +42,4 @@ public class InMemoryUserDAO implements IUserDAO {
     public boolean deleteUser(String id) throws DataAccessException {
         return false;
     }
-
-    @Override
-    public void clearUsersTable() {
-
-    }
 }
