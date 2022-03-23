@@ -3,6 +3,7 @@
   <component name="CompilerConfiguration">
     <bytecodeTargetLevel target="1.8">
       <module name="backend" target="1.7" />
+      <module name="CS_356_App.app" target="11" />
     </bytecodeTargetLevel>
   </component>
 </project>

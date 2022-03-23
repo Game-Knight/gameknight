@@ -1,11 +1,10 @@
 package Entities;
 
 import java.util.Date;
-import java.util.List;
+import java.util.Map;
 
 import Enums.RSVP;
 import Utils.EntityUtils;
-import javafx.util.Pair;
 
 public class GameNight {
 
@@ -13,9 +12,9 @@ public class GameNight {
     private String hostId;
     private Date date;
     private String location;
-    private List<Pair<String, RSVP>> guestList;
+    private Map<String, RSVP> guestList;
 
-    public GameNight(String hostId, Date date, String location, List<Pair<String, RSVP>> guestList) {
+    public GameNight(String hostId, Date date, String location, Map<String, RSVP> guestList) {
         this.id = EntityUtils.generateId();
         this.hostId = hostId;
         this.date = date;
@@ -51,11 +50,11 @@ public class GameNight {
         this.location = location;
     }
 
-    public List<Pair<String, RSVP>> getGuestList() {
+    public Map<String, RSVP> getGuestList() {
         return guestList;
     }
 
-    public void setGuestList(List<Pair<String, RSVP>> guestList) {
+    public void setGuestList(Map<String, RSVP> guestList) {
         this.guestList = guestList;
     }
 }
