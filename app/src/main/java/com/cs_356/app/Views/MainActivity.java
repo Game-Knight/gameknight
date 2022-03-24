@@ -1,7 +1,8 @@
-package com.cs_356.app;
+package com.cs_356.app.Views;
 
 import android.os.Bundle;
 
+import com.cs_356.app.R;
 import com.google.android.material.snackbar.Snackbar;
 
 import androidx.appcompat.app.AppCompatActivity;
