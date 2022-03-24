@@ -10,7 +10,7 @@
             android:icon="@drawable/dice_24"/>
         <item android:id="@+id/nav_game_nights"
             android:title="@string/game_nights"
-            android:icon="@drawable/house_24"/>
+            android:icon="@drawable/moon_24"/>
         <item android:id="@+id/nav_settings"
             android:title="@string/settings"
             android:icon="@drawable/gear_24"/>
