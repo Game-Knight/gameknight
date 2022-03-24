@@ -4,16 +4,17 @@
     <group android:checkableBehavior="single">
         <item android:id="@+id/nav_home"
             android:title="@string/home"
-            android:icon="@drawable/house_24"/>
+            android:icon="@drawable/ic_baseline_home_24"
+            android:checked="true" />
         <item android:id="@+id/nav_game_library"
             android:title="@string/game_library"
-            android:icon="@drawable/dice_24"/>
+            android:icon="@drawable/ic_baseline_casino_24"/>
         <item android:id="@+id/nav_game_nights"
             android:title="@string/game_nights"
             android:icon="@drawable/moon_24"/>
         <item android:id="@+id/nav_settings"
             android:title="@string/settings"
-            android:icon="@drawable/gear_24"/>
+            android:icon="@drawable/ic_baseline_settings_24"/>
     </group>
 
 <!--    TODO: Add logout here! -->
