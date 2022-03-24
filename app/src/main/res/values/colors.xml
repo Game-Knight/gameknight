@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <color name="primary">#83C5BE</color>
-    <color name="primaryShade">#006D77</color>
-    <color name="primaryTint">#EDF6F9</color>
+    <color name="shade">#006D77</color>
+    <color name="tint">#EDF6F9</color>
+    <color name="shade30">#4D006D77</color>
     <color name="complement">#FFDDD2</color>
     <color name="green">#48F163</color>
     <color name="yellow">#FBD300</color>
@@ -10,4 +11,5 @@
     <color name="red">#FE6161</color>
     <color name="white">#FFFFFF</color>
     <color name="black">#000000</color>
+    <color name="transparent">#00000000</color>
 </resources>

@@ -1,5 +1,5 @@
 <resources>
-	<string name="app_name">CS_356_App</string>
+	<string name="app_name">Game Knight</string>
 	<string name="title_activity_main">MainActivity</string>
 	<!-- Strings used for fragments for navigation -->
 	<string name="first_fragment_label">First Fragment</string>
@@ -17,4 +17,6 @@
 
 	<string name="navigation_drawer_open">Open navigation drawer</string>
 	<string name="navigation_drawer_close">Close navigation drawer</string>
+
+	<string name="placeholder_game_name">Game Name</string>
 </resources>
