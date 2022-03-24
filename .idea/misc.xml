@@ -9,11 +9,14 @@
         <entry key="app/src/main/res/drawable/ic_baseline_casino_24.xml" value="0.197" />
         <entry key="app/src/main/res/drawable/ic_baseline_home_24.xml" value="0.197" />
         <entry key="app/src/main/res/drawable/ic_baseline_settings_24.xml" value="0.197" />
+        <entry key="app/src/main/res/drawable/ic_community_barcode_scan.xml" value="0.1555" />
         <entry key="app/src/main/res/drawable/ic_custom_moonandstars_24.xml" value="0.181" />
         <entry key="app/src/main/res/drawable/ic_launcher_background.xml" value="0.181" />
         <entry key="app/src/main/res/drawable/ic_launcher_background2.xml" value="0.197" />
         <entry key="app/src/main/res/drawable/ic_launcher_foreground.xml" value="0.4303404541015625" />
         <entry key="app/src/main/res/drawable/ic_launcher_foreground2.xml" value="0.197" />
+        <entry key="app/src/main/res/layout/activity_game_library.xml" value="0.4147146558004712" />
+        <entry key="app/src/main/res/layout/activity_home.xml" value="0.14583333333333334" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.48391608391608393" />
         <entry key="app/src/main/res/layout/card_view_test.xml" value="0.2566009521484375" />
         <entry key="app/src/main/res/layout/content_main.xml" value="0.1890625" />
