@@ -5,6 +5,7 @@
       <map>
         <entry key="app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.197" />
         <entry key="app/src/main/res/drawable/dice_24.xml" value="0.197" />
+        <entry key="app/src/main/res/drawable/ic_baseline_add_24.xml" value="0.271" />
         <entry key="app/src/main/res/drawable/ic_baseline_casino_24.xml" value="0.197" />
         <entry key="app/src/main/res/drawable/ic_baseline_home_24.xml" value="0.197" />
         <entry key="app/src/main/res/drawable/ic_baseline_settings_24.xml" value="0.197" />
@@ -13,8 +14,8 @@
         <entry key="app/src/main/res/drawable/ic_launcher_background2.xml" value="0.197" />
         <entry key="app/src/main/res/drawable/ic_launcher_foreground.xml" value="0.4303404541015625" />
         <entry key="app/src/main/res/drawable/ic_launcher_foreground2.xml" value="0.197" />
-        <entry key="app/src/main/res/layout/activity_main.xml" value="0.1" />
-        <entry key="app/src/main/res/layout/card_view_test.xml" value="0.28595733642578136" />
+        <entry key="app/src/main/res/layout/activity_main.xml" value="0.48391608391608393" />
+        <entry key="app/src/main/res/layout/card_view_test.xml" value="0.2566009521484375" />
         <entry key="app/src/main/res/layout/content_main.xml" value="0.1890625" />
         <entry key="app/src/main/res/layout/fragment_first.xml" value="0.1890625" />
         <entry key="app/src/main/res/layout/fragment_second.xml" value="0.1890625" />
