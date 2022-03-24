@@ -15,6 +15,7 @@ public class GameLibraryActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        System.out.println("Game library created!");
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_game_library);
     }
