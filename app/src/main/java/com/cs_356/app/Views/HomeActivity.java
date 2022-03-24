@@ -8,13 +8,17 @@ import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.navigation.ui.AppBarConfiguration;
 
 import com.cs_356.app.R;
-import com.cs_356.app.databinding.ActivityMainBinding;
+import com.cs_356.app.databinding.ActivityHomeBinding;
 import com.google.android.material.navigation.NavigationView;
 
-public class MainActivity extends AppCompatActivity {
+/**
+ * This is the activity that represents the home view.
+ * TODO: Add card components (maybe as fragments?) to display the contents of the home view
+ */
+public class HomeActivity extends AppCompatActivity {
 
 	private AppBarConfiguration appBarConfiguration;
-	private ActivityMainBinding binding;
+	private ActivityHomeBinding binding;
 	private DrawerLayout drawerLayout;
 	private NavigationView navigationView;
 
@@ -22,7 +26,7 @@ public class MainActivity extends AppCompatActivity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 
-		binding = ActivityMainBinding.inflate(getLayoutInflater());
+		binding = ActivityHomeBinding.inflate(getLayoutInflater());
 		setContentView(binding.getRoot());
 
 		setSupportActionBar(binding.toolbar);
