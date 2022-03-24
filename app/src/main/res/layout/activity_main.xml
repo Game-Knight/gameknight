@@ -16,8 +16,11 @@
         android:layout_gravity="start"
         app:headerLayout="@layout/menu_header"
         app:menu="@menu/main_menu"
+        app:itemTextColor="@color/white_black_toggle"
+        app:itemIconTint="@color/white_black_toggle"
         android:theme="@style/ThemeOverlay.PopupTheme"
-        android:backgroundTint="@color/primary" />
+        android:backgroundTint="@color/primary"
+        app:itemBackground="@color/primary_complement_toggle"/>
 
     <ScrollView
         android:layout_width="match_parent"
