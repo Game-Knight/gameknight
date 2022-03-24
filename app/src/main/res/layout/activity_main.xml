@@ -16,6 +16,7 @@
         android:layout_gravity="start"
         app:headerLayout="@layout/menu_header"
         app:menu="@menu/main_menu"
+        android:theme="@style/ThemeOverlay.PopupTheme"
         android:backgroundTint="@color/primary" />
 
     <ScrollView
