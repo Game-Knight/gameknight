@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
-    tools:context=".Views.MainActivity"
+    tools:context=".Views.HomeActivity"
     tools:openDrawer="start">
 
     <com.google.android.material.navigation.NavigationView
@@ -14,13 +14,13 @@
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:layout_gravity="start"
-        app:headerLayout="@layout/menu_header"
-        app:menu="@menu/main_menu"
-        app:itemTextColor="@color/white_black_toggle"
-        app:itemIconTint="@color/white_black_toggle"
-        android:theme="@style/ThemeOverlay.PopupTheme"
         android:backgroundTint="@color/primary"
-        app:itemBackground="@color/primary_complement_toggle"/>
+        android:theme="@style/ThemeOverlay.PopupTheme"
+        app:headerLayout="@layout/menu_header"
+        app:itemBackground="@color/primary_complement_toggle"
+        app:itemIconTint="@color/white_black_toggle"
+        app:itemTextColor="@color/white_black_toggle"
+        app:menu="@menu/main_menu" />
 
     <ScrollView
         android:layout_width="match_parent"
@@ -34,20 +34,19 @@
                 android:id="@+id/appBarLayout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:theme="@style/AppTheme.AppBarOverlay">
+                android:theme="@style/AppTheme.AppBarOverlay"
+                tools:ignore="MissingConstraints">
 
                 <androidx.appcompat.widget.Toolbar
                     android:id="@+id/toolbar"
                     android:layout_width="match_parent"
                     android:layout_height="?attr/actionBarSize"
                     android:background="?attr/colorPrimary"
-                    app:popupTheme="@style/ThemeOverlay.PopupTheme"/>
+                    app:popupTheme="@style/ThemeOverlay.PopupTheme" />
 
             </com.google.android.material.appbar.AppBarLayout>
 
-            <include
-                android:id="@+id/include"
-                layout="@layout/content_main" />
+            <!-- TODO: Add home content here-->
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
