@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/BarcodeScannerFragment">
+
+    <fragment
+        android:id="@+id/BarcodeScannerFragment"
+        android:name="com.cs_356.app.Views.BarcodeScannerFragment"
+        android:label="Barcode Scanner Fragment"
+        tools:layout="@layout/fragment_barcode_scanner">
+
+        <action
+            android:id="@+id/action_BarcodeScannerFragment_to_GameScannedFragment"
+            app:destination="@id/GameScannedFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/GameScannedFragment"
+        android:name="com.cs_356.app.Views.GameScannedFragment"
+        android:label="@string/game_scanned_fragment_label"
+        tools:layout="@layout/fragment_game_scanned">
+
+        <action
+            android:id="@+id/action_GameScannedFragment_to_BarcodeScannerFragment"
+            app:destination="@id/BarcodeScannerFragment" />
+    </fragment>
+</navigation>

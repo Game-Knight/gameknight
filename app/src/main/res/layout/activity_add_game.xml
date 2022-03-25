@@ -6,4 +6,6 @@
     android:layout_height="match_parent"
     tools:context=".Views.AddGameActivity">
 
+    <include layout="@layout/content_add_game" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
