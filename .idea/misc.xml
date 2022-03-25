@@ -14,11 +14,9 @@
         <entry key="app/src/main/res/drawable/ic_launcher_background2.xml" value="0.197" />
         <entry key="app/src/main/res/drawable/ic_launcher_foreground.xml" value="0.4303404541015625" />
         <entry key="app/src/main/res/drawable/ic_launcher_foreground2.xml" value="0.197" />
-        <entry key="app/src/main/res/layout/activity_main.xml" value="0.48391608391608393" />
+        <entry key="app/src/main/res/layout/activity_game_library.xml" value="0.2848731884057971" />
+        <entry key="app/src/main/res/layout/activity_home.xml" value="0.2848731884057971" />
         <entry key="app/src/main/res/layout/card_view_test.xml" value="0.2566009521484375" />
-        <entry key="app/src/main/res/layout/content_main.xml" value="0.1890625" />
-        <entry key="app/src/main/res/layout/fragment_first.xml" value="0.1890625" />
-        <entry key="app/src/main/res/layout/fragment_second.xml" value="0.1890625" />
         <entry key="app/src/main/res/layout/game_card.xml" value="0.6125198989191153" />
         <entry key="app/src/main/res/layout/menu_header.xml" value="0.4648885533429575" />
         <entry key="app/src/main/res/menu/main_menu.xml" value="0.37580871582031244" />
