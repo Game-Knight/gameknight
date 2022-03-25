@@ -2,17 +2,17 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
     <group android:checkableBehavior="single">
-        <item android:id="@+id/nav_home"
+        <item android:id="@+id/nav_item_home"
             android:title="@string/home"
             android:icon="@drawable/ic_baseline_home_24"
             android:checked="true" />
-        <item android:id="@+id/nav_game_library"
+        <item android:id="@+id/nav_item_game_library"
             android:title="@string/game_library"
             android:icon="@drawable/ic_baseline_casino_24"/>
-        <item android:id="@+id/nav_game_nights"
+        <item android:id="@+id/nav_item_game_nights"
             android:title="@string/game_nights"
             android:icon="@drawable/ic_custom_moonandstars_24"/>
-        <item android:id="@+id/nav_settings"
+        <item android:id="@+id/nav_item_settings"
             android:title="@string/settings"
             android:icon="@drawable/ic_baseline_settings_24"/>
     </group>
