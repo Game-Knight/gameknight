@@ -13,6 +13,8 @@ import com.cs_356.app.Utils.ActivityUtils;
 import com.cs_356.app.databinding.ActivityGameLibraryBinding;
 import com.google.android.material.navigation.NavigationView;
 
+import java.util.Objects;
+
 /**
  * This shows a user's game library. It displays the games on cards, and
  * when you click a game card, it launches the GameViewActivity.
@@ -33,6 +35,7 @@ public class GameLibraryActivity extends AppCompatActivity implements Navigation
         setContentView(binding.getRoot());
 
         setSupportActionBar(binding.toolbarGameLibrary);
+        Objects.requireNonNull(getSupportActionBar()).setTitle(R.string.game_library);
 
         drawerLayout = ActivityUtils.setupDrawerLayout(
                 this,
