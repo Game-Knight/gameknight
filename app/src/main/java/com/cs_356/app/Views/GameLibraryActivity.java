@@ -7,6 +7,7 @@ import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.navigation.ui.AppBarConfiguration;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
@@ -139,7 +140,8 @@ public class GameLibraryActivity extends AppCompatActivity implements Navigation
                 new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
-                        //TODO launch barcode scanner fragment/activity
+                        startActivity(new Intent(view.getContext(), AddGameActivity.class));
+                        finish();
                     }
                 });
         addManuallyButton.setOnClickListener(
