@@ -27,6 +27,7 @@
         <entry key="app/src/main/res/layout/activity_settings.xml" value="0.26262664794921875" />
         <entry key="app/src/main/res/layout/card_view_test.xml" value="0.2566009521484375" />
         <entry key="app/src/main/res/layout/content_main.xml" value="0.1890625" />
+        <entry key="app/src/main/res/layout/fragment_barcode_scanner.xml" value="0.2520263424518744" />
         <entry key="app/src/main/res/layout/fragment_first.xml" value="0.1890625" />
         <entry key="app/src/main/res/layout/fragment_second.xml" value="0.1890625" />
         <entry key="app/src/main/res/layout/game_card.xml" value="0.6125198989191153" />
