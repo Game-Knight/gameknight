@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.navigation.ui.AppBarConfiguration;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -13,13 +14,18 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import com.cs_356.app.Adapters.GameCardAdapter;
 import com.cs_356.app.R;
 import com.cs_356.app.Utils.ActivityUtils;
 import com.cs_356.app.databinding.ActivityGameLibraryBinding;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.navigation.NavigationView;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
+
+import Entities.BoardGame;
 
 /**
  * This shows a user's game library. It displays the games on cards, and
@@ -38,6 +44,8 @@ public class GameLibraryActivity extends AppCompatActivity implements Navigation
     private CardView expandedFABCard;
     private Button scanBarcodeButton, addManuallyButton;
     private boolean fabExpanded;
+
+    private List<BoardGame> gamesList;
 
 
     @Override
@@ -143,6 +151,18 @@ public class GameLibraryActivity extends AppCompatActivity implements Navigation
                         //TODO (low priority, not needed for demo) launch add manually fragment/activity
                     }
                 });
+
+        RecyclerView recycler = findViewById(R.id.game_library_recycler_view);
+        gamesList = new ArrayList<>();
+        gamesList.add(new BoardGame("311475", "https://cmon-files.s3.amazonaws.com/images/product/avatar/401/avatar.jpg", "https://cmon-files.s3.amazonaws.com/images/product/avatar/401/avatar.jpg", "test",
+                "test", 2022, 2, 8,
+                10, 10, 15, 12));
+        // Create adapter passing in the sample user data
+        GameCardAdapter adapter = new GameCardAdapter(gamesList);
+        adapter.notifyItemInserted(0);
+        // Attach the adapter to the recyclerview to populate items
+        recycler.setAdapter(adapter);
+//        recycler.setLayoutManager(new LinearLayoutManager(this));
     }
 
     @Override
