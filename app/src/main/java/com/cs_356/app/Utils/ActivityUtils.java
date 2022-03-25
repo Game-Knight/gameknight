@@ -10,7 +10,7 @@ import androidx.drawerlayout.widget.DrawerLayout;
 
 import com.cs_356.app.R;
 import com.cs_356.app.Views.GameLibraryActivity;
-import com.cs_356.app.Views.GameNightActivity;
+import com.cs_356.app.Views.GameNightsActivity;
 import com.cs_356.app.Views.HomeActivity;
 import com.google.android.material.navigation.NavigationView;
 
@@ -69,14 +69,17 @@ public class ActivityUtils {
         if (item.getItemId() == R.id.nav_item_home
                 && curItemId != R.id.nav_item_home) {
             activity.startActivity(new Intent(activity, HomeActivity.class));
+            activity.finish();
         }
         else if (item.getItemId() == R.id.nav_item_game_library
                 && curItemId != R.id.nav_item_game_library) {
             activity.startActivity(new Intent(activity, GameLibraryActivity.class));
+            activity.finish();
         }
         else if (item.getItemId() == R.id.nav_item_game_nights
                 && curItemId != R.id.nav_item_game_nights) {
-            activity.startActivity(new Intent(activity, GameNightActivity.class));
+            activity.startActivity(new Intent(activity, GameNightsActivity.class));
+            activity.finish();
         }
         else if (item.getItemId() == R.id.nav_item_settings
                 && curItemId != R.id.nav_item_settings) {
