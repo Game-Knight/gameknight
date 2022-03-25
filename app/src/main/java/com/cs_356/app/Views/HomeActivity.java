@@ -12,6 +12,7 @@ import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.navigation.ui.AppBarConfiguration;
 
 import com.cs_356.app.R;
+import com.cs_356.app.Utils.ActivityUtils;
 import com.cs_356.app.databinding.ActivityHomeBinding;
 import com.google.android.material.navigation.NavigationView;
 
@@ -35,36 +36,27 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
 
 		setSupportActionBar(binding.toolbarHome);
 
-		drawerLayout = findViewById(R.id.drawer_layout_home);
-		navigationView = findViewById(R.id.nav_view_home);
-
-		ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
+		drawerLayout = ActivityUtils.setupDrawerLayout(
 				this,
-				drawerLayout,
 				binding.toolbarHome,
-				R.string.navigation_drawer_open,
-				R.string.navigation_drawer_close
+				R.id.drawer_layout_home
 		);
 
-		drawerLayout.addDrawerListener(toggle);
-		toggle.syncState();
-
-		navigationView.setCheckedItem(R.id.nav_home);
-		navigationView.setNavigationItemSelectedListener(this);
+		navigationView = ActivityUtils.setupNavigationView(
+				this,
+				this,
+				R.id.nav_view_home,
+				R.id.nav_item_home
+		);
 	}
 
 	@Override
 	public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-		if (item.getItemId() == R.id.nav_game_library) {
-			startActivity(new Intent(this, GameLibraryActivity.class));
-			System.out.println("Clicked on game library!");
-		}
-		else if (item.getItemId() == R.id.nav_game_nights) {
-			startActivity(new Intent(this, GameNightActivity.class));
-		}
-		else if (item.getItemId() == R.id.nav_settings) {
-			// TODO: Add settings navigation if we want!
-		}
-		return true;
+		return ActivityUtils.onNavigationItemSelected(
+				item,
+				drawerLayout,
+				navigationView,
+				this
+		);
 	}
 }
