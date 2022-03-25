@@ -13,6 +13,8 @@ import com.cs_356.app.Utils.ActivityUtils;
 import com.cs_356.app.databinding.ActivityGameNightsBinding;
 import com.google.android.material.navigation.NavigationView;
 
+import java.util.Objects;
+
 /**
  * This displays the game nights you have coming up. From this page,
  * you'll be able to add a new game night (which launches the AddGameNightActivity)
@@ -35,6 +37,7 @@ public class GameNightsActivity extends AppCompatActivity implements NavigationV
         setContentView(binding.getRoot());
 
         setSupportActionBar(binding.toolbarGameNights);
+        Objects.requireNonNull(getSupportActionBar()).setTitle(R.string.game_nights);
 
         drawerLayout = ActivityUtils.setupDrawerLayout(
                 this,
