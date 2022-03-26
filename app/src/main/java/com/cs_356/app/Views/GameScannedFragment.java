@@ -1,5 +1,6 @@
 package com.cs_356.app.Views;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -31,13 +32,24 @@ public class GameScannedFragment extends Fragment {
     public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-//        binding.buttonSecond.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                NavHostFragment.findNavController(GameScannedFragment.this)
-//                        .navigate(R.id.action_BarcodeScannerFragment_to_GameScannedFragment);
-//            }
-//        });
+        binding.gameScannedBackButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                NavHostFragment.findNavController(GameScannedFragment.this)
+                        .navigate(R.id.action_GameScannedFragment_to_BarcodeScannerFragment);
+            }
+        });
+
+        binding.addGameButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                // TODO: Actually add the game!
+                requireActivity().startActivity(
+                        new Intent(getActivity(), GameLibraryActivity.class)
+                );
+                requireActivity().finish();
+            }
+        });
     }
 
     @Override

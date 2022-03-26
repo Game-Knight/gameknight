@@ -15,6 +15,7 @@ import android.widget.TextView;
 
 import com.cs_356.app.Adapters.GameCardAdapter;
 import com.cs_356.app.R;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.squareup.picasso.Picasso;
 
 import org.apache.commons.text.StringEscapeUtils;
@@ -61,14 +62,21 @@ public class GameViewActivity extends AppCompatActivity {
             playTime.setText(game.getMinPlayingTime() + " " + getString(R.string.mins));
         }
         description.setText(StringEscapeUtils.unescapeHtml4(game.getDescription()));
-        rulesButton.setOnClickListener(
-            new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    Intent intent = new Intent(getBaseContext(), GameRulesActivity.class);
-                    intent.putExtra("URL", game.getRulesURL());
-                    startActivity(intent);
-                }
-            });
+        rulesButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getBaseContext(), GameRulesActivity.class);
+                intent.putExtra("URL", game.getRulesURL());
+                startActivity(intent);
+            }
+        });
+
+        FloatingActionButton backFAB = findViewById(R.id.game_view_back_button);
+        backFAB.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                onBackPressed();
+            }
+        });
     }
 }
