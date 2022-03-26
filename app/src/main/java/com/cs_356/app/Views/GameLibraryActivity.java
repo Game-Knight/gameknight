@@ -12,6 +12,7 @@ import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.TextView;
 
 import com.cs_356.app.Adapters.GameCardAdapter;
@@ -46,6 +47,7 @@ public class GameLibraryActivity extends AppCompatActivity implements Navigation
     private TextView scanBarcodeText, addManuallyText;
     private CardView expandedFABCard;
     private Button scanBarcodeButton, addManuallyButton;
+    private ImageButton rotatingAddButton;
     private boolean fabExpanded;
 
     private List<BoardGame> gamesList;
@@ -87,6 +89,7 @@ public class GameLibraryActivity extends AppCompatActivity implements Navigation
 //        addManuallyText.setVisibility(View.GONE);
 
         expandedFABCard = findViewById(R.id.expandedFABCard);
+        rotatingAddButton = findViewById(R.id.addButton);
         scanBarcodeButton = findViewById(R.id.scanBarcodeButton);
         addManuallyButton = findViewById(R.id.addManuallyButton);
 
@@ -98,12 +101,12 @@ public class GameLibraryActivity extends AppCompatActivity implements Navigation
 
         fabExpanded = false;
 
-        addFab.setOnClickListener(
+        rotatingAddButton.setOnClickListener(
                 new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
                         if (!fabExpanded) {
-                            addFab.animate().rotation(45);
+                            rotatingAddButton.animate().rotation(45);
                             expandedFABCard.animate().scaleX(1).scaleY(1);
 //                            scanBarcodeFAB.show();
 //                            addManuallyFAB.show();
@@ -112,7 +115,7 @@ public class GameLibraryActivity extends AppCompatActivity implements Navigation
 
                             fabExpanded = true;
                         } else {
-                            addFab.animate().rotation(0);
+                            rotatingAddButton.animate().rotation(0);
                             expandedFABCard.animate().scaleX(0).scaleY(0);
 //                            scanBarcodeFAB.hide();
 //                            addManuallyFAB.hide();
