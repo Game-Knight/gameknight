@@ -12,17 +12,12 @@ import java.util.List;
 import java.util.Map;
 
 import Exceptions.NetworkRequestException;
+import Utils.HttpUtils;
 
 class ClientCommunicator {
 
     private static final int TIMEOUT_MILLIS = 30000;
-
-    private final String baseURL;
     private String authToken;
-
-    ClientCommunicator(String baseURL) {
-        this.baseURL = baseURL;
-    }
 
     public void setAuthToken(String authToken) {
         this.authToken = authToken;
@@ -113,7 +108,7 @@ class ClientCommunicator {
     }
 
     private URL getUrl(String urlPath) throws MalformedURLException {
-        String urlString = baseURL + (urlPath.startsWith("/") ? "" : "/") + urlPath;
+        String urlString = HttpUtils.BASE_URL + (urlPath.startsWith("/") ? "" : "/") + urlPath;
         return new URL(urlString);
     }
 
