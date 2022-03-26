@@ -6,11 +6,10 @@ import java.net.InetSocketAddress;
 
 import DataAccess.DataGeneration.InMemoryDB;
 import Handlers.AddBoardGameHandler;
+import Handlers.GetUserHandler;
 import Utils.HttpUtils;
 
 public class BackendStartup {
-
-    private static final int PORT_NUMBER = 3030;
     private static final int MAX_WAITING_CONNECTIONS = 12;
 
     private void run() {
@@ -30,7 +29,7 @@ public class BackendStartup {
         try {
             System.out.println("Initializing HTTP Server...");
             server = HttpServer.create(
-                    new InetSocketAddress(PORT_NUMBER),
+                    new InetSocketAddress(HttpUtils.PORT_NUMBER),
                     MAX_WAITING_CONNECTIONS
             );
             System.out.println("HTTP Server initialized!");
@@ -45,7 +44,8 @@ public class BackendStartup {
         System.out.println("Creating request handler contexts...");
 
         server.createContext(HttpUtils.ADD_BOARD_GAME_EXT, new AddBoardGameHandler());
-        // TODO: Add request handlers!
+        server.createContext(HttpUtils.GET_USER_EXT, new GetUserHandler());
+        // TODO: Add more request handlers!
 
         System.out.println("Starting server...");
         server.start();

@@ -4,20 +4,20 @@ import com.sun.net.httpserver.HttpExchange;
 
 import java.io.IOException;
 
-import Requests.GetUserRequest;
-import Responses.GetUserResponse;
-import Services.GetUserService;
+import Requests.AddBoardGameRequest;
+import Responses.AddBoardGameResponse;
+import Services.AddBoardGameService;
 import Utils.HttpUtils;
 
-public class AddBoardGameHandler extends BaseHandler {
+public class GetUserHandler  extends BaseHandler {
     @Override
     public void handle(HttpExchange exchange) throws IOException {
         try {
             if (exchange.getRequestMethod().equalsIgnoreCase(HttpUtils.POST_METHOD)) {
-                GetUserRequest request = extractRequest(exchange, GetUserRequest.class);
+                AddBoardGameRequest request = extractRequest(exchange, AddBoardGameRequest.class);
 
-                GetUserService service = new GetUserService();
-                GetUserResponse response = service.getUser(request);
+                AddBoardGameService service = new AddBoardGameService();
+                AddBoardGameResponse response = service.addBoardGame(request);
 
                 sendResponse(exchange, response);
             }
