@@ -1,6 +1,4 @@
-<img align="left" height=50px style="padding-right:10px" src="./img/icon_rounded_square.png">
-
-# Game Knight
+# ![](./img/header.png)
 
 #### [Figma Demo](https://www.figma.com/proto/K79ySLuqGCEd21DjGE6WXa/Game-Night-Mobile---Color?node-id=2%3A3&scaling=scale-down&page-id=0%3A1&starting-point-node-id=2%3A3)
 
