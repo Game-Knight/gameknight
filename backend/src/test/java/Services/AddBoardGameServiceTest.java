@@ -27,7 +27,7 @@ public class AddBoardGameServiceTest {
     @Test
     public void addBoardGame_success() {
         String validUPC = "681706711003";
-        AddBoardGameRequest request = new AddBoardGameRequest(validUPC);
+        AddBoardGameRequest request = new AddBoardGameRequest(validUPC, "1");
         AddBoardGameResponse response = service.addBoardGame(request);
         assertTrue(response.isSuccess());
     }
@@ -35,7 +35,7 @@ public class AddBoardGameServiceTest {
     @Test
     public void addBoardGame_failure() {
         String invalidUPC = "bubbles";
-        AddBoardGameRequest request = new AddBoardGameRequest(invalidUPC);
+        AddBoardGameRequest request = new AddBoardGameRequest(invalidUPC, "1");
         AddBoardGameResponse response = service.addBoardGame(request);
         assertFalse(response.isSuccess());
     }
