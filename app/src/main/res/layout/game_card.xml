@@ -51,8 +51,9 @@
 
             <ImageView
                 android:id="@+id/card_bg"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:scaleType="centerCrop"
                 android:layout_gravity="center"
                 android:elevation="-2dp"
                 android:src="@drawable/placeholder_gamecard_bg" />
