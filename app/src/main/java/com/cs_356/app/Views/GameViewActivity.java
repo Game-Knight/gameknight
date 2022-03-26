@@ -2,9 +2,27 @@ package com.cs_356.app.Views;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.annotation.SuppressLint;
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
+import android.util.Log;
+import android.view.View;
+import android.webkit.WebView;
+import android.widget.Button;
+import android.widget.ImageView;
+import android.widget.TextView;
 
+import com.cs_356.app.Adapters.GameCardAdapter;
 import com.cs_356.app.R;
+import com.squareup.picasso.Picasso;
+
+import org.apache.commons.text.StringEscapeUtils;
+
+import java.io.Serializable;
+
+import Entities.BoardGame;
+import jp.wasabeef.picasso.transformations.BlurTransformation;
 
 /**
  * This is the activity that represents viewing a single game.
@@ -12,9 +30,45 @@ import com.cs_356.app.R;
  */
 public class GameViewActivity extends AppCompatActivity {
 
+    @SuppressLint("SetTextI18n")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_game_view);
+
+        BoardGame game = (BoardGame) getIntent().getSerializableExtra("game");
+
+        ImageView gameImg, bgImg;
+        TextView name, numPlayers, playTime, description;
+        Button rulesButton;
+
+        name = findViewById(R.id.gameTitle);
+        numPlayers = findViewById(R.id.numPlayers);
+        playTime = findViewById(R.id.playTime);
+        gameImg = findViewById(R.id.gameImg);
+        bgImg = findViewById(R.id.bgImg);
+        description = findViewById(R.id.description);
+        rulesButton = findViewById(R.id.rulesButton);
+
+        Picasso.get().load(game.getImageUrl()).into(gameImg);
+        Picasso.get().load(game.getImageUrl()).transform(new BlurTransformation(bgImg.getContext(),75)).into(bgImg);
+
+        name.setText(game.getName());
+        numPlayers.setText(game.getMinPlayers() + "–" + game.getMaxPlayers() + " " + getString(R.string.players));
+        if (game.getMinPlayingTime() != game.getMaxPlayingTime()) {
+            playTime.setText(game.getMinPlayingTime() + "–" + game.getMaxPlayingTime() + " " + getString(R.string.mins));
+        } else {
+            playTime.setText(game.getMinPlayingTime() + " " + getString(R.string.mins));
+        }
+        description.setText(StringEscapeUtils.unescapeHtml4(game.getDescription()));
+        rulesButton.setOnClickListener(
+            new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Intent intent = new Intent(getBaseContext(), GameRulesActivity.class);
+                    intent.putExtra("URL", game.getRulesURL());
+                    startActivity(intent);
+                }
+            });
     }
 }
