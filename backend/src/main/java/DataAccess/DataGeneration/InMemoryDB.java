@@ -1,5 +1,6 @@
 package DataAccess.DataGeneration;
 
+//import org.apache.commons.text.StringEscapeUtils;
 import org.json.simple.JSONObject;
 
 import java.util.ArrayList;
@@ -58,13 +59,15 @@ public class InMemoryDB {
                     (String) rawBoardGame.get(JsonKeys.IMAGE),
                     JsonUtils.getInnerObjectStringValue(rawBoardGame, JsonKeys.NAME),
                     (String) rawBoardGame.get(JsonKeys.DESCRIPTION),
+//                    StringEscapeUtils.unescapeHtml4((String) rawBoardGame.get(JsonKeys.DESCRIPTION)),
                     JsonUtils.getInnerObjectIntValue(rawBoardGame, JsonKeys.YEAR_PUBLISHED),
                     JsonUtils.getInnerObjectIntValue(rawBoardGame, JsonKeys.MIN_PLAYERS),
                     JsonUtils.getInnerObjectIntValue(rawBoardGame, JsonKeys.MAX_PLAYERS),
                     JsonUtils.getInnerObjectIntValue(rawBoardGame, JsonKeys.PLAYING_TIME),
                     JsonUtils.getInnerObjectIntValue(rawBoardGame, JsonKeys.MIN_PLAY_TIME),
                     JsonUtils.getInnerObjectIntValue(rawBoardGame, JsonKeys.MAX_PLAY_TIME),
-                    JsonUtils.getInnerObjectIntValue(rawBoardGame, JsonKeys.MIN_AGE)
+                    JsonUtils.getInnerObjectIntValue(rawBoardGame, JsonKeys.MIN_AGE),
+                    "https://www.secrethitler.com/assets/Secret_Hitler_Rules.pdf"
             );
 
             boardGameTable.put(boardGame.getId(), boardGame);

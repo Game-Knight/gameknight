@@ -18,6 +18,7 @@ public class BoardGame implements Serializable {
     private int minPlayingTime;
     private int maxPlayingTime;
     private int minAge;
+    private String rulesURL;
     private boolean borrowed;
 
     public BoardGame(String id, String thumbnailUrl, String imageUrl, String name,
@@ -36,6 +37,25 @@ public class BoardGame implements Serializable {
         this.maxPlayingTime = maxPlayingTime;
         this.minAge = minAge;
         this.borrowed = false;
+    }
+
+    public BoardGame(String id, String thumbnailUrl, String imageUrl, String name,
+                     String description, int yearPublished, int minPlayers, int maxPlayers,
+                     int playingTime, int minPlayingTime, int maxPlayingTime, int minAge, String rulesURL) {
+        this.id = id;
+        this.thumbnailUrl = thumbnailUrl;
+        this.imageUrl = imageUrl;
+        this.name = name;
+        this.description = description;
+        this.yearPublished = yearPublished;
+        this.minPlayers = minPlayers;
+        this.maxPlayers = maxPlayers;
+        this.playingTime = playingTime;
+        this.minPlayingTime = minPlayingTime;
+        this.maxPlayingTime = maxPlayingTime;
+        this.minAge = minAge;
+        this.borrowed = false;
+        this.rulesURL = rulesURL;
     }
 
     public String getId() {
@@ -132,6 +152,14 @@ public class BoardGame implements Serializable {
 
     public void setMinAge(int minAge) {
         this.minAge = minAge;
+    }
+
+    public String getRulesURL() {
+        return rulesURL;
+    }
+
+    public void setRulesURL(String rulesURL) {
+        this.rulesURL = rulesURL;
     }
 
     public boolean isBorrowed() {

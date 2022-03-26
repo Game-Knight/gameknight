@@ -1,6 +1,7 @@
 package com.cs_356.app.Adapters;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -9,6 +10,7 @@ import android.widget.ImageView;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.cs_356.app.R;
+import com.cs_356.app.Views.AddGameActivity;
 import com.squareup.picasso.Picasso;
 
 import java.util.List;
@@ -16,30 +18,41 @@ import java.util.List;
 import Entities.BoardGame;
 import jp.wasabeef.picasso.transformations.BlurTransformation;
 
-public class GameCardAdapter extends
-        RecyclerView.Adapter<GameCardAdapter.ViewHolder> {
+public class GameCardAdapter extends RecyclerView.Adapter<GameCardAdapter.ViewHolder> {
 
-    public class ViewHolder extends RecyclerView.ViewHolder {
+    private List<BoardGame> gamesList;
+    private OnGameCardClickListener onGameCardClickListener;
+
+    public GameCardAdapter(List<BoardGame> gamesList, OnGameCardClickListener onGameCardClickListener) {
+        this.gamesList = gamesList;
+        this.onGameCardClickListener = onGameCardClickListener;
+    }
+
+    public class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
         // Your holder should contain a member variable
         // for any view that will be set as you render a row
         public ImageView gameImg;
         public ImageView bgImg;
+        OnGameCardClickListener onGameCardClickListener;
 
         // We also create a constructor that accepts the entire item row
         // and does the view lookups to find each subview
-        public ViewHolder(View itemView) {
+        public ViewHolder(View itemView, OnGameCardClickListener onGameCardClickListener) {
             // Stores the itemView in a public final member variable that can be used
             // to access the context from any ViewHolder instance.
             super(itemView);
 
             gameImg = (ImageView) itemView.findViewById(R.id.card_img);
             bgImg = (ImageView) itemView.findViewById(R.id.card_bg);
-        }
-    }
-    private List<BoardGame> gamesList;
+            this.onGameCardClickListener = onGameCardClickListener;
 
-    public GameCardAdapter(List<BoardGame> gamesList) {
-        this.gamesList = gamesList;
+            itemView.setOnClickListener(this);
+        }
+
+        @Override
+        public void onClick(View view) {
+            onGameCardClickListener.onGameCardClick(getAdapterPosition());
+        }
     }
 
     @Override
@@ -47,10 +60,9 @@ public class GameCardAdapter extends
         Context context = parent.getContext();
         LayoutInflater inflater = LayoutInflater.from(context);
 
-        View contactView = inflater.inflate(R.layout.game_card, parent, false);
+        View gameView = inflater.inflate(R.layout.game_card, parent, false);
 
-        ViewHolder viewHolder = new ViewHolder(contactView);
-        return viewHolder;
+        return new ViewHolder(gameView, onGameCardClickListener);
     }
 
     @Override
@@ -64,5 +76,9 @@ public class GameCardAdapter extends
     @Override
     public int getItemCount() {
         return gamesList.size();
+    }
+
+    public interface OnGameCardClickListener {
+        void onGameCardClick(int position);
     }
 }

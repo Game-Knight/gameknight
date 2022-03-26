@@ -6,4 +6,125 @@
     android:layout_height="match_parent"
     tools:context=".Views.GameViewActivity">
 
+    <View
+        android:id="@+id/view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/shade30"
+        android:elevation="-1dp"
+        android:visibility="visible" />
+
+    <ImageView
+        android:id="@+id/bgImg"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:elevation="-2dp"
+        android:scaleType="centerCrop"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/placeholder_gamecard_bg" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="64dp"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/view">
+
+        <ImageView
+            android:id="@+id/gameImg"
+            android:layout_width="170dp"
+            android:layout_height="170dp"
+            android:padding="6dp"
+            app:srcCompat="@drawable/placeholder_game_image" />
+
+        <Space
+            android:layout_width="8dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/gameTitle"
+                style="@style/Title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/placeholder_game_name"
+                android:textColor="@color/white" />
+
+            <TextView
+                android:id="@+id/numPlayers"
+                style="@style/Subtitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:drawableStart="@drawable/ic_baseline_people_24"
+                android:drawablePadding="8dp"
+                android:drawableTint="@color/white"
+                android:text="@string/placeholder_num_players"
+                android:textColor="@color/white" />
+
+            <TextView
+                android:id="@+id/playTime"
+                style="@style/Subtitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:drawableStart="@drawable/ic_baseline_watch_later_24"
+                android:drawablePadding="8dp"
+                android:drawableTint="@color/white"
+                android:text="@string/placeholder_play_time"
+                android:textColor="@color/white" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toTopOf="@+id/rulesButton"
+        app:layout_constraintTop_toBottomOf="@id/linearLayout"
+        tools:layout_editor_absoluteX="0dp">
+
+        <TextView
+            android:id="@+id/description"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/lato_bold"
+            android:justificationMode="inter_word"
+            android:paddingStart="32dp"
+            android:paddingEnd="32dp"
+            android:text="@string/placeholder_game_description"
+            android:textColor="@color/white" />
+    </ScrollView>
+
+    <Button
+        android:id="@+id/rulesButton"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="64dp"
+        android:layout_marginEnd="64dp"
+        android:layout_marginBottom="16dp"
+        android:backgroundTint="@color/shade"
+        android:fontFamily="@font/lato_bold"
+        android:text="Game Rules"
+        android:textSize="20sp"
+        app:icon="@drawable/ic_baseline_menu_book_24"
+        app:iconSize="32dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
