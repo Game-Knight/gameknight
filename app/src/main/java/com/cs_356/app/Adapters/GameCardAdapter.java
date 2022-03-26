@@ -58,7 +58,7 @@ public class GameCardAdapter extends
         BoardGame game = gamesList.get(position);
 
         Picasso.get().load(game.getImageUrl()).into(holder.gameImg);
-        Picasso.get().load(game.getImageUrl()).transform(new BlurTransformation(holder.bgImg.getContext(),20)).into(holder.bgImg);
+        Picasso.get().load(game.getImageUrl()).transform(new BlurTransformation(holder.bgImg.getContext(),75)).into(holder.bgImg);
     }
 
     @Override
