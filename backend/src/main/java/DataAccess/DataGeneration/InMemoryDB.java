@@ -19,6 +19,7 @@ import Exceptions.DataAccessException;
 public class InMemoryDB {
 
     private static final String BOARD_GAME_DATA_PATH = "./backend/src/main/java/DataAccess/DataGeneration/JSON/board-game-data.json";
+    private static final String BOARD_GAME_DATA_SUPPLEMENTAL_PATH = "./backend/src/main/java/DataAccess/DataGeneration/JSON/board-game-data-supplemental.json";
     private static final String USER_DATA_PATH = "./backend/src/main/java/DataAccess/DataGeneration/JSON/user-data.json";
     private static final String UPC_DATA_PATH = "./backend/src/main/java/DataAccess/DataGeneration/JSON/board-game-upc.json";
 
@@ -51,6 +52,12 @@ public class InMemoryDB {
     private void initBoardGameTable() throws DataAccessException {
         boardGameTable = new HashMap<>();
 
+        List<JSONObject> rawSupplementalData = JsonUtils.getJSONObjectsFromFile(BOARD_GAME_DATA_SUPPLEMENTAL_PATH);
+        Map<String, JSONObject> supplementalDataMap = new HashMap<>();
+        for (JSONObject supplemental : rawSupplementalData) {
+            supplementalDataMap.put((String) supplemental.get(JsonKeys.BGG_ID), supplemental);
+        }
+
         List<JSONObject> rawBoardGames = JsonUtils.getJSONObjectsFromFile(BOARD_GAME_DATA_PATH);
         for (JSONObject rawBoardGame : rawBoardGames) {
             BoardGame boardGame = new BoardGame(
@@ -67,7 +74,7 @@ public class InMemoryDB {
                     JsonUtils.getInnerObjectIntValue(rawBoardGame, JsonKeys.MIN_PLAY_TIME),
                     JsonUtils.getInnerObjectIntValue(rawBoardGame, JsonKeys.MAX_PLAY_TIME),
                     JsonUtils.getInnerObjectIntValue(rawBoardGame, JsonKeys.MIN_AGE),
-                    "https://www.secrethitler.com/assets/Secret_Hitler_Rules.pdf"
+                    (String) supplementalDataMap.get((String) rawBoardGame.get(JsonKeys.BGG_ID)).get(JsonKeys.RULES_URL)
             );
 
             boardGameTable.put(boardGame.getId(), boardGame);

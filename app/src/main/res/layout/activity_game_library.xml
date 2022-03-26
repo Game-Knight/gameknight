@@ -177,7 +177,9 @@
                             android:padding="6dp"
                             android:text="@string/scan_barcode"
                             android:textColor="@color/white"
-                            app:icon="@drawable/ic_community_barcode_scan" />
+                            android:textSize="14sp"
+                            app:icon="@drawable/ic_community_barcode_scan"
+                            app:iconSize="24dp" />
                         <View
                             android:layout_width="match_parent"
                             android:layout_height="1dp"
@@ -192,9 +194,13 @@
                             android:drawableTint="@color/white"
                             android:foreground="?android:attr/selectableItemBackground"
                             android:padding="6dp"
+                            android:paddingStart="10dp"
                             android:text="@string/add_manually"
                             android:textColor="@color/white"
-                            app:icon="@drawable/ic_baseline_edit_note_24" />
+                            android:textSize="14sp"
+                            app:icon="@drawable/ic_baseline_edit_note_24"
+                            app:iconPadding="4dp"
+                            app:iconSize="28dp" />
                     </LinearLayout>
 
     </androidx.cardview.widget.CardView>

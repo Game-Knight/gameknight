@@ -26,4 +26,7 @@ public class JsonKeys {
     public static final String LAST_NAME = "lastName";
     public static final String PHONE_NUMBER = "phoneNumber";
     public static final String PASSWORD = "password";
+
+    //Supplemental Data Keys
+    public static final String RULES_URL = "rules_url";
 }
