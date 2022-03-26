@@ -33,5 +33,7 @@
     <string name="players">players</string>
     <string name="mins">mins</string>
     <string name="back">back</string>
+    <string name="add_game">Add Game</string>
+    <string name="game_found">Game found!</string>
 
 </resources>
