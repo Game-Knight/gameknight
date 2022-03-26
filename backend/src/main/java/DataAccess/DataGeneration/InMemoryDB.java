@@ -2,6 +2,7 @@ package DataAccess.DataGeneration;
 
 import org.json.simple.JSONObject;
 
+import java.io.File;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -17,13 +18,19 @@ import Exceptions.DataAccessException;
 
 public class InMemoryDB {
 
-    private static final String BOARD_GAME_DATA_PATH = "./backend/src/main/java/DataAccess/DataGeneration/JSON/board-game-data.json";
-    private static final String USER_DATA_PATH = "./backend/src/main/java/DataAccess/DataGeneration/JSON/user-data.json";
-    private static final String UPC_DATA_PATH = "./backend/src/main/java/DataAccess/DataGeneration/JSON/board-game-upc.json";
+    private static final String BOARD_GAME_DATA_FILE = "board-game-data.json";
+    private static final String USER_DATA_FILE = "user-data.json";
+    private static final String UPC_DATA_FILE = "board-game-upc.json";
+
+    private static final String BOARD_GAME_DATA_PATH = "./backend/src/main/java/DataAccess/DataGeneration/JSON/" + BOARD_GAME_DATA_FILE;
+    private static final String USER_DATA_PATH = "./backend/src/main/java/DataAccess/DataGeneration/JSON/" + USER_DATA_FILE;
+    private static final String UPC_DATA_PATH = "./backend/src/main/java/DataAccess/DataGeneration/JSON/" + UPC_DATA_FILE;
 
     private static final int MAX_GAMES_PER_USER = 20;
 
     private static InMemoryDB dbInstance = null;
+
+    private final boolean useAssets;
 
     public HashMap<String, BoardGame> boardGameTable;
     public HashMap<String, String> upcToBoardGameTable;
@@ -31,7 +38,8 @@ public class InMemoryDB {
 
     public List<Ownership> ownershipTable;
 
-    private InMemoryDB() throws DataAccessException {
+    private InMemoryDB(boolean useAssets) throws DataAccessException {
+        this.useAssets = useAssets;
         initBoardGameTable();
         initUPCToBoardGameTable();
         initUserTable();
@@ -41,7 +49,15 @@ public class InMemoryDB {
 
     public static InMemoryDB getInstance() throws DataAccessException {
         if (dbInstance == null) {
-            dbInstance = new InMemoryDB();
+            dbInstance = new InMemoryDB(false);
+        }
+
+        return dbInstance;
+    }
+
+    public static InMemoryDB getInstance(boolean useAssets) throws DataAccessException {
+        if (dbInstance == null) {
+            dbInstance = new InMemoryDB(useAssets);
         }
 
         return dbInstance;
@@ -50,7 +66,7 @@ public class InMemoryDB {
     private void initBoardGameTable() throws DataAccessException {
         boardGameTable = new HashMap<>();
 
-        List<JSONObject> rawBoardGames = JsonUtils.getJSONObjectsFromFile(BOARD_GAME_DATA_PATH);
+        List<JSONObject> rawBoardGames = JsonUtils.getJSONObjectsFromFile(getBoardGameDataFile());
         for (JSONObject rawBoardGame : rawBoardGames) {
             BoardGame boardGame = new BoardGame(
                     (String) rawBoardGame.get(JsonKeys.BGG_ID),
@@ -74,7 +90,7 @@ public class InMemoryDB {
     private void initUPCToBoardGameTable() throws DataAccessException {
         upcToBoardGameTable = new HashMap<>();
 
-        List<JSONObject> rawUPCData = JsonUtils.getJSONObjectsFromFile(UPC_DATA_PATH);
+        List<JSONObject> rawUPCData = JsonUtils.getJSONObjectsFromFile(getUpcDataFile());
         for (JSONObject rawUPC : rawUPCData) {
             String upc = (String) rawUPC.get(JsonKeys.UPC);
             String bggId = (String) rawUPC.get(JsonKeys.UPC_BGG_ID);
@@ -86,7 +102,7 @@ public class InMemoryDB {
     private void initUserTable() throws DataAccessException {
         userTable = new HashMap<>();
 
-        List<JSONObject> rawUsers = JsonUtils.getJSONObjectsFromFile(USER_DATA_PATH);
+        List<JSONObject> rawUsers = JsonUtils.getJSONObjectsFromFile(getUserDataFile());
         for (JSONObject rawUser : rawUsers) {
             String firstName = (String) rawUser.get(JsonKeys.FIRST_NAME);
             String lastName = (String) rawUser.get(JsonKeys.LAST_NAME);
@@ -110,5 +126,17 @@ public class InMemoryDB {
                 ownershipTable.add(new Ownership(userEntry.getKey(), randomBoardGameId));
             }
         }
+    }
+
+    private String getBoardGameDataFile() {
+        return useAssets ? BOARD_GAME_DATA_FILE : BOARD_GAME_DATA_PATH;
+    }
+
+    private String getUserDataFile() {
+        return useAssets ? USER_DATA_FILE : USER_DATA_PATH;
+    }
+
+    private String getUpcDataFile() {
+        return useAssets ? UPC_DATA_FILE : UPC_DATA_PATH;
     }
 }

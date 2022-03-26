@@ -1,0 +1,188 @@
+[
+	{
+		"_id": "13",
+		"title": "Catan",
+		"rules_url": "https://www.catan.com/sites/prod/files/2021-06/catan_base_rules_2020_200707.pdf"
+	},
+	{
+		"_id": "74",
+		"title": "Apples to Apples",
+		"rules_url": "https://service.mattel.com/instruction_sheets/N1384-0920.pdf"
+	},
+	{
+		"_id": "181",
+		"title": "Risk",
+		"rules_url": "https://www.hasbro.com/common/instruct/risk.pdf"
+	},
+	{
+		"_id": "320",
+		"title": "Scrabble",
+		"rules_url": "https://service.mattel.com/instruction_sheets/53639-ENG.pdf"
+	},
+	{
+		"_id": "811",
+		"title": "Rummikub",
+		"rules_url": "https://rummikub.com/wp-content/uploads/2019/12/2600-English-1.pdf"
+	},
+	{
+		"_id": "822",
+		"title": "Carcassonne",
+		"rules_url": "https://images.zmangames.com/filer_public/d5/20/d5208d61-8583-478b-a06d-b49fc9cd7aaa/zm7810_carcassonne_rules.pdf"
+	},
+	{
+		"_id": "1258",
+		"title": "Phase 10",
+		"rules_url": "https://service.mattel.com/instruction_sheets/HHR41-Eng.pdf"
+	},
+	{
+		"_id": "1294",
+		"title": "Clue",
+		"rules_url": "https://www.hasbro.com/common/instruct/Clue_(2002).pdf"
+	},
+	{
+		"_id": "1406",
+		"title": "Monopoly",
+		"rules_url": "https://www.hasbro.com/common/instruct/monins.pdf"
+	},
+	{
+		"_id": "2223",
+		"title": "UNO",
+		"rules_url": "https://service.mattel.com/instruction_sheets/42001pr.pdf"
+	},
+	{
+		"_id": "2375",
+		"title": "Sequence",
+		"rules_url": "https://www.jaxgames.com/sequence-game-rules/"
+	},
+	{
+		"_id": "2921",
+		"bga_id": "OCv0s54FtD",
+		"title": "The Game of Life",
+		"rules_url": "https://www.hasbro.com/common/instruct/life.pdf"
+	},
+	{
+		"_id": "9209",
+		"title": "Ticket to Ride",
+		"rules_url": "https://ncdn0.daysofwonder.com/tickettoride/de/img/tt_rules_2015_en.pdf"
+	},
+	{
+		"_id": "10547",
+		"title": "Betrayal at House on the Hill",
+		"rules_url": "https://media.wizards.com/2018/downloads/rules/betrayal_rules.pdf"
+	},
+	{
+		"_id": "30549",
+		"title": "Pandemic",
+		"rules_url": "https://images.zmangames.com/filer_public/53/ed/53edbee8-adfb-4715-899f-dd381e1420d7/zm7101_rules_web.pdf"
+	},
+	{
+		"_id": "46213",
+		"title": "Telestrations",
+		"rules_url": "https://theop.games/wp-content/uploads/2019/02/Telestrations_8-Player_edition.pdf"
+	},
+	{
+		"_id": "76085",
+		"title": "Bang!",
+		"rules_url": "https://www.dvgiochi.com/giochi/bang/download/Bang_rules_ENG.pdf"
+	},
+	{
+		"_id": "131357",
+		"title": "Coup",
+		"rules_url": "https://www.qugs.org/rules/r131357.pdf"
+	},
+	{
+		"_id": "144344",
+		"title": "Rococo",
+		"rules_url": "https://www.fgbradleys.com/rules/rules4/Rococo%20-%20rules.pdf"
+	},
+	{
+		"_id": "155703",
+		"title": "Evolution",
+		"rules_url": "https://cdn.shopify.com/s/files/1/0283/4324/files/Evolution-Rules-Web_1.pdf"
+	},
+	{
+		"_id": "167791",
+		"title": "Terraforming Mars",
+		"rules_url": "http://www.fryxgames.se/TerraformingMars/TMRULESFINAL.pdf"
+	},
+	{
+		"_id": "178900",
+		"title": "Codenames",
+		"rules_url": "https://czechgames.com/files/rules/codenames-rules-en.pdf"
+	},
+	{
+		"_id": "184267",
+		"bga_id": "BgXeKFHwhz",
+		"title": "On Mars",
+		"rules_url": "https://www.dropbox.com/sh/syjr8l49yacxvkj/AAC689G6zSDEPjVpxiJxGao0a/Rulebook%20v11_draft.pdf?dl=1"
+	},
+	{
+		"_id": "188834",
+		"title": "Secret Hitler",
+		"rules_url": "https://www.secrethitler.com/assets/Secret_Hitler_Rules.pdf"
+	},
+	{
+		"_id": "205398",
+		"bga_id": "Yd28NnaUA0",
+		"title": "Citadels",
+		"rules_url": "https://images.zmangames.com/filer_public/c4/8f/c48f0e33-2967-4cf8-a486-487ff4b46e29/zc01-rulebook_web.pdf"
+	},
+	{
+		"_id": "224037",
+		"title": "Codenames: Duet",
+		"rules_url": "https://czechgames.com/files/rules/codenames-duet-rules-en.pdf"
+	},
+	{
+		"_id": "23082",
+		"title": "Azul",
+		"rules_url": "https://cdn.1j1ju.com/medias/03/14/fd-azul-rulebook.pdf"
+	},
+	{
+		"_id": "241724",
+		"title": "Villagers",
+		"rules_url": "https://sinisterfish.com/wp-content/uploads/2022/01/villagers_rulebook_revised_low.pdf"
+	},
+	{
+		"_id": "256831",
+		"title": "Life Siphon",
+		"rules_url": ""
+	},
+	{
+		"_id": "256916",
+		"bga_id": "xetNswpgzl",
+		"title": "Concordia Venus",
+		"rules_url": "https://www.riograndegames.com/wp-content/uploads/2018/11/Concordia-Venus-Rules-V11.pdf"
+	},
+	{
+		"_id": "266192",
+		"title": "Wingspan",
+		"rules_url": "https://www.dropbox.com/sh/f2tekc23yvb27w3/AACMN8vtpP8c8G3gJ686H9xHa/Wingspan?dl=1&preview=WS_Rulebook_r23-LR.pdf"
+	},
+	{
+		"_id": "266524",
+		"title": "PARKS",
+		"rules_url": "https://cdn.shopify.com/s/files/1/1898/8501/files/Rules-NEWLOGO-Small.pdf"
+	},
+	{
+		"_id": "311475",
+		"title": "Masters of the Universe: The Board Game - Clash for Eternia",
+		"rules_url": "https://resources.cmon.com/MOTU-WIP-Rulebook-web.pdf"
+	},
+	{
+		"_id": "312786",
+		"bga_id": "yqtKCtQD1i",
+		"title": "Poetry for Neanderthals",
+		"rules_url": "https://dumekj556jp75.cloudfront.net/poetry-for-neanderthals/poetry-for-neanderthals-rules.pdf"
+	},
+	{
+		"_id": "312786",
+		"title": "GigaWatt",
+		"rules_url": ""
+	},
+	{
+		"_id": "358816",
+		"bga_id": "l3YvMDBUMf",
+		"title": "Rear Window",
+		"rules_url": ""
+	}
+]

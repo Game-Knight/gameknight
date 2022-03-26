@@ -1,20 +1,25 @@
 package com.cs_356.app.Views;
 
-import android.annotation.SuppressLint;
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
 
 import androidx.annotation.NonNull;
-import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.navigation.ui.AppBarConfiguration;
 
 import com.cs_356.app.R;
 import com.cs_356.app.Utils.ActivityUtils;
+import com.cs_356.app.Utils.DirectDBAccess;
 import com.cs_356.app.databinding.ActivityHomeBinding;
 import com.google.android.material.navigation.NavigationView;
+
+import java.io.File;
+import java.io.FileReader;
+import java.io.InputStream;
+import java.io.Reader;
+
+import DataAccess.DataGeneration.InMemoryDB;
 
 /**
  * This is the activity that represents the home view.
@@ -48,6 +53,13 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
 				R.id.nav_view_home,
 				R.id.nav_item_home
 		);
+
+		try {
+			DirectDBAccess.getInstance(this);
+		}
+		catch (Exception ex) {
+			System.err.println(ex.getMessage());
+		}
 	}
 
 	@Override
