@@ -4,11 +4,14 @@ package DataAccess.DataGeneration;
 import org.json.simple.JSONObject;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Random;
 
+import DataAccess.DAO.APIs.APIBoardGameDAO;
+import DataAccess.DAO.Interfaces.IBoardGameDAO;
 import DataAccess.DataGeneration.JSON.JsonKeys;
 import DataAccess.DataGeneration.JSON.JsonUtils;
 import Entities.BoardGame;
@@ -22,6 +25,8 @@ public class InMemoryDB {
     private static final String BOARD_GAME_DATA_SUPPLEMENTAL_PATH = "./backend/src/main/java/DataAccess/DataGeneration/JSON/board-game-data-supplemental.json";
     private static final String USER_DATA_PATH = "./backend/src/main/java/DataAccess/DataGeneration/JSON/user-data.json";
     private static final String UPC_DATA_PATH = "./backend/src/main/java/DataAccess/DataGeneration/JSON/board-game-upc.json";
+
+    private static final String[] BGG_GAME_IDS = {"13", "74", "181", "320", "811", "822", "1258", "1294", "1406", "2223", "2375", "3955", "9209", "10547", "30549", "46213", "131357", "144344", "155703", "167791", "178900", "184267", "188834", "194655", "205398", "224037", "230802", "241724", "256916", "266192", "266524", "276182", "311475", "312786", "333481", "358816"};
 
     private static final int MAX_GAMES_PER_USER = 20;
 
@@ -77,7 +82,7 @@ public class InMemoryDB {
                     (String) supplementalDataMap.get((String) rawBoardGame.get(JsonKeys.BGG_ID)).get(JsonKeys.RULES_URL)
             );
 
-            boardGameTable.put(boardGame.getId(), boardGame);
+            boardGameTable.put(boardGame.getBggId(), boardGame);
         }
     }
 
