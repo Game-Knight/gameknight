@@ -166,8 +166,6 @@ public class GameLibraryActivity extends AppCompatActivity implements Navigation
         recycler = findViewById(R.id.game_library_recycler_view);
         loadGamesFromInBackground(this);
 
-
-
         // Create adapter passing in the sample user data
 
 //        recycler.setLayoutManager(new LinearLayoutManager(this));
