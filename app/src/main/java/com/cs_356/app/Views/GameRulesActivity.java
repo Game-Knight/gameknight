@@ -27,7 +27,9 @@ public class GameRulesActivity extends AppCompatActivity {
         });
 
         String url = getIntent().getStringExtra("URL");
-        url = "https://docs.google.com/gview?embedded=true&url=" + url;
+        if (url.toLowerCase().contains("pdf") && !url.toLowerCase().contains("dropbox")) {
+            url = "https://docs.google.com/gview?embedded=true&url=" + url;
+        }
         WebView webView = findViewById(R.id.webView);
         webView.getSettings().setJavaScriptEnabled(true);
         webView.loadUrl(url);
