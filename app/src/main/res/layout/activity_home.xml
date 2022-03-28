@@ -28,7 +28,8 @@
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal">
 
             <com.google.android.material.appbar.AppBarLayout
                 android:id="@+id/appBarLayout_home"
@@ -49,7 +50,33 @@
 
             </com.google.android.material.appbar.AppBarLayout>
 
-            <!-- TODO: Add home content here-->
+            <TextView
+                android:id="@+id/upcoming_game_nights_title"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintBaseline_toBottomOf="@id/appBarLayout_home"
+                app:layout_marginBaseline="30dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:theme="@style/Subtitle"
+                android:text="@string/upcoming_game_nights" />
+
+            <!-- TODO: Fix this view to be dynamic! -->
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintBaseline_toBottomOf="@id/upcoming_game_nights_title" >
+
+                <include
+                    layout="@layout/game_night_card"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginVertical="104dp"/>
+
+            </LinearLayout>
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
