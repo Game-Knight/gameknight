@@ -10,7 +10,8 @@
         android:id="@+id/game_view_back_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_margin="10dp"
+        android:layout_marginStart="@dimen/fab_margin"
+        android:layout_marginTop="@dimen/fab_margin"
         android:backgroundTint="@android:color/transparent"
         android:clickable="true"
         android:outlineAmbientShadowColor="@android:color/transparent"
@@ -21,7 +22,7 @@
         app:tint="@color/white" />
 
     <View
-        android:id="@+id/view"
+        android:id="@+id/bgShade"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@color/shade30"
@@ -48,12 +49,13 @@
         android:paddingStart="16dp"
         android:paddingEnd="16dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/view">
+        app:layout_constraintTop_toTopOf="parent">
 
         <ImageView
             android:id="@+id/gameImg"
             android:layout_width="170dp"
             android:layout_height="170dp"
+            android:clickable="true"
             android:padding="6dp"
             app:srcCompat="@drawable/placeholder_game_image" />
 
@@ -140,5 +142,45 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/closeFullscreenFAB"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/fab_margin"
+        android:layout_marginEnd="@dimen/fab_margin"
+        android:backgroundTint="@android:color/transparent"
+        android:clickable="true"
+        android:contentDescription="@string/close"
+        android:outlineAmbientShadowColor="@android:color/transparent"
+        android:outlineSpotShadowColor="@android:color/transparent"
+        android:visibility="gone"
+        app:elevation="9dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_baseline_close_24"
+        app:tint="@color/white" />
+
+    <View
+        android:id="@+id/fullscreenShade"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@color/black70"
+        android:elevation="8dp"
+        android:visibility="gone"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/fullscreenGameImage"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:elevation="10dp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/placeholder_game_image" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
