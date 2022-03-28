@@ -24,7 +24,8 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:background="@color/tint">
 
         <com.google.android.material.appbar.AppBarLayout
             android:id="@+id/appBarLayout_game_library"
@@ -39,8 +40,8 @@
                 android:id="@+id/toolbar_game_library"
                 android:layout_width="match_parent"
                 android:layout_height="?attr/actionBarSize"
-                android:theme="@style/TintToolbarStyle"
                 android:elevation="0dp"
+                android:theme="@style/TintToolbarStyle"
                 app:popupTheme="@style/ThemeOverlay.PopupTheme" />
 
         </com.google.android.material.appbar.AppBarLayout>
@@ -49,29 +50,162 @@
             android:id="@+id/game_library_recycler_view"
             android:layout_width="357dp"
             android:layout_height="0dp"
+            android:clipToPadding="false"
+            android:paddingBottom="50dp"
             app:layoutManager="GridLayoutManager"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/appBarLayout_game_library"
+            app:layout_constraintVertical_bias="0.0"
             app:spanCount="2"
-            tools:listitem="@layout/game_card" />
+            tools:listitem="@layout/game_card">
+
+        </androidx.recyclerview.widget.RecyclerView>
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton
-            android:id="@+id/floatingActionButton"
+            android:id="@+id/addFAB"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginEnd="20dp"
-            android:layout_marginBottom="20dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="16dp"
             android:clickable="true"
             android:contentDescription="@string/cd_add_game"
-            android:tint="@color/white"
             app:backgroundTint="@color/shade"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:srcCompat="@drawable/ic_baseline_add_24" />
+            app:tint="@color/white" />
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+<!--        <com.google.android.material.floatingactionbutton.FloatingActionButton-->
+<!--            android:id="@+id/addManuallyFAB"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginEnd="16dp"-->
+<!--            android:layout_marginBottom="16dp"-->
+<!--            android:clickable="true"-->
+<!--            android:contentDescription="@string/cd_add_game"-->
+<!--            android:tint="@color/white"-->
+<!--            app:backgroundTint="@color/primary"-->
+<!--            app:layout_constraintBottom_toTopOf="@id/addFAB"-->
+<!--            app:layout_constraintEnd_toEndOf="parent"-->
+<!--            app:srcCompat="@drawable/ic_baseline_edit_note_24" />-->
+
+<!--        <com.google.android.material.floatingactionbutton.FloatingActionButton-->
+<!--            android:id="@+id/scanBarcodeFAB"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginEnd="16dp"-->
+<!--            android:layout_marginBottom="16dp"-->
+<!--            android:clickable="true"-->
+<!--            android:contentDescription="@string/cd_add_game"-->
+<!--            android:tint="@color/white"-->
+<!--            app:backgroundTint="@color/primary"-->
+<!--            app:layout_constraintBottom_toTopOf="@id/addManuallyFAB"-->
+<!--            app:layout_constraintEnd_toEndOf="parent"-->
+<!--            app:srcCompat="@drawable/ic_community_barcode_scan" />-->
+
+<!--        <TextView-->
+<!--            android:id="@+id/scanBarcodeTextView"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginEnd="16dp"-->
+<!--            android:background="@color/shade30"-->
+<!--            android:padding="6dp"-->
+<!--            android:text="@string/scan_barcode"-->
+<!--            android:textColor="@color/white"-->
+<!--            app:circularflow_radiusInDP="10dp"-->
+<!--            app:layout_constraintBottom_toBottomOf="@+id/scanBarcodeFAB"-->
+<!--            app:layout_constraintEnd_toStartOf="@+id/scanBarcodeFAB"-->
+<!--            app:layout_constraintTop_toTopOf="@+id/scanBarcodeFAB" />-->
+
+<!--        <TextView-->
+<!--            android:id="@+id/addManuallyTextView"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginEnd="16dp"-->
+<!--            android:background="@color/shade30"-->
+<!--            android:padding="6dp"-->
+<!--            android:text="@string/add_manually"-->
+<!--            android:textColor="@color/white"-->
+<!--            app:layout_constraintBottom_toBottomOf="@+id/addManuallyFAB"-->
+<!--            app:layout_constraintEnd_toStartOf="@+id/addManuallyFAB"-->
+<!--            app:layout_constraintTop_toTopOf="@+id/addManuallyFAB" />-->
+                <ImageButton
+                    android:id="@+id/addButton"
+                    android:layout_width="56dp"
+                    android:layout_height="56dp"
+                    android:layout_marginEnd="16dp"
+                    android:layout_marginBottom="16dp"
+                    android:background="@color/transparent"
+                    android:elevation="6.1dp"
+                    app:tint="@color/white"
+                    android:visibility="visible"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:srcCompat="@drawable/ic_baseline_add_24" />
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/expandedFABCard"
+                    android:layout_width="220dp"
+                    android:layout_height="100dp"
+                    android:layout_marginEnd="16dp"
+                    android:layout_marginBottom="16dp"
+                    android:backgroundTint="@color/shade"
+                    android:visibility="visible"
+                    app:cardCornerRadius="28dp"
+                    app:cardElevation="5.99dp"
+                    app:cardMaxElevation="5.99dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    android:clickable="true" >
+
+
+                    <LinearLayout
+                        android:layout_width="160dp"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"
+                        android:paddingStart="16dp">
+
+                        <Button
+                            android:id="@+id/scanBarcodeButton"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@color/transparent"
+                            android:drawableStart="@drawable/ic_community_barcode_scan"
+                            android:drawableTint="@color/white"
+                            android:foreground="?android:attr/selectableItemBackground"
+                            android:padding="6dp"
+                            android:text="@string/scan_barcode"
+                            android:textColor="@color/white"
+                            android:textSize="14sp"
+                            app:icon="@drawable/ic_community_barcode_scan"
+                            app:iconSize="24dp" />
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:background="@color/white"/>
+
+                        <Button
+                            android:id="@+id/addManuallyButton"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@color/transparent"
+                            android:drawableStart="@drawable/ic_baseline_edit_note_24"
+                            android:drawableTint="@color/white"
+                            android:foreground="?android:attr/selectableItemBackground"
+                            android:padding="6dp"
+                            android:paddingStart="10dp"
+                            android:text="@string/add_manually"
+                            android:textColor="@color/white"
+                            android:textSize="14sp"
+                            app:icon="@drawable/ic_baseline_edit_note_24"
+                            app:iconPadding="4dp"
+                            app:iconSize="28dp" />
+                    </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
 
     <!-- TODO: Add game library content here-->
 

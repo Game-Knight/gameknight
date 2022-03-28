@@ -81,7 +81,7 @@
 		"rules_url": "https://theop.games/wp-content/uploads/2019/02/Telestrations_8-Player_edition.pdf"
 	},
 	{
-		"_id": "76085",
+		"_id": "3955",
 		"title": "Bang!",
 		"rules_url": "https://www.dvgiochi.com/giochi/bang/download/Bang_rules_ENG.pdf"
 	},
@@ -117,6 +117,12 @@
 		"rules_url": "https://www.dropbox.com/sh/syjr8l49yacxvkj/AAC689G6zSDEPjVpxiJxGao0a/Rulebook%20v11_draft.pdf?dl=1"
 	},
 	{
+		"_id": "194655",
+		"bga_id": "VibNUMwsqr"
+		"title": "Santorini",
+		"rules_url": "http://files.roxley.com/Santorini-Rulebook-Web-2016.08.14.pdf"
+	},
+	{
 		"_id": "188834",
 		"title": "Secret Hitler",
 		"rules_url": "https://www.secrethitler.com/assets/Secret_Hitler_Rules.pdf"
@@ -133,7 +139,7 @@
 		"rules_url": "https://czechgames.com/files/rules/codenames-duet-rules-en.pdf"
 	},
 	{
-		"_id": "23082",
+		"_id": "230802",
 		"title": "Azul",
 		"rules_url": "https://cdn.1j1ju.com/medias/03/14/fd-azul-rulebook.pdf"
 	},
@@ -164,6 +170,12 @@
 		"rules_url": "https://cdn.shopify.com/s/files/1/1898/8501/files/Rules-NEWLOGO-Small.pdf"
 	},
 	{
+		"_id": "276182",
+		"bga_id": "dWHx1DwGHl",
+		"title": "Dead Reckoning",
+		"rules_url": "https://www.alderac.com/wp-content/uploads/2022/02/DeadReckoning_Deckhand_Rulebook_FINAL.pdf"
+	},
+	{
 		"_id": "311475",
 		"title": "Masters of the Universe: The Board Game - Clash for Eternia",
 		"rules_url": "https://resources.cmon.com/MOTU-WIP-Rulebook-web.pdf"
@@ -175,7 +187,7 @@
 		"rules_url": "https://dumekj556jp75.cloudfront.net/poetry-for-neanderthals/poetry-for-neanderthals-rules.pdf"
 	},
 	{
-		"_id": "312786",
+		"_id": "333481",
 		"title": "GigaWatt",
 		"rules_url": ""
 	},

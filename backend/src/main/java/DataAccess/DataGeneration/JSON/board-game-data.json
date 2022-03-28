@@ -2724,6 +2724,166 @@
 		"_id": "2375"
 	},
 	{
+		"thumbnail": "https://cf.geekdo-images.com/_04xA-d-rfygm0c49HE4vA__thumb/img/P-6cf4TEk7ewzrfP9d-8c-TxAY4=/fit-in/200x150/filters:strip_icc()/pic1170986.jpg",
+		"image": "https://cf.geekdo-images.com/_04xA-d-rfygm0c49HE4vA__original/img/el-4Ilu9DeYunRT3r4TVP8Vy3uk=/0x0/filters:format(jpeg)/pic1170986.jpg",
+		"name": {
+			"_type": "primary",
+			"_sortindex": "1",
+			"_value": "BANG!"
+		},
+		"description": "&quot;The Outlaws hunt the Sheriff. The Sheriff hunts the Outlaws. The Renegade plots secretly, ready to take one side or the other. Bullets fly. Who among the gunmen is a Deputy, ready to sacrifice himself for the Sheriff? And who is a merciless Outlaw, willing to kill him? If you want to find out, just draw (your cards)!&quot; (From back of box)&#10;&#10;The card game BANG! recreates an old-fashioned spaghetti western shoot-out, with each player randomly receiving a Character card to determine special abilities, and a secret Role card to determine their goal.&#10;&#10;Four different Roles are available, each with a unique victory condition:&#10;&#10;     Sheriff - Kill all Outlaws and the Renegade&#10;     Deputy - Protect the Sheriff and kill any Outlaws&#10;     Outlaw - Kill the Sheriff&#10;     Renegade - Be the last person standing&#10;&#10;&#10;A player's Role is kept secret, except for the Sheriff. Character cards are placed face up on table, and also track strength (hand limit) in addition to special ability.&#10;&#10;There are 22 different types of cards in the draw deck. Most common are the BANG! cards, which let you shoot at another player, assuming the target is within &quot;range&quot; of your current gun.  The target player can play a &quot;MISSED!&quot; card to dodge the shot.  Other cards can provide temporary boosts while in play (for example, different guns to improve your firing range) and special one-time effects to help you or hinder your opponents (such as Beer to restore health, or Barrels to hide behind during a shootout). A horse is useful for keeping your distance from unruly neighbors, while the Winchester can hit a target at range 5. The Gatling is a deadly exception where range doesn't matter: it can only be used once, but targets all other players at the table!&#10;&#10;Information on the cards is displayed using language-independent symbols, and 7 summary/reference cards are included.&#10;&#10;",
+		"yearpublished": {
+			"_value": "2002"
+		},
+		"minplayers": {
+			"_value": "4"
+		},
+		"maxplayers": {
+			"_value": "7"
+		},
+		"playingtime": {
+			"_value": "40"
+		},
+		"minplaytime": {
+			"_value": "20"
+		},
+		"maxplaytime": {
+			"_value": "40"
+		},
+		"minage": {
+			"_value": "10"
+		},
+		"link": [
+			{
+				"_type": "boardgamedesigner",
+				"_id": "1581",
+				"_value": "Emiliano Sciarra"
+			},
+			{
+				"_type": "boardgameartist",
+				"_id": "12126",
+				"_value": "Stefano de Fazi"
+			},
+			{
+				"_type": "boardgameartist",
+				"_id": "12119",
+				"_value": "Alessandro Pierangelini"
+			},
+			{
+				"_type": "boardgamepublisher",
+				"_id": "917",
+				"_value": "dV Giochi"
+			},
+			{
+				"_type": "boardgamepublisher",
+				"_id": "29",
+				"_value": "ABACUSSPIELE"
+			},
+			{
+				"_type": "boardgamepublisher",
+				"_id": "4304",
+				"_value": "Albi"
+			},
+			{
+				"_type": "boardgamepublisher",
+				"_id": "157",
+				"_value": "Asmodee"
+			},
+			{
+				"_type": "boardgamepublisher",
+				"_id": "9074",
+				"_value": "Bard Centrum Gier"
+			},
+			{
+				"_type": "boardgamepublisher",
+				"_id": "46980",
+				"_value": "Brädspel.se"
+			},
+			{
+				"_type": "boardgamepublisher",
+				"_id": "4570",
+				"_value": "Crómola"
+			},
+			{
+				"_type": "boardgamepublisher",
+				"_id": "2973",
+				"_value": "Edge Entertainment"
+			},
+			{
+				"_type": "boardgamepublisher",
+				"_id": "8820",
+				"_value": "Gém Klub Kft."
+			},
+			{
+				"_type": "boardgamepublisher",
+				"_id": "858",
+				"_value": "Grow Jogos e Brinquedos"
+			},
+			{
+				"_type": "boardgamepublisher",
+				"_id": "18852",
+				"_value": "Hobby World"
+			},
+			{
+				"_type": "boardgamepublisher",
+				"_id": "38674",
+				"_value": "Inter Hobby Co., Ltd."
+			},
+			{
+				"_type": "boardgamepublisher",
+				"_id": "6214",
+				"_value": "Kaissa Chess & Games"
+			},
+			{
+				"_type": "boardgamepublisher",
+				"_id": "8291",
+				"_value": "Korea Boardgames Co., Ltd."
+			},
+			{
+				"_type": "boardgamepublisher",
+				"_id": "40841",
+				"_value": "Land of Beautiful Mind (سرزمین ذهن زیبا)"
+			},
+			{
+				"_type": "boardgamepublisher",
+				"_id": "3218",
+				"_value": "Lautapelit.fi"
+			},
+			{
+				"_type": "boardgamepublisher",
+				"_id": "30399",
+				"_value": "Ludicus"
+			},
+			{
+				"_type": "boardgamepublisher",
+				"_id": "10",
+				"_value": "Mayfair Games"
+			},
+			{
+				"_type": "boardgamepublisher",
+				"_id": "32395",
+				"_value": "NeoTroy Games"
+			},
+			{
+				"_type": "boardgamepublisher",
+				"_id": "2962",
+				"_value": "PS-Games"
+			},
+			{
+				"_type": "boardgamepublisher",
+				"_id": "9234",
+				"_value": "Swan Panasia Co., Ltd."
+			},
+			{
+				"_type": "boardgamepublisher",
+				"_id": "42",
+				"_value": "Tilsit"
+			}
+		],
+		"_type": "boardgame",
+		"_id": "3955"
+	},
+	{
 		"thumbnail": "https://cf.geekdo-images.com/ZWJg0dCdrWHxVnc0eFXK8w__thumb/img/a9rsFV6KR0aun8GobhRU16aU8Kc=/fit-in/200x150/filters:strip_icc()/pic38668.jpg",
 		"image": "https://cf.geekdo-images.com/ZWJg0dCdrWHxVnc0eFXK8w__original/img/LgzEsQlF3xkSEQLoorc8ntiYiIY=/0x0/filters:format(jpeg)/pic38668.jpg",
 		"name": {
@@ -3327,51 +3487,6 @@
 		],
 		"_type": "boardgame",
 		"_id": "46213"
-	},
-	{
-		"thumbnail": "https://cf.geekdo-images.com/_a-Xq2n7TvLGN3Gk9qT4XQ__thumb/img/H4qXO2afhRlb54LsMkQieBXSGWM=/fit-in/200x150/filters:strip_icc()/pic402657.jpg",
-		"image": "https://cf.geekdo-images.com/_a-Xq2n7TvLGN3Gk9qT4XQ__original/img/esdUNZxotQ6U-45H_CoTLoaNuNw=/0x0/filters:format(jpeg)/pic402657.jpg",
-		"name": {
-			"_type": "primary",
-			"_sortindex": "1",
-			"_value": "Unauthorized Production"
-		},
-		"description": "This is a placeholder for game versions that are unauthorized productions of games.  Specifically, this is not for items where a publisher has taken a product and has created a different publication of the same game without permission (e.g. Jungle Jam and Jungle Speed) but rather where a bootleg or unauthorized version of a game has been created that is visually similar to an existing product.&#10;&#10;",
-		"yearpublished": {
-			"_value": "2014"
-		},
-		"minplayers": {
-			"_value": "2"
-		},
-		"maxplayers": {
-			"_value": "8"
-		},
-		"playingtime": {
-			"_value": "20"
-		},
-		"minplaytime": {
-			"_value": "20"
-		},
-		"maxplaytime": {
-			"_value": "20"
-		},
-		"minage": {
-			"_value": "0"
-		},
-		"link": [
-			{
-				"_type": "boardgamepublisher",
-				"_id": "3320",
-				"_value": "(Unknown)"
-			},
-			{
-				"_type": "boardgamepublisher",
-				"_id": "1052",
-				"_value": "ToyCo"
-			}
-		],
-		"_type": "boardgame",
-		"_id": "76085"
 	},
 	{
 		"thumbnail": "https://cf.geekdo-images.com/MWhSY_GOe2-bmlQ2rntSVg__thumb/img/vuR_0PCX1w2EkjO_LbchOHZPOwU=/fit-in/200x150/filters:strip_icc()/pic2016054.jpg",
@@ -4339,6 +4454,76 @@
 		"_id": "188834"
 	},
 	{
+		"thumbnail": "https://cf.geekdo-images.com/665Ply7Ho1WVf1v1iZlWeg__thumb/img/BKnSb6kAhpVFHV8cyUXrs3EF_dw=/fit-in/200x150/filters:strip_icc()/pic3283110.png",
+		"image": "https://cf.geekdo-images.com/665Ply7Ho1WVf1v1iZlWeg__original/img/4q6RCxd7st-yW2MyrJwVC_d3ajk=/0x0/filters:format(png)/pic3283110.png",
+		"name": {
+			"_type": "primary",
+			"_sortindex": "1",
+			"_value": "Santorini"
+		},
+		"description": "Santorini is a re-imagining of the purely abstract 2004 edition. Since its original inception over 30 years ago, Santorini has been continually developed, enhanced and refined by designer Gordon Hamilton.&#10;&#10;Santorini is an accessible strategy game, simple enough for an elementary school classroom while aiming to provide gameplay depth and content for hardcore gamers to explore, The rules are simple. Each turn consists of 2 steps:&#10;&#10;1. Move - move one of your builders into a neighboring space. You may move your Builder Pawn on the same level, step-up one level, or step down any number of levels.&#10;&#10;2. Build - Then construct a building level adjacent to the builder you moved.  When building on top of the third level, place a dome instead, removing that space from play.&#10;&#10;Winning the game - If either of your builders reaches the third level, you win.&#10;&#10;Variable player powers - Santorini features variable player powers layered over an otherwise abstract game, with 40 thematic god and hero powers that fundamentally change the way the game is played.&#10;&#10;",
+		"yearpublished": {
+			"_value": "2016"
+		},
+		"minplayers": {
+			"_value": "2"
+		},
+		"maxplayers": {
+			"_value": "4"
+		},
+		"playingtime": {
+			"_value": "20"
+		},
+		"minplaytime": {
+			"_value": "20"
+		},
+		"maxplaytime": {
+			"_value": "20"
+		},
+		"minage": {
+			"_value": "8"
+		},
+		"link": [
+			{
+				"_type": "boardgamedesigner",
+				"_id": "3302",
+				"_value": "Gord!"
+			},
+			{
+				"_type": "boardgameartist",
+				"_id": "70571",
+				"_value": "Lina Cossette"
+			},
+			{
+				"_type": "boardgameartist",
+				"_id": "70568",
+				"_value": "David Forest"
+			},
+			{
+				"_type": "boardgamepublisher",
+				"_id": "21765",
+				"_value": "Roxley"
+			},
+			{
+				"_type": "boardgamepublisher",
+				"_id": "15605",
+				"_value": "Galápagos Jogos"
+			},
+			{
+				"_type": "boardgamepublisher",
+				"_id": "8291",
+				"_value": "Korea Boardgames Co., Ltd."
+			},
+			{
+				"_type": "boardgamepublisher",
+				"_id": "1905",
+				"_value": "Spin Master Ltd."
+			}
+		],
+		"_type": "boardgame",
+		"_id": "194655"
+	},
+	{
 		"thumbnail": "https://cf.geekdo-images.com/sHd0jkZZLDgixHjAXtn7kA__thumb/img/HB0Z5D7uwBjf1lCCPjMck-5VP9A=/fit-in/200x150/filters:strip_icc()/pic3119514.jpg",
 		"image": "https://cf.geekdo-images.com/sHd0jkZZLDgixHjAXtn7kA__original/img/9n76iqzSN06hlbX4DuuPD6fSkHQ=/0x0/filters:format(jpeg)/pic3119514.jpg",
 		"name": {
@@ -5110,6 +5295,11 @@
 			},
 			{
 				"_type": "boardgameartist",
+				"_id": "41862",
+				"_value": "Greg May"
+			},
+			{
+				"_type": "boardgameartist",
 				"_id": "71164",
 				"_value": "Beth Sobel"
 			},
@@ -5333,7 +5523,62 @@
 		"_id": "266524"
 	},
 	{
-		"thumbnail": "https://cf.geekdo-images.com/fOOSe4ToH3zg4Y9KxsWQZw__thumb/img/A9el7cgyOgEuy-5gSCpmo-nKafI=/fit-in/200x150/filters:strip_icc()/pic6437594.png",
+		"thumbnail": "https://cf.geekdo-images.com/4q_5Ox7oYtK3Ma73iRtfAg__thumb/img/TU4UOoot_zqqUwCEmE_wFnLRRCY=/fit-in/200x150/filters:strip_icc()/pic4650725.jpg",
+		"image": "https://cf.geekdo-images.com/4q_5Ox7oYtK3Ma73iRtfAg__original/img/67KL6z6m8eD2MprJ7JfsxXoAPlM=/0x0/filters:format(jpeg)/pic4650725.jpg",
+		"name": {
+			"_type": "primary",
+			"_sortindex": "1",
+			"_value": "Dead Reckoning"
+		},
+		"description": "Dead Reckoning is a game of exploration, piracy, and influence based in a Caribbean-esque setting. Each player commands a ship and crew and seeks to amass the greatest fortune. They do this through pirating, trading, treasure hunting, and (importantly) capturing and maintaining control over the uninhabited but resource-rich islands of the region. During the game, you can:&#10;&#10;&bull; Customize your ship: Your ship is represented by a token on the board. The board starts mostly unexplored and will be revealed as you venture into uncharted waters. You also have a ship board where you load cargo and treasure, and you can customize the guns, speed, or holding space of your ship.&#10;&#10;&bull; Card-craft your crew: You have a small deck of cards that will drive your actions in the game, with each card representing one of your crew members. This deck functions like one in a deck-building game, but the cards in the deck are sleeved, and rather than add new crew cards to your deck, you improve the skill and abilities of your crew cards by placing transparent &quot;advancement&quot; cards in those sleeves. Aside from the transparent advancements, your crew will also &quot;level up&quot; naturally during the game using a new card-leveling mechanism not seen in other card-crafting games such as Mystic Vale.&#10;&#10;&bull; Control the region: The region is filled with many deserted islands. These islands are a major source of treasure, and players will battle for control of these islands.&#10;&#10;&bull; Battle via a dynamic cube-tower: You can battle other players' ships or NPC merchant ships, and these battles are resolved via a new take on what a cube tower can be, with crew cards and ship powers increasing your chances of victory.&#10;&#10;&bull; Uncover secrets of the sea: Expansions for Dead Reckoning use a &quot;saga&quot; system in which certain content remains hidden and is discovered and added to the game organically only via playing. Rather than add everything at once, you gradually add it by playing and discovering. Depending on luck and player choice, less or more new content may get added each game.&#10;&#10;&mdash;description from the publisher&#10;&#10;",
+		"yearpublished": {
+			"_value": "2022"
+		},
+		"minplayers": {
+			"_value": "1"
+		},
+		"maxplayers": {
+			"_value": "4"
+		},
+		"playingtime": {
+			"_value": "150"
+		},
+		"minplaytime": {
+			"_value": "90"
+		},
+		"maxplaytime": {
+			"_value": "150"
+		},
+		"minage": {
+			"_value": "14"
+		},
+		"link": [
+			{
+				"_type": "boardgamedesigner",
+				"_id": "57723",
+				"_value": "John D. Clair"
+			},
+			{
+				"_type": "boardgameartist",
+				"_id": "64844",
+				"_value": "Ian O'Toole"
+			},
+			{
+				"_type": "boardgamepublisher",
+				"_id": "396",
+				"_value": "Alderac Entertainment Group"
+			},
+			{
+				"_type": "boardgamepublisher",
+				"_id": "8291",
+				"_value": "Korea Boardgames Co., Ltd."
+			}
+		],
+		"_type": "boardgame",
+		"_id": "276182"
+	},
+	{
+		"thumbnail": "https://cmon-files.s3.amazonaws.com/images/product/avatar/401/avatar.jpg",
 		"image": "https://cmon-files.s3.amazonaws.com/images/product/avatar/401/avatar.jpg",
 		"name": {
 			"_type": "primary",
@@ -5377,6 +5622,11 @@
 				"_type": "boardgameartist",
 				"_id": "24858",
 				"_value": "Henning Ludvigsen"
+			},
+			{
+				"_type": "boardgamepublisher",
+				"_id": "157",
+				"_value": "Asmodee"
 			},
 			{
 				"_type": "boardgamepublisher",
@@ -5500,7 +5750,7 @@
 			"_sortindex": "1",
 			"_value": "Rear Window"
 		},
-		"description": "",
+		"description": "Experience Alfred Hitchcock's masterpiece film Rear Window in a game of deduction and suspense. Carefully observe strange clues and ominous patterns in the things going on in the apartments across the way. There are parties, knives, a saw, bickering, laughing, music...and a mysterious trunk. Do you detect a murder? Or is the secret, private world of the neighbors planting frightening ideas in your mind?&#10;&#10;In Rear Window, one player takes the role of director Alfred Hitchcock &mdash; the &quot;Master of Suspense&quot; &mdash; and communicates via building windows clues and signs for the other players without ever uttering a word, ideally giving them enough to go on that they can figure out who the murderer is &mdash; or whether a murder even took place.&#10;&#10;If a murderer is out there, you need to nail down all eight attributes of that person by the end of four rounds without them catching on to what you see and know.&#10;&#10;",
 		"yearpublished": {
 			"_value": "2022"
 		},

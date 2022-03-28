@@ -12,6 +12,7 @@ import com.cs_356.app.R;
 import com.cs_356.app.Views.GameLibraryActivity;
 import com.cs_356.app.Views.GameNightsActivity;
 import com.cs_356.app.Views.HomeActivity;
+import com.cs_356.app.Views.SettingsActivity;
 import com.google.android.material.navigation.NavigationView;
 
 import java.util.List;
@@ -83,7 +84,8 @@ public class ActivityUtils {
         }
         else if (item.getItemId() == R.id.nav_item_settings
                 && curItemId != R.id.nav_item_settings) {
-            // TODO: Add settings navigation if we want!
+            activity.startActivity(new Intent(activity, SettingsActivity.class));
+            activity.finish();
         }
 
         return true;

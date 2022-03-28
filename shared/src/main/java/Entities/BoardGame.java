@@ -2,11 +2,10 @@ package Entities;
 
 import java.io.Serializable;
 
-import Utils.EntityUtils;
-
 public class BoardGame implements Serializable {
 
-    private String id;
+    private String bggId;
+    private String bgaId;
     private String thumbnailUrl;
     private String imageUrl;
     private String name;
@@ -18,12 +17,17 @@ public class BoardGame implements Serializable {
     private int minPlayingTime;
     private int maxPlayingTime;
     private int minAge;
+    private String officialURL;
+    private String rulesURL;
+    private String primaryPublisher;
+    private String primaryDesigner;
+    private String upc;
     private boolean borrowed;
 
-    public BoardGame(String id, String thumbnailUrl, String imageUrl, String name,
+    public BoardGame(String bggId, String thumbnailUrl, String imageUrl, String name,
                      String description, int yearPublished, int minPlayers, int maxPlayers,
                      int playingTime, int minPlayingTime, int maxPlayingTime, int minAge) {
-        this.id = id;
+        this.bggId = bggId;
         this.thumbnailUrl = thumbnailUrl;
         this.imageUrl = imageUrl;
         this.name = name;
@@ -38,12 +42,63 @@ public class BoardGame implements Serializable {
         this.borrowed = false;
     }
 
-    public String getId() {
-        return id;
+    public BoardGame(String bggId, String thumbnailUrl, String imageUrl, String name,
+                     String description, int yearPublished, int minPlayers, int maxPlayers,
+                     int playingTime, int minPlayingTime, int maxPlayingTime, int minAge, String rulesURL) {
+        this.bggId = bggId;
+        this.thumbnailUrl = thumbnailUrl;
+        this.imageUrl = imageUrl;
+        this.name = name;
+        this.description = description;
+        this.yearPublished = yearPublished;
+        this.minPlayers = minPlayers;
+        this.maxPlayers = maxPlayers;
+        this.playingTime = playingTime;
+        this.minPlayingTime = minPlayingTime;
+        this.maxPlayingTime = maxPlayingTime;
+        this.minAge = minAge;
+        this.borrowed = false;
+        this.rulesURL = rulesURL;
     }
 
-    public void setId(String id) {
-        this.id = id;
+    public BoardGame(String bggId, String bgaId, String thumbnailUrl, String imageUrl, String name,
+                     String description, int yearPublished, int minPlayers, int maxPlayers,
+                     int playingTime, int minPlayingTime, int maxPlayingTime, int minAge, String primaryPublisher, String primaryDesigner, String officialURL, String rulesURL, String upc) {
+        this.bggId = bggId;
+        this.bgaId = bgaId;
+        this.thumbnailUrl = thumbnailUrl;
+        this.imageUrl = imageUrl;
+        this.name = name;
+        this.description = description;
+        this.yearPublished = yearPublished;
+        this.minPlayers = minPlayers;
+        this.maxPlayers = maxPlayers;
+        this.playingTime = playingTime;
+        this.minPlayingTime = minPlayingTime;
+        this.maxPlayingTime = maxPlayingTime;
+        this.minAge = minAge;
+        this.primaryPublisher = primaryPublisher;
+        this.primaryDesigner = primaryDesigner;
+        this.officialURL = officialURL;
+        this.rulesURL = rulesURL;
+        this.upc = upc;
+        this.borrowed = false;
+    }
+
+    public String getBggId() {
+        return bggId;
+    }
+
+    public void setBggId(String bggId) {
+        this.bggId = bggId;
+    }
+
+    public String getBgaId() {
+        return bgaId;
+    }
+
+    public void setBgaId(String bgaId) {
+        this.bgaId = bgaId;
     }
 
     public String getThumbnailUrl() {
@@ -134,6 +189,46 @@ public class BoardGame implements Serializable {
         this.minAge = minAge;
     }
 
+    public String getOfficialURL() {
+        return officialURL;
+    }
+
+    public void setOfficialURL(String officialURL) {
+        this.officialURL = officialURL;
+    }
+
+    public String getRulesURL() {
+        return rulesURL;
+    }
+
+    public void setRulesURL(String rulesURL) {
+        this.rulesURL = rulesURL;
+    }
+
+    public String getPrimaryPublisher() {
+        return primaryPublisher;
+    }
+
+    public void setPrimaryPublisher(String primaryPublisher) {
+        this.primaryPublisher = primaryPublisher;
+    }
+
+    public String getPrimaryDesigner() {
+        return primaryDesigner;
+    }
+
+    public void setPrimaryDesigner(String primaryDesigner) {
+        this.primaryDesigner = primaryDesigner;
+    }
+
+    public String getUpc() {
+        return upc;
+    }
+
+    public void setUpc(String upc) {
+        this.upc = upc;
+    }
+
     public boolean isBorrowed() {
         return borrowed;
     }
@@ -144,7 +239,7 @@ public class BoardGame implements Serializable {
 
     @Override
     public String toString() {
-        return "Id: " + this.id + "\nName: " + this.name + "\nDescription: " + this.description +
+        return "Id: " + this.bggId + "\nName: " + this.name + "\nDescription: " + this.description +
                 "\nImage URL: " + this.imageUrl + "\nBorrowed: " + this.borrowed + "\n";
     }
 }
