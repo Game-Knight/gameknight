@@ -2,6 +2,7 @@ package com.cs_356.app.Adapters;
 
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Bitmap;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,13 +11,16 @@ import android.widget.ImageView;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.cs_356.app.R;
+import com.cs_356.app.Utils.Image.PicassoTransformations;
 import com.cs_356.app.Views.AddGameActivity;
 import com.squareup.picasso.Picasso;
+import com.squareup.picasso.Transformation;
 
 import java.util.List;
 
 import Entities.BoardGame;
 import jp.wasabeef.picasso.transformations.BlurTransformation;
+import jp.wasabeef.picasso.transformations.CropSquareTransformation;
 
 public class GameCardAdapter extends RecyclerView.Adapter<GameCardAdapter.ViewHolder> {
 
@@ -69,8 +73,8 @@ public class GameCardAdapter extends RecyclerView.Adapter<GameCardAdapter.ViewHo
     public void onBindViewHolder(GameCardAdapter.ViewHolder holder, int position) {
         BoardGame game = gamesList.get(position);
 
-        Picasso.get().load(game.getImageUrl()).into(holder.gameImg);
-        Picasso.get().load(game.getImageUrl()).transform(new BlurTransformation(holder.bgImg.getContext(),75)).into(holder.bgImg);
+        Picasso.get().load(game.getImageUrl()).transform(new PicassoTransformations.SCALE_300_MAX()).into(holder.gameImg);
+        Picasso.get().load(game.getImageUrl()).transform(new PicassoTransformations.CROP_SQUARE()).transform(new PicassoTransformations.SCALE_300_MAX()).transform(new BlurTransformation(holder.bgImg.getContext(),30)).into(holder.bgImg);
     }
 
     @Override
@@ -81,4 +85,6 @@ public class GameCardAdapter extends RecyclerView.Adapter<GameCardAdapter.ViewHo
     public interface OnGameCardClickListener {
         void onGameCardClick(int position);
     }
+
+
 }

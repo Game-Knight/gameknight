@@ -7,28 +7,33 @@
 #### 🔴 High Priority
 - [ ] add HomeActivity
     - [ ] create card layout for Home
-- [ ] add AddGameNightActivity
+- [ ] add AddGameNightActivity (Brayden)
 - [ ] add GameNightActivity
-- [ ] add GameNightsActivity
-- [ ] implement barcode scanner
-- [ ] mark games as borrowable
+    - [ ] voting for games
+- [ ] add GameNightsActivity (Brayden)
+- [ ] implement barcode scanner (Chayston)
 
 #### 🟠 Medium Priority
 - [ ] remove games from library
     - [ ] using overflow (3 dots) menu in GameView
     - [ ] tap and hold card for options in GameLibrary
+- [ ] mark games as borrowable
 - [ ] view other users' borrowable games
 - [ ] allow adding games to library from AddGameManually
+- [ ] speed up AddGameManually search
+- [ ] loading spinner for AddGameManually search
 
 #### 🟡 Low Priority
 - [ ] use APIs instead of local data (*partially implemented*)
 - [ ] improve search result ordering in AddGameManually
 - [ ] search, sort, and filter game library
+- [ ] change FABs to Material2 style
 
 #### 🟢 Completed
 - [X] add AddGameManuallyActivity
     - [X] implement search feature
 - [X] add GameLibraryActivity
+    - [X] scale images for faster loading
 - [X] add GameViewActivity
     - [X] tap game image show in full screen
     - [X] disable rules button if no URL found
@@ -36,3 +41,4 @@
 
 #### ⚫️ Backlog
 - [ ] make SettingsActivity functional
+- [ ] create recurring game nights
