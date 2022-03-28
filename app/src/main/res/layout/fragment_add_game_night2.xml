@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Views.AddGameNight2Fragment">
+    tools:context=".Views.AddGameNight.AddGameNight2Fragment">
 
     <!-- TODO: Update blank fragment layout -->
     <TextView

@@ -1,4 +1,4 @@
-package com.cs_356.app.Views;
+package com.cs_356.app.Views.AddGameNight;
 
 import android.os.Bundle;
 

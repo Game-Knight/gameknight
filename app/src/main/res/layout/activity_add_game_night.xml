@@ -4,6 +4,18 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Views.AddGameNightActivity">
+    tools:context=".Views.AddGameNight.AddGameNightActivity">
+
+    <androidx.fragment.app.FragmentContainerView
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/addGameNight1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:name="com.cs_356.app.Views.AddGameNight.AddGameNight1Fragment" />
+    <androidx.fragment.app.FragmentContainerView
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/addGameNight2"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
