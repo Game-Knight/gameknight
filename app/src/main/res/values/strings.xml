@@ -39,5 +39,6 @@
     <string name="back">back</string>
     <string name="add_game">Add Game</string>
     <string name="game_found">Game found!</string>
+    <string name="close">Close</string>
 
 </resources>

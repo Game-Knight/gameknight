@@ -23,6 +23,7 @@
 - [ ] disable Game Rules button in GameView if no URL found
 - [ ] tap image in GameView to show in full screen
 - [ ] use APIs instead of local data
+- [ ] improve search result ordering for manual game adding
 
 #### 🟢 Completed
 - [X] add GameLibraryActivity
