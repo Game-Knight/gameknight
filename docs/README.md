@@ -18,16 +18,20 @@
     - [ ] using overflow (3 dots) menu in GameView
     - [ ] tap and hold card for options in GameLibrary
 - [ ] view other users' borrowable games
+- [ ] allow adding games to library from AddGameManually
 
 #### 🟡 Low Priority
-- [ ] disable Game Rules button in GameView if no URL found
-- [ ] tap image in GameView to show in full screen
-- [ ] use APIs instead of local data
-- [ ] improve search result ordering for manual game adding
+- [ ] use APIs instead of local data (*partially implemented*)
+- [ ] improve search result ordering in AddGameManually
+- [ ] search, sort, and filter game library
 
 #### 🟢 Completed
+- [X] add AddGameManuallyActivity
+    - [X] implement search feature
 - [X] add GameLibraryActivity
 - [X] add GameViewActivity
+    - [X] tap game image show in full screen
+    - [X] disable rules button if no URL found
 - [X] add SettingsActivity
 
 #### ⚫️ Backlog
