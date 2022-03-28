@@ -12,6 +12,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.cs_356.app.R;
+import com.cs_356.app.Utils.Constants;
 import com.cs_356.app.databinding.FragmentGameScannedBinding;
 
 public class GameScannedFragment extends Fragment {
@@ -23,7 +24,6 @@ public class GameScannedFragment extends Fragment {
             @NonNull LayoutInflater inflater, ViewGroup container,
             Bundle savedInstanceState
     ) {
-
         binding = FragmentGameScannedBinding.inflate(inflater, container, false);
         return binding.getRoot();
 
@@ -31,6 +31,17 @@ public class GameScannedFragment extends Fragment {
 
     public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+
+        String barcodeRetrieved;
+        try {
+            assert getArguments() != null;
+            barcodeRetrieved = getArguments().getString(Constants.BARCODE_KEY);
+        }
+        catch (Exception ex) {
+            System.out.println("There was no barcode retrieved!");
+        }
+
+        // TODO: Use the barcode retrieved to show what game was found!
 
         binding.gameScannedBackButton.setOnClickListener(new View.OnClickListener() {
             @Override
