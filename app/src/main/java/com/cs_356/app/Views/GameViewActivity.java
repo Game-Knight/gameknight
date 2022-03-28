@@ -62,6 +62,10 @@ public class GameViewActivity extends AppCompatActivity {
             playTime.setText(game.getMinPlayingTime() + " " + getString(R.string.mins));
         }
         description.setText(StringEscapeUtils.unescapeHtml4(game.getDescription()));
+
+        if (game.getRulesURL() == null || game.getRulesURL().equals("")) {
+            rulesButton.setVisibility(View.INVISIBLE);
+        }
         rulesButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

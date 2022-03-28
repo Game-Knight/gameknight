@@ -40,5 +40,7 @@
     <string name="add_game">Add Game</string>
     <string name="game_found">Game found!</string>
     <string name="close">Close</string>
+    <string name="rules_unavailable">Rules Unavailable</string>
+    <string name="game_rules">Game Rules</string>
 
 </resources>

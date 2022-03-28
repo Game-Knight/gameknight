@@ -20,7 +20,7 @@ public class APIDB {
     private static final String USER_DATA_PATH = "./backend/src/main/java/DataAccess/DataGeneration/JSON/user-data.json";
     private static final String UPC_DATA_PATH = "./backend/src/main/java/DataAccess/DataGeneration/JSON/board-game-upc.json";
 
-    private static final String[] BGG_GAME_IDS = {"13", "74", "181", "320", "811", "822", "1258", "1294", "1406", "2223", "2375", "3955", "9209", "10547", "30549", "46213", "131357", "144344", "155703", "167791", "178900", "184267", "188834", "194655", "205398", "224037", "230802", "241724", "256916", "266192", "266524", "276182", "311475", "312786", "333481", "358816"};
+    private static final String[] BGG_GAME_IDS = {"13", "74", "181", "320", "811", "822", "1258", "1294", "1406", "2223", "2375", "3955", "9209", "10547", "30549", "46213", "131357", "144344", "155703", "167791", "178900", "184267", "188834", "194655", "205398", "224037", "230802", "241724", "256916", "266192", "266524", "276182", "311475", "312786", "332290", "333481", "358816"};
 
     private static final int MAX_GAMES_PER_USER = 20;
 
