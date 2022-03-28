@@ -6,6 +6,9 @@
     android:layout_height="match_parent"
     tools:context=".Views.AddGameActivity">
 
-    <include layout="@layout/content_add_game" />
+    <include
+        android:id="@+id/scanFragment"
+        layout="@layout/content_add_game"
+        android:visibility="gone" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

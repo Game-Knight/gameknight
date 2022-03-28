@@ -31,9 +31,7 @@ import java.util.Objects;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
-import DataAccess.DataGeneration.APIDB;
 import Entities.BoardGame;
-import Exceptions.DataAccessException;
 
 /**
  * This shows a user's game library. It displays the games on cards, and
@@ -151,7 +149,9 @@ public class GameLibraryActivity extends AppCompatActivity implements Navigation
                 new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
-                        startActivity(new Intent(view.getContext(), AddGameActivity.class));
+                        Intent intent = new Intent(view.getContext(), AddGameActivity.class);
+                        intent.putExtra(AddGameActivity.EXTRA_MODE, AddGameActivity.MODE_SCANNER);
+                        startActivity(intent);
                         finish();
                     }
                 });
@@ -159,12 +159,13 @@ public class GameLibraryActivity extends AppCompatActivity implements Navigation
                 new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
-                        //TODO (low priority, not needed for demo) launch add manually fragment/activity
+                        Intent intent = new Intent(view.getContext(), AddGameManuallyActivity.class);
+                        startActivity(intent);
                     }
                 });
 
         recycler = findViewById(R.id.game_library_recycler_view);
-        loadGamesFromInBackground(this);
+        loadGamesInBackground(this);
 
         // Create adapter passing in the sample user data
 
@@ -196,7 +197,7 @@ public class GameLibraryActivity extends AppCompatActivity implements Navigation
         public void onProcessed(boolean success);
     }
 
-    private void loadGamesFromInBackground(GameCardAdapter.OnGameCardClickListener cardClickListener){
+    private void loadGamesInBackground(GameCardAdapter.OnGameCardClickListener cardClickListener){
 
         final OnProcessedListener listener = new OnProcessedListener(){
             @Override

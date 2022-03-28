@@ -30,6 +30,7 @@ import okhttp3.Response;
 public class APIBoardGameDAO implements IBoardGameDAO {
     private static final String BGG_API_URL="https://boardgamegeek.com/xmlapi2/";
     private static final String BGG_QUERY_BY_ID="thing?id=";
+    private static final String BGG_SEARCH_BY_NAME="search?type=boardgame&query=";
     private static final String BGA_API_URL="https://api.boardgameatlas.com/api/";
     private static final String BGA_CLIENT_ID="3OGB9fbtWY";
     private static final String BGA_QUERY_BY_NAME="search?client_id=" + BGA_CLIENT_ID + "&name=";
@@ -82,13 +83,49 @@ public class APIBoardGameDAO implements IBoardGameDAO {
         return gamesList;
     }
 
+    public List<BoardGame> getBoardGamesByName(String name, int count) throws DataAccessException {
+        List<BoardGame> gamesList = new ArrayList<>();
+        DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
+        try {
+//            dbf.setFeature(XMLConstants.FEATURE_SECURE_PROCESSING, true);
+            DocumentBuilder db = dbf.newDocumentBuilder();
+            Document doc = db.parse(BGG_API_URL + BGG_SEARCH_BY_NAME + name);
+            doc.getDocumentElement().normalize();
+
+            NodeList list = doc.getElementsByTagName("item");
+            if (count > list.getLength()) {
+                count = list.getLength();
+            }
+            for (int i = 0; i < count; i++) {
+                Node node = list.item(i);
+                if (node.getNodeType() == Node.ELEMENT_NODE) {
+                    Element element = (Element) node;
+
+                    String bggId = element.getAttribute(BGGKeys.ID);
+                    gamesList.add(getBoardGameById(bggId));
+                }
+            }
+
+        } catch (ParserConfigurationException | SAXException | IOException e) {
+            e.printStackTrace();
+        }
+
+        return gamesList;
+    }
+
     private static BoardGame bggItemToBoardGame(Node node) throws IOException, ParseException {
         if (node.getNodeType() == Node.ELEMENT_NODE) {
             Element element = (Element) node;
 
             String bggId = element.getAttribute(BGGKeys.ID);
-            String thumbnailUrl = element.getElementsByTagName(BGGKeys.THUMBNAIL).item(0).getTextContent();
-            String imageUrl = element.getElementsByTagName(BGGKeys.IMAGE).item(0).getTextContent();
+            String thumbnailUrl = null;
+            if (element.getElementsByTagName(BGGKeys.THUMBNAIL).item(0) != null) {
+                thumbnailUrl = element.getElementsByTagName(BGGKeys.THUMBNAIL).item(0).getTextContent();
+            }
+            String imageUrl = null;
+            if (element.getElementsByTagName(BGGKeys.IMAGE).item(0) != null) {
+                imageUrl = element.getElementsByTagName(BGGKeys.IMAGE).item(0).getTextContent();
+            }
             String name = element.getElementsByTagName(BGGKeys.NAME).item(0).getAttributes().getNamedItem("value").getNodeValue();
             String bggDescription = element.getElementsByTagName(BGGKeys.DESCRIPTION).item(0).getTextContent();
             int yearPublished = Integer.parseInt(element.getElementsByTagName(BGGKeys.YEAR_PUBLISHED).item(0).getAttributes().getNamedItem("value").getNodeValue());
@@ -112,15 +149,34 @@ public class APIBoardGameDAO implements IBoardGameDAO {
             JSONObject bgaJSON = (JSONObject) parser.parse(response.body().string());
             JSONArray games =  ((JSONArray) bgaJSON.get("games"));
 
-            JSONObject bgaGame = (JSONObject) ((JSONArray) bgaJSON.get("games")).get(0);
+            String bgaId = null;
+            String bgaDescription = null;
+            String primaryPublisher = null;
+            String primaryDesigner = null;
+            String officialURL = null;
+            String rulesURL = null;
+            String upc = null;
 
-            String bgaId = (String) bgaGame.get(BGAKeys.ID);
-            String bgaDescription = (String) bgaGame.get(BGGKeys.DESCRIPTION);
-            String primaryPublisher = (String) ((JSONObject) bgaGame.get(BGAKeys.PRIMARY_PUBLISHER)).get(BGAKeys.NAME);
-            String primaryDesigner = (String) ((JSONObject) bgaGame.get(BGAKeys.PRIMARY_DESIGNER)).get(BGAKeys.NAME);
-            String officialURL = (String) bgaGame.get(BGAKeys.OFFICIAL_URL);
-            String rulesURL = (String) bgaGame.get(BGAKeys.RULES_URL);
-            String upc = (String) bgaGame.get(BGAKeys.UPC);
+            if (bgaJSON.get("games") == null || ((JSONArray) bgaJSON.get("games")).size() > 0) {
+                JSONObject bgaGame = (JSONObject) ((JSONArray) bgaJSON.get("games")).get(0);
+
+                bgaId = (String) bgaGame.get(BGAKeys.ID);
+                bgaDescription = (String) bgaGame.get(BGGKeys.DESCRIPTION);
+
+
+                if (bgaGame.get(BGAKeys.PRIMARY_PUBLISHER) != null) {
+                    primaryPublisher = (String) ((JSONObject) bgaGame.get(BGAKeys.PRIMARY_PUBLISHER)).get(BGAKeys.NAME);
+                }
+
+
+                if (bgaGame.get(BGAKeys.PRIMARY_DESIGNER) != null) {
+                    primaryDesigner = (String) ((JSONObject) bgaGame.get(BGAKeys.PRIMARY_DESIGNER)).get(BGAKeys.NAME);
+                }
+
+                officialURL = (String) bgaGame.get(BGAKeys.OFFICIAL_URL);
+                rulesURL = (String) bgaGame.get(BGAKeys.RULES_URL);
+                upc = (String) bgaGame.get(BGAKeys.UPC);
+            }
 
             return new BoardGame(bggId, bgaId, thumbnailUrl, imageUrl, name,
                     bggDescription, yearPublished, minPlayers, maxPlayers, playingTime,
