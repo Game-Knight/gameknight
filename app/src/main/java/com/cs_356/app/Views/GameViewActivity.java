@@ -62,6 +62,10 @@ public class GameViewActivity extends AppCompatActivity {
             playTime.setText(game.getMinPlayingTime() + " " + getString(R.string.mins));
         }
         description.setText(StringEscapeUtils.unescapeHtml4(game.getDescription()));
+
+        if (game.getRulesURL() == null || game.getRulesURL().equals("")) {
+            rulesButton.setVisibility(View.INVISIBLE);
+        }
         rulesButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -78,5 +82,30 @@ public class GameViewActivity extends AppCompatActivity {
                 onBackPressed();
             }
         });
+
+        FloatingActionButton closeFullscreenFAB = findViewById(R.id.closeFullscreenFAB);
+        View fullscreenShade = findViewById(R.id.fullscreenShade);
+        ImageView fullscreenGameImage = findViewById(R.id.fullscreenGameImage);
+
+        Picasso.get().load(game.getImageUrl()).into(fullscreenGameImage);
+
+        gameImg.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                closeFullscreenFAB.setVisibility(View.VISIBLE);
+                fullscreenShade.setVisibility(View.VISIBLE);
+                fullscreenGameImage.setVisibility(View.VISIBLE);
+            }
+        });
+
+        closeFullscreenFAB.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                closeFullscreenFAB.setVisibility(View.GONE);
+                fullscreenShade.setVisibility(View.GONE);
+                fullscreenGameImage.setVisibility(View.GONE);
+            }
+        });
+
     }
 }

@@ -39,5 +39,13 @@
     <string name="back">back</string>
     <string name="add_game">Add Game</string>
     <string name="game_found">Game found!</string>
+    <string name="close">Close</string>
+    <string name="rules_unavailable">Rules Unavailable</string>
+    <string name="game_rules">Game Rules</string>
+    <string name="game_night_title">Game Night Title</string>
+    <string name="game_night_location">Game Night Location</string>
+    <string name="game_night_date_time">Game Night Date/Time</string>
+    <string name="game_night_assignments">Game Night Assignments</string>
+    <string name="upcoming_game_nights">Upcoming Game Nights</string>
 
 </resources>

@@ -88,7 +88,6 @@ public class AddGameManuallyActivity extends AppCompatActivity implements GameCa
                     public void run(){
                         GameCardAdapter adapter = new GameCardAdapter(results, cardClickListener);
                         recycler.setAdapter(adapter);
-                        mExecutor.shutdown();
                     }
                 });
             }
@@ -109,5 +108,11 @@ public class AddGameManuallyActivity extends AppCompatActivity implements GameCa
         };
 
         mExecutor.execute(backgroundRunnable);
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        mExecutor.shutdown();
     }
 }
