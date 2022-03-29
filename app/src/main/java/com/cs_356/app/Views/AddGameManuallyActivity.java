@@ -3,12 +3,18 @@ package com.cs_356.app.Views;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.graphics.drawable.Animatable2;
+import android.graphics.drawable.AnimatedVectorDrawable;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
 import android.view.View;
+import android.widget.ProgressBar;
 import android.widget.SearchView;
 import androidx.recyclerview.widget.RecyclerView;
+import androidx.vectordrawable.graphics.drawable.Animatable2Compat;
+import androidx.vectordrawable.graphics.drawable.AnimatedVectorDrawableCompat;
 
 import com.cs_356.app.Adapters.GameCardAdapter;
 import com.cs_356.app.R;
@@ -30,6 +36,7 @@ public class AddGameManuallyActivity extends AppCompatActivity implements GameCa
     private static final int RESULTS_COUNT = 10;
     private static List<BoardGame> results = new ArrayList<>();
     private static RecyclerView recycler;
+    private static ProgressBar progressSpinner;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -37,9 +44,26 @@ public class AddGameManuallyActivity extends AppCompatActivity implements GameCa
 
         SearchView searchView = findViewById(R.id.searchView);
         recycler = findViewById(R.id.game_library_recycler_view);
+        progressSpinner = findViewById(R.id.progressSpinner);
+        AnimatedVectorDrawable diceAnimation = (AnimatedVectorDrawable) progressSpinner.getIndeterminateDrawable();
+
+        diceAnimation.registerAnimationCallback(new Animatable2.AnimationCallback(){
+            public void onAnimationEnd(Drawable drawable){
+                diceAnimation.start();
+            }
+        });
 
         searchView.requestFocus();
         GameCardAdapter.OnGameCardClickListener cardClickListener = this;
+
+        searchView.setOnFocusChangeListener(new View.OnFocusChangeListener() {
+            @Override
+            public void onFocusChange(View view, boolean b) {
+                if (b) {
+                    recycler.setVisibility(View.INVISIBLE);
+                }
+            }
+        });
 
         searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
             @Override
@@ -51,6 +75,9 @@ public class AddGameManuallyActivity extends AppCompatActivity implements GameCa
             public boolean onQueryTextSubmit(String query) {
                 searchView.getQuery();
                 loadGamesInBackground(cardClickListener, query);
+                searchView.clearFocus();
+                recycler.setVisibility(View.INVISIBLE);
+                progressSpinner.setVisibility(View.VISIBLE);
 
                 return true;
             }
@@ -86,8 +113,10 @@ public class AddGameManuallyActivity extends AppCompatActivity implements GameCa
                 mHandler.post(new Runnable(){
                     @Override
                     public void run(){
+                        progressSpinner.setVisibility(View.GONE);
                         GameCardAdapter adapter = new GameCardAdapter(results, cardClickListener);
                         recycler.setAdapter(adapter);
+                        recycler.setVisibility(View.VISIBLE);
                     }
                 });
             }
