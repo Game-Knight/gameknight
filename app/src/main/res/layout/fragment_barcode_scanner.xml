@@ -28,14 +28,4 @@
         android:src="@drawable/ic_scan_barcode_240"
         app:tint="@color/primary" />
 
-    <Button
-        android:id="@+id/scan_barcode_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="bottom|center"
-        android:layout_marginBottom="10dp"
-        android:backgroundTint="@color/shade"
-        android:text="@string/scan_barcode"
-        android:textColor="@color/white" />
-
 </FrameLayout>

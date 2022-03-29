@@ -32,7 +32,6 @@ public class BarcodeScannerFragment extends Fragment {
     private FragmentBarcodeScannerBinding binding;
     private CameraSource cameraSource;
     private static final int REQUEST_CAMERA_PERMISSION = 201;
-    private String barcodeData;
 
     @Override
     public View onCreateView(
@@ -51,20 +50,6 @@ public class BarcodeScannerFragment extends Fragment {
 
     public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-
-        binding.scanBarcodeButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Bundle bundle = new Bundle();
-                bundle.putString(Constants.BARCODE_KEY, barcodeData);
-
-                NavHostFragment.findNavController(BarcodeScannerFragment.this)
-                        .navigate(
-                                R.id.action_BarcodeScannerFragment_to_GameScannedFragment,
-                                bundle
-                        );
-            }
-        });
 
         binding.scanBarcodeBackButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -139,9 +124,19 @@ public class BarcodeScannerFragment extends Fragment {
             public void receiveDetections(Detector.Detections<Barcode> detections) {
                 final SparseArray<Barcode> barcodes = detections.getDetectedItems();
                 if (barcodes.size() != 0) {
-                    if (barcodes.valueAt(0).displayValue != null) {
-                        barcodeData = barcodes.valueAt(0).displayValue;
-                    }
+                    Bundle bundle = new Bundle();
+                    bundle.putString(Constants.BARCODE_KEY, barcodes.valueAt(0).displayValue);
+
+                    requireActivity().runOnUiThread(new Runnable() {
+                        @Override
+                        public void run() {
+                            NavHostFragment.findNavController(BarcodeScannerFragment.this)
+                                .navigate(
+                                        R.id.action_BarcodeScannerFragment_to_GameScannedFragment,
+                                        bundle
+                                );
+                        }
+                    });
                 }
             }
         });
