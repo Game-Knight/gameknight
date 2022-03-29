@@ -5,11 +5,15 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.navigation.ui.AppBarConfiguration;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
 
 import com.cs_356.app.R;
 import com.cs_356.app.Utils.ActivityUtils;
+import com.cs_356.app.Views.AddGameNight.AddGameNightActivity;
 import com.cs_356.app.databinding.ActivityGameNightsBinding;
 import com.google.android.material.navigation.NavigationView;
 
@@ -36,6 +40,13 @@ public class GameNightsActivity extends AppCompatActivity implements NavigationV
         binding = ActivityGameNightsBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
+        final Button addGameNightButton = findViewById(R.id.add_game_night_button);
+        addGameNightButton.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                onClickAddNewGameNight(v);
+            }
+        });
+
         setSupportActionBar(binding.toolbarGameNights);
         Objects.requireNonNull(getSupportActionBar()).setTitle(R.string.game_nights);
 
@@ -61,5 +72,10 @@ public class GameNightsActivity extends AppCompatActivity implements NavigationV
                 navigationView,
                 this
         );
+    }
+
+    public void onClickAddNewGameNight(View view) {
+        Intent intent = new Intent(this, AddGameNightActivity.class);
+        startActivity(intent);
     }
 }

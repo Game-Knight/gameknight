@@ -3,10 +3,12 @@ package com.cs_356.app.Views.AddGameNight;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.DialogFragment;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
 import com.cs_356.app.R;
+import com.cs_356.app.Views.GameNightsActivity;
 
 /**
  * This activity allows a user to schedule a new game night.
@@ -21,15 +23,34 @@ public class AddGameNightActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_game_night);
+        if (savedInstanceState == null) {
+            getSupportFragmentManager().beginTransaction()
+                    .setReorderingAllowed(true)
+                    .add(R.id.addGameNightFragment, AddGameNightInfoFragment.class, null)
+                    .commit();
+        }
     }
 
-    public void showDatePickerDialog(View v) {
+    public void showDatePickerDialog() {
         DialogFragment newFragment = new DatePickerFragment();
         newFragment.show(getSupportFragmentManager(), "datePicker");
     }
 
-    public void showTimePickerDialog(View v) {
+    public void showTimePickerDialog() {
         DialogFragment newFragment = new TimePickerFragment();
         newFragment.show(getSupportFragmentManager(), "datePicker");
+    }
+
+    public void onClickNextButton() {
+        getSupportFragmentManager().beginTransaction()
+                .replace(R.id.addGameNightFragment, AddGameNightFriendsFragment.class, null)
+                .setReorderingAllowed(true)
+                .addToBackStack(null)
+                .commit();
+    }
+
+    public void onClickFinishButton() {
+        Intent intent = new Intent(this, GameNightsActivity.class);
+        startActivity(intent);
     }
 }
