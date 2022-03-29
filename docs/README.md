@@ -11,7 +11,7 @@
 - [ ] add GameNightActivity
     - [ ] voting for games
 - [ ] add GameNightsActivity (Brayden)
-- [ ] implement barcode scanner (Chayston)
+- [ ] make barcode scanner actually look for games (Chayston)
 
 #### 🟠 Medium Priority
 - [ ] remove games from library
@@ -38,6 +38,8 @@
     - [X] tap game image show in full screen
     - [X] disable rules button if no URL found
 - [X] add SettingsActivity
+- [X] implement barcode scanner
+    - [X] add documentation on how to set up emulator to scan
 
 #### ⚫️ Backlog
 - [ ] make SettingsActivity functional
