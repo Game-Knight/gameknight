@@ -139,16 +139,9 @@ public class BarcodeScannerFragment extends Fragment {
             public void receiveDetections(Detector.Detections<Barcode> detections) {
                 final SparseArray<Barcode> barcodes = detections.getDetectedItems();
                 if (barcodes.size() != 0) {
-                    binding.barcodeText.post(new Runnable() {
-                        @Override
-                        public void run() {
-
-                            if (barcodes.valueAt(0).displayValue != null) {
-                                barcodeData = barcodes.valueAt(0).displayValue;
-                            }
-                        }
-                    });
-
+                    if (barcodes.valueAt(0).displayValue != null) {
+                        barcodeData = barcodes.valueAt(0).displayValue;
+                    }
                 }
             }
         });
