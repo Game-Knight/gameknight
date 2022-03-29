@@ -32,6 +32,7 @@
 #### 🟢 Completed
 - [X] add AddGameManuallyActivity
     - [X] implement search feature
+    - [X] add super sick custom loading animation
 - [X] add GameLibraryActivity
     - [X] scale images for faster loading
 - [X] add GameViewActivity
