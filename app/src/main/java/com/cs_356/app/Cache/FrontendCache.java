@@ -3,16 +3,22 @@ package com.cs_356.app.Cache;
 import com.cs_356.app.Utils.Constants;
 
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Calendar;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
+import java.util.Objects;
 import java.util.Random;
 import java.util.Set;
 
 import Entities.BoardGame;
+import Entities.GameNight;
 import Entities.Ownership;
 import Entities.User;
+import Enums.RSVP;
 
 public class FrontendCache {
 
@@ -22,6 +28,9 @@ public class FrontendCache {
     private static List<User> userList = null;
     private static Map<String, User> userMap = null;
     private static Set<Ownership> ownershipSet = null;
+    private static List<GameNight> gameNightList = null;
+    private static final int NUM_GAME_NIGHTS = 5;
+    private static final Random RANDOM = new Random();
 
     private static User authenticatedUser = new User("123-456-7890", "Test", "User", "test");
     private static List<BoardGame> gamesListForAuthenticatedUser = null;
@@ -115,6 +124,14 @@ public class FrontendCache {
         }
 
         return gamesList;
+    }
+
+    public static List<GameNight> getGameNightsForAuthenticatedUser() {
+        if (gameNightList == null) {
+            initGameNightCache();
+        }
+
+        return gameNightList;
     }
 
     /**
@@ -404,5 +421,92 @@ public class FrontendCache {
         gamesList.add(new BoardGame("266192", "5H5JS0KLzK", "https://cf.geekdo-images.com/yLZJCVLlIx4c7eJEWUNJ7w__thumb/img/VNToqgS2-pOGU6MuvIkMPKn_y-s=/fit-in/200x150/filters:strip_icc()/pic4458123.jpg", "https://cf.geekdo-images.com/yLZJCVLlIx4c7eJEWUNJ7w__original/img/cI782Zis9cT66j2MjSHKJGnFPNw=/0x0/filters:format(jpeg)/pic4458123.jpg", "Wingspan", "Wingspan is&nbsp;a competitive, medium-weight, card-driven, engine-building board game from Stonemaier Games. It's designed by Elizabeth Hargrave and features over 170 birds illustrated by Beth Sobel, Natalia Rojas, and Ana Maria Martinez.&#10;&#10;You are bird enthusiasts&mdash;researchers, bird watchers, ornithologists, and collectors&mdash;seeking to discover and attract the best birds to your network of wildlife preserves. Each bird extends a chain of powerful combinations in one of your habitats (actions). These habitats  focus on several key aspects of growth:&#10;&#10;&#10;     Gain food tokens via custom dice in a birdfeeder dice tower&#10;     Lay eggs using egg miniatures in a variety of colors&#10;     Draw from hundreds of unique bird cards and play them&#10;&#10;&#10;The winner is the player with the most points after 4 rounds.&#10;&#10;If you enjoy Terraforming Mars and Gizmos, we think this game will take flight at your table.&#10;&#10;&mdash;description from the publisher&#10;&#10;From the 7th printing on, the base game box includes Wingspan: Swift-Start Promo Pack.&#10;&#10;", 2019, 1, 5, 70, 40, 70, 10, "Stonemaier Games", "Elizabeth Hargrave", "https://stonemaiergames.com/games/wingspan/?utm_source=boardgameatlas.com&utm_medium=search&utm_campaign=bga_ads", "https://stonemaiergames.com/games/wingspan/rules/", "644216627721"));
         gamesList.add(new BoardGame("256916", "xetNswpgzl", "https://cf.geekdo-images.com/36WIe0ZHkp5OvHOlB-8vog__thumb/img/C7u2bDi9kOoLkLoYHJ_jr0A928A=/fit-in/200x150/filters:strip_icc()/pic4356580.jpg", "https://cf.geekdo-images.com/36WIe0ZHkp5OvHOlB-8vog__original/img/4oIeldEZrg5Fi2YAlc5SzldywaA=/0x0/filters:format(jpeg)/pic4356580.jpg", "Concordia Venus", "Concordia Venus is a standalone reimplementation of Concordia with some added features.&#10;&#10;Concordia Venus is a peaceful strategy game of economic development in Roman times for 2-6 players aged 13 and up. Instead of looking to the luck of dice or cards, players must rely on their strategic abilities. Be sure to watch your rivals to determine which goals they are pursuing and where you can outpace them! In the game, colonists are sent out from Rome to settle down in cities that produce bricks, food, tools, wine, and cloth. Each player starts with an identical set of playing cards and acquires more cards during the game. These cards serve two purposes:&#10;&#10;They allow a player to choose actions during the game.&#10;They are worth victory points (VPs) at the end of the game.&#10;&#10;Concordia is a strategy game that requires advance planning and consideration of your opponent's moves. Every game is different, not only because of the sequence of new cards on sale but also due to the modular layout of cities on the 4 different maps included with the game. When all cards have been sold from the market or after the first player builds his 15th house, the game ends. The player with the most VPs from the gods (Jupiter, Saturnus, Mercurius, Minerva, Vesta, Venus, etc.) wins the game.&#10;&#10;&#10;     Teams of two players each may play against each other.&#10;     New personality cards with the goddess Venus allow for new strategies.&#10;     New maps (Cyprus, Hellas, Ionium) on which to play in addition to the classic Imperium map.&#10;&#10;&#10;The Italia map plus a new map will be sold as an expansion in 2019 for Venus owners.&#10;&#10;Note: The Concordia Venus expansion, which should not be confused with the Concordia Venus standalone game, can be found here. The expansion has Hellas/Ionium maps but not Imperium (which is already in the base game) or Cyprus (which will also be sold with a new map in an expansion in 2019 for original Concordia owners).&#10;&#10;", 2018, 2, 6, 120, 60, 120, 12, "PD-Verlag", "Mac Gerdts", "http://riograndegames.com/Game/1336-Concordia-with-Venus-expansion?utm_source=boardgameatlas.com&utm_medium=search&utm_campaign=bga_ads", "https://www.riograndegames.com/wp-content/uploads/2018/11/Concordia-Venus-Rules-V11.pdf", "655132005616"));
         gamesList.add(new BoardGame("1406", "fG5Ax8PA7n", "https://cf.geekdo-images.com/9nGoBZ0MRbi6rdH47sj2Qg__thumb/img/ezXcyEsHhS9iRxmuGe8SmiLLXlM=/fit-in/200x150/filters:strip_icc()/pic5786795.jpg", "https://cf.geekdo-images.com/9nGoBZ0MRbi6rdH47sj2Qg__original/img/bA8irydTCNlE38QSzM9EhcUIuNU=/0x0/filters:format(jpeg)/pic5786795.jpg", "Monopoly", "Theme&#10;Players take the part of land owners, attempting to buy and then develop their land. Income is gained by other players visiting their properties and money is spent when they visit properties belonging to other players. When times get tough, players may have to mortgage their properties to raise cash for fines, taxes and other misfortunes.&#10;&#10;Gameplay&#10;On his turn, a player rolls two dice and moves that number of spaces around the board. If the player lands on an as-yet-unowned property, he has the opportunity to buy it and add it to his portfolio or allow the bank to auction it to the highest bidder. If a player owns all the spaces within a color group, he may then build houses and hotels on these spaces, generating even more income from opponents who land there. If he lands on a property owned by another player, he must pay that player rent according to the value of the land and any buildings on it. There are other places on the board which can not be bought, but instead require the player to draw a card and perform the action on the card, pay taxes, collect income, or even go to jail.&#10;&#10;Goal&#10;The goal of the game is to be the last player remaining with any money.&#10;&#10;Cultural impact on rules&#10;Monopoly is unusual in that the game has official, printed rules, but most players learn how to play from others, never actually learning the correct way to play. This has led to the canonization of a number of house rules that make the game more palatable to children (and sore losers) but harm the gameplay by preventing players from going bankrupt or slowing down the rate of property acquisition. One common house rule has players put any money paid to the bank in the center of the board, which jackpot a player may earn by landing on Free Parking. This prevents the game from removing money from play, and since players collect $200 each time they pass Go, this results in ever-increasing bankrolls and players surviving rents that should have bankrupted them. Another house rule allows players to take &quot;loans&quot; from the bank instead of going bankrupt, which means the game will never end. Some house rules arise out of ignorance rather than attempts to improve the game. For instance, many players don't know that properties landed on but left unbought go up for auction, and even some that know to auction don't know that the bidding starts at $1, meaning a player may pay well below the listed price for an auctioned property.&#10;&#10;Background&#10;In the USA in 1933, Charles Darrow devised Monopoly based on an earlier game by Elizabeth J. Magie. The patent was filed 31st August 1935 while the game was on sale in America. Based on an earlier game, The Landlord's Game, it was at first rejected by Parker Bros., as being too complicated to be a success. How wrong could they be! It came to the UK in 1936, made under licence by Waddingtons. Darrow died in 1967 having realised he had developed one of the most successful board games of all times. It was awarded as Game of the Century by the TRA (Toy Retailers Association).&#10;&#10;Monopoly was patented in 1935 by Charles Darrow and released by Parker Brothers. The game was actually one of a number of variants in existence at the time, all of which date back to an earlier, 1904 game by Elizabeth J. Magie called The Landlord's Game. Magie was a proponent of the Single Tax put forth by famous author Henry George.  The game was designed to show the evils of earning money from renting land (as it leads to the destitution of all but one player) and the virtues of the proposed Single Tax - players could choose to play under regular rules or alternate &quot;Single Tax&quot; rules.&#10;&#10;The game didn't really go anywhere and Magie lost interest in it. Variations of the game evolved, however, and homemade versions traveled up and down the Atlantic coast and even as far west as Michigan and Texas, being developed all along the way. Eventually the game was noticed by Charles Darrow, who introduced it to the world in its current form.&#10;&#10;Re-implements:&#10;&#10;    The Landlord's Game&#10;&#10;&#10;Expanded by:&#10;Official&#10;&#10;    Monopoly Stock Exchange Add-on&#10;    Monopoly Free Parking Mini Game&#10;    Monopoly Get Out of Jail Mini Game&#10;&#10;&#10;Unofficial&#10;&#10;    Super Add-Ons: Monopoly (fan expansion for Monopoly)&#10;    Entrepreneur's Accessory to Monopoly (fan expansion for Monopoly)&#10;    Game Spice: Monopoly Expansion (fan expansion for Monopoly)&#10;    Mafiopoly&#10;    Monopoly: Mob Rule Expansion Deck&#10;    Final Fantasy Monopoly&#10;&#10;&#10;", 1935, 2, 8, 180, 60, 180, 8, "Hasbro", "Charles Darrow", "https://shop.hasbro.com/en-us/product/monopoly-classic-game:7EABAF97-5056-9047-F577-8F4663C79E75?utm_source=boardgameatlas.com&utm_medium=search&utm_campaign=bga_ads", "https://www.hasbro.com/common/instruct/monins.pdf", "700304154415"));
+    }
+
+    private static void initGameNightCache() {
+        // These two lists are the same length, but don't need to be
+        List<String> genericNames = Arrays.asList(
+                "11th Ward FHE",
+                "Good Move Date",
+                "Games w/Dave",
+                "Weekly Game Night",
+                "The Chess Two Years",
+                "Birthday Party! 🎉",
+                "Jenga-roo");
+        List<String> genericLocations = Arrays.asList(
+                "Apartment 110",
+                "1 E Center St, Provo, UT 84606",
+                "935 N University Ave #9",
+                "876 N 300th W",
+                "1380 W 1700th N",
+                "522 E 3950th N",
+                "Your Mom's House");
+        assert(gameNightList == null);
+        gameNightList = new ArrayList<>();
+        List<User> userList = getUserList();
+
+        for (int i = 0; i < NUM_GAME_NIGHTS; ++i) {
+            // Randomly selects a host from all users
+            User randomHost = userList.get(RANDOM.nextInt(userList.size()));
+
+            /* Iterates through the genericNames list for names. If
+             * NUM_GAME_NIGHTS > genericNames.size() it will just start at the beginning again.
+             * The same will happen for genericLocation */
+            String name = genericNames.get(i % genericNames.size());
+
+            /* Creating a time:
+             * The way that this works is that for each game night that needs to be generated
+             * (up to NUM_GAME_NIGHTS), it starts by making a game night for tonight, the night
+             * after that, etc. Each event is also given a random time on the hour or half-hour
+             * sometime between 5 and 10PM */
+            Calendar cal = Calendar.getInstance();
+            int day = cal.get(Calendar.DAY_OF_MONTH);
+            cal.set(Calendar.DAY_OF_MONTH, day + i);
+            int maxHour = 23;
+            int minHour = 17;
+            cal.set(Calendar.HOUR, RANDOM.nextInt((maxHour - minHour) + 1) + minHour);
+            cal.set(Calendar.MINUTE, (RANDOM.nextBoolean()) ? 0 : 30);
+            cal.set(Calendar.SECOND, 0);
+            cal.set(Calendar.MILLISECOND, 0);
+            Date date = cal.getTime();
+
+            /* These locations are literally just from https://www.bestrandoms.com/random-address
+             * when you give it 84604, and I added in a couple just raw text as well, to
+             * make sure the View handles it well. */
+            String location = genericLocations.get(i % genericLocations.size());
+
+            /* First, when creating the guest list, the main user is added, and randomly
+             * selected as either coming or not responded.
+             *
+             * Secondly, the number of guests is randomly selected, and they are added with a
+             * completely random RSVP. (I don't know what effect the ones other than YES and NO
+             * should really have...). Check out randomEnum for how the enum is randomly chosen */
+            Map<String, RSVP> guestList = new HashMap<>();
+            guestList.put(
+                    authenticatedUser.getPhoneNumber(),
+                    (RANDOM.nextBoolean()) ? RSVP.YES : RSVP.NOT_YET_RESPONDED);
+            int minInvites = 1;
+            int maxInvites = 10;
+            int numInvites = RANDOM.nextInt((maxInvites - minInvites) + 1) + minInvites;
+            for (int j = 0; j < numInvites; ++j) {
+                User randomInvite = userList.get(RANDOM.nextInt(userList.size()));
+                guestList.put(
+                        randomInvite.getPhoneNumber(),
+                        randomEnum(RSVP.class));
+            }
+
+            gameNightList.add(new GameNight(
+                    name,
+                    randomHost.getPhoneNumber(),
+                    date,
+                    location,
+                    guestList));
+        }
+    }
+
+    /* Helper Functions */
+    private static <T extends Enum<?>> T randomEnum(Class<T> clazz){
+        int x = RANDOM.nextInt(Objects.requireNonNull(clazz.getEnumConstants()).length);
+        return clazz.getEnumConstants()[x];
     }
 }

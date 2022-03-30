@@ -9,17 +9,28 @@ import Utils.EntityUtils;
 public class GameNight {
 
     private String id;
+    private String name;
     private String hostId;
     private Date date;
     private String location;
     private Map<String, RSVP> guestList;
 
-    public GameNight(String hostId, Date date, String location, Map<String, RSVP> guestList) {
+
+    public GameNight(String name, String hostId, Date date, String location, Map<String, RSVP> guestList) {
         this.id = EntityUtils.generateId();
+        this.name = name;
         this.hostId = hostId;
         this.date = date;
         this.location = location;
         this.guestList = guestList;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 
     public String getId() {
