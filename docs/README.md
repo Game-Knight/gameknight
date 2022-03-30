@@ -11,7 +11,6 @@
 - [ ] add GameNightActivity
     - [ ] voting for games
 - [ ] add GameNightsActivity (Brayden)
-- [ ] make barcode scanner actually look for games (Chayston)
 
 #### 🟠 Medium Priority
 - [ ] remove games from library
@@ -21,7 +20,7 @@
 - [ ] view other users' borrowable games
 - [ ] allow adding games to library from AddGameManually
 - [ ] speed up AddGameManually search
-- [ ] loading spinner for AddGameManually search
+- [ ] speed up cache initialization
 
 #### 🟡 Low Priority
 - [ ] use APIs instead of local data (*partially implemented*)
@@ -41,6 +40,8 @@
 - [X] add SettingsActivity
 - [X] implement barcode scanner
     - [X] add documentation on how to set up emulator to scan
+    - [X] make barcode scanner look for games
+- [X] loading spinner for AddGameManually search
 
 #### ⚫️ Backlog
 - [ ] make SettingsActivity functional
