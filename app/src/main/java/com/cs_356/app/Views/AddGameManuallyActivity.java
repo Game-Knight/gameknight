@@ -3,6 +3,7 @@ package com.cs_356.app.Views;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.graphics.drawable.Animatable2;
 import android.graphics.drawable.AnimatedVectorDrawable;
 import android.graphics.drawable.Drawable;
@@ -87,7 +88,8 @@ public class AddGameManuallyActivity extends AppCompatActivity implements GameCa
         backFAB.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                onBackPressed();
+                startActivity(new Intent(view.getContext(), GameLibraryActivity.class));
+                finish();
             }
         });
     }
