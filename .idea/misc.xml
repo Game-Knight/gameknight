@@ -6,6 +6,7 @@
         <entry key="..\:/Users/brayd/Documents/College/Semester 8/UX Design/cs356/app/src/main/res/drawable/date_time_picker_background.xml" value="0.2265" />
         <entry key="..\:/Users/brayd/Documents/College/Semester 8/UX Design/cs356/app/src/main/res/drawable/ic_custom_moonandstars_24.xml" value="0.121" />
         <entry key="..\:/Users/brayd/Documents/College/Semester 8/UX Design/cs356/app/src/main/res/layout/activity_add_game.xml" value="0.10989583333333333" />
+        <entry key="..\:/Users/brayd/Documents/College/Semester 8/UX Design/cs356/app/src/main/res/layout/activity_add_game_manually.xml" value="0.25" />
         <entry key="..\:/Users/brayd/Documents/College/Semester 8/UX Design/cs356/app/src/main/res/layout/activity_add_game_night.xml" value="0.25" />
         <entry key="..\:/Users/brayd/Documents/College/Semester 8/UX Design/cs356/app/src/main/res/layout/activity_game_library.xml" value="0.2" />
         <entry key="..\:/Users/brayd/Documents/College/Semester 8/UX Design/cs356/app/src/main/res/layout/activity_game_night.xml" value="0.22826086956521738" />
@@ -13,7 +14,9 @@
         <entry key="..\:/Users/brayd/Documents/College/Semester 8/UX Design/cs356/app/src/main/res/layout/activity_home.xml" value="0.25" />
         <entry key="..\:/Users/brayd/Documents/College/Semester 8/UX Design/cs356/app/src/main/res/layout/fragment_add_game_night1.xml" value="0.264" />
         <entry key="..\:/Users/brayd/Documents/College/Semester 8/UX Design/cs356/app/src/main/res/layout/fragment_add_game_night2.xml" value="0.10989583333333333" />
+        <entry key="..\:/Users/brayd/Documents/College/Semester 8/UX Design/cs356/app/src/main/res/layout/fragment_add_game_night_friends.xml" value="0.25" />
         <entry key="..\:/Users/brayd/Documents/College/Semester 8/UX Design/cs356/app/src/main/res/layout/game_card.xml" value="0.10989583333333333" />
+        <entry key="..\:/Users/brayd/Documents/College/Semester 8/UX Design/cs356/app/src/main/res/layout/invitee_item.xml" value="0.25" />
         <entry key="app/src/main/res/drawable/dice_24.xml" value="0.2575" />
         <entry key="app/src/main/res/drawable/house_24.xml" value="0.19" />
         <entry key="app/src/main/res/layout/activity_game_library.xml" value="0.2848731884057971" />
