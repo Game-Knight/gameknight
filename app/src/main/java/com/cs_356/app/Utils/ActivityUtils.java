@@ -1,21 +1,31 @@
 package com.cs_356.app.Utils;
 
+import android.annotation.SuppressLint;
+import android.app.Activity;
 import android.content.Intent;
+import android.os.Bundle;
+import android.util.SparseArray;
 import android.view.MenuItem;
+import android.view.SurfaceHolder;
+import android.view.SurfaceView;
 
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.drawerlayout.widget.DrawerLayout;
+import androidx.navigation.NavController;
 
 import com.cs_356.app.R;
 import com.cs_356.app.Views.GameLibraryActivity;
 import com.cs_356.app.Views.GameNightsActivity;
 import com.cs_356.app.Views.HomeActivity;
 import com.cs_356.app.Views.SettingsActivity;
+import com.google.android.gms.vision.CameraSource;
+import com.google.android.gms.vision.Detector;
+import com.google.android.gms.vision.barcode.Barcode;
+import com.google.android.gms.vision.barcode.BarcodeDetector;
 import com.google.android.material.navigation.NavigationView;
 
-import java.util.List;
 import java.util.Objects;
 
 public class ActivityUtils {
@@ -89,5 +99,74 @@ public class ActivityUtils {
         }
 
         return true;
+    }
+
+    public static CameraSource initializeCamera(
+            Activity activity,
+            SurfaceView surfaceView,
+            boolean setBarcodeProcessor,
+            NavController navController
+    ) {
+        BarcodeDetector barcodeDetector = new BarcodeDetector.Builder(activity)
+                .setBarcodeFormats(Barcode.ALL_FORMATS)
+                .build();
+
+        CameraSource cameraSource = new CameraSource.Builder(activity, barcodeDetector)
+                .setRequestedPreviewSize(1920, 1080)
+                .setAutoFocusEnabled(true)
+                .build();
+
+        surfaceView.getHolder().addCallback(new SurfaceHolder.Callback() {
+            @SuppressLint("MissingPermission") // The permissions are verified in the activity.
+            @Override
+            public void surfaceCreated(SurfaceHolder holder) {
+                try {
+                    cameraSource.start(surfaceView.getHolder());
+                }
+                catch (Exception ex) {
+                    ex.printStackTrace();
+                }
+            }
+
+            @Override
+            public void surfaceChanged(SurfaceHolder holder, int format, int width, int height) {}
+
+            @Override
+            public void surfaceDestroyed(SurfaceHolder holder) {
+                cameraSource.stop();
+            }
+        });
+
+
+        if (setBarcodeProcessor) {
+            barcodeDetector.setProcessor(new Detector.Processor<Barcode>() {
+                @Override
+                public void release() {
+                    // Intentionally empty.
+                }
+
+                @Override
+                public void receiveDetections(Detector.Detections<Barcode> detections) {
+                    final SparseArray<Barcode> barcodes = detections.getDetectedItems();
+                    if (barcodes.size() != 0) {
+                        Bundle bundle = new Bundle();
+                        bundle.putString(Constants.BARCODE_KEY, barcodes.valueAt(0).displayValue);
+
+                        activity.runOnUiThread(new Runnable() {
+                            @Override
+                            public void run() {
+                                cameraSource.release();
+                                navController.navigate(
+                                        R.id.action_BarcodeScannerFragment_to_GameScannedFragment,
+                                        bundle
+                                );
+                            }
+                        });
+                    }
+                }
+            });
+        }
+
+        return cameraSource;
     }
 }

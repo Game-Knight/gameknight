@@ -12,12 +12,15 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.cs_356.app.R;
+import com.cs_356.app.Utils.ActivityUtils;
 import com.cs_356.app.Utils.Constants;
 import com.cs_356.app.databinding.FragmentGameScannedBinding;
+import com.google.android.gms.vision.CameraSource;
 
 public class GameScannedFragment extends Fragment {
 
     private FragmentGameScannedBinding binding;
+    private CameraSource cameraSource;
 
     @Override
     public View onCreateView(
@@ -25,6 +28,7 @@ public class GameScannedFragment extends Fragment {
             Bundle savedInstanceState
     ) {
         binding = FragmentGameScannedBinding.inflate(inflater, container, false);
+        initializeCamera();
         return binding.getRoot();
 
     }
@@ -64,8 +68,30 @@ public class GameScannedFragment extends Fragment {
     }
 
     @Override
+    public void onPause() {
+        super.onPause();
+        cameraSource.release();
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        initializeCamera();
+    }
+
+    @Override
     public void onDestroyView() {
         super.onDestroyView();
+        cameraSource.release();
         binding = null;
+    }
+
+    private void initializeCamera() {
+        cameraSource = ActivityUtils.initializeCamera(
+                requireActivity(),
+                binding.gameScannedSurfaceView,
+                false,
+                null
+        );
     }
 }

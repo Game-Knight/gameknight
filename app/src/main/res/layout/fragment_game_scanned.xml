@@ -7,8 +7,14 @@
     tools:context=".Views.GameScannedFragment">
 
     <SurfaceView
+        android:id="@+id/game_scanned_surface_view"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
+
+    <View android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/primary"
+        android:alpha="0.5" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/game_scanned_back_button"
@@ -51,6 +57,4 @@
             android:textColor="@color/white" />
 
     </LinearLayout>
-
-
 </FrameLayout>
