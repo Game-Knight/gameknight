@@ -23,6 +23,7 @@ import com.google.android.gms.vision.CameraSource;
 import com.squareup.picasso.Picasso;
 
 import Entities.BoardGame;
+import Entities.Ownership;
 import jp.wasabeef.picasso.transformations.BlurTransformation;
 
 public class GameScannedFragment extends Fragment {
@@ -89,10 +90,11 @@ public class GameScannedFragment extends Fragment {
             });
         }
         else {
-            Picasso.get().load(boardGameRetrieved.getImageUrl())
+            final BoardGame nonNullBoardGame = boardGameRetrieved;
+            Picasso.get().load(nonNullBoardGame.getImageUrl())
                     .transform(new PicassoTransformations.SCALE_300_MAX())
                     .into(gameCardBinding.cardImg);
-            Picasso.get().load(boardGameRetrieved.getImageUrl())
+            Picasso.get().load(nonNullBoardGame.getImageUrl())
                     .transform(new PicassoTransformations.CROP_SQUARE())
                     .transform(new PicassoTransformations.SCALE_300_MAX())
                     .transform(new BlurTransformation(gameCardBinding.cardBg.getContext(),30))
@@ -101,7 +103,7 @@ public class GameScannedFragment extends Fragment {
             binding.addGameButton.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    // TODO: Actually add the game!
+                    FrontendCache.addGameOwnershipForAuthUser(nonNullBoardGame.getBggId());
                     requireActivity().startActivity(
                             new Intent(getActivity(), GameLibraryActivity.class)
                     );
