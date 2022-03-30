@@ -63,6 +63,20 @@
 
         </androidx.recyclerview.widget.RecyclerView>
 
+        <ProgressBar
+            android:id="@+id/progressSpinner"
+            style="?android:attr/progressBarStyle"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_marginBottom="100dp"
+            android:indeterminateDrawable="@drawable/progress_dice_anim"
+            android:progressDrawable="@drawable/progress_dice_anim"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="@id/game_library_recycler_view"
+            app:layout_constraintEnd_toEndOf="@id/game_library_recycler_view"
+            app:layout_constraintStart_toStartOf="@id/game_library_recycler_view"
+            app:layout_constraintTop_toTopOf="@id/game_library_recycler_view" />
+
         <com.google.android.material.floatingactionbutton.FloatingActionButton
             android:id="@+id/addFAB"
             android:layout_width="wrap_content"

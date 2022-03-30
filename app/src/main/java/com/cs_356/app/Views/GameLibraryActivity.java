@@ -8,6 +8,9 @@ import androidx.navigation.ui.AppBarConfiguration;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
+import android.graphics.drawable.Animatable2;
+import android.graphics.drawable.AnimatedVectorDrawable;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
@@ -15,6 +18,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import com.cs_356.app.Adapters.GameCardAdapter;
@@ -54,6 +58,7 @@ public class GameLibraryActivity extends AppCompatActivity implements Navigation
     private boolean fabExpanded;
 
     private RecyclerView recycler;
+    private static ProgressBar progressSpinner;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -164,6 +169,16 @@ public class GameLibraryActivity extends AppCompatActivity implements Navigation
                 });
 
         recycler = findViewById(R.id.game_library_recycler_view);
+
+        progressSpinner = findViewById(R.id.progressSpinner);
+        AnimatedVectorDrawable diceAnimation = (AnimatedVectorDrawable) progressSpinner.getIndeterminateDrawable();
+
+        diceAnimation.registerAnimationCallback(new Animatable2.AnimationCallback(){
+            public void onAnimationEnd(Drawable drawable){
+                diceAnimation.start();
+            }
+        });
+
         loadGamesInBackground(this);
 
         // Create adapter passing in the sample user data
@@ -184,7 +199,7 @@ public class GameLibraryActivity extends AppCompatActivity implements Navigation
     @Override
     public void onGameCardClick(int position) {
         Intent intent = new Intent(this, GameViewActivity.class);
-        intent.putExtra("game", FrontendCache.getGamesList().get(position));
+        intent.putExtra("game", FrontendCache.getGamesForAuthenticatedUser().get(position));
         startActivity(intent);
     }
 
@@ -205,7 +220,8 @@ public class GameLibraryActivity extends AppCompatActivity implements Navigation
                 mHandler.post(new Runnable(){
                     @Override
                     public void run(){
-                        GameCardAdapter adapter = new GameCardAdapter(FrontendCache.getGamesList(), cardClickListener);
+                        progressSpinner.setVisibility(View.GONE);
+                        GameCardAdapter adapter = new GameCardAdapter(FrontendCache.getGamesForAuthenticatedUser(), cardClickListener);
                         recycler.setAdapter(adapter);
                         mExecutor.shutdown();
                     }
@@ -222,7 +238,8 @@ public class GameLibraryActivity extends AppCompatActivity implements Navigation
 //                } catch (DataAccessException e) {
 //                    e.printStackTrace();
 //                }
-                FrontendCache.getGamesList().sort(Comparator.comparing(BoardGame::getName));
+                progressSpinner.setVisibility(View.VISIBLE);
+                FrontendCache.getGamesForAuthenticatedUser().sort(Comparator.comparing(BoardGame::getName));
 
                 listener.onProcessed(true);
             }

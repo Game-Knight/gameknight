@@ -104,7 +104,7 @@ public class ActivityUtils {
     public static CameraSource initializeCamera(
             Activity activity,
             SurfaceView surfaceView,
-            boolean setBarcodeProcessor,
+            boolean scanBarcodesDetected,
             NavController navController
     ) {
         BarcodeDetector barcodeDetector = new BarcodeDetector.Builder(activity)
@@ -136,36 +136,33 @@ public class ActivityUtils {
                 cameraSource.stop();
             }
         });
+        
+        barcodeDetector.setProcessor(new Detector.Processor<Barcode>() {
+            @Override
+            public void release() {
+                // Intentionally empty.
+            }
 
+            @Override
+            public void receiveDetections(Detector.Detections<Barcode> detections) {
+                final SparseArray<Barcode> barcodes = detections.getDetectedItems();
+                if (barcodes.size() != 0 && scanBarcodesDetected) {
+                    Bundle bundle = new Bundle();
+                    bundle.putString(Constants.BARCODE_KEY, barcodes.valueAt(0).displayValue);
 
-        if (setBarcodeProcessor) {
-            barcodeDetector.setProcessor(new Detector.Processor<Barcode>() {
-                @Override
-                public void release() {
-                    // Intentionally empty.
+                    activity.runOnUiThread(new Runnable() {
+                        @Override
+                        public void run() {
+                            cameraSource.release();
+                            navController.navigate(
+                                    R.id.action_BarcodeScannerFragment_to_GameScannedFragment,
+                                    bundle
+                            );
+                        }
+                    });
                 }
-
-                @Override
-                public void receiveDetections(Detector.Detections<Barcode> detections) {
-                    final SparseArray<Barcode> barcodes = detections.getDetectedItems();
-                    if (barcodes.size() != 0) {
-                        Bundle bundle = new Bundle();
-                        bundle.putString(Constants.BARCODE_KEY, barcodes.valueAt(0).displayValue);
-
-                        activity.runOnUiThread(new Runnable() {
-                            @Override
-                            public void run() {
-                                cameraSource.release();
-                                navController.navigate(
-                                        R.id.action_BarcodeScannerFragment_to_GameScannedFragment,
-                                        bundle
-                                );
-                            }
-                        });
-                    }
-                }
-            });
-        }
+            }
+        });
 
         return cameraSource;
     }
