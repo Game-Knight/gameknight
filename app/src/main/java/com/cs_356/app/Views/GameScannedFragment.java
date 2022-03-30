@@ -103,7 +103,7 @@ public class GameScannedFragment extends Fragment {
             binding.addGameButton.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    FrontendCache.addGameOwnershipForAuthUser(nonNullBoardGame.getBggId());
+                    FrontendCache.addGameOwnershipForAuthUser(nonNullBoardGame);
                     requireActivity().startActivity(
                             new Intent(getActivity(), GameLibraryActivity.class)
                     );
