@@ -1,6 +1,8 @@
 package com.cs_356.app.Views;
 
 import android.Manifest;
+import android.annotation.SuppressLint;
+import android.app.Activity;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
@@ -17,6 +19,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.cs_356.app.R;
+import com.cs_356.app.Utils.ActivityUtils;
 import com.cs_356.app.Utils.Constants;
 import com.cs_356.app.databinding.FragmentBarcodeScannerBinding;
 import com.google.android.gms.vision.CameraSource;
@@ -25,13 +28,11 @@ import com.google.android.gms.vision.barcode.Barcode;
 import com.google.android.gms.vision.barcode.BarcodeDetector;
 
 import java.io.IOException;
-import java.util.Objects;
 
 public class BarcodeScannerFragment extends Fragment {
 
     private FragmentBarcodeScannerBinding binding;
     private CameraSource cameraSource;
-    private static final int REQUEST_CAMERA_PERMISSION = 201;
 
     @Override
     public View onCreateView(
@@ -40,11 +41,7 @@ public class BarcodeScannerFragment extends Fragment {
     ) {
 
         binding = FragmentBarcodeScannerBinding.inflate(inflater, container, false);
-
-
-        initialiseDetectorsAndSources();
-
-
+        initializeCamera();
         return binding.getRoot();
     }
 
@@ -62,87 +59,6 @@ public class BarcodeScannerFragment extends Fragment {
         });
     }
 
-    private void initialiseDetectorsAndSources() {
-
-        BarcodeDetector barcodeDetector = new BarcodeDetector.Builder(this.requireContext())
-                .setBarcodeFormats(Barcode.ALL_FORMATS)
-                .build();
-
-        cameraSource = new CameraSource.Builder(this.requireContext(), barcodeDetector)
-                .setRequestedPreviewSize(1920, 1080)
-                .setAutoFocusEnabled(true)
-                .build();
-
-        binding.barcodeSurfaceView.getHolder().addCallback(new SurfaceHolder.Callback() {
-            @Override
-            public void surfaceCreated(SurfaceHolder holder) {
-                try {
-                    if (!checkPermissionsAndStartCamera()) {
-                        ActivityCompat.requestPermissions(
-                                requireActivity(),
-                                new String[] { Manifest.permission.CAMERA },
-                                REQUEST_CAMERA_PERMISSION
-                        );
-
-                        checkPermissionsAndStartCamera();
-                    }
-                }
-                catch (IOException ex) {
-                    ex.printStackTrace();
-                }
-            }
-
-            private boolean checkPermissionsAndStartCamera() throws IOException {
-                if (ActivityCompat.checkSelfPermission(
-                        requireContext(),
-                        Manifest.permission.CAMERA) == PackageManager.PERMISSION_GRANTED
-                ) {
-                    cameraSource.start(binding.barcodeSurfaceView.getHolder());
-                    return true;
-                }
-
-                return false;
-            }
-
-            @Override
-            public void surfaceChanged(SurfaceHolder holder, int format, int width, int height) {}
-
-            @Override
-            public void surfaceDestroyed(SurfaceHolder holder) {
-                cameraSource.stop();
-            }
-        });
-
-
-        barcodeDetector.setProcessor(new Detector.Processor<Barcode>() {
-            @Override
-            public void release() {
-                // Intentionally empty.
-            }
-
-            @Override
-            public void receiveDetections(Detector.Detections<Barcode> detections) {
-                final SparseArray<Barcode> barcodes = detections.getDetectedItems();
-                if (barcodes.size() != 0) {
-                    Bundle bundle = new Bundle();
-                    bundle.putString(Constants.BARCODE_KEY, barcodes.valueAt(0).displayValue);
-
-                    requireActivity().runOnUiThread(new Runnable() {
-                        @Override
-                        public void run() {
-                            NavHostFragment.findNavController(BarcodeScannerFragment.this)
-                                .navigate(
-                                        R.id.action_BarcodeScannerFragment_to_GameScannedFragment,
-                                        bundle
-                                );
-                        }
-                    });
-                }
-            }
-        });
-    }
-
-
     @Override
     public void onPause() {
         super.onPause();
@@ -152,12 +68,22 @@ public class BarcodeScannerFragment extends Fragment {
     @Override
     public void onResume() {
         super.onResume();
-        initialiseDetectorsAndSources();
+        initializeCamera();
     }
 
     @Override
     public void onDestroyView() {
         super.onDestroyView();
+        cameraSource.release();
         binding = null;
+    }
+
+    private void initializeCamera() {
+        cameraSource = ActivityUtils.initializeCamera(
+                requireActivity(),
+                binding.barcodeSurfaceView,
+                true,
+                NavHostFragment.findNavController(BarcodeScannerFragment.this)
+        );
     }
 }
