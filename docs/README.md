@@ -18,7 +18,6 @@
     - [ ] tap and hold card for options in GameLibrary
 - [ ] mark games as borrowable
 - [ ] view other users' borrowable games
-- [ ] allow adding games to library from AddGameManually
 - [ ] speed up AddGameManually search
 - [ ] speed up cache initialization
 
@@ -42,6 +41,7 @@
     - [X] add documentation on how to set up emulator to scan
     - [X] make barcode scanner look for games
 - [X] loading spinner for AddGameManually search
+- [X] allow adding games to library from AddGameManually
 
 #### ⚫️ Backlog
 - [ ] make SettingsActivity functional

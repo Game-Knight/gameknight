@@ -30,14 +30,18 @@ public class FrontendCache {
      * This section is for cache getters
      */
 
-    public static void addGameOwnershipForAuthUser(String gameId) {
-        getOwnershipSet().add(new Ownership(authenticatedUser.getPhoneNumber(), gameId));
-        if (getGamesMap().get(gameId) != null) {
-            getGamesForAuthenticatedUser().add(getGamesMap().get(gameId));
+    public static void addGameOwnershipForAuthUser(BoardGame game) {
+        getOwnershipSet().add(new Ownership(authenticatedUser.getPhoneNumber(), game.getBggId()));
+        if (getGamesMap().get(game.getBggId()) == null) {
+            getGamesList().add(game);
+            getGamesMap().put(game.getBggId(), game);
+
+            if (game.getUpc() != null && !game.getUpc().equals("")) {
+                getUPCMappings().put(game.getUpc(), game.getBggId());
+            }
         }
-        else {
-            // TODO: Add newly acquired game from api!
-        }
+
+        getGamesForAuthenticatedUser().add(getGamesMap().get(game.getBggId()));
     }
 
     public static Set<Ownership> getOwnershipSet() {
