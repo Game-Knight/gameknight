@@ -1,13 +1,40 @@
 package com.cs_356.app.Cache;
 
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import Entities.BoardGame;
 
 public class FrontendCache {
 
     private static List<BoardGame> gamesList = null;
+    private static Map<String, BoardGame> gamesMap = null;
+    private static Map<String, String> upcMappings = null;
+
+    public static BoardGame getGameMatchingUPC(String upc) {
+        String bggId = getUPCMappings().get(upc);
+        return bggId != null ? getGamesMap().get(bggId) : null;
+    }
+
+    public static Map<String, BoardGame> getGamesMap() {
+        if (gamesMap == null) {
+            initGamesMapCache();
+        }
+
+        return gamesMap;
+    }
+
+    public static Map<String, String> getUPCMappings() {
+        if (upcMappings == null) {
+            initUPCCache();
+        }
+
+        return upcMappings;
+    }
 
     public static List<BoardGame> getGamesList() {
         if (gamesList == null) {
@@ -15,6 +42,96 @@ public class FrontendCache {
         }
 
         return gamesList;
+    }
+
+    private static void initGamesMapCache() {
+        gamesMap = new HashMap<>();
+
+        List<BoardGame> games = getGamesList();
+        for (BoardGame game : games) {
+            gamesMap.put(game.getBggId(), game);
+        }
+    }
+
+    private static void initUPCCache() {
+        upcMappings = new HashMap<>();
+
+        upcMappings.put("029877030712", "13");
+        upcMappings.put("029877030729", "13");
+        upcMappings.put("600074120835", "13");
+        upcMappings.put("520295188448", "13");
+        upcMappings.put("027084645194", "74");
+        upcMappings.put("746775321543", "74");
+        upcMappings.put("630509453436", "181");
+        upcMappings.put("653569566069", "181");
+        upcMappings.put("5010993312269", "181");
+        upcMappings.put("653569973720", "320");
+        upcMappings.put("032244040245", "320");
+        upcMappings.put("032244040344", "320");
+        upcMappings.put("784311715982", "320");
+        upcMappings.put("021853004007", "811");
+        upcMappings.put("021853004076", "811");
+        upcMappings.put("021853014082", "811");
+        upcMappings.put("021853014105", "811");
+        upcMappings.put("783318511887", "811");
+        upcMappings.put("746775054540", "1258");
+        upcMappings.put("887961437225", "1258");
+        upcMappings.put("604945379537", "1258");
+        upcMappings.put("653569308584", "1294");
+        upcMappings.put("630509477722", "1294");
+        upcMappings.put("073000000097", "1406");
+        upcMappings.put("073000000103", "1406");
+        upcMappings.put("078206010017", "2223");
+        upcMappings.put("074299419409", "2223");
+        upcMappings.put("78206020016", "2223");
+        upcMappings.put("352610800274", "2375");
+        upcMappings.put("035261080027", "2375");
+        upcMappings.put("824968717912", "9209");
+        upcMappings.put("681706711003", "30549");
+        upcMappings.put("032057614404", "30549");
+        upcMappings.put("794965251583", "30549");
+        upcMappings.put("700304045973", "46213");
+        upcMappings.put("700304043542", "46213");
+        upcMappings.put("787799688953", "46213");
+        upcMappings.put("8032611691003", "76085");
+        upcMappings.put("722301926246", "131357");
+        upcMappings.put("792273251066", "131357");
+        upcMappings.put("717356247040", "178900");
+        upcMappings.put("046139085174", "178900");
+        upcMappings.put("704679648203", "178900");
+        upcMappings.put("8594156310394", "178900");
+        upcMappings.put("884925011316", "188834");
+        upcMappings.put("711746875073", "188834");
+        upcMappings.put("675905281368", "188834");
+        upcMappings.put("0675905281368", "188834");
+        upcMappings.put("859145631040", "224037");
+        upcMappings.put("702874124201", "224037");
+        upcMappings.put("8591456310400", "224037");
+        upcMappings.put("826956400202", "23082");
+        upcMappings.put("826956600107", "23082");
+        upcMappings.put("604945379711", "23082");
+        upcMappings.put("766214814955", "266192");
+        upcMappings.put("644216627721", "266192");
+        upcMappings.put("653341029102", "266192");
+//        upcMappings.put("653341029102", "276182");
+        upcMappings.put("889698605014", "358816");
+//        upcMappings.put("653341029102", "311475");
+        upcMappings.put("778988704691", "194655");
+//        upcMappings.put("653341029102", "333481");
+//        upcMappings.put("653341029102", "332290");
+//        upcMappings.put("653341029102", "3955");
+        upcMappings.put("850003498027", "266524");
+        upcMappings.put("892884000821", "155703");
+//        upcMappings.put("653341029102", "241724");
+        upcMappings.put("696859265808", "167791");
+//        upcMappings.put("653341029102", "184267");
+//        upcMappings.put("653341029102", "10547");
+//        upcMappings.put("653341029102", "144344");
+        upcMappings.put("852131006303", "312786");
+        upcMappings.put("841333102067", "205398");
+        upcMappings.put("681706781006", "822");
+//        upcMappings.put("653341029102", "230802");
+        upcMappings.put("655132005616", "256916");
     }
 
     private static void initGamesCache() {

@@ -11,10 +11,11 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
 
-    <View android:layout_width="match_parent"
+    <View
+        android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/primary"
-        android:alpha="0.5" />
+        android:alpha="0.5"
+        android:background="@color/primary" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/game_scanned_back_button"
@@ -33,6 +34,7 @@
         android:orientation="vertical">
 
         <TextView
+            android:id="@+id/result_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
@@ -40,12 +42,12 @@
             android:textColor="@color/white"
             android:textSize="25sp" />
 
-        <include
-            layout="@layout/game_card"
+        <LinearLayout
+            android:id="@+id/result_linear_layout"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:layout_margin="10dp" />
+            android:orientation="vertical" />
 
         <Button
             android:id="@+id/add_game_button"
@@ -55,6 +57,16 @@
             android:backgroundTint="@color/shade"
             android:text="@string/add_game"
             android:textColor="@color/white" />
+
+        <Button
+            android:id="@+id/retry_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:backgroundTint="@color/shade"
+            android:text="@string/try_another_barcode"
+            android:textColor="@color/white"
+            android:visibility="invisible" />
 
     </LinearLayout>
 </FrameLayout>
