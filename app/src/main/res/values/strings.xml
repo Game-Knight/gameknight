@@ -47,5 +47,8 @@
     <string name="game_night_date_time">Game Night Date/Time</string>
     <string name="game_night_assignments">Game Night Assignments</string>
     <string name="upcoming_game_nights">Upcoming Game Nights</string>
+    <string name="no_game_found">No game found!</string>
+    <string name="try_another_barcode">Try Another Barcode</string>
+    <string name="add_game_manually_button">Add Game Manually</string>
 
 </resources>

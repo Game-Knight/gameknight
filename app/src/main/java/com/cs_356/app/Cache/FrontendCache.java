@@ -1,13 +1,113 @@
 package com.cs_356.app.Cache;
 
+import com.cs_356.app.Utils.Constants;
+
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Map;
+import java.util.Random;
+import java.util.Set;
 
 import Entities.BoardGame;
+import Entities.Ownership;
+import Entities.User;
 
 public class FrontendCache {
 
     private static List<BoardGame> gamesList = null;
+    private static Map<String, BoardGame> gamesMap = null;
+    private static Map<String, String> upcMappings = null;
+    private static List<User> userList = null;
+    private static Map<String, User> userMap = null;
+    private static Set<Ownership> ownershipSet = null;
+
+    private static User authenticatedUser = new User("123-456-7890", "Test", "User", "test");
+    private static List<BoardGame> gamesListForAuthenticatedUser = null;
+
+    /**
+     * This section is for cache getters
+     */
+
+    public static void addGameOwnershipForAuthUser(BoardGame game) {
+        getOwnershipSet().add(new Ownership(authenticatedUser.getPhoneNumber(), game.getBggId()));
+        if (getGamesMap().get(game.getBggId()) == null) {
+            getGamesList().add(game);
+            getGamesMap().put(game.getBggId(), game);
+
+            if (game.getUpc() != null && !game.getUpc().equals("")) {
+                getUPCMappings().put(game.getUpc(), game.getBggId());
+            }
+        }
+
+        getGamesForAuthenticatedUser().add(getGamesMap().get(game.getBggId()));
+    }
+
+    public static Set<Ownership> getOwnershipSet() {
+        if (ownershipSet == null) {
+            initOwnershipSetCache();
+        }
+
+        return ownershipSet;
+    }
+
+    public static Map<String, User> getUserMap() {
+        if (userMap == null) {
+            initUsersMapCache();
+        }
+
+        return userMap;
+    }
+
+    public static List<User> getUserList() {
+        if (userList == null) {
+            initUsersCache();
+        }
+
+        return userList;
+    }
+
+    public static BoardGame getGameMatchingUPC(String upc) {
+        String bggId = getUPCMappings().get(upc);
+        return bggId != null ? getGamesMap().get(bggId) : null;
+    }
+
+    public static Map<String, BoardGame> getGamesMap() {
+        if (gamesMap == null) {
+            initGamesMapCache();
+        }
+
+        return gamesMap;
+    }
+
+    public static Map<String, String> getUPCMappings() {
+        if (upcMappings == null) {
+            initUPCCache();
+        }
+
+        return upcMappings;
+    }
+
+    public static List<BoardGame> getGamesForAuthenticatedUser() {
+        if (gamesListForAuthenticatedUser == null) {
+            gamesListForAuthenticatedUser = getGamesForUser(authenticatedUser.getPhoneNumber());
+        }
+
+        return gamesListForAuthenticatedUser;
+    }
+
+    public static List<BoardGame> getGamesForUser(String phoneNumber) {
+        List<BoardGame> boardGames = new ArrayList<>();
+
+        for (Ownership ownership : getOwnershipSet()) {
+            if (ownership.getUserId().equals(phoneNumber)) {
+                boardGames.add(getGamesMap().get(ownership.getBoardGameId()));
+            }
+        }
+
+        return boardGames;
+    }
 
     public static List<BoardGame> getGamesList() {
         if (gamesList == null) {
@@ -15,6 +115,253 @@ public class FrontendCache {
         }
 
         return gamesList;
+    }
+
+    /**
+     * The section below is for cache initialization methods.
+     */
+
+    private static void initOwnershipSetCache() {
+        ownershipSet = new HashSet<>();
+
+        List<String> boardGameIds = new ArrayList<>(getGamesMap().keySet());
+        for (Map.Entry<String, User> userEntry : getUserMap().entrySet()) {
+            if (userEntry.getKey().equals(authenticatedUser.getPhoneNumber())) {
+                ownershipSet.add(new Ownership(userEntry.getKey(), "13"));
+                ownershipSet.add(new Ownership(userEntry.getKey(), "74"));
+                ownershipSet.add(new Ownership(userEntry.getKey(), "181"));
+                ownershipSet.add(new Ownership(userEntry.getKey(), "320"));
+                ownershipSet.add(new Ownership(userEntry.getKey(), "1258"));
+                ownershipSet.add(new Ownership(userEntry.getKey(), "1294"));
+                ownershipSet.add(new Ownership(userEntry.getKey(), "1406"));
+                ownershipSet.add(new Ownership(userEntry.getKey(), "2223"));
+                ownershipSet.add(new Ownership(userEntry.getKey(), "131357"));
+                ownershipSet.add(new Ownership(userEntry.getKey(), "178900"));
+                ownershipSet.add(new Ownership(userEntry.getKey(), "188834"));
+                ownershipSet.add(new Ownership(userEntry.getKey(), "266192"));
+                ownershipSet.add(new Ownership(userEntry.getKey(), "256916"));
+                ownershipSet.add(new Ownership(userEntry.getKey(), "822"));
+            }
+            else {
+                Random rand = new Random();
+                int numGamesForUser = rand.nextInt(Constants.MAX_GAMES_PER_USER);
+
+                int gamesAdded = 0;
+                while (gamesAdded < numGamesForUser) {
+                    String randomBoardGameId = boardGameIds.get(rand.nextInt(boardGameIds.size()));
+                    Ownership ownership = new Ownership(userEntry.getKey(), randomBoardGameId);
+
+                    boolean success = ownershipSet.add(ownership);
+                    if (success) {
+                        gamesAdded++;
+                    }
+                }
+            }
+        }
+    }
+
+    private static void initUsersMapCache() {
+        userMap = new HashMap<>();
+
+        for (User user : getUserList()) {
+            userMap.put(user.getPhoneNumber(), user);
+        }
+    }
+
+    private static void initUsersCache() {
+        userList = new ArrayList<>();
+
+        userList.add(authenticatedUser);
+        userList.add(new User("665-123-3838", "Sorcha", "Paintain", "Red"));
+        userList.add(new User("936-943-9307", "Wat", "Rubenovic", "Maroon"));
+        userList.add(new User("599-736-4222", "Viva", "Espinel", "Crimson"));
+        userList.add(new User("963-474-2980", "Jessamine", "Mealand", "Red"));
+        userList.add(new User("420-788-9562", "Al", "Francillo", "Green"));
+        userList.add(new User("880-781-6016", "Noby", "Pashe", "Aquamarine"));
+        userList.add(new User("571-567-0176", "Melessa", "Mayall", "Khaki"));
+        userList.add(new User("533-617-3529", "Donnajean", "Mathys", "Mauv"));
+        userList.add(new User("715-743-9381", "Farand", "Ceaplen", "Violet"));
+        userList.add(new User("102-280-1984", "Nan", "Blanckley", "Red"));
+        userList.add(new User("697-219-5262", "Junina", "Mahony", "Crimson"));
+        userList.add(new User("867-720-0421", "Alvie", "McRae", "Crimson"));
+        userList.add(new User("152-437-3026", "Harmonia", "Nield", "Fuscia"));
+        userList.add(new User("231-458-3966", "Antonella", "Yesenev", "Blue"));
+        userList.add(new User("587-276-8711", "Alric", "Doust", "Violet"));
+        userList.add(new User("755-644-5425", "Kellen", "Lockhart", "Fuscia"));
+        userList.add(new User("269-105-6282", "Estele", "Cote", "Crimson"));
+        userList.add(new User("908-949-3803", "Sharona", "Janssen", "Blue"));
+        userList.add(new User("629-433-1900", "Nikkie", "Sudddard", "Turquoise"));
+        userList.add(new User("949-698-9852", "Jonas", "Santo", "Maroon"));
+        userList.add(new User("381-984-5567", "Corrie", "Abbott", "Goldenrod"));
+        userList.add(new User("688-237-9359", "Charin", "Vertey", "Pink"));
+        userList.add(new User("976-115-5792", "Ilka", "Brigg", "Crimson"));
+        userList.add(new User("887-739-5788", "Thekla", "Chatterton", "Yellow"));
+        userList.add(new User("171-380-7033", "Angele", "Cholonin", "Orange"));
+        userList.add(new User("981-907-1748", "Alvinia", "MacNeachtain", "Green"));
+        userList.add(new User("829-223-5549", "Raynor", "Guillond", "Purple"));
+        userList.add(new User("342-841-3740", "Parker", "Blofeld", "Teal"));
+        userList.add(new User("701-168-1756", "Beltran", "Chape", "Orange"));
+        userList.add(new User("213-477-4846", "Nefen", "Brunner", "Blue"));
+        userList.add(new User("646-885-1661", "Melicent", "Kemell", "Orange"));
+        userList.add(new User("188-260-3416", "Ginger", "Guinane", "Red"));
+        userList.add(new User("622-586-6456", "Boigie", "Dimond", "Purple"));
+        userList.add(new User("152-336-0716", "Land", "Faulkner", "Violet"));
+        userList.add(new User("966-349-8785", "Allan", "Hogsden", "Aquamarine"));
+        userList.add(new User("991-602-5145", "Janessa", "Furlonge", "Purple"));
+        userList.add(new User("443-308-4572", "Sandra", "Clemmey", "Indigo"));
+        userList.add(new User("844-422-2573", "Queenie", "Tunmore", "Orange"));
+        userList.add(new User("819-343-4770", "Datha", "Kersting", "Maroon"));
+        userList.add(new User("902-450-5022", "Cilka", "Putland", "Pink"));
+        userList.add(new User("532-309-7259", "Jackquelin", "Arrell", "Teal"));
+        userList.add(new User("246-676-0569", "Riley", "Yushkov", "Mauv"));
+        userList.add(new User("748-915-1758", "Skelly", "Howles", "Mauv"));
+//        userList.add(new User("647-130-6590", "Eamon", "Spuffard", "Indigo"));
+//        userList.add(new User("500-536-8337", "Koren", "Aindriu", "Yellow"));
+//        userList.add(new User("344-656-6380", "Chrisse", "Godman", "Puce"));
+//        userList.add(new User("227-726-2979", "Antin", "Mechan", "Crimson"));
+//        userList.add(new User("993-598-1272", "Oates", "Dominetti", "Green"));
+//        userList.add(new User("214-551-8750", "Tammie", "Kolak", "Puce"));
+//        userList.add(new User("138-765-5942", "Upton", "Karczinski", "Yellow"));
+//        userList.add(new User("589-487-0845", "Roda", "Squibbs", "Turquoise"));
+//        userList.add(new User("630-780-0434", "Vanny", "Lionel", "Maroon"));
+//        userList.add(new User("248-992-7467", "Loydie", "Goomes", "Goldenrod"));
+//        userList.add(new User("273-487-2364", "Tamma", "Lawranson", "Aquamarine"));
+//        userList.add(new User("425-947-6739", "Josephina", "Tynan", "Orange"));
+//        userList.add(new User("907-324-8336", "Karyl", "Allott", "Teal"));
+//        userList.add(new User("942-834-4688", "Klara", "Lepick", "Fuscia"));
+//        userList.add(new User("753-271-9616", "Sarge", "Madine", "Orange"));
+//        userList.add(new User("910-350-6880", "Slade", "Duell", "Mauv"));
+//        userList.add(new User("364-806-8479", "Miran", "Duhig", "Yellow"));
+//        userList.add(new User("934-675-0756", "Barney", "Bushaway", "Aquamarine"));
+//        userList.add(new User("306-860-5599", "Darill", "Lynch", "Maroon"));
+//        userList.add(new User("465-456-1021", "Bliss", "Daton", "Yellow"));
+//        userList.add(new User("791-997-1729", "Ashli", "Woodroffe", "Maroon"));
+//        userList.add(new User("828-109-5117", "Madge", "Ripon", "Puce"));
+//        userList.add(new User("252-745-5999", "Carce", "Giannassi", "Pink"));
+//        userList.add(new User("588-221-6263", "Enrique", "Colt", "Crimson"));
+//        userList.add(new User("759-390-4604", "Tobie", "Latta", "Purple"));
+//        userList.add(new User("147-470-6133", "Zahara", "Good", "Indigo"));
+//        userList.add(new User("902-193-8394", "Scotty", "Giacomazzo", "Teal"));
+//        userList.add(new User("276-687-3370", "Kare", "Battlestone", "Turquoise"));
+//        userList.add(new User("846-617-9925", "Sharon", "Inder", "Orange"));
+//        userList.add(new User("874-221-4929", "Shoshana", "Pearse", "Puce"));
+//        userList.add(new User("555-535-8569", "Analise", "Lapenna", "Fuscia"));
+//        userList.add(new User("199-583-5166", "Alejoa", "Sydney", "Green"));
+//        userList.add(new User("698-944-3495", "Taber", "Keogh", "Pink"));
+//        userList.add(new User("640-697-0623", "Teodorico", "Dubs", "Orange"));
+//        userList.add(new User("745-932-3392", "Belvia", "Tivenan", "Blue"));
+//        userList.add(new User("522-326-7150", "Ron", "Bouette", "Teal"));
+//        userList.add(new User("370-756-2496", "Imogene", "Kirkup", "Yellow"));
+//        userList.add(new User("808-545-4170", "Erwin", "Dradey", "Fuscia"));
+//        userList.add(new User("704-432-9112", "Gregg", "Vassar", "Fuscia"));
+//        userList.add(new User("826-533-9872", "Wainwright", "Polycote", "Khaki"));
+//        userList.add(new User("569-565-5844", "Ely", "McIntosh", "Aquamarine"));
+//        userList.add(new User("974-445-3971", "Rachele", "Betz", "Teal"));
+//        userList.add(new User("477-191-5578", "Bailie", "Sleight", "Yellow"));
+//        userList.add(new User("670-728-2872", "Son", "Bodycomb", "Maroon"));
+//        userList.add(new User("904-413-7444", "Elene", "Petkens", "Teal"));
+//        userList.add(new User("228-984-7477", "Wynn", "Covil", "Aquamarine"));
+//        userList.add(new User("707-279-6977", "Arda", "Deniset", "Blue"));
+//        userList.add(new User("775-190-5582", "Joelynn", "Cuthill", "Aquamarine"));
+//        userList.add(new User("560-776-4501", "Wakefield", "Duckhouse", "Mauv"));
+//        userList.add(new User("298-725-9105", "Rolland", "Mersey", "Fuscia"));
+//        userList.add(new User("663-263-7409", "Staford", "Ockland", "Violet"));
+//        userList.add(new User("745-809-8601", "Callida", "Twitchings", "Khaki"));
+//        userList.add(new User("363-279-2491", "Kelcie", "Secrett", "Purple"));
+//        userList.add(new User("345-387-9589", "Fernande", "De Cruz", "Red"));
+//        userList.add(new User("146-384-3573", "Sanderson", "Piper", "Teal"));
+//        userList.add(new User("309-946-3150", "Kip", "Dawid", "Blue"));
+//        userList.add(new User("797-634-1875", "Feodora", "Hewkin", "Purple"));
+    }
+
+    private static void initGamesMapCache() {
+        gamesMap = new HashMap<>();
+
+        List<BoardGame> games = getGamesList();
+        for (BoardGame game : games) {
+            gamesMap.put(game.getBggId(), game);
+        }
+    }
+
+    private static void initUPCCache() {
+        upcMappings = new HashMap<>();
+
+        upcMappings.put("029877030712", "13");
+        upcMappings.put("029877030729", "13");
+        upcMappings.put("600074120835", "13");
+        upcMappings.put("520295188448", "13");
+        upcMappings.put("027084645194", "74");
+        upcMappings.put("746775321543", "74");
+        upcMappings.put("630509453436", "181");
+        upcMappings.put("653569566069", "181");
+        upcMappings.put("5010993312269", "181");
+        upcMappings.put("653569973720", "320");
+        upcMappings.put("032244040245", "320");
+        upcMappings.put("032244040344", "320");
+        upcMappings.put("784311715982", "320");
+        upcMappings.put("021853004007", "811");
+        upcMappings.put("021853004076", "811");
+        upcMappings.put("021853014082", "811");
+        upcMappings.put("021853014105", "811");
+        upcMappings.put("783318511887", "811");
+        upcMappings.put("746775054540", "1258");
+        upcMappings.put("887961437225", "1258");
+        upcMappings.put("604945379537", "1258");
+        upcMappings.put("653569308584", "1294");
+        upcMappings.put("630509477722", "1294");
+        upcMappings.put("073000000097", "1406");
+        upcMappings.put("073000000103", "1406");
+        upcMappings.put("078206010017", "2223");
+        upcMappings.put("074299419409", "2223");
+        upcMappings.put("78206020016", "2223");
+        upcMappings.put("352610800274", "2375");
+        upcMappings.put("035261080027", "2375");
+        upcMappings.put("824968717912", "9209");
+        upcMappings.put("681706711003", "30549");
+        upcMappings.put("032057614404", "30549");
+        upcMappings.put("794965251583", "30549");
+        upcMappings.put("700304045973", "46213");
+        upcMappings.put("700304043542", "46213");
+        upcMappings.put("787799688953", "46213");
+//        upcMappings.put("8032611691003", "76085");
+        upcMappings.put("722301926246", "131357");
+        upcMappings.put("792273251066", "131357");
+        upcMappings.put("717356247040", "178900");
+        upcMappings.put("046139085174", "178900");
+        upcMappings.put("704679648203", "178900");
+        upcMappings.put("8594156310394", "178900");
+        upcMappings.put("884925011316", "188834");
+        upcMappings.put("711746875073", "188834");
+        upcMappings.put("675905281368", "188834");
+        upcMappings.put("0675905281368", "188834");
+        upcMappings.put("859145631040", "224037");
+        upcMappings.put("702874124201", "224037");
+        upcMappings.put("8594156310400", "224037");
+        upcMappings.put("826956400202", "23082");
+        upcMappings.put("826956600107", "23082");
+        upcMappings.put("604945379711", "23082");
+        upcMappings.put("766214814955", "266192");
+        upcMappings.put("644216627721", "266192");
+        upcMappings.put("653341029102", "266192");
+//        upcMappings.put("653341029102", "276182");
+        upcMappings.put("889698605014", "358816");
+//        upcMappings.put("653341029102", "311475");
+        upcMappings.put("778988704691", "194655");
+//        upcMappings.put("653341029102", "333481");
+//        upcMappings.put("653341029102", "332290");
+//        upcMappings.put("653341029102", "3955");
+        upcMappings.put("850003498027", "266524");
+        upcMappings.put("892884000821", "155703");
+//        upcMappings.put("653341029102", "241724");
+        upcMappings.put("696859265808", "167791");
+//        upcMappings.put("653341029102", "184267");
+//        upcMappings.put("653341029102", "10547");
+//        upcMappings.put("653341029102", "144344");
+        upcMappings.put("852131006303", "312786");
+        upcMappings.put("841333102067", "205398");
+        upcMappings.put("681706781006", "822");
+//        upcMappings.put("653341029102", "230802");
+        upcMappings.put("655132005616", "256916");
     }
 
     private static void initGamesCache() {

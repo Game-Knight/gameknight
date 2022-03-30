@@ -3,6 +3,7 @@ package com.cs_356.app.Views;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.graphics.drawable.Animatable2;
 import android.graphics.drawable.AnimatedVectorDrawable;
 import android.graphics.drawable.Drawable;
@@ -12,11 +13,14 @@ import android.os.Looper;
 import android.view.View;
 import android.widget.ProgressBar;
 import android.widget.SearchView;
+import android.widget.Toast;
+
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.vectordrawable.graphics.drawable.Animatable2Compat;
 import androidx.vectordrawable.graphics.drawable.AnimatedVectorDrawableCompat;
 
 import com.cs_356.app.Adapters.GameCardAdapter;
+import com.cs_356.app.Cache.FrontendCache;
 import com.cs_356.app.R;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
@@ -87,7 +91,8 @@ public class AddGameManuallyActivity extends AppCompatActivity implements GameCa
         backFAB.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                onBackPressed();
+                startActivity(new Intent(view.getContext(), GameLibraryActivity.class));
+                finish();
             }
         });
     }
@@ -97,7 +102,8 @@ public class AddGameManuallyActivity extends AppCompatActivity implements GameCa
 
     @Override
     public void onGameCardClick(int position) {
-
+        FrontendCache.addGameOwnershipForAuthUser(results.get(position));
+        Toast.makeText(this, "Game added!", Toast.LENGTH_SHORT).show();
     }
 
     public interface OnProcessedListener {
