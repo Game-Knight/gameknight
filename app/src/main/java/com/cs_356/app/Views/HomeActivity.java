@@ -12,12 +12,20 @@ import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.navigation.ui.AppBarConfiguration;
+import androidx.recyclerview.widget.RecyclerView;
 
+import com.cs_356.app.Adapters.GameCardAdapter;
+import com.cs_356.app.Adapters.GameNightCardAdapter;
+import com.cs_356.app.Cache.FrontendCache;
 import com.cs_356.app.R;
 import com.cs_356.app.Utils.ActivityUtils;
 import com.cs_356.app.Views.AddGameNight.AddGameNightActivity;
 import com.cs_356.app.databinding.ActivityHomeBinding;
 import com.google.android.material.navigation.NavigationView;
+
+import java.util.Comparator;
+
+import Entities.BoardGame;
 
 /**
  * This is the activity that represents the home view.
@@ -25,41 +33,46 @@ import com.google.android.material.navigation.NavigationView;
  */
 public class HomeActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
-	private AppBarConfiguration appBarConfiguration;
-	private ActivityHomeBinding binding;
-	private DrawerLayout drawerLayout;
-	private NavigationView navigationView;
+    private AppBarConfiguration appBarConfiguration;
+    private ActivityHomeBinding binding;
+    private DrawerLayout drawerLayout;
+    private NavigationView navigationView;
+    private RecyclerView recycler;
 
-	@Override
-	protected void onCreate(Bundle savedInstanceState) {
-		super.onCreate(savedInstanceState);
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
 
-		binding = ActivityHomeBinding.inflate(getLayoutInflater());
-		setContentView(binding.getRoot());
+        binding = ActivityHomeBinding.inflate(getLayoutInflater());
+        setContentView(binding.getRoot());
 
-		setSupportActionBar(binding.toolbarHome);
+        setSupportActionBar(binding.toolbarHome);
 
-		drawerLayout = ActivityUtils.setupDrawerLayout(
-				this,
-				binding.toolbarHome,
-				R.id.drawer_layout_home
-		);
+        drawerLayout = ActivityUtils.setupDrawerLayout(
+                this,
+                binding.toolbarHome,
+                R.id.drawer_layout_home
+        );
 
-		navigationView = ActivityUtils.setupNavigationView(
-				this,
-				this,
-				R.id.nav_view_home,
-				R.id.nav_item_home
-		);
-	}
+        navigationView = ActivityUtils.setupNavigationView(
+                this,
+                this,
+                R.id.nav_view_home,
+                R.id.nav_item_home
+        );
 
-	@Override
-	public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-		return ActivityUtils.onNavigationItemSelected(
-				item,
-				drawerLayout,
-				navigationView,
-				this
-		);
-	}
+        recycler = findViewById(R.id.home_recycler_view);
+//        GameCardAdapter adapter = new GameNightCardAdapter(FrontendCache.getGamesForAuthenticatedUser());
+//        recycler.setAdapter(adapter);
+    }
+
+    @Override
+    public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+        return ActivityUtils.onNavigationItemSelected(
+                item,
+                drawerLayout,
+                navigationView,
+                this
+        );
+    }
 }

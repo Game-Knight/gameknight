@@ -221,7 +221,8 @@ public class GameLibraryActivity extends AppCompatActivity implements Navigation
                     @Override
                     public void run(){
                         progressSpinner.setVisibility(View.GONE);
-                        GameCardAdapter adapter = new GameCardAdapter(FrontendCache.getGamesForAuthenticatedUser(), cardClickListener);
+                        GameCardAdapter adapter = new GameCardAdapter(
+                                FrontendCache.getGamesForAuthenticatedUser(), cardClickListener);
                         recycler.setAdapter(adapter);
                         mExecutor.shutdown();
                     }

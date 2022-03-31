@@ -9,17 +9,39 @@ import Utils.EntityUtils;
 public class GameNight {
 
     private String id;
+    private String name;
     private String hostId;
     private Date date;
     private String location;
     private Map<String, RSVP> guestList;
+    /* This is a map from a board game's "bggId" (idk if this is the best one to pick but that
+     * seems the most unique), to the phone number string ID for the user who is bringing it.
+     * If no one is assigned to bring a game, then its value should be null (or an empty string).
+     * I also realize this a sub-optimal name so change it if you want. */
+    private Map<String, String> bringingAssignments;
 
-    public GameNight(String hostId, Date date, String location, Map<String, RSVP> guestList) {
+
+    public GameNight(String name,
+                     String hostId,
+                     Date date,
+                     String location,
+                     Map<String, RSVP> guestList,
+                     Map<String, String> bringingAssignments) {
         this.id = EntityUtils.generateId();
+        this.name = name;
         this.hostId = hostId;
         this.date = date;
         this.location = location;
         this.guestList = guestList;
+        this.bringingAssignments = bringingAssignments;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 
     public String getId() {
@@ -56,5 +78,13 @@ public class GameNight {
 
     public void setGuestList(Map<String, RSVP> guestList) {
         this.guestList = guestList;
+    }
+
+    public Map<String, String> getBringingAssignments() {
+        return bringingAssignments;
+    }
+
+    public void setBringingAssignments(Map<String, String> bringingAssignments) {
+        this.bringingAssignments = bringingAssignments;
     }
 }
