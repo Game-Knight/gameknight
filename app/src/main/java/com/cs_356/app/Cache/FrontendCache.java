@@ -24,19 +24,20 @@ import Enums.RSVP;
 
 public class FrontendCache {
 
+    private static final Random RANDOM = new Random();
     private static List<BoardGame> gamesList = null;
     private static Map<String, BoardGame> gamesMap = null;
     private static Map<String, String> upcMappings = null;
     private static List<User> userList = null;
     private static Map<String, User> userMap = null;
     private static Set<Ownership> ownershipSet = null;
-    private static List<GameNight> gameNightList = null;
-    private static final int NUM_GAME_NIGHTS = 5;
-    private static final Random RANDOM = new Random();
 
-    private static User authenticatedUser = new User(
+    private static final User authenticatedUser = new User(
             "123-456-7890", "Test", "User", "test");
     private static List<BoardGame> gamesListForAuthenticatedUser = null;
+    /* This is also only for the authenticatedUser since we have no need for seeing
+     * other game nights */
+    private static List<GameNight> gameNightList = null;
 
     /**
      * This section is for cache getters
@@ -427,14 +428,15 @@ public class FrontendCache {
     }
 
     private static void initGameNightCache() {
+        final int NUM_GAME_NIGHTS = 3;
         final int MIN_EVENT_HOUR = 17;
         final int MAX_EVENT_HOUR = 23;
         final int MIN_INVITES = 1;
-        final int MAX_INVITES = 10;
+        final int MAX_INVITES = 5;
         final int MIN_USER_GAMES = 1;
-        final int MAX_USER_GAMES = 5;
+        final int MAX_USER_GAMES = 3;
         final int MIN_GAME_NIGHT_GAMES = 1;
-        final int MAX_GAME_NIGHT_GAMES = 10;
+        final int MAX_GAME_NIGHT_GAMES = 5;
 
         // These two lists are the same length, but don't need to be
         List<String> genericNames = Arrays.asList(
