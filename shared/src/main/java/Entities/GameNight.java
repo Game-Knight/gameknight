@@ -1,6 +1,6 @@
 package Entities;
 
-import java.util.Date;
+import java.time.LocalDateTime;
 import java.util.Map;
 
 import Enums.RSVP;
@@ -11,7 +11,7 @@ public class GameNight {
     private String id;
     private String name;
     private String hostId;
-    private Date date;
+    private LocalDateTime date;
     private String location;
     private Map<String, RSVP> guestList;
     /* This is a map from a board game's "bggId" (idk if this is the best one to pick but that
@@ -23,7 +23,7 @@ public class GameNight {
 
     public GameNight(String name,
                      String hostId,
-                     Date date,
+                     LocalDateTime date,
                      String location,
                      Map<String, RSVP> guestList,
                      Map<String, String> bringingAssignments) {
@@ -56,11 +56,11 @@ public class GameNight {
         this.hostId = hostId;
     }
 
-    public Date getDate() {
+    public LocalDateTime getDate() {
         return date;
     }
 
-    public void setDate(Date date) {
+    public void setDate(LocalDateTime date) {
         this.date = date;
     }
 

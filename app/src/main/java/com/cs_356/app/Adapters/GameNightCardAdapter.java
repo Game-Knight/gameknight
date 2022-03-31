@@ -4,14 +4,15 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
-
 import androidx.recyclerview.widget.RecyclerView;
-
 import com.cs_356.app.R;
+import com.cs_356.app.Utils.DateUtils;
 
+import java.text.DateFormat;
+import java.time.DayOfWeek;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.List;
-
-import Entities.BoardGame;
 import Entities.GameNight;
 
 public class GameNightCardAdapter extends RecyclerView.Adapter<GameNightCardAdapter.ViewHolder> {
@@ -40,15 +41,12 @@ public class GameNightCardAdapter extends RecyclerView.Adapter<GameNightCardAdap
         public TextView getTitleTextView() {
             return titleTextView;
         }
-
         public TextView getLocationTextView() {
             return locationTextView;
         }
-
         public TextView getDateTimeTextView() {
             return dateTimeTextView;
         }
-
         public TextView getAssignmentTextView() {
             return assignmentTextView;
         }
@@ -76,10 +74,14 @@ public class GameNightCardAdapter extends RecyclerView.Adapter<GameNightCardAdap
     // Replace the contents of a view (invoked by the layout manager)
     @Override
     public void onBindViewHolder(ViewHolder viewHolder, final int position) {
-
         // Get element from your dataset at this position and replace the
         // contents of the view with that element
-        viewHolder.getTitleTextView().setText(gameNights.get(position).getName());
+        GameNight curr = gameNights.get(position);
+
+        viewHolder.getTitleTextView().setText(curr.getName());
+        viewHolder.getLocationTextView().setText(curr.getLocation());
+        viewHolder.getDateTimeTextView().setText(DateUtils.formatDate(curr.getDate()));
+
     }
 
     // Return the size of your dataset (invoked by the layout manager)
@@ -88,4 +90,6 @@ public class GameNightCardAdapter extends RecyclerView.Adapter<GameNightCardAdap
         return gameNights.size();
     }
 
+    public interface OnGameNightCardClickListener {
+    }
 }
