@@ -3,6 +3,7 @@ package com.cs_356.app.Cache;
 import com.cs_356.app.R;
 import com.cs_356.app.Utils.Constants;
 
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Calendar;
@@ -481,7 +482,10 @@ public class FrontendCache {
             cal.set(Calendar.MINUTE, (RANDOM.nextBoolean()) ? 0 : 30);
             cal.set(Calendar.SECOND, 0);
             cal.set(Calendar.MILLISECOND, 0);
-            Date date = cal.getTime();
+            LocalDateTime date = LocalDateTime.ofInstant(
+                    cal.toInstant(),
+                    cal.getTimeZone().toZoneId());
+
 
             /* These locations are literally just from https://www.bestrandoms.com/random-address
              * when you give it 84604, and I added in a couple just raw text as well, to
