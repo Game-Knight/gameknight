@@ -41,6 +41,14 @@ public class AddGameNightActivity extends AppCompatActivity {
         newFragment.show(getSupportFragmentManager(), "datePicker");
     }
 
+    public void setSelectDateTextView(String date) {
+        ((AddGameNightInfoFragment)getSupportFragmentManager().findFragmentById(R.id.addGameNightFragment)).setSelectDateTextView(date);
+    }
+
+    public void setSelectTimeTextView(String time) {
+        ((AddGameNightInfoFragment)getSupportFragmentManager().findFragmentById(R.id.addGameNightFragment)).setSelectTimeTextView(time);
+    }
+
     public void onClickNextButton() {
         getSupportFragmentManager().beginTransaction()
                 .replace(R.id.addGameNightFragment, AddGameNightFriendsFragment.class, null)
