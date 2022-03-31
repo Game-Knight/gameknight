@@ -1,10 +1,12 @@
 package com.cs_356.app.Cache;
 
+import com.cs_356.app.R;
 import com.cs_356.app.Utils.Constants;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Calendar;
+import java.util.Collections;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.HashSet;
@@ -32,7 +34,8 @@ public class FrontendCache {
     private static final int NUM_GAME_NIGHTS = 5;
     private static final Random RANDOM = new Random();
 
-    private static User authenticatedUser = new User("123-456-7890", "Test", "User", "test");
+    private static User authenticatedUser = new User(
+            "123-456-7890", "Test", "User", "test");
     private static List<BoardGame> gamesListForAuthenticatedUser = null;
 
     /**
@@ -424,6 +427,15 @@ public class FrontendCache {
     }
 
     private static void initGameNightCache() {
+        final int MIN_EVENT_HOUR = 17;
+        final int MAX_EVENT_HOUR = 23;
+        final int MIN_INVITES = 1;
+        final int MAX_INVITES = 10;
+        final int MIN_USER_GAMES = 1;
+        final int MAX_USER_GAMES = 5;
+        final int MIN_GAME_NIGHT_GAMES = 1;
+        final int MAX_GAME_NIGHT_GAMES = 10;
+
         // These two lists are the same length, but don't need to be
         List<String> genericNames = Arrays.asList(
                 "11th Ward FHE",
@@ -441,6 +453,7 @@ public class FrontendCache {
                 "1380 W 1700th N",
                 "522 E 3950th N",
                 "Your Mom's House");
+
         assert(gameNightList == null);
         gameNightList = new ArrayList<>();
         List<User> userList = getUserList();
@@ -462,9 +475,7 @@ public class FrontendCache {
             Calendar cal = Calendar.getInstance();
             int day = cal.get(Calendar.DAY_OF_MONTH);
             cal.set(Calendar.DAY_OF_MONTH, day + i);
-            int maxHour = 23;
-            int minHour = 17;
-            cal.set(Calendar.HOUR, RANDOM.nextInt((maxHour - minHour) + 1) + minHour);
+            cal.set(Calendar.HOUR, RANDOM.nextInt((MAX_EVENT_HOUR - MIN_EVENT_HOUR) + 1) + MIN_EVENT_HOUR);
             cal.set(Calendar.MINUTE, (RANDOM.nextBoolean()) ? 0 : 30);
             cal.set(Calendar.SECOND, 0);
             cal.set(Calendar.MILLISECOND, 0);
@@ -485,9 +496,7 @@ public class FrontendCache {
             guestList.put(
                     authenticatedUser.getPhoneNumber(),
                     (RANDOM.nextBoolean()) ? RSVP.YES : RSVP.NOT_YET_RESPONDED);
-            int minInvites = 1;
-            int maxInvites = 10;
-            int numInvites = RANDOM.nextInt((maxInvites - minInvites) + 1) + minInvites;
+            int numInvites = RANDOM.nextInt((MAX_INVITES - MIN_INVITES) + 1) + MIN_INVITES;
             for (int j = 0; j < numInvites; ++j) {
                 User randomInvite = userList.get(RANDOM.nextInt(userList.size()));
                 guestList.put(
@@ -495,12 +504,64 @@ public class FrontendCache {
                         randomEnum(RSVP.class));
             }
 
+            /* Bringing assignments:
+             * First, I flip a coin to see if the current user should bring any games. If this is
+             * the first game being created, this will be guaranteed. The current user then has a
+             * random number of board games assigned for them to bring from their own collection.
+             * The reason for requiring the first BoardGame object (and the reason we're even giving
+             * the user assignments in general) is so that it shows up in the MainActivity cards.
+             *
+             * Secondly, the program chooses a number of other board games being brought, from the
+             * list of all board games in the database (because I don't want to think about who is
+             * invited owning what game or whatever). This does not currently take the voting
+             * system into account. Each board game has then a 3 / 4 chance of being assigned,
+             * and is then randomly assigned to an id in the guestList. This _does_ mean that the
+             * current user may be assigned additional games, but that's fine.
+             *
+             * Also, I make copies of the game lists and shuffle them each time because I don't
+             * want repeats.
+             */
+            Map<String, String> bringingAssignments = new HashMap<>();
+            if (i == 0 || RANDOM.nextBoolean()) {
+                int numCurrUserGames = RANDOM.nextInt(
+                        (MAX_USER_GAMES - MIN_USER_GAMES) + 1) + MIN_USER_GAMES;
+                final List<BoardGame> currUserGames = getGamesForAuthenticatedUser();
+                List<BoardGame> shuffledGames = new ArrayList<>(currUserGames);
+                Collections.shuffle(shuffledGames);
+                assert MAX_USER_GAMES < shuffledGames.size();
+                for (int j = 0; j < numCurrUserGames; ++j) {
+                    bringingAssignments.put(
+                            shuffledGames.get(j).getBggId(),
+                            authenticatedUser.getPhoneNumber());
+                }
+            }
+
+            int numCurrUserGames = RANDOM.nextInt(
+                    (MAX_GAME_NIGHT_GAMES - MIN_GAME_NIGHT_GAMES) + 1) + MIN_GAME_NIGHT_GAMES;
+            final List<BoardGame> allGames = getGamesList();
+            List<BoardGame> shuffledGames = new ArrayList<>(allGames);
+            Collections.shuffle(shuffledGames);
+            for (int j = 0; j < numCurrUserGames; ++j) {
+                if (bringingAssignments.containsKey(shuffledGames.get(j).getBggId())) {
+                    --j;
+                    continue;
+                }
+
+                String assigned = null;
+                if (xInYChance(3, 4)) {
+                    assigned = (new ArrayList<>(guestList.keySet()))
+                            .get(RANDOM.nextInt(guestList.size()));
+                }
+                bringingAssignments.put(shuffledGames.get(j).getBgaId(), assigned);
+            }
+
             gameNightList.add(new GameNight(
                     name,
                     randomHost.getPhoneNumber(),
                     date,
                     location,
-                    guestList));
+                    guestList,
+                    bringingAssignments));
         }
     }
 
@@ -508,5 +569,10 @@ public class FrontendCache {
     private static <T extends Enum<?>> T randomEnum(Class<T> clazz){
         int x = RANDOM.nextInt(Objects.requireNonNull(clazz.getEnumConstants()).length);
         return clazz.getEnumConstants()[x];
+    }
+
+    /* Returns the chance that x in y happens*/
+    public static Boolean xInYChance(int x, int y) {
+        return RANDOM.nextDouble() <= ((double) x / y);
     }
 }
