@@ -12,6 +12,7 @@ import android.widget.Button;
 
 import com.cs_356.app.Adapters.GameCardAdapter;
 import com.cs_356.app.Adapters.InviteeAdapter;
+import com.cs_356.app.Cache.FrontendCache;
 import com.cs_356.app.R;
 
 import java.util.ArrayList;
@@ -49,40 +50,8 @@ public class AddGameNightFriendsFragment extends Fragment {
 
         recyclerView = rootView.findViewById(R.id.inviteeRecyclerView);
         // Set up adapter for recycler view
-        User user1 = new User("555", "Brayden", "Wood", "pass");
-        User user2 = new User("555", "Chayston", "Wood", "pass");
-        User user3 = new User("555", "Jake", "Wood", "pass");
-        User user4 = new User("555", "Daniel", "Wood", "pass");
-        User user5 = new User("555", "Brayden", "Wood", "pass");
-        User user6 = new User("555", "Chayston", "Wood", "pass");
-        User user7 = new User("555", "Jake", "Wood", "pass");
-        User user8 = new User("555", "Daniel", "Wood", "pass");
-        User user9 = new User("555", "Brayden", "Wood", "pass");
-        User user10 = new User("555", "Chayston", "Wood", "pass");
-        User user11 = new User("555", "Jake", "Wood", "pass");
-        User user12 = new User("555", "Daniel", "Wood", "pass");
-        User user13 = new User("555", "Brayden", "Wood", "pass");
-        User user14 = new User("555", "Chayston", "Wood", "pass");
-        User user15 = new User("555", "Jake", "Wood", "pass");
-        User user16 = new User("555", "Daniel", "Wood", "pass");
-        List<User> users = new ArrayList<User>();
-        users.add(user1);
-        users.add(user2);
-        users.add(user3);
-        users.add(user4);
-        users.add(user5);
-        users.add(user6);
-        users.add(user7);
-        users.add(user8);
-        users.add(user9);
-        users.add(user10);
-        users.add(user11);
-        users.add(user12);
-        users.add(user13);
-        users.add(user14);
-        users.add(user15);
-        users.add(user16);
-        InviteeAdapter adapter = new InviteeAdapter(users);
+        List<User> invitees = FrontendCache.getUserList();
+        InviteeAdapter adapter = new InviteeAdapter(invitees);
         recyclerView.setAdapter(adapter);
         recyclerView.setVisibility(View.VISIBLE);
 

@@ -26,12 +26,25 @@ public class TimePickerFragment extends DialogFragment
         int hour = c.get(Calendar.HOUR_OF_DAY);
         int minute = c.get(Calendar.MINUTE);
 
+
         // Create a new instance of TimePickerDialog and return it
         return new TimePickerDialog(getActivity(), this, hour, minute,
                 DateFormat.is24HourFormat(getActivity()));
     }
 
     public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
-        // Do something with the time chosen by the user
+        String modifier;
+        if (hourOfDay > 12) {
+            hourOfDay = hourOfDay % 12;
+            modifier = "pm";
+        }
+        else {
+            if (hourOfDay == 0) {
+                hourOfDay = 12;
+            }
+            modifier = "am";
+        }
+        String time = Integer.toString(hourOfDay) + ":" + Integer.toString(minute) + modifier;
+        ((AddGameNightActivity)getActivity()).setSelectTimeTextView(time);
     }
 }
