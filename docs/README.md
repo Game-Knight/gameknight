@@ -5,7 +5,7 @@
 ## To Do
 
 #### 🔴 High Priority
-- [ ] add HomeActivity
+- [X] add HomeActivity
     - [ ] create card layout for Home
 - [ ] add AddGameNightActivity (Brayden)
 - [ ] add GameNightActivity
