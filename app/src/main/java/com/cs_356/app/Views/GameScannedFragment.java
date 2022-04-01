@@ -71,7 +71,7 @@ public class GameScannedFragment extends Fragment {
                 @Override
                 public void onClick(View view) {
                     requireActivity().startActivity(
-                            new Intent(getActivity(), AddGameManuallyActivity.class)
+                            new Intent(requireActivity(), AddGameManuallyActivity.class)
                     );
                     requireActivity().finish();
                 }
@@ -102,7 +102,7 @@ public class GameScannedFragment extends Fragment {
                 public void onClick(View view) {
                     FrontendCache.addGameOwnershipForAuthUser(nonNullBoardGame);
                     requireActivity().startActivity(
-                            new Intent(getActivity(), GameLibraryActivity.class)
+                            new Intent(requireActivity(), GameLibraryActivity.class)
                     );
                     requireActivity().finish();
                 }
