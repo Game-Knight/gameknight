@@ -53,5 +53,7 @@
     <string name="no_results">No results!</string>
     <string name="to_game_night_friends">Next</string>
     <string name="finish_adding_game_night">Finish</string>
+    <string name="invite_list">Invite List</string>
+    <string name="available_games">Available Games</string>
 
 </resources>

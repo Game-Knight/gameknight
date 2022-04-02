@@ -1,5 +1,6 @@
 package com.cs_356.app.Views;
 
+import android.content.Intent;
 import android.graphics.drawable.Animatable2;
 import android.graphics.drawable.AnimatedVectorDrawable;
 import android.graphics.drawable.Drawable;
@@ -16,10 +17,12 @@ import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.navigation.ui.AppBarConfiguration;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.cs_356.app.Adapters.GameCardAdapter;
 import com.cs_356.app.Adapters.GameNightCardAdapter;
 import com.cs_356.app.Cache.FrontendCache;
 import com.cs_356.app.R;
 import com.cs_356.app.Utils.ActivityUtils;
+import com.cs_356.app.Utils.Constants;
 import com.cs_356.app.databinding.ActivityHomeBinding;
 import com.google.android.material.navigation.NavigationView;
 
@@ -101,22 +104,34 @@ public class HomeActivity
         );
     }
 
+    @Override
+    public void onGameNightCardClick(int position) {
+        Intent intent = new Intent(this, GameNightActivity.class);
+        intent.putExtra(Constants.GAME_NIGHT_KEY, FrontendCache.getGameNightsForAuthenticatedUser().get(position));
+        startActivity(intent);
+        finish();
+    }
+
     private void loadGameNightsInBackground(GameNightCardAdapter.OnGameNightCardClickListener cardClickListener){
 
-        final HomeActivity.OnProcessedListener listener = success -> {
-            // Use the handler so we're not trying to update the UI from the bg thread
-            mHandler.post((Runnable) () -> {
-                progressSpinner.setVisibility(View.GONE);
-                GameNightCardAdapter adapter = new GameNightCardAdapter(
-                        FrontendCache.getGameNightsForAuthenticatedUser());
-//                GameNightCardAdapter adapter = new GameNightCardAdapter(
-//                        FrontendCache.getGameNightsForAuthenticatedUser(), cardClickListener);
-                recycler.setAdapter(adapter);
-                mExecutor.shutdown();
-            });
+        final OnProcessedListener listener = new OnProcessedListener() {
+            @Override
+            public void onProcessed(boolean success){
+                // Use the handler so we're not trying to update the UI from the bg thread
+                mHandler.post(new Runnable(){
+                    @Override
+                    public void run(){
+                        progressSpinner.setVisibility(View.GONE);
+                        GameNightCardAdapter adapter = new GameNightCardAdapter(
+                                FrontendCache.getGameNightsForAuthenticatedUser(), cardClickListener);
+                        recycler.setAdapter(adapter);
+                        mExecutor.shutdown();
+                    }
+                });
+            }
         };
 
-        Runnable backgroundRunnable = new Runnable(){
+        Runnable backgroundRunnable = new Runnable() {
             @Override
             public void run(){
                 progressSpinner.setVisibility(View.VISIBLE);
