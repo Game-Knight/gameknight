@@ -1,12 +1,13 @@
 package Entities;
 
+import java.io.Serializable;
 import java.time.LocalDateTime;
 import java.util.Map;
 
 import Enums.RSVP;
 import Utils.EntityUtils;
 
-public class GameNight {
+public class GameNight implements Serializable {
 
     private String id;
     private String name;

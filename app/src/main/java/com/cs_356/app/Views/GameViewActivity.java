@@ -11,6 +11,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.cs_356.app.R;
+import com.cs_356.app.Utils.Constants;
 import com.cs_356.app.Utils.Image.PicassoTransformations;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.squareup.picasso.Picasso;
@@ -32,7 +33,7 @@ public class GameViewActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_game_view);
 
-        BoardGame game = (BoardGame) getIntent().getSerializableExtra("game");
+        BoardGame game = (BoardGame) getIntent().getSerializableExtra(Constants.GAME_KEY);
 
         ImageView gameImg, bgImg;
         TextView name, numPlayers, playTime, description;
