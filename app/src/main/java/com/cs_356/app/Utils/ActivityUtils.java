@@ -3,6 +3,7 @@ package com.cs_356.app.Utils;
 import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Intent;
+import android.content.res.ColorStateList;
 import android.os.Bundle;
 import android.util.SparseArray;
 import android.view.MenuItem;
@@ -137,7 +138,7 @@ public class ActivityUtils {
                 cameraSource.stop();
             }
         });
-        
+
         barcodeDetector.setProcessor(new Detector.Processor<Barcode>() {
             @Override
             public void release() {
@@ -151,6 +152,7 @@ public class ActivityUtils {
                     if (barcodes.size() != 0 && scanBarcodesDetected) {
                         Bundle bundle = new Bundle();
                         bundle.putString(Constants.BARCODE_KEY, barcodes.valueAt(0).displayValue);
+                        activity.findViewById(R.id.scanOverlay).setForegroundTintList(ColorStateList.valueOf(activity.getColor(R.color.orange)));
 
                         activity.runOnUiThread(new Runnable() {
                             @Override

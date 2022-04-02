@@ -22,11 +22,12 @@
         app:tint="@color/white" />
 
     <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:id="@+id/scanOverlay"
+        android:layout_width="240dp"
+        android:layout_height="240dp"
         android:layout_gravity="center"
         android:alpha="0.5"
-        android:src="@drawable/ic_scan_barcode_240"
-        app:tint="@color/primary" />
+        android:foreground="@drawable/ic_scan_barcode_240"
+        android:foregroundTint="@color/shade" />
 
 </FrameLayout>
