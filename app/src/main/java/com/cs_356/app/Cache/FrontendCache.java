@@ -47,7 +47,7 @@ public class FrontendCache {
      * This section is for cache getters
      */
 
-    public static void addGameOwnershipForAuthUser(BoardGame game) {
+    public static String addGameOwnershipForAuthUser(BoardGame game) {
         getOwnershipSet().add(new Ownership(authenticatedUser.getPhoneNumber(), game.getBggId()));
         if (getGamesMap().get(game.getBggId()) == null) {
             getGamesList().add(game);
@@ -59,6 +59,8 @@ public class FrontendCache {
         }
 
         getGamesForAuthenticatedUser().add(getGamesMap().get(game.getBggId()));
+
+        return game.getBggId();
     }
 
     public static Set<Ownership> getOwnershipSet() {
@@ -337,6 +339,7 @@ public class FrontendCache {
         upcMappings.put("653569973720", "320");
         upcMappings.put("032244040245", "320");
         upcMappings.put("032244040344", "320");
+        upcMappings.put("076930409572", "320");
         upcMappings.put("784311715982", "320");
         upcMappings.put("021853004007", "811");
         upcMappings.put("021853004076", "811");

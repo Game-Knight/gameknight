@@ -13,11 +13,6 @@ import android.os.Looper;
 import android.view.View;
 import android.widget.ProgressBar;
 import android.widget.SearchView;
-import android.widget.Toast;
-
-import androidx.recyclerview.widget.RecyclerView;
-import androidx.vectordrawable.graphics.drawable.Animatable2Compat;
-import androidx.vectordrawable.graphics.drawable.AnimatedVectorDrawableCompat;
 
 import com.cs_356.app.Adapters.GameCardAdapter;
 import com.cs_356.app.Cache.FrontendCache;
@@ -25,13 +20,11 @@ import com.cs_356.app.R;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.util.ArrayList;
-import java.util.Comparator;
 import java.util.List;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
 import DataAccess.DAO.APIs.APIBoardGameDAO;
-import DataAccess.DataGeneration.APIDB;
 import Entities.BoardGame;
 import Exceptions.DataAccessException;
 
@@ -102,8 +95,12 @@ public class AddGameManuallyActivity extends AppCompatActivity implements GameCa
 
     @Override
     public void onGameCardClick(int position) {
-        FrontendCache.addGameOwnershipForAuthUser(results.get(position));
-        Toast.makeText(this, "Game added!", Toast.LENGTH_SHORT).show();
+        String id = FrontendCache.addGameOwnershipForAuthUser(results.get(position));
+//        Toast.makeText(this, "Game added!", Toast.LENGTH_SHORT).show();
+        Intent intent = getIntent();
+        intent.putExtra(GameLibraryActivity.SCROLL_TO_EXTRA, id);
+        setResult(RESULT_OK, intent);
+        finish();
     }
 
     public interface OnProcessedListener {

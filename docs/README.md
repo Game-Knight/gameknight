@@ -5,8 +5,6 @@
 ## To Do
 
 #### 🔴 High Priority
-- [X] add HomeActivity
-    - [ ] create card layout for Home
 - [ ] add AddGameNightActivity (Brayden)
 - [ ] add GameNightActivity
     - [ ] voting for games
@@ -19,29 +17,35 @@
 - [ ] mark games as borrowable
 - [ ] view other users' borrowable games
 - [ ] speed up AddGameManually search
-- [ ] speed up cache initialization
+- [ ] scroll to game when added by scanning
 
 #### 🟡 Low Priority
 - [ ] use APIs instead of local data (*partially implemented*)
 - [ ] improve search result ordering in AddGameManually
 - [ ] search, sort, and filter game library
 - [ ] change FABs to Material2 style
+- [ ] preview game info before adding manually
+- [ ] highlight game after adding manually
 
 #### 🟢 Completed
 - [X] add AddGameManuallyActivity
     - [X] implement search feature
     - [X] add super sick custom loading animation
+    - [X] scroll to game in library after adding
 - [X] add GameLibraryActivity
     - [X] scale images for faster loading
 - [X] add GameViewActivity
     - [X] tap game image show in full screen
     - [X] disable rules button if no URL found
+- [X] add HomeActivity
+  - [X] create card layout for Home
 - [X] add SettingsActivity
 - [X] implement barcode scanner
     - [X] add documentation on how to set up emulator to scan
     - [X] make barcode scanner look for games
 - [X] loading spinner for AddGameManually search
 - [X] allow adding games to library from AddGameManually
+- [X] speed up cache initialization
 
 #### ⚫️ Backlog
 - [ ] make SettingsActivity functional
