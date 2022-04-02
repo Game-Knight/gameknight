@@ -17,7 +17,7 @@ public class User implements Serializable {
         this.phoneNumber = phoneNumber;
         this.firstName = firstName;
         this.lastName = lastName;
-        setPassword(password);
+//        setPassword(password);
     }
 
     public String getPhoneNumber() {
