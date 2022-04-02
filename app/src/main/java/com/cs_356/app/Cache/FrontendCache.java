@@ -1,5 +1,7 @@
 package com.cs_356.app.Cache;
 
+import android.util.Log;
+
 import com.cs_356.app.R;
 import com.cs_356.app.Utils.Constants;
 
@@ -32,6 +34,7 @@ public class FrontendCache {
     private static List<User> userList = null;
     private static Map<String, User> userMap = null;
     private static Set<Ownership> ownershipSet = null;
+    private final static String LOG_TAG = "FRONTEND_CACHE";
 
     private static final User authenticatedUser = new User(
             "123-456-7890", "Test", "User", "test");
@@ -60,7 +63,9 @@ public class FrontendCache {
 
     public static Set<Ownership> getOwnershipSet() {
         if (ownershipSet == null) {
+            Log.d(LOG_TAG, "running initOwenershipSetCache()");
             initOwnershipSetCache();
+            Log.d(LOG_TAG, "finished initOwenershipSetCache()");
         }
 
         return ownershipSet;
@@ -68,7 +73,9 @@ public class FrontendCache {
 
     public static Map<String, User> getUserMap() {
         if (userMap == null) {
+            Log.d(LOG_TAG, "running initUsersMapCache()");
             initUsersMapCache();
+            Log.d(LOG_TAG, "finished initUsersMapCache()");
         }
 
         return userMap;
@@ -76,7 +83,9 @@ public class FrontendCache {
 
     public static List<User> getUserList() {
         if (userList == null) {
+            Log.d(LOG_TAG, "running initUsersCache()");
             initUsersCache();
+            Log.d(LOG_TAG, "finished initUsersCache()");
         }
 
         return userList;
@@ -89,7 +98,9 @@ public class FrontendCache {
 
     public static Map<String, BoardGame> getGamesMap() {
         if (gamesMap == null) {
+            Log.d(LOG_TAG, "running initGamesMapCache()");
             initGamesMapCache();
+            Log.d(LOG_TAG, "finished initGamesMapCache()");
         }
 
         return gamesMap;
@@ -97,7 +108,9 @@ public class FrontendCache {
 
     public static Map<String, String> getUPCMappings() {
         if (upcMappings == null) {
+            Log.d(LOG_TAG, "running initUPCCache()");
             initUPCCache();
+            Log.d(LOG_TAG, "finished initUPCCache()");
         }
 
         return upcMappings;
@@ -125,7 +138,9 @@ public class FrontendCache {
 
     public static List<BoardGame> getGamesList() {
         if (gamesList == null) {
+            Log.d(LOG_TAG, "running initGamesCache()");
             initGamesCache();
+            Log.d(LOG_TAG, "finished initGamesCache()");
         }
 
         return gamesList;
@@ -133,7 +148,9 @@ public class FrontendCache {
 
     public static List<GameNight> getGameNightsForAuthenticatedUser() {
         if (gameNightList == null) {
+            Log.d(LOG_TAG, "running initGameNightCache()");
             initGameNightCache();
+            Log.d(LOG_TAG, "finished initGameNightCache()");
         }
 
         return gameNightList;
@@ -165,12 +182,11 @@ public class FrontendCache {
                 ownershipSet.add(new Ownership(userEntry.getKey(), "822"));
             }
             else {
-                Random rand = new Random();
-                int numGamesForUser = rand.nextInt(Constants.MAX_GAMES_PER_USER);
+                int numGamesForUser = RANDOM.nextInt(Constants.MAX_GAMES_PER_USER);
 
                 int gamesAdded = 0;
                 while (gamesAdded < numGamesForUser) {
-                    String randomBoardGameId = boardGameIds.get(rand.nextInt(boardGameIds.size()));
+                    String randomBoardGameId = boardGameIds.get(RANDOM.nextInt(boardGameIds.size()));
                     Ownership ownership = new Ownership(userEntry.getKey(), randomBoardGameId);
 
                     boolean success = ownershipSet.add(ownership);
@@ -178,6 +194,7 @@ public class FrontendCache {
                         gamesAdded++;
                     }
                 }
+                Log.d(LOG_TAG, "Added " + gamesAdded + " games for user " + userEntry.getKey());
             }
         }
     }
