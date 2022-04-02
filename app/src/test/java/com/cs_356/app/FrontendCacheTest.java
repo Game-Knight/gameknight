@@ -19,7 +19,7 @@ public class FrontendCacheTest {
     @Test
     public void initGameNightCache_works() {
         // Plz don't throw any errors
-        List<GameNight> gameNightList = FrontendCache.getGameNightsForAuthenticatedUser();
+        List<GameNight> gameNightList = FrontendCache.getGameNightList();
         assertNotNull(gameNightList);
         assertFalse(gameNightList.isEmpty());
     }

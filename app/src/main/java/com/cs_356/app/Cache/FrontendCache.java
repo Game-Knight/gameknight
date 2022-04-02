@@ -2,7 +2,6 @@ package com.cs_356.app.Cache;
 
 import android.util.Log;
 
-import com.cs_356.app.R;
 import com.cs_356.app.Utils.Constants;
 
 import java.time.LocalDateTime;
@@ -10,7 +9,6 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Calendar;
 import java.util.Collections;
-import java.util.Date;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
@@ -117,15 +115,38 @@ public class FrontendCache {
         return upcMappings;
     }
 
-    public static List<BoardGame> getGamesAvailableForGameNight(String gameNightId) {
+    public static Set<BoardGame> getGamesAvailableForGameNight(String gameNightId) {
         GameNight gameNight = getGameNightMap().get(gameNightId);
 
-        List<BoardGame> availableGames = new ArrayList<>();
-//        for (String userId : gameNight.getGuestList().entrySet()) {
-//
-//        }
+        Set<BoardGame> availableGames = new HashSet<>();
+        Set<String> userIds = new HashSet<>();
+        userIds.add(authenticatedUser.getPhoneNumber());
+
+        if (gameNight != null && gameNight.getGuestList() != null && gameNight.getGuestList().size() > 0) {
+            for (Map.Entry<String, RSVP> guest : gameNight.getGuestList().entrySet()) {
+                if (guest.getValue() != RSVP.NO) {
+                    userIds.add(guest.getKey());
+                }
+            }
+        }
+
+        for (Ownership ownership : getOwnershipSet()) {
+            if (userIds.contains(ownership.getUserId())) {
+                availableGames.add(getGamesMap().get(ownership.getBoardGameId()));
+            }
+        }
 
         return availableGames;
+    }
+
+    public static List<GameNight> getGameNightsForAuthenticatedUser() {
+        List<GameNight> gameNights = new ArrayList<>();
+        return gameNights;
+    }
+
+    public static List<GameNight> getGameNightsHostedByAuthenticatedUser() {
+        List<GameNight> gameNights = new ArrayList<>();
+        return gameNights;
     }
 
     public static List<BoardGame> getGamesForAuthenticatedUser() {
@@ -168,7 +189,7 @@ public class FrontendCache {
         return gameNightMap;
     }
 
-    public static List<GameNight> getGameNightsForAuthenticatedUser() {
+    public static List<GameNight> getGameNightList() {
         if (gameNightList == null) {
             Log.d(LOG_TAG, "running initGameNightCache()");
             initGameNightCache();
@@ -224,7 +245,7 @@ public class FrontendCache {
     private static void initGameNightMapCache() {
         gameNightMap = new HashMap<>();
 
-        for (GameNight gameNight : getGameNightsForAuthenticatedUser()) {
+        for (GameNight gameNight : getGameNightList()) {
             gameNightMap.put(gameNight.getId(), gameNight);
         }
     }

@@ -17,7 +17,6 @@ import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.navigation.ui.AppBarConfiguration;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.cs_356.app.Adapters.GameCardAdapter;
 import com.cs_356.app.Adapters.GameNightCardAdapter;
 import com.cs_356.app.Cache.FrontendCache;
 import com.cs_356.app.R;
@@ -31,7 +30,6 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
 import Entities.BoardGame;
-import Entities.GameNight;
 
 /**
  * This is the activity that represents the home view.
@@ -108,7 +106,7 @@ public class HomeActivity
     @Override
     public void onGameNightCardClick(int position) {
         Intent intent = new Intent(this, GameNightActivity.class);
-        intent.putExtra(Constants.GAME_NIGHT_KEY, FrontendCache.getGameNightsForAuthenticatedUser().get(position));
+        intent.putExtra(Constants.GAME_NIGHT_KEY, FrontendCache.getGameNightList().get(position));
         startActivity(intent);
     }
 
@@ -123,7 +121,7 @@ public class HomeActivity
                     public void run(){
                         progressSpinner.setVisibility(View.GONE);
                         GameNightCardAdapter adapter = new GameNightCardAdapter(
-                                FrontendCache.getGameNightsForAuthenticatedUser(), cardClickListener);
+                                FrontendCache.getGameNightList(), cardClickListener);
                         recycler.setAdapter(adapter);
                         mExecutor.shutdown();
                     }
