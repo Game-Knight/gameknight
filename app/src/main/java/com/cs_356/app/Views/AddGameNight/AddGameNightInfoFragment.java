@@ -12,6 +12,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 import com.cs_356.app.R;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import org.w3c.dom.Text;
 
@@ -19,6 +20,7 @@ public class AddGameNightInfoFragment extends Fragment {
 
     public TextView selectDateTextView;
     public TextView selectTimeTextView;
+    public FloatingActionButton backButton;
     public Button nextButton;
 
     public AddGameNightInfoFragment() {
@@ -35,6 +37,13 @@ public class AddGameNightInfoFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View rootView = inflater.inflate(R.layout.fragment_add_game_night_info, container, false);
+
+        backButton = rootView.findViewById(R.id.addGameNightBackFAB);
+        backButton.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                ((AddGameNightActivity)getActivity()).onClickBackButton();
+            }
+        });
 
         nextButton = rootView.findViewById(R.id.add_game_night_next_button);
         nextButton.setOnClickListener(new View.OnClickListener() {
