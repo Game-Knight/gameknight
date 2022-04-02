@@ -352,6 +352,7 @@ public class FrontendCache {
         upcMappings.put("046139085174", "178900");
         upcMappings.put("704679648203", "178900");
         upcMappings.put("8594156310394", "178900");
+        upcMappings.put("8594156310318", "178900");
         upcMappings.put("884925011316", "188834");
         upcMappings.put("711746875073", "188834");
         upcMappings.put("675905281368", "188834");
