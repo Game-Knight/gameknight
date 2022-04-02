@@ -157,11 +157,16 @@ public class ActivityUtils {
                         activity.runOnUiThread(new Runnable() {
                             @Override
                             public void run() {
-                                cameraSource.release();
-                                navController.navigate(
-                                        R.id.action_BarcodeScannerFragment_to_GameScannedFragment,
-                                        bundle
-                                );
+                                try {
+                                    cameraSource.release();
+                                    navController.navigate(
+                                            R.id.action_BarcodeScannerFragment_to_GameScannedFragment,
+                                            bundle
+                                    );
+                                }
+                                catch (Exception ex) {
+                                    System.err.println(ex.getMessage());
+                                }
                             }
                         });
                     }
