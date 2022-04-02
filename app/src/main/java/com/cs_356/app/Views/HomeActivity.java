@@ -31,6 +31,7 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
 import Entities.BoardGame;
+import Entities.GameNight;
 
 /**
  * This is the activity that represents the home view.
@@ -109,7 +110,6 @@ public class HomeActivity
         Intent intent = new Intent(this, GameNightActivity.class);
         intent.putExtra(Constants.GAME_NIGHT_KEY, FrontendCache.getGameNightsForAuthenticatedUser().get(position));
         startActivity(intent);
-        finish();
     }
 
     private void loadGameNightsInBackground(GameNightCardAdapter.OnGameNightCardClickListener cardClickListener){

@@ -42,6 +42,7 @@ public class FrontendCache {
     /* This is also only for the authenticatedUser since we have no need for seeing
      * other game nights */
     private static List<GameNight> gameNightList = null;
+    private static Map<String, GameNight> gameNightMap = null;
 
     /**
      * This section is for cache getters
@@ -116,6 +117,17 @@ public class FrontendCache {
         return upcMappings;
     }
 
+    public static List<BoardGame> getGamesAvailableForGameNight(String gameNightId) {
+        GameNight gameNight = getGameNightMap().get(gameNightId);
+
+        List<BoardGame> availableGames = new ArrayList<>();
+//        for (String userId : gameNight.getGuestList().entrySet()) {
+//
+//        }
+
+        return availableGames;
+    }
+
     public static List<BoardGame> getGamesForAuthenticatedUser() {
         if (gamesListForAuthenticatedUser == null) {
             gamesListForAuthenticatedUser = getGamesForUser(authenticatedUser.getPhoneNumber());
@@ -144,6 +156,16 @@ public class FrontendCache {
         }
 
         return gamesList;
+    }
+
+    public static Map<String, GameNight> getGameNightMap() {
+        if (gameNightMap == null) {
+            Log.d(LOG_TAG, "running initGameNightMapCache()");
+            initGameNightMapCache();
+            Log.d(LOG_TAG, "finished initGameNightMapCache()");
+        }
+
+        return gameNightMap;
     }
 
     public static List<GameNight> getGameNightsForAuthenticatedUser() {
@@ -196,6 +218,14 @@ public class FrontendCache {
                 }
                 Log.d(LOG_TAG, "Added " + gamesAdded + " games for user " + userEntry.getKey());
             }
+        }
+    }
+
+    private static void initGameNightMapCache() {
+        gameNightMap = new HashMap<>();
+
+        for (GameNight gameNight : getGameNightsForAuthenticatedUser()) {
+            gameNightMap.put(gameNight.getId(), gameNight);
         }
     }
 
