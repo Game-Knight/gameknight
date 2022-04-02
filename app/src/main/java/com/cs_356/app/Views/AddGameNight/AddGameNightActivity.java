@@ -49,6 +49,11 @@ public class AddGameNightActivity extends AppCompatActivity {
         ((AddGameNightInfoFragment)getSupportFragmentManager().findFragmentById(R.id.addGameNightFragment)).setSelectTimeTextView(time);
     }
 
+    public void onClickBackButton() {
+        Intent intent = new Intent(this, GameNightsActivity.class);
+        startActivity(intent);
+    }
+
     public void onClickNextButton() {
         getSupportFragmentManager().beginTransaction()
                 .replace(R.id.addGameNightFragment, AddGameNightFriendsFragment.class, null)

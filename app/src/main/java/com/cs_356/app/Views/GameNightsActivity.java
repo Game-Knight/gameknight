@@ -40,8 +40,7 @@ public class GameNightsActivity extends AppCompatActivity implements NavigationV
         binding = ActivityGameNightsBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
-        final Button addGameNightButton = findViewById(R.id.add_game_night_button);
-        addGameNightButton.setOnClickListener(new View.OnClickListener() {
+        binding.addGameNight.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 onClickAddNewGameNight(v);
             }
@@ -75,7 +74,7 @@ public class GameNightsActivity extends AppCompatActivity implements NavigationV
     }
 
     public void onClickAddNewGameNight(View view) {
-        Intent intent = new Intent(this, AddGameNightActivity.class);
-        startActivity(intent);
+        startActivity(new Intent(this, AddGameNightActivity.class));
+        finish();
     }
 }

@@ -22,43 +22,73 @@
         app:itemTextColor="@color/white_black_toggle"
         app:menu="@menu/main_menu" />
 
-    <ScrollView
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content">
 
-        <androidx.constraintlayout.widget.ConstraintLayout
+        <com.google.android.material.appbar.AppBarLayout
+            android:id="@+id/appBarLayout_game_nights"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:theme="@style/AppTheme.AppBarOverlay"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
 
-            <com.google.android.material.appbar.AppBarLayout
-                android:id="@+id/appBarLayout_game_nights"
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolbar_game_nights"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:theme="@style/AppTheme.AppBarOverlay"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent">
+                android:layout_height="?attr/actionBarSize"
+                android:background="?attr/colorPrimary"
+                android:elevation="0dp"
+                app:popupTheme="@style/ThemeOverlay.PopupTheme" />
 
-                <androidx.appcompat.widget.Toolbar
-                    android:id="@+id/toolbar_game_nights"
-                    android:layout_width="match_parent"
-                    android:layout_height="?attr/actionBarSize"
-                    android:background="?attr/colorPrimary"
-                    android:elevation="0dp"
-                    app:popupTheme="@style/ThemeOverlay.PopupTheme" />
+        </com.google.android.material.appbar.AppBarLayout>
 
-            </com.google.android.material.appbar.AppBarLayout>
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/game_nights_recycler_view"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:clipToPadding="false"
+            android:paddingBottom="50dp"
+            app:layoutManager="GridLayoutManager"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/appBarLayout_game_nights"
+            app:layout_constraintVertical_bias="1.0"
+            app:spanCount="1"
+            tools:listitem="@layout/game_night_card">
 
-            <Button
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="+"
-                android:id="@+id/add_game_night_button"
-                app:layout_constraintStart_toStartOf="@+id/appBarLayout_game_nights"
-                app:layout_constraintTop_toBottomOf="@+id/appBarLayout_game_nights" />
+        </androidx.recyclerview.widget.RecyclerView>
 
-        </androidx.constraintlayout.widget.ConstraintLayout>
+        <ProgressBar
+            android:id="@+id/progressSpinner"
+            style="?android:attr/progressBarStyle"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_marginBottom="100dp"
+            android:indeterminateDrawable="@drawable/progress_dice_anim"
+            android:progressDrawable="@drawable/progress_dice_anim"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="@id/game_nights_recycler_view"
+            app:layout_constraintEnd_toEndOf="@id/game_nights_recycler_view"
+            app:layout_constraintStart_toStartOf="@id/game_nights_recycler_view"
+            app:layout_constraintTop_toTopOf="@id/game_nights_recycler_view" />
 
-    </ScrollView>
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/add_game_night"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="16dp"
+            android:backgroundTint="@color/shade"
+            android:clickable="true"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:srcCompat="@drawable/ic_baseline_add_24"
+            app:tint="@color/white" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </androidx.drawerlayout.widget.DrawerLayout>
