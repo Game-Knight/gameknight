@@ -4,23 +4,18 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
-import android.net.Uri;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
-import android.webkit.WebView;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.cs_356.app.Adapters.GameCardAdapter;
 import com.cs_356.app.R;
+import com.cs_356.app.Utils.Image.PicassoTransformations;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.squareup.picasso.Picasso;
 
 import org.apache.commons.text.StringEscapeUtils;
-
-import java.io.Serializable;
 
 import Entities.BoardGame;
 import jp.wasabeef.picasso.transformations.BlurTransformation;
@@ -51,8 +46,8 @@ public class GameViewActivity extends AppCompatActivity {
         description = findViewById(R.id.description);
         rulesButton = findViewById(R.id.rulesButton);
 
-        Picasso.get().load(game.getImageUrl()).into(gameImg);
-        Picasso.get().load(game.getImageUrl()).transform(new BlurTransformation(bgImg.getContext(),75)).into(bgImg);
+        Picasso.get().load(game.getImageUrl()).transform(new PicassoTransformations.SCALE_300_MAX()).into(gameImg);
+        Picasso.get().load(game.getImageUrl()).transform(new PicassoTransformations.SCALE_1000_MAX()).transform(new BlurTransformation(bgImg.getContext(),75)).into(bgImg);
 
         name.setText(game.getName());
         numPlayers.setText(game.getMinPlayers() + "–" + game.getMaxPlayers() + " " + getString(R.string.players));
