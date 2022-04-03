@@ -651,6 +651,7 @@ public class FrontendCache {
             Collections.shuffle(shuffledGames);
             for (int j = 0; j < numCurrUserGames; ++j) {
                 if (bringingAssignments.containsKey(shuffledGames.get(j).getBggId())) {
+                    Collections.shuffle(shuffledGames);
                     --j;
                     continue;
                 }
