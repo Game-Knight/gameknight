@@ -2,7 +2,11 @@ package Entities;
 
 import java.io.Serializable;
 import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.List;
 import java.util.Map;
+import java.util.Set;
 
 import Enums.RSVP;
 import Utils.EntityUtils;
@@ -87,5 +91,16 @@ public class GameNight implements Serializable {
 
     public void setBringingAssignments(Map<String, String> bringingAssignments) {
         this.bringingAssignments = bringingAssignments;
+    }
+
+    public List<String> getAssignmentsForUser(String phoneNumber) {
+        Set<String> bggIds = new HashSet<>();
+        for (Map.Entry<String, String> entry : bringingAssignments.entrySet()) {
+            if (entry != null && entry.getValue() != null && entry.getValue().equals(phoneNumber)) {
+                bggIds.add(entry.getKey());
+            }
+        }
+
+        return new ArrayList<>(bggIds);
     }
 }

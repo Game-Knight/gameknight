@@ -46,6 +46,19 @@ public class FrontendCache {
      * This section is for cache getters
      */
 
+    public static List<BoardGame> getGamesAssignedToAuthenticatedUser(GameNight gameNight) {
+        List<String> bggIds = gameNight.getAssignmentsForUser(authenticatedUser.getPhoneNumber());
+        List<BoardGame> boardGames = new ArrayList<>();
+
+        for (String bggId : bggIds) {
+            if (getGamesMap().get(bggId) != null) {
+                boardGames.add(getGamesMap().get(bggId));
+            }
+        }
+
+        return boardGames;
+    }
+
     public static void addGameOwnershipForAuthUser(BoardGame game) {
         getOwnershipSet().add(new Ownership(authenticatedUser.getPhoneNumber(), game.getBggId()));
         if (getGamesMap().get(game.getBggId()) == null) {
@@ -546,11 +559,13 @@ public class FrontendCache {
 
         for (int i = 0; i < NUM_GAME_NIGHTS; ++i) {
             // Randomly selects a host from all users
+            System.out.println("Selecting a host");
             User randomHost = userList.get(RANDOM.nextInt(userList.size()));
 
             /* Iterates through the genericNames list for names. If
              * NUM_GAME_NIGHTS > genericNames.size() it will just start at the beginning again.
              * The same will happen for genericLocation */
+            System.out.println("Selecting a name");
             String name = genericNames.get(i % genericNames.size());
 
             /* Creating a time:
@@ -558,6 +573,7 @@ public class FrontendCache {
              * (up to NUM_GAME_NIGHTS), it starts by making a game night for tonight, the night
              * after that, etc. Each event is also given a random time on the hour or half-hour
              * sometime between 5 and 10PM */
+            System.out.println("Selecting a time");
             Calendar cal = Calendar.getInstance();
             int day = cal.get(Calendar.DAY_OF_MONTH);
             cal.set(Calendar.DAY_OF_MONTH, day + i);
@@ -573,6 +589,7 @@ public class FrontendCache {
             /* These locations are literally just from https://www.bestrandoms.com/random-address
              * when you give it 84604, and I added in a couple just raw text as well, to
              * make sure the View handles it well. */
+            System.out.println("Selecting a location");
             String location = genericLocations.get(i % genericLocations.size());
 
             /* First, when creating the guest list, the main user is added, and randomly
@@ -581,6 +598,7 @@ public class FrontendCache {
              * Secondly, the number of guests is randomly selected, and they are added with a
              * completely random RSVP. (I don't know what effect the ones other than YES and NO
              * should really have...). Check out randomEnum for how the enum is randomly chosen */
+            System.out.println("Creating guest list");
             Map<String, RSVP> guestList = new HashMap<>();
             guestList.put(
                     authenticatedUser.getPhoneNumber(),
@@ -610,6 +628,7 @@ public class FrontendCache {
              * Also, I make copies of the game lists and shuffle them each time because I don't
              * want repeats.
              */
+            System.out.println("Selecting game assignments");
             Map<String, String> bringingAssignments = new HashMap<>();
             if (i == 0 || RANDOM.nextBoolean()) {
                 int numCurrUserGames = RANDOM.nextInt(

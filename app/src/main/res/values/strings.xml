@@ -45,7 +45,7 @@
     <string name="game_night_title">Game Night Title</string>
     <string name="game_night_location">Game Night Location</string>
     <string name="game_night_date_time">Game Night Date/Time</string>
-    <string name="game_night_assignments">Game Night Assignments</string>
+    <string name="game_night_assignments">Don\'t forget to bring:</string>
     <string name="upcoming_game_nights">Upcoming Game Nights</string>
     <string name="no_game_found">No game found!</string>
     <string name="try_another_barcode">Try Another Barcode</string>
@@ -55,5 +55,6 @@
     <string name="finish_adding_game_night">Finish</string>
     <string name="invite_list">Invite List</string>
     <string name="available_games">Available Games</string>
+    <string name="nothing_to_bring">Nothing to bring!</string>
 
 </resources>

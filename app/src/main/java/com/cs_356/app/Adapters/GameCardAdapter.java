@@ -29,7 +29,10 @@ public class GameCardAdapter extends RecyclerView.Adapter<GameCardAdapter.ViewHo
 
     public GameCardAdapter(List<BoardGame> gamesList, OnGameCardClickListener onGameCardClickListener) {
         this.gamesList = gamesList;
-        this.onGameCardClickListener = onGameCardClickListener;
+
+        if (onGameCardClickListener != null) {
+            this.onGameCardClickListener = onGameCardClickListener;
+        }
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
@@ -48,14 +51,18 @@ public class GameCardAdapter extends RecyclerView.Adapter<GameCardAdapter.ViewHo
 
             gameImg = (ImageView) itemView.findViewById(R.id.card_img);
             bgImg = (ImageView) itemView.findViewById(R.id.card_bg);
-            this.onGameCardClickListener = onGameCardClickListener;
 
-            itemView.setOnClickListener(this);
+            if (onGameCardClickListener != null) {
+                this.onGameCardClickListener = onGameCardClickListener;
+                itemView.setOnClickListener(this);
+            }
         }
 
         @Override
         public void onClick(View view) {
-            onGameCardClickListener.onGameCardClick(getAdapterPosition());
+            if (onGameCardClickListener != null) {
+                onGameCardClickListener.onGameCardClick(getAdapterPosition());
+            }
         }
     }
 
