@@ -2,7 +2,6 @@ package com.cs_356.app.Cache;
 
 import android.util.Log;
 
-import com.cs_356.app.R;
 import com.cs_356.app.Utils.Constants;
 
 import java.time.LocalDateTime;
@@ -10,7 +9,6 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Calendar;
 import java.util.Collections;
-import java.util.Date;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
@@ -42,6 +40,7 @@ public class FrontendCache {
     /* This is also only for the authenticatedUser since we have no need for seeing
      * other game nights */
     private static List<GameNight> gameNightList = null;
+    private static Map<String, GameNight> gameNightMap = null;
 
     /**
      * This section is for cache getters
@@ -116,6 +115,54 @@ public class FrontendCache {
         return upcMappings;
     }
 
+    public static List<BoardGame> getGamesAvailableForGameNight(String gameNightId) {
+        GameNight gameNight = getGameNightMap().get(gameNightId);
+
+        Set<BoardGame> availableGames = new HashSet<>();
+        Set<String> userIds = new HashSet<>();
+        userIds.add(authenticatedUser.getPhoneNumber());
+
+        if (gameNight != null && gameNight.getGuestList() != null && gameNight.getGuestList().size() > 0) {
+            for (Map.Entry<String, RSVP> guest : gameNight.getGuestList().entrySet()) {
+                if (guest.getValue() != RSVP.NO) {
+                    userIds.add(guest.getKey());
+                }
+            }
+        }
+
+        for (Ownership ownership : getOwnershipSet()) {
+            if (userIds.contains(ownership.getUserId())) {
+                availableGames.add(getGamesMap().get(ownership.getBoardGameId()));
+            }
+        }
+
+        return new ArrayList<>(availableGames);
+    }
+
+    public static List<GameNight> getGameNightsForAuthenticatedUser() {
+        Set<GameNight> gameNights = new HashSet<>();
+
+        for (GameNight gameNight : getGameNightList()) {
+            if (gameNight.getHostId().equals(authenticatedUser.getPhoneNumber())
+                || gameNight.getGuestList().containsKey(authenticatedUser.getPhoneNumber())) {
+                gameNights.add(gameNight);
+            }
+        }
+
+        return new ArrayList<>(gameNights);
+    }
+
+    public static List<GameNight> getGameNightsHostedByAuthenticatedUser() {
+        Set<GameNight> gameNights = new HashSet<>();
+
+        for (GameNight gameNight : getGameNightList()) {
+            if (gameNight.getHostId().equals(authenticatedUser.getPhoneNumber())) {
+                gameNights.add(gameNight);
+            }
+        }
+        return new ArrayList<>(gameNights);
+    }
+
     public static List<BoardGame> getGamesForAuthenticatedUser() {
         if (gamesListForAuthenticatedUser == null) {
             gamesListForAuthenticatedUser = getGamesForUser(authenticatedUser.getPhoneNumber());
@@ -146,7 +193,17 @@ public class FrontendCache {
         return gamesList;
     }
 
-    public static List<GameNight> getGameNightsForAuthenticatedUser() {
+    public static Map<String, GameNight> getGameNightMap() {
+        if (gameNightMap == null) {
+            Log.d(LOG_TAG, "running initGameNightMapCache()");
+            initGameNightMapCache();
+            Log.d(LOG_TAG, "finished initGameNightMapCache()");
+        }
+
+        return gameNightMap;
+    }
+
+    public static List<GameNight> getGameNightList() {
         if (gameNightList == null) {
             Log.d(LOG_TAG, "running initGameNightCache()");
             initGameNightCache();
@@ -196,6 +253,14 @@ public class FrontendCache {
                 }
                 Log.d(LOG_TAG, "Added " + gamesAdded + " games for user " + userEntry.getKey());
             }
+        }
+    }
+
+    private static void initGameNightMapCache() {
+        gameNightMap = new HashMap<>();
+
+        for (GameNight gameNight : getGameNightList()) {
+            gameNightMap.put(gameNight.getId(), gameNight);
         }
     }
 

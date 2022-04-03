@@ -166,6 +166,7 @@ public class GameLibraryActivity extends AppCompatActivity implements Navigation
                     public void onClick(View view) {
                         Intent intent = new Intent(view.getContext(), AddGameManuallyActivity.class);
                         startActivity(intent);
+                        finish();
                     }
                 });
 
