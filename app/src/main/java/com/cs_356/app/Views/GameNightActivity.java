@@ -90,7 +90,7 @@ public class GameNightActivity extends AppCompatActivity implements GameCardAdap
 
     private void loadGamesInBackground(GameCardAdapter.OnGameCardClickListener cardClickListener) {
 
-        final GameLibraryActivity.OnProcessedListener listener = new GameLibraryActivity.OnProcessedListener() {
+        final OnProcessedListener listener = new OnProcessedListener() {
             @Override
             public void onProcessed(boolean success) {
                 // Use the handler so we're not trying to update the UI from the bg thread
@@ -99,7 +99,9 @@ public class GameNightActivity extends AppCompatActivity implements GameCardAdap
                     public void run() {
                         binding.progressSpinner.setVisibility(View.GONE);
                         GameCardAdapter adapter = new GameCardAdapter(
-                                FrontendCache.getGamesForAuthenticatedUser(), cardClickListener);
+                                FrontendCache.getGamesAvailableForGameNight(gameNight.getId()),
+                                cardClickListener
+                        );
                         binding.gameNightRecyclerView.setAdapter(adapter);
                         mExecutor.shutdown();
                     }

@@ -106,7 +106,7 @@ public class HomeActivity
     @Override
     public void onGameNightCardClick(int position) {
         Intent intent = new Intent(this, GameNightActivity.class);
-        intent.putExtra(Constants.GAME_NIGHT_KEY, FrontendCache.getGameNightList().get(position));
+        intent.putExtra(Constants.GAME_NIGHT_KEY, FrontendCache.getGameNightsForAuthenticatedUser().get(position));
         startActivity(intent);
     }
 

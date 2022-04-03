@@ -115,7 +115,7 @@ public class FrontendCache {
         return upcMappings;
     }
 
-    public static Set<BoardGame> getGamesAvailableForGameNight(String gameNightId) {
+    public static List<BoardGame> getGamesAvailableForGameNight(String gameNightId) {
         GameNight gameNight = getGameNightMap().get(gameNightId);
 
         Set<BoardGame> availableGames = new HashSet<>();
@@ -136,17 +136,31 @@ public class FrontendCache {
             }
         }
 
-        return availableGames;
+        return new ArrayList<>(availableGames);
     }
 
     public static List<GameNight> getGameNightsForAuthenticatedUser() {
-        List<GameNight> gameNights = new ArrayList<>();
-        return gameNights;
+        Set<GameNight> gameNights = new HashSet<>();
+
+        for (GameNight gameNight : getGameNightList()) {
+            if (gameNight.getHostId().equals(authenticatedUser.getPhoneNumber())
+                || gameNight.getGuestList().containsKey(authenticatedUser.getPhoneNumber())) {
+                gameNights.add(gameNight);
+            }
+        }
+
+        return new ArrayList<>(gameNights);
     }
 
     public static List<GameNight> getGameNightsHostedByAuthenticatedUser() {
-        List<GameNight> gameNights = new ArrayList<>();
-        return gameNights;
+        Set<GameNight> gameNights = new HashSet<>();
+
+        for (GameNight gameNight : getGameNightList()) {
+            if (gameNight.getHostId().equals(authenticatedUser.getPhoneNumber())) {
+                gameNights.add(gameNight);
+            }
+        }
+        return new ArrayList<>(gameNights);
     }
 
     public static List<BoardGame> getGamesForAuthenticatedUser() {
