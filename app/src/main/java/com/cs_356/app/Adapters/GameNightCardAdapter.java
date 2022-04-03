@@ -5,6 +5,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.cs_356.app.Cache.FrontendCache;
 import com.cs_356.app.R;
 import com.cs_356.app.Utils.DateUtils;
 
@@ -13,6 +15,8 @@ import java.time.DayOfWeek;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.List;
+
+import Entities.BoardGame;
 import Entities.GameNight;
 
 public class GameNightCardAdapter extends RecyclerView.Adapter<GameNightCardAdapter.ViewHolder> {
@@ -28,6 +32,7 @@ public class GameNightCardAdapter extends RecyclerView.Adapter<GameNightCardAdap
         private final TextView locationTextView;
         private final TextView dateTimeTextView;
         private final TextView assignmentTextView;
+        private final RecyclerView recyclerView;
         OnGameNightCardClickListener onGameNightCardClickListener;
 
         public ViewHolder(View view, OnGameNightCardClickListener onGameNightCardClickListener) {
@@ -38,6 +43,7 @@ public class GameNightCardAdapter extends RecyclerView.Adapter<GameNightCardAdap
             locationTextView = (TextView) view.findViewById(R.id.game_night_card_location);
             dateTimeTextView = (TextView) view.findViewById(R.id.game_night_card_date_time);
             assignmentTextView = (TextView) view.findViewById(R.id.game_night_card_assignments);
+            recyclerView = (RecyclerView) view.findViewById(R.id.game_night_card_recycler_view);
             this.onGameNightCardClickListener = onGameNightCardClickListener;
 
             itemView.setOnClickListener(this);
@@ -54,6 +60,9 @@ public class GameNightCardAdapter extends RecyclerView.Adapter<GameNightCardAdap
         }
         public TextView getAssignmentTextView() {
             return assignmentTextView;
+        }
+        public RecyclerView getRecyclerView() {
+            return recyclerView;
         }
 
         @Override
@@ -93,6 +102,13 @@ public class GameNightCardAdapter extends RecyclerView.Adapter<GameNightCardAdap
         viewHolder.getLocationTextView().setText(curr.getLocation());
         viewHolder.getDateTimeTextView().setText(DateUtils.formatDate(curr.getDate()));
 
+        List<BoardGame> assignedGames = FrontendCache.getGamesAssignedToAuthenticatedUser(curr);
+        if (assignedGames.size() == 0) {
+            viewHolder.getAssignmentTextView().setText(R.string.nothing_to_bring);
+        }
+
+        GameCardAdapter adapter = new GameCardAdapter(assignedGames, null);
+        viewHolder.getRecyclerView().setAdapter(adapter);
     }
 
     // Return the size of your dataset (invoked by the layout manager)
