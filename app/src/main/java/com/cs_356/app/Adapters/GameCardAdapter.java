@@ -3,7 +3,9 @@ package com.cs_356.app.Adapters;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
+import android.view.ContextMenu;
 import android.view.LayoutInflater;
+import android.view.Menu;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
@@ -27,6 +29,16 @@ public class GameCardAdapter extends RecyclerView.Adapter<GameCardAdapter.ViewHo
     private List<BoardGame> gamesList;
     private OnGameCardClickListener onGameCardClickListener;
 
+    private int position;
+    public static final int CONTEXT_ITEM_DELETE_GAME = 0;
+
+    public int getPosition() {
+        return position;
+    }
+
+    public void setPosition(int position) {
+        this.position = position;
+    }
     public GameCardAdapter(List<BoardGame> gamesList, OnGameCardClickListener onGameCardClickListener) {
         this.gamesList = gamesList;
 
@@ -35,7 +47,7 @@ public class GameCardAdapter extends RecyclerView.Adapter<GameCardAdapter.ViewHo
         }
     }
 
-    public class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
+    public class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener, View.OnCreateContextMenuListener {
         // Your holder should contain a member variable
         // for any view that will be set as you render a row
         public ImageView gameImg;
@@ -48,6 +60,8 @@ public class GameCardAdapter extends RecyclerView.Adapter<GameCardAdapter.ViewHo
             // Stores the itemView in a public final member variable that can be used
             // to access the context from any ViewHolder instance.
             super(itemView);
+
+            itemView.setOnCreateContextMenuListener(this);
 
             gameImg = (ImageView) itemView.findViewById(R.id.card_img);
             bgImg = (ImageView) itemView.findViewById(R.id.card_bg);
@@ -64,6 +78,26 @@ public class GameCardAdapter extends RecyclerView.Adapter<GameCardAdapter.ViewHo
                 onGameCardClickListener.onGameCardClick(getAdapterPosition());
             }
         }
+
+        @Override
+        public void onCreateContextMenu(ContextMenu contextMenu, View view, ContextMenu.ContextMenuInfo contextMenuInfo) {
+                //menuInfo is null
+                contextMenu.add(Menu.NONE, CONTEXT_ITEM_DELETE_GAME, 0, R.string.delete_game);
+        }
+
+//        @Override
+//        public boolean onContextItemSelected(MenuItem item) {
+//
+//            if (item.getTitle() == "Yellow") {
+//                relativeLayout.setBackgroundColor(Color.YELLOW);
+//            } else if (item.getTitle() == "Gray") {
+//                relativeLayout.setBackgroundColor(Color.GRAY);
+//            } else if (item.getTitle() == "Cyan") {
+//                relativeLayout.setBackgroundColor(Color.CYAN);
+//            }
+//
+//            return true;
+//        }
     }
 
     @Override
@@ -75,10 +109,28 @@ public class GameCardAdapter extends RecyclerView.Adapter<GameCardAdapter.ViewHo
 
         return new ViewHolder(gameView, onGameCardClickListener);
     }
+//    @Override
+//    public GameCardAdapter.ViewHolder onBindViewHolder(ViewGroup parent, int viewType) {
+//        parent.itemView.setOnLongClickListener(new View.OnLongClickListener() {
+//            @Override
+//            public boolean onLongClick(View v) {
+//                setPosition(holder.getPosition());
+//                return false;
+//            }
+//        });
+//    }
 
     @Override
     public void onBindViewHolder(GameCardAdapter.ViewHolder holder, int position) {
         BoardGame game = gamesList.get(position);
+
+        holder.itemView.setOnLongClickListener(new View.OnLongClickListener() {
+            @Override
+            public boolean onLongClick(View v) {
+                setPosition(holder.getAdapterPosition());
+                return false;
+            }
+        });
 
         Picasso.get().load(game.getImageUrl()).transform(new PicassoTransformations.SCALE_300_MAX()).into(holder.gameImg);
         Picasso.get().load(game.getImageUrl()).transform(new PicassoTransformations.CROP_SQUARE()).transform(new PicassoTransformations.SCALE_300_MAX()).transform(new BlurTransformation(holder.bgImg.getContext(),30)).into(holder.bgImg);

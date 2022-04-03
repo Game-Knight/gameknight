@@ -30,9 +30,7 @@ import com.cs_356.app.databinding.ActivityGameLibraryBinding;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.navigation.NavigationView;
 
-import java.util.ArrayList;
 import java.util.Comparator;
-import java.util.List;
 import java.util.Objects;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
@@ -60,6 +58,23 @@ public class GameLibraryActivity extends AppCompatActivity implements Navigation
 
     private RecyclerView recycler;
     private static ProgressBar progressSpinner;
+
+    @Override
+    public boolean onContextItemSelected(MenuItem item) {
+        int position = -1;
+        try {
+            position = ((GameCardAdapter) recycler.getAdapter()).getPosition();
+        } catch (Exception e) {
+            return super.onContextItemSelected(item);
+        }
+        switch (item.getItemId()) {
+            case GameCardAdapter.CONTEXT_ITEM_DELETE_GAME:
+                FrontendCache.getGamesForAuthenticatedUser().remove(position);
+                recycler.getAdapter().notifyItemRemoved(position);
+                break;
+        }
+        return super.onContextItemSelected(item);
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
