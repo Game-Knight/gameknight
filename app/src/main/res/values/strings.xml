@@ -56,5 +56,6 @@
     <string name="invite_list">Invite List</string>
     <string name="available_games">Available Games</string>
     <string name="nothing_to_bring">Nothing to bring!</string>
+    <string name="delete_game">Delete Game</string>
 
 </resources>
