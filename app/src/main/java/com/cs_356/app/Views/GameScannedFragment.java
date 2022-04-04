@@ -2,15 +2,13 @@ package com.cs_356.app.Views;
 
 import android.content.Intent;
 import android.os.Bundle;
-
-import androidx.annotation.NonNull;
-import androidx.constraintlayout.widget.ConstraintLayout;
-import androidx.fragment.app.Fragment;
-import androidx.navigation.fragment.NavHostFragment;
-
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+
+import androidx.annotation.NonNull;
+import androidx.fragment.app.Fragment;
+import androidx.navigation.fragment.NavHostFragment;
 
 import com.cs_356.app.Cache.FrontendCache;
 import com.cs_356.app.R;
@@ -23,7 +21,6 @@ import com.google.android.gms.vision.CameraSource;
 import com.squareup.picasso.Picasso;
 
 import Entities.BoardGame;
-import Entities.Ownership;
 import jp.wasabeef.picasso.transformations.BlurTransformation;
 
 public class GameScannedFragment extends Fragment {
@@ -74,7 +71,7 @@ public class GameScannedFragment extends Fragment {
                 @Override
                 public void onClick(View view) {
                     requireActivity().startActivity(
-                            new Intent(getActivity(), AddGameManuallyActivity.class)
+                            new Intent(requireActivity(), AddGameManuallyActivity.class)
                     );
                     requireActivity().finish();
                 }
@@ -105,7 +102,7 @@ public class GameScannedFragment extends Fragment {
                 public void onClick(View view) {
                     FrontendCache.addGameOwnershipForAuthUser(nonNullBoardGame);
                     requireActivity().startActivity(
-                            new Intent(getActivity(), GameLibraryActivity.class)
+                            new Intent(requireActivity(), GameLibraryActivity.class)
                     );
                     requireActivity().finish();
                 }

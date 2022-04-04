@@ -22,64 +22,61 @@
         app:itemTextColor="@color/white_black_toggle"
         app:menu="@menu/main_menu" />
 
-    <ScrollView
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:background="@color/tint">
 
-        <androidx.constraintlayout.widget.ConstraintLayout
+        <com.google.android.material.appbar.AppBarLayout
+            android:id="@+id/appBarLayout_home"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal">
+            android:theme="@style/AppTheme.AppBarOverlay"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
 
-            <com.google.android.material.appbar.AppBarLayout
-                android:id="@+id/appBarLayout_home"
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolbar_home"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:theme="@style/AppTheme.AppBarOverlay"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent">
+                android:layout_height="?attr/actionBarSize"
+                android:elevation="0dp"
+                android:theme="@style/TintToolbarStyle"
+                app:popupTheme="@style/ThemeOverlay.PopupTheme" />
 
-                <androidx.appcompat.widget.Toolbar
-                    android:id="@+id/toolbar_home"
-                    android:layout_width="match_parent"
-                    android:layout_height="?attr/actionBarSize"
-                    android:background="?attr/colorPrimary"
-                    android:elevation="0dp"
-                    app:popupTheme="@style/ThemeOverlay.PopupTheme" />
+        </com.google.android.material.appbar.AppBarLayout>
 
-            </com.google.android.material.appbar.AppBarLayout>
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/home_recycler_view"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:clipToPadding="false"
+            android:paddingBottom="50dp"
+            app:layoutManager="GridLayoutManager"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/appBarLayout_home"
+            app:layout_constraintVertical_bias="1.0"
+            app:spanCount="1"
+            tools:listitem="@layout/game_night_card">
 
-            <TextView
-                android:id="@+id/upcoming_game_nights_title"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintBaseline_toBottomOf="@id/appBarLayout_home"
-                app:layout_marginBaseline="30dp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                app:theme="@style/Subtitle"
-                android:text="@string/upcoming_game_nights" />
+        </androidx.recyclerview.widget.RecyclerView>
 
-            <!-- TODO: Fix this view to be dynamic! -->
+        <ProgressBar
+            android:id="@+id/progressSpinner"
+            style="?android:attr/progressBarStyle"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_marginBottom="100dp"
+            android:indeterminateDrawable="@drawable/progress_dice_anim"
+            android:progressDrawable="@drawable/progress_dice_anim"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="@id/home_recycler_view"
+            app:layout_constraintEnd_toEndOf="@id/home_recycler_view"
+            app:layout_constraintStart_toStartOf="@id/home_recycler_view"
+            app:layout_constraintTop_toTopOf="@id/home_recycler_view" />
 
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintBaseline_toBottomOf="@id/upcoming_game_nights_title" >
-
-                <include
-                    layout="@layout/game_night_card"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginVertical="104dp"/>
-
-            </LinearLayout>
-
-        </androidx.constraintlayout.widget.ConstraintLayout>
-
-    </ScrollView>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </androidx.drawerlayout.widget.DrawerLayout>

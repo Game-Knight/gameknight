@@ -25,13 +25,12 @@ import com.cs_356.app.Adapters.GameCardAdapter;
 import com.cs_356.app.Cache.FrontendCache;
 import com.cs_356.app.R;
 import com.cs_356.app.Utils.ActivityUtils;
+import com.cs_356.app.Utils.Constants;
 import com.cs_356.app.databinding.ActivityGameLibraryBinding;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.navigation.NavigationView;
 
-import java.util.ArrayList;
 import java.util.Comparator;
-import java.util.List;
 import java.util.Objects;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
@@ -59,6 +58,23 @@ public class GameLibraryActivity extends AppCompatActivity implements Navigation
 
     private RecyclerView recycler;
     private static ProgressBar progressSpinner;
+
+    @Override
+    public boolean onContextItemSelected(MenuItem item) {
+        int position = -1;
+        try {
+            position = ((GameCardAdapter) recycler.getAdapter()).getPosition();
+        } catch (Exception e) {
+            return super.onContextItemSelected(item);
+        }
+        switch (item.getItemId()) {
+            case GameCardAdapter.CONTEXT_ITEM_DELETE_GAME:
+                FrontendCache.getGamesForAuthenticatedUser().remove(position);
+                recycler.getAdapter().notifyItemRemoved(position);
+                break;
+        }
+        return super.onContextItemSelected(item);
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -165,6 +181,7 @@ public class GameLibraryActivity extends AppCompatActivity implements Navigation
                     public void onClick(View view) {
                         Intent intent = new Intent(view.getContext(), AddGameManuallyActivity.class);
                         startActivity(intent);
+                        finish();
                     }
                 });
 
@@ -199,7 +216,7 @@ public class GameLibraryActivity extends AppCompatActivity implements Navigation
     @Override
     public void onGameCardClick(int position) {
         Intent intent = new Intent(this, GameViewActivity.class);
-        intent.putExtra("game", FrontendCache.getGamesForAuthenticatedUser().get(position));
+        intent.putExtra(Constants.GAME_KEY, FrontendCache.getGamesForAuthenticatedUser().get(position));
         startActivity(intent);
     }
 
@@ -221,7 +238,8 @@ public class GameLibraryActivity extends AppCompatActivity implements Navigation
                     @Override
                     public void run(){
                         progressSpinner.setVisibility(View.GONE);
-                        GameCardAdapter adapter = new GameCardAdapter(FrontendCache.getGamesForAuthenticatedUser(), cardClickListener);
+                        GameCardAdapter adapter = new GameCardAdapter(
+                                FrontendCache.getGamesForAuthenticatedUser(), cardClickListener);
                         recycler.setAdapter(adapter);
                         mExecutor.shutdown();
                     }

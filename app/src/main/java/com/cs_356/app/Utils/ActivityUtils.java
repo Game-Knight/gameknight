@@ -3,11 +3,13 @@ package com.cs_356.app.Utils;
 import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Intent;
+import android.content.res.ColorStateList;
 import android.os.Bundle;
 import android.util.SparseArray;
 import android.view.MenuItem;
 import android.view.SurfaceHolder;
 import android.view.SurfaceView;
+import android.widget.Toast;
 
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
@@ -136,7 +138,7 @@ public class ActivityUtils {
                 cameraSource.stop();
             }
         });
-        
+
         barcodeDetector.setProcessor(new Detector.Processor<Barcode>() {
             @Override
             public void release() {
@@ -145,21 +147,37 @@ public class ActivityUtils {
 
             @Override
             public void receiveDetections(Detector.Detections<Barcode> detections) {
-                final SparseArray<Barcode> barcodes = detections.getDetectedItems();
-                if (barcodes.size() != 0 && scanBarcodesDetected) {
-                    Bundle bundle = new Bundle();
-                    bundle.putString(Constants.BARCODE_KEY, barcodes.valueAt(0).displayValue);
+                try {
+                    final SparseArray<Barcode> barcodes = detections.getDetectedItems();
+                    if (barcodes.size() != 0 && scanBarcodesDetected) {
+                        Bundle bundle = new Bundle();
+                        bundle.putString(Constants.BARCODE_KEY, barcodes.valueAt(0).displayValue);
+                        activity.findViewById(R.id.scanOverlay).setForegroundTintList(ColorStateList.valueOf(activity.getColor(R.color.orange)));
 
-                    activity.runOnUiThread(new Runnable() {
-                        @Override
-                        public void run() {
-                            cameraSource.release();
-                            navController.navigate(
-                                    R.id.action_BarcodeScannerFragment_to_GameScannedFragment,
-                                    bundle
-                            );
-                        }
-                    });
+                        activity.runOnUiThread(new Runnable() {
+                            @Override
+                            public void run() {
+                                try {
+                                    cameraSource.release();
+                                    navController.navigate(
+                                            R.id.action_BarcodeScannerFragment_to_GameScannedFragment,
+                                            bundle
+                                    );
+                                }
+                                catch (Exception ex) {
+                                    System.err.println(ex.getMessage());
+                                }
+                            }
+                        });
+                    }
+                }
+                catch (Exception ex) {
+                    System.err.println(ex.getMessage());
+                    Toast.makeText(
+                            activity,
+                            "Oops, there was an error scanning the barcode! Please try again.",
+                            Toast.LENGTH_LONG
+                    ).show();
                 }
             }
         });

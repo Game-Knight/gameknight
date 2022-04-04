@@ -52,7 +52,7 @@ public class BarcodeScannerFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 requireActivity().startActivity(
-                        new Intent(getActivity(), GameLibraryActivity.class)
+                        new Intent(requireActivity(), GameLibraryActivity.class)
                 );
                 requireActivity().finish();
             }

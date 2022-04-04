@@ -22,7 +22,13 @@ import androidx.vectordrawable.graphics.drawable.AnimatedVectorDrawableCompat;
 import com.cs_356.app.Adapters.GameCardAdapter;
 import com.cs_356.app.Cache.FrontendCache;
 import com.cs_356.app.R;
+import com.cs_356.app.Utils.Constants;
+import com.cs_356.app.Utils.Image.PicassoTransformations;
+import com.cs_356.app.databinding.ActivityAddGameManuallyBinding;
+import com.cs_356.app.databinding.ActivityGameLibraryBinding;
+import com.cs_356.app.databinding.GameCardBinding;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 import java.util.Comparator;
@@ -34,22 +40,25 @@ import DataAccess.DAO.APIs.APIBoardGameDAO;
 import DataAccess.DataGeneration.APIDB;
 import Entities.BoardGame;
 import Exceptions.DataAccessException;
+import jp.wasabeef.picasso.transformations.BlurTransformation;
 
 public class AddGameManuallyActivity extends AppCompatActivity implements GameCardAdapter.OnGameCardClickListener {
 
     private static final int RESULTS_COUNT = 10;
     private static List<BoardGame> results = new ArrayList<>();
-    private static RecyclerView recycler;
-    private static ProgressBar progressSpinner;
+
+    private ActivityAddGameManuallyBinding binding;
+    private GameCardBinding gameCardBinding;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_add_game_manually);
 
-        SearchView searchView = findViewById(R.id.searchView);
-        recycler = findViewById(R.id.game_library_recycler_view);
-        progressSpinner = findViewById(R.id.progressSpinner);
-        AnimatedVectorDrawable diceAnimation = (AnimatedVectorDrawable) progressSpinner.getIndeterminateDrawable();
+        binding = ActivityAddGameManuallyBinding.inflate(getLayoutInflater());
+        gameCardBinding = GameCardBinding.inflate(getLayoutInflater(), binding.noResultsImgLinearLayout, true);
+        setContentView(binding.getRoot());
+
+        AnimatedVectorDrawable diceAnimation = (AnimatedVectorDrawable) binding.progressSpinner.getIndeterminateDrawable();
 
         diceAnimation.registerAnimationCallback(new Animatable2.AnimationCallback(){
             public void onAnimationEnd(Drawable drawable){
@@ -57,19 +66,19 @@ public class AddGameManuallyActivity extends AppCompatActivity implements GameCa
             }
         });
 
-        searchView.requestFocus();
+        binding.searchView.requestFocus();
         GameCardAdapter.OnGameCardClickListener cardClickListener = this;
 
-        searchView.setOnFocusChangeListener(new View.OnFocusChangeListener() {
+        binding.searchView.setOnFocusChangeListener(new View.OnFocusChangeListener() {
             @Override
             public void onFocusChange(View view, boolean b) {
                 if (b) {
-                    recycler.setVisibility(View.INVISIBLE);
+                    binding.addGameManuallyRecyclerView.setVisibility(View.INVISIBLE);
                 }
             }
         });
 
-        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+        binding.searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
             @Override
             public boolean onQueryTextChange(String newText) {
                 return true;
@@ -77,11 +86,12 @@ public class AddGameManuallyActivity extends AppCompatActivity implements GameCa
 
             @Override
             public boolean onQueryTextSubmit(String query) {
-                searchView.getQuery();
+                binding.noResultsLinearLayout.setVisibility(View.GONE);
+                binding.searchView.getQuery();
                 loadGamesInBackground(cardClickListener, query);
-                searchView.clearFocus();
-                recycler.setVisibility(View.INVISIBLE);
-                progressSpinner.setVisibility(View.VISIBLE);
+                binding.searchView.clearFocus();
+                binding.addGameManuallyRecyclerView.setVisibility(View.INVISIBLE);
+                binding.progressSpinner.setVisibility(View.VISIBLE);
 
                 return true;
             }
@@ -110,31 +120,46 @@ public class AddGameManuallyActivity extends AppCompatActivity implements GameCa
         public void onProcessed(boolean success);
     }
 
-    private void loadGamesInBackground(GameCardAdapter.OnGameCardClickListener cardClickListener, String query){
+    private void loadGamesInBackground(GameCardAdapter.OnGameCardClickListener cardClickListener, String query) {
 
-        final GameLibraryActivity.OnProcessedListener listener = new GameLibraryActivity.OnProcessedListener(){
+        final GameLibraryActivity.OnProcessedListener listener = new GameLibraryActivity.OnProcessedListener() {
             @Override
-            public void onProcessed(boolean success){
+            public void onProcessed(boolean success) {
                 // Use the handler so we're not trying to update the UI from the bg thread
-                mHandler.post(new Runnable(){
+                mHandler.post(new Runnable() {
                     @Override
-                    public void run(){
-                        progressSpinner.setVisibility(View.GONE);
-                        GameCardAdapter adapter = new GameCardAdapter(results, cardClickListener);
-                        recycler.setAdapter(adapter);
-                        recycler.setVisibility(View.VISIBLE);
+                    public void run() {
+                        binding.progressSpinner.setVisibility(View.GONE);
+                        if (results.size() > 0) {
+                            GameCardAdapter adapter = new GameCardAdapter(results, cardClickListener);
+                            binding.addGameManuallyRecyclerView.setAdapter(adapter);
+                            binding.addGameManuallyRecyclerView.setVisibility(View.VISIBLE);
+                        }
+                        else {
+                            Picasso.get().load(Constants.NO_RESULTS_IMG_URL)
+                                    .transform(new PicassoTransformations.SCALE_300_MAX())
+                                    .into(gameCardBinding.cardImg);
+                            Picasso.get().load(Constants.NO_RESULTS_IMG_URL)
+                                    .transform(new PicassoTransformations.CROP_SQUARE())
+                                    .transform(new PicassoTransformations.SCALE_300_MAX())
+                                    .transform(new BlurTransformation(gameCardBinding.cardBg.getContext(),30))
+                                    .into(gameCardBinding.cardBg);
+
+                            binding.noResultsLinearLayout.setVisibility(View.VISIBLE);
+                        }
                     }
                 });
             }
         };
 
-        Runnable backgroundRunnable = new Runnable(){
+        Runnable backgroundRunnable = new Runnable() {
             @Override
-            public void run(){
+            public void run() {
                 APIBoardGameDAO dao = new APIBoardGameDAO();
                 try {
                     results = dao.getBoardGamesByName(query, RESULTS_COUNT);
-                } catch (DataAccessException e) {
+                }
+                catch (DataAccessException e) {
                     e.printStackTrace();
                 }
 

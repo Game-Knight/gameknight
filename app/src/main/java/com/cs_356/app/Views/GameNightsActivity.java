@@ -15,7 +15,6 @@ import com.cs_356.app.R;
 import com.cs_356.app.Utils.ActivityUtils;
 import com.cs_356.app.Views.AddGameNight.AddGameNightActivity;
 import com.cs_356.app.databinding.ActivityGameNightsBinding;
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.navigation.NavigationView;
 
 import java.util.Objects;
@@ -34,8 +33,6 @@ public class GameNightsActivity extends AppCompatActivity implements NavigationV
     private DrawerLayout drawerLayout;
     private NavigationView navigationView;
 
-    private FloatingActionButton addGameNightFAB;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -43,8 +40,7 @@ public class GameNightsActivity extends AppCompatActivity implements NavigationV
         binding = ActivityGameNightsBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
-        addGameNightFAB = findViewById(R.id.addGameNightFAB);
-        addGameNightFAB.setOnClickListener(new View.OnClickListener() {
+        binding.addGameNight.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 onClickAddNewGameNight(v);
             }
@@ -78,7 +74,7 @@ public class GameNightsActivity extends AppCompatActivity implements NavigationV
     }
 
     public void onClickAddNewGameNight(View view) {
-        Intent intent = new Intent(this, AddGameNightActivity.class);
-        startActivity(intent);
+        startActivity(new Intent(this, AddGameNightActivity.class));
+        finish();
     }
 }
