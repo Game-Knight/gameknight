@@ -63,13 +63,13 @@ public class GameNightActivity extends AppCompatActivity implements GameCardAdap
         binding.gameNightLocation.setText(gameNight.getLocation());
         binding.gameNightDateTime.setText(DateUtils.formatDate(gameNight.getDate()));
 
-        AnimatedVectorDrawable diceAnimation = (AnimatedVectorDrawable) binding.progressSpinner.getIndeterminateDrawable();
-
-        diceAnimation.registerAnimationCallback(new Animatable2.AnimationCallback(){
-            public void onAnimationEnd(Drawable drawable){
-                diceAnimation.start();
-            }
-        });
+//        AnimatedVectorDrawable diceAnimation = (AnimatedVectorDrawable) binding.progressSpinner.getIndeterminateDrawable();
+//
+//        diceAnimation.registerAnimationCallback(new Animatable2.AnimationCallback(){
+//            public void onAnimationEnd(Drawable drawable){
+//                diceAnimation.start();
+//            }
+//        });
 
         loadGamesInBackground(this, this);
     }
@@ -101,13 +101,13 @@ public class GameNightActivity extends AppCompatActivity implements GameCardAdap
                 mHandler.post(new Runnable() {
                     @Override
                     public void run() {
-                        binding.progressSpinner.setVisibility(View.GONE);
+//                        binding.progressSpinner.setVisibility(View.GONE);
                         GameCardAdapter adapter = new GameCardAdapter(
                                 FrontendCache.getGamesAvailableForGameNight(gameNight.getId()),
                                 cardClickListener,
                                 context
                         );
-                        binding.gameNightRecyclerView.setAdapter(adapter);
+//                        binding.gameNightRecyclerView.setAdapter(adapter);
                         mExecutor.shutdown();
                     }
                 });
@@ -117,7 +117,7 @@ public class GameNightActivity extends AppCompatActivity implements GameCardAdap
         Runnable backgroundRunnable = new Runnable() {
             @Override
             public void run() {
-                binding.progressSpinner.setVisibility(View.VISIBLE);
+//                binding.progressSpinner.setVisibility(View.VISIBLE);
                 FrontendCache.getGamesForAuthenticatedUser().sort(Comparator.comparing(BoardGame::getName));
 
                 listener.onProcessed(true);

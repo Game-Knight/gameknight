@@ -57,5 +57,8 @@
     <string name="available_games">Available Games</string>
     <string name="nothing_to_bring">Nothing to bring!</string>
     <string name="delete_game">Delete Game</string>
+    <string name="tab_text_1">Tab 1</string>
+    <string name="tab_text_2">Tab 2</string>
+    <string name="edit_game_night">Edit Game Night</string>
 
 </resources>
