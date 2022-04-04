@@ -77,7 +77,10 @@ public class GameNightActivity extends AppCompatActivity implements GameCardAdap
     @Override
     public void onGameCardClick(int position) {
         Intent intent = new Intent(this, GameViewActivity.class);
-        intent.putExtra(Constants.GAME_KEY, FrontendCache.getGamesForAuthenticatedUser().get(position));
+        intent.putExtra(
+                Constants.GAME_KEY,
+                FrontendCache.getGamesAvailableForGameNight(gameNight.getId()).get(position)
+        );
         startActivity(intent);
     }
 
