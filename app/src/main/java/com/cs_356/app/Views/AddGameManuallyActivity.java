@@ -3,6 +3,7 @@ package com.cs_356.app.Views;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Context;
 import android.content.Intent;
 import android.graphics.drawable.Animatable2;
 import android.graphics.drawable.AnimatedVectorDrawable;
@@ -50,6 +51,8 @@ public class AddGameManuallyActivity extends AppCompatActivity implements GameCa
     private ActivityAddGameManuallyBinding binding;
     private GameCardBinding gameCardBinding;
 
+    private Context context;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -57,6 +60,8 @@ public class AddGameManuallyActivity extends AppCompatActivity implements GameCa
         binding = ActivityAddGameManuallyBinding.inflate(getLayoutInflater());
         gameCardBinding = GameCardBinding.inflate(getLayoutInflater(), binding.noResultsImgLinearLayout, true);
         setContentView(binding.getRoot());
+
+        context = this;
 
         AnimatedVectorDrawable diceAnimation = (AnimatedVectorDrawable) binding.progressSpinner.getIndeterminateDrawable();
 
@@ -88,7 +93,7 @@ public class AddGameManuallyActivity extends AppCompatActivity implements GameCa
             public boolean onQueryTextSubmit(String query) {
                 binding.noResultsLinearLayout.setVisibility(View.GONE);
                 binding.searchView.getQuery();
-                loadGamesInBackground(cardClickListener, query);
+                loadGamesInBackground(cardClickListener, context, query);
                 binding.searchView.clearFocus();
                 binding.addGameManuallyRecyclerView.setVisibility(View.INVISIBLE);
                 binding.progressSpinner.setVisibility(View.VISIBLE);
@@ -120,7 +125,7 @@ public class AddGameManuallyActivity extends AppCompatActivity implements GameCa
         public void onProcessed(boolean success);
     }
 
-    private void loadGamesInBackground(GameCardAdapter.OnGameCardClickListener cardClickListener, String query) {
+    private void loadGamesInBackground(GameCardAdapter.OnGameCardClickListener cardClickListener, Context context, String query) {
 
         final GameLibraryActivity.OnProcessedListener listener = new GameLibraryActivity.OnProcessedListener() {
             @Override
@@ -131,7 +136,7 @@ public class AddGameManuallyActivity extends AppCompatActivity implements GameCa
                     public void run() {
                         binding.progressSpinner.setVisibility(View.GONE);
                         if (results.size() > 0) {
-                            GameCardAdapter adapter = new GameCardAdapter(results, cardClickListener);
+                            GameCardAdapter adapter = new GameCardAdapter(results, cardClickListener, context);
                             binding.addGameManuallyRecyclerView.setAdapter(adapter);
                             binding.addGameManuallyRecyclerView.setVisibility(View.VISIBLE);
                         }

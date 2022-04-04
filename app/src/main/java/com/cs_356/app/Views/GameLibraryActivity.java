@@ -7,6 +7,7 @@ import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.navigation.ui.AppBarConfiguration;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Context;
 import android.content.Intent;
 import android.graphics.drawable.Animatable2;
 import android.graphics.drawable.AnimatedVectorDrawable;
@@ -196,7 +197,7 @@ public class GameLibraryActivity extends AppCompatActivity implements Navigation
             }
         });
 
-        loadGamesInBackground(this);
+        loadGamesInBackground(this, this);
 
         // Create adapter passing in the sample user data
 
@@ -228,7 +229,7 @@ public class GameLibraryActivity extends AppCompatActivity implements Navigation
         public void onProcessed(boolean success);
     }
 
-    private void loadGamesInBackground(GameCardAdapter.OnGameCardClickListener cardClickListener){
+    private void loadGamesInBackground(GameCardAdapter.OnGameCardClickListener cardClickListener, Context context){
 
         final OnProcessedListener listener = new OnProcessedListener(){
             @Override
@@ -239,7 +240,10 @@ public class GameLibraryActivity extends AppCompatActivity implements Navigation
                     public void run(){
                         progressSpinner.setVisibility(View.GONE);
                         GameCardAdapter adapter = new GameCardAdapter(
-                                FrontendCache.getGamesForAuthenticatedUser(), cardClickListener);
+                                FrontendCache.getGamesForAuthenticatedUser(),
+                                cardClickListener,
+                                context
+                        );
                         recycler.setAdapter(adapter);
                         mExecutor.shutdown();
                     }
