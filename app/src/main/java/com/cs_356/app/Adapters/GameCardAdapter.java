@@ -15,6 +15,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.cs_356.app.R;
 import com.cs_356.app.Utils.Image.PicassoTransformations;
 import com.cs_356.app.Views.AddGameActivity;
+import com.cs_356.app.Views.GameLibraryActivity;
 import com.squareup.picasso.Picasso;
 import com.squareup.picasso.Transformation;
 
@@ -28,6 +29,15 @@ public class GameCardAdapter extends RecyclerView.Adapter<GameCardAdapter.ViewHo
 
     private List<BoardGame> gamesList;
     private OnGameCardClickListener onGameCardClickListener;
+    private Context context;
+
+    public List<BoardGame> getGamesList() {
+        return gamesList;
+    }
+
+    public void setGamesList(List<BoardGame> gamesList) {
+        this.gamesList = gamesList;
+    }
 
     private int position;
     public static final int CONTEXT_ITEM_DELETE_GAME = 0;
@@ -39,8 +49,10 @@ public class GameCardAdapter extends RecyclerView.Adapter<GameCardAdapter.ViewHo
     public void setPosition(int position) {
         this.position = position;
     }
-    public GameCardAdapter(List<BoardGame> gamesList, OnGameCardClickListener onGameCardClickListener) {
+
+    public GameCardAdapter(List<BoardGame> gamesList, OnGameCardClickListener onGameCardClickListener, Context context) {
         this.gamesList = gamesList;
+        this.context = context;
 
         if (onGameCardClickListener != null) {
             this.onGameCardClickListener = onGameCardClickListener;
@@ -82,7 +94,7 @@ public class GameCardAdapter extends RecyclerView.Adapter<GameCardAdapter.ViewHo
         @Override
         public void onCreateContextMenu(ContextMenu contextMenu, View view, ContextMenu.ContextMenuInfo contextMenuInfo) {
                 //menuInfo is null
-            if (onGameCardClickListener != null) {
+            if (onGameCardClickListener != null && context.getClass().equals(GameLibraryActivity.class)) {
                 contextMenu.add(Menu.NONE, CONTEXT_ITEM_DELETE_GAME, 0, R.string.delete_game);
             }
         }

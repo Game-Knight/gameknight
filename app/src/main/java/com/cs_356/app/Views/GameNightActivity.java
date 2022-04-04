@@ -3,6 +3,7 @@ package com.cs_356.app.Views;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
 import android.content.Intent;
 import android.graphics.drawable.Animatable2;
 import android.graphics.drawable.AnimatedVectorDrawable;
@@ -70,7 +71,7 @@ public class GameNightActivity extends AppCompatActivity implements GameCardAdap
             }
         });
 
-        loadGamesInBackground(this);
+        loadGamesInBackground(this, this);
     }
 
     @Override
@@ -88,7 +89,7 @@ public class GameNightActivity extends AppCompatActivity implements GameCardAdap
         void onProcessed(boolean success);
     }
 
-    private void loadGamesInBackground(GameCardAdapter.OnGameCardClickListener cardClickListener) {
+    private void loadGamesInBackground(GameCardAdapter.OnGameCardClickListener cardClickListener, Context context) {
 
         final OnProcessedListener listener = new OnProcessedListener() {
             @Override
@@ -100,7 +101,8 @@ public class GameNightActivity extends AppCompatActivity implements GameCardAdap
                         binding.progressSpinner.setVisibility(View.GONE);
                         GameCardAdapter adapter = new GameCardAdapter(
                                 FrontendCache.getGamesAvailableForGameNight(gameNight.getId()),
-                                cardClickListener
+                                cardClickListener,
+                                context
                         );
                         binding.gameNightRecyclerView.setAdapter(adapter);
                         mExecutor.shutdown();

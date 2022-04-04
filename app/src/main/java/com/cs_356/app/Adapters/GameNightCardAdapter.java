@@ -23,26 +23,19 @@ import java.util.List;
 import Entities.BoardGame;
 import Entities.GameNight;
 
-public class GameNightCardAdapter
-        extends RecyclerView.Adapter<GameNightCardAdapter.ViewHolder>
-        implements GameCardAdapter.OnGameCardClickListener
-{
+public class GameNightCardAdapter extends RecyclerView.Adapter<GameNightCardAdapter.ViewHolder> {
     private List<GameNight> gameNights;
     private OnGameNightCardClickListener onGameNightCardClickListener;
     private Context context;
-
-    @Override
-    public void onGameCardClick(int position) {
-        Intent intent = new Intent(context, GameViewActivity.class);
-        intent.putExtra(Constants.GAME_KEY, FrontendCache.getGamesForAuthenticatedUser().get(position));
-        context.startActivity(intent);
-    }
 
     /**
      * Provide a reference to the type of views that you are using
      * (custom ViewHolder).
      */
-    public class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
+    public class ViewHolder
+            extends RecyclerView.ViewHolder
+            implements View.OnClickListener, GameCardAdapter.OnGameCardClickListener
+    {
         private final TextView titleTextView;
         private final TextView locationTextView;
         private final TextView dateTimeTextView;
@@ -84,6 +77,21 @@ public class GameNightCardAdapter
         public void onClick(View view) {
             onGameNightCardClickListener.onGameNightCardClick(getAdapterPosition());
         }
+
+        @Override
+        public void onGameCardClick(int position) {
+            GameCardAdapter adapter = (GameCardAdapter) this.getRecyclerView().getAdapter();
+
+            if (adapter != null
+                && adapter.getGamesList() != null
+                && adapter.getGamesList().size() > position
+                && adapter.getGamesList().get(position) != null) {
+
+                Intent intent = new Intent(context, GameViewActivity.class);
+                intent.putExtra(Constants.GAME_KEY, adapter.getGamesList().get(position));
+                context.startActivity(intent);
+            }
+        }
     }
 
     /**
@@ -123,7 +131,7 @@ public class GameNightCardAdapter
             viewHolder.getAssignmentTextView().setText(R.string.nothing_to_bring);
         }
 
-        GameCardAdapter adapter = new GameCardAdapter(assignedGames, this);
+        GameCardAdapter adapter = new GameCardAdapter(assignedGames, viewHolder, context);
         viewHolder.getRecyclerView().setAdapter(adapter);
     }
 
