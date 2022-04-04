@@ -24,7 +24,8 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:background="@color/tint">
 
         <com.google.android.material.appbar.AppBarLayout
             android:id="@+id/appBarLayout_game_nights"
@@ -39,8 +40,8 @@
                 android:id="@+id/toolbar_game_nights"
                 android:layout_width="match_parent"
                 android:layout_height="?attr/actionBarSize"
-                android:background="?attr/colorPrimary"
                 android:elevation="0dp"
+                android:theme="@style/TintToolbarStyle"
                 app:popupTheme="@style/ThemeOverlay.PopupTheme" />
 
         </com.google.android.material.appbar.AppBarLayout>
