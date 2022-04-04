@@ -2,7 +2,7 @@ package Entities;
 
 import java.io.Serializable;
 
-public class BoardGame implements Serializable {
+public class BoardGame implements Serializable, Comparable<BoardGame> {
 
     private String bggId;
     private String bgaId;
@@ -241,5 +241,10 @@ public class BoardGame implements Serializable {
     public String toString() {
         return "Id: " + this.bggId + "\nName: " + this.name + "\nDescription: " + this.description +
                 "\nImage URL: " + this.imageUrl + "\nBorrowed: " + this.borrowed + "\n";
+    }
+
+    @Override
+    public int compareTo(BoardGame game) {
+        return this.name.compareTo(game.name);
     }
 }

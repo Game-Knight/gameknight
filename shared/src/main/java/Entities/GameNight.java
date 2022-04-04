@@ -11,7 +11,7 @@ import java.util.Set;
 import Enums.RSVP;
 import Utils.EntityUtils;
 
-public class GameNight implements Serializable {
+public class GameNight implements Serializable, Comparable<GameNight> {
 
     private String id;
     private String name;
@@ -102,5 +102,10 @@ public class GameNight implements Serializable {
         }
 
         return new ArrayList<>(bggIds);
+    }
+
+    @Override
+    public int compareTo(GameNight gameNight) {
+        return this.name.compareTo(gameNight.name);
     }
 }
