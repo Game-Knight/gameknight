@@ -8,17 +8,6 @@
     android:background="@color/tint"
     tools:context=".Views.GameNightView.AvailableGamesFragment">
 
-        <TextView
-            android:id="@+id/available_games_title"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:paddingTop="16dp"
-            android:text="@string/available_games"
-            android:theme="@style/Subtitle"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/game_night_recycler_view"
             android:layout_width="357dp"
@@ -29,7 +18,7 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/available_games_title"
+            app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.0"
             app:spanCount="2"
             tools:listitem="@layout/game_card">

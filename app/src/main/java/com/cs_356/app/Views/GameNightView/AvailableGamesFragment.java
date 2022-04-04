@@ -34,15 +34,6 @@ public class AvailableGamesFragment extends Fragment implements GameCardAdapter.
     private static GameNight gameNight;
 
     @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-//        int index = 1;
-//        if (getArguments() != null) {
-//            index = getArguments().getInt(Constants.TAB_SECTION_NUMBER);
-//        }
-    }
-
-    @Override
     public View onCreateView(
             @NonNull LayoutInflater inflater, ViewGroup container,
             Bundle savedInstanceState) {
