@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/tint"
-    tools:context=".Views.GameNightActivity">
+    tools:context=".Views.GameNightView.GameNightActivity">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/game_night_header"

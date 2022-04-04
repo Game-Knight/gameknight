@@ -1,4 +1,4 @@
-package com.cs_356.app.Views;
+package com.cs_356.app.Views.GameNightView;
 
 import android.content.Context;
 
