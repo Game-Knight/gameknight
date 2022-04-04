@@ -7,8 +7,6 @@
 #### 🔴 High Priority
 - [ ] add AddGameNightActivity (Brayden)
 - [ ] voting for games
-- [ ] fix clicking board game on game night card
-- [ ] fix context clicking on games on game night card
 
 #### 🟠 Medium Priority
 - [ ] overflow (3 dots) menu in GameView
@@ -44,6 +42,9 @@
 - [X] speed up cache initialization
 - [X] add GameNightsActivity
 - [X] add GameNightActivity
+- [X] fix clicking board game on game night card
+- [X] fix context clicking on games on game night card
+- [X] fix being able to add a game multiple times
 
 #### ⚫️ Backlog
 - [ ] make SettingsActivity functional

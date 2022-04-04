@@ -72,7 +72,10 @@ public class FrontendCache {
             }
         }
 
-        getGamesForAuthenticatedUser().add(getGamesMap().get(game.getBggId()));
+        BoardGame gameToAdd = getGamesMap().get(game.getBggId());
+        if (!getGamesForAuthenticatedUser().contains(gameToAdd)) {
+            getGamesForAuthenticatedUser().add(gameToAdd);
+        }
     }
 
     public static Set<Ownership> getOwnershipSet() {
