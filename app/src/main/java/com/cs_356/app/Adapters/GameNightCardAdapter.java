@@ -1,5 +1,7 @@
 package com.cs_356.app.Adapters;
 
+import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -8,7 +10,9 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.cs_356.app.Cache.FrontendCache;
 import com.cs_356.app.R;
+import com.cs_356.app.Utils.Constants;
 import com.cs_356.app.Utils.DateUtils;
+import com.cs_356.app.Views.GameViewActivity;
 
 import java.text.DateFormat;
 import java.time.DayOfWeek;
@@ -19,9 +23,20 @@ import java.util.List;
 import Entities.BoardGame;
 import Entities.GameNight;
 
-public class GameNightCardAdapter extends RecyclerView.Adapter<GameNightCardAdapter.ViewHolder> {
+public class GameNightCardAdapter
+        extends RecyclerView.Adapter<GameNightCardAdapter.ViewHolder>
+        implements GameCardAdapter.OnGameCardClickListener
+{
     private List<GameNight> gameNights;
     private OnGameNightCardClickListener onGameNightCardClickListener;
+    private Context context;
+
+    @Override
+    public void onGameCardClick(int position) {
+        Intent intent = new Intent(context, GameViewActivity.class);
+        intent.putExtra(Constants.GAME_KEY, FrontendCache.getGamesForAuthenticatedUser().get(position));
+        context.startActivity(intent);
+    }
 
     /**
      * Provide a reference to the type of views that you are using
@@ -77,9 +92,10 @@ public class GameNightCardAdapter extends RecyclerView.Adapter<GameNightCardAdap
      * @param dataSet List<GameNight> containing the data to populate views to be used
      * by RecyclerView.
      */
-    public GameNightCardAdapter(List<GameNight> dataSet, OnGameNightCardClickListener onGameNightCardClickListener) {
+    public GameNightCardAdapter(List<GameNight> dataSet, OnGameNightCardClickListener onGameNightCardClickListener, Context context) {
         gameNights = dataSet;
         this.onGameNightCardClickListener = onGameNightCardClickListener;
+        this.context = context;
     }
 
     // Create new views (invoked by the layout manager)
@@ -107,7 +123,7 @@ public class GameNightCardAdapter extends RecyclerView.Adapter<GameNightCardAdap
             viewHolder.getAssignmentTextView().setText(R.string.nothing_to_bring);
         }
 
-        GameCardAdapter adapter = new GameCardAdapter(assignedGames, null);
+        GameCardAdapter adapter = new GameCardAdapter(assignedGames, this);
         viewHolder.getRecyclerView().setAdapter(adapter);
     }
 

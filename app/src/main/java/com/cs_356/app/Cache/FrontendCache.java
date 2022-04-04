@@ -16,6 +16,8 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.Random;
 import java.util.Set;
+import java.util.TreeSet;
+import java.util.stream.Collectors;
 
 import Entities.BoardGame;
 import Entities.GameNight;
@@ -131,8 +133,8 @@ public class FrontendCache {
     public static List<BoardGame> getGamesAvailableForGameNight(String gameNightId) {
         GameNight gameNight = getGameNightMap().get(gameNightId);
 
-        Set<BoardGame> availableGames = new HashSet<>();
-        Set<String> userIds = new HashSet<>();
+        Set<BoardGame> availableGames = new TreeSet<>();
+        Set<String> userIds = new TreeSet<>();
         userIds.add(authenticatedUser.getPhoneNumber());
 
         if (gameNight != null && gameNight.getGuestList() != null && gameNight.getGuestList().size() > 0) {
@@ -153,11 +155,11 @@ public class FrontendCache {
     }
 
     public static List<GameNight> getGameNightsForAuthenticatedUser() {
-        Set<GameNight> gameNights = new HashSet<>();
+        Set<GameNight> gameNights = new TreeSet<>();
 
         for (GameNight gameNight : getGameNightList()) {
-            if (gameNight.getHostId().equals(authenticatedUser.getPhoneNumber())
-                || gameNight.getGuestList().containsKey(authenticatedUser.getPhoneNumber())) {
+            if ((gameNight.getHostId().equals(authenticatedUser.getPhoneNumber())
+                    || gameNight.getGuestList().containsKey(authenticatedUser.getPhoneNumber()))) {
                 gameNights.add(gameNight);
             }
         }
@@ -166,7 +168,7 @@ public class FrontendCache {
     }
 
     public static List<GameNight> getGameNightsHostedByAuthenticatedUser() {
-        Set<GameNight> gameNights = new HashSet<>();
+        Set<GameNight> gameNights = new TreeSet<>();
 
         for (GameNight gameNight : getGameNightList()) {
             if (gameNight.getHostId().equals(authenticatedUser.getPhoneNumber())) {
@@ -559,8 +561,11 @@ public class FrontendCache {
 
         for (int i = 0; i < NUM_GAME_NIGHTS; ++i) {
             // Randomly selects a host from all users
+            // but makes sure the authenticated user hosts at least one.
             System.out.println("Selecting a host");
-            User randomHost = userList.get(RANDOM.nextInt(userList.size()));
+            User randomHost = i == 0
+                    ? getUserMap().get(authenticatedUser.getPhoneNumber())
+                    : userList.get(RANDOM.nextInt(userList.size()));
 
             /* Iterates through the genericNames list for names. If
              * NUM_GAME_NIGHTS > genericNames.size() it will just start at the beginning again.

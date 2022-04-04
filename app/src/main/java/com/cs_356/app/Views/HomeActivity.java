@@ -1,5 +1,6 @@
 package com.cs_356.app.Views;
 
+import android.content.Context;
 import android.content.Intent;
 import android.graphics.drawable.Animatable2;
 import android.graphics.drawable.AnimatedVectorDrawable;
@@ -30,6 +31,7 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
 import Entities.BoardGame;
+import Entities.GameNight;
 
 /**
  * This is the activity that represents the home view.
@@ -46,8 +48,6 @@ public class HomeActivity
     private ActivityHomeBinding binding;
     private DrawerLayout drawerLayout;
     private NavigationView navigationView;
-    private RecyclerView recycler;
-    private static ProgressBar progressSpinner;
 
     private ExecutorService mExecutor = Executors.newSingleThreadExecutor();
     private Handler mHandler = new Handler(Looper.getMainLooper());
@@ -74,15 +74,7 @@ public class HomeActivity
                 R.id.nav_item_home
         );
 
-//        recycler = findViewById(R.id.home_recycler_view);
-//        GameNightCardAdapter adapter =
-//                new GameNightCardAdapter(FrontendCache.getGameNightsForAuthenticatedUser());
-//        recycler.setAdapter(adapter);
-
-        recycler = findViewById(R.id.home_recycler_view);
-
-        progressSpinner = findViewById(R.id.progressSpinner);
-        AnimatedVectorDrawable diceAnimation = (AnimatedVectorDrawable) progressSpinner.getIndeterminateDrawable();
+        AnimatedVectorDrawable diceAnimation = (AnimatedVectorDrawable) binding.progressSpinner.getIndeterminateDrawable();
 
         diceAnimation.registerAnimationCallback(new Animatable2.AnimationCallback(){
             public void onAnimationEnd(Drawable drawable){
@@ -90,7 +82,7 @@ public class HomeActivity
             }
         });
 
-        loadGameNightsInBackground(this);
+        loadGameNightsInBackground(this, this);
     }
 
     @Override
@@ -110,7 +102,7 @@ public class HomeActivity
         startActivity(intent);
     }
 
-    private void loadGameNightsInBackground(GameNightCardAdapter.OnGameNightCardClickListener cardClickListener){
+    private void loadGameNightsInBackground(GameNightCardAdapter.OnGameNightCardClickListener cardClickListener, Context context){
 
         final OnProcessedListener listener = new OnProcessedListener() {
             @Override
@@ -119,10 +111,13 @@ public class HomeActivity
                 mHandler.post(new Runnable(){
                     @Override
                     public void run(){
-                        progressSpinner.setVisibility(View.GONE);
+                        binding.progressSpinner.setVisibility(View.GONE);
                         GameNightCardAdapter adapter = new GameNightCardAdapter(
-                                FrontendCache.getGameNightList(), cardClickListener);
-                        recycler.setAdapter(adapter);
+                                FrontendCache.getGameNightsForAuthenticatedUser(),
+                                cardClickListener,
+                                context
+                        );
+                        binding.homeRecyclerView.setAdapter(adapter);
                         mExecutor.shutdown();
                     }
                 });
@@ -132,8 +127,8 @@ public class HomeActivity
         Runnable backgroundRunnable = new Runnable() {
             @Override
             public void run(){
-                progressSpinner.setVisibility(View.VISIBLE);
-                FrontendCache.getGamesForAuthenticatedUser().sort(Comparator.comparing(BoardGame::getName));
+                binding.progressSpinner.setVisibility(View.VISIBLE);
+                FrontendCache.getGameNightsForAuthenticatedUser().sort(Comparator.comparing(GameNight::getName));
 
                 listener.onProcessed(true);
             }

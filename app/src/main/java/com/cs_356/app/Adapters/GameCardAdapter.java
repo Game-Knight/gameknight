@@ -82,22 +82,10 @@ public class GameCardAdapter extends RecyclerView.Adapter<GameCardAdapter.ViewHo
         @Override
         public void onCreateContextMenu(ContextMenu contextMenu, View view, ContextMenu.ContextMenuInfo contextMenuInfo) {
                 //menuInfo is null
+            if (onGameCardClickListener != null) {
                 contextMenu.add(Menu.NONE, CONTEXT_ITEM_DELETE_GAME, 0, R.string.delete_game);
+            }
         }
-
-//        @Override
-//        public boolean onContextItemSelected(MenuItem item) {
-//
-//            if (item.getTitle() == "Yellow") {
-//                relativeLayout.setBackgroundColor(Color.YELLOW);
-//            } else if (item.getTitle() == "Gray") {
-//                relativeLayout.setBackgroundColor(Color.GRAY);
-//            } else if (item.getTitle() == "Cyan") {
-//                relativeLayout.setBackgroundColor(Color.CYAN);
-//            }
-//
-//            return true;
-//        }
     }
 
     @Override
@@ -109,16 +97,6 @@ public class GameCardAdapter extends RecyclerView.Adapter<GameCardAdapter.ViewHo
 
         return new ViewHolder(gameView, onGameCardClickListener);
     }
-//    @Override
-//    public GameCardAdapter.ViewHolder onBindViewHolder(ViewGroup parent, int viewType) {
-//        parent.itemView.setOnLongClickListener(new View.OnLongClickListener() {
-//            @Override
-//            public boolean onLongClick(View v) {
-//                setPosition(holder.getPosition());
-//                return false;
-//            }
-//        });
-//    }
 
     @Override
     public void onBindViewHolder(GameCardAdapter.ViewHolder holder, int position) {
