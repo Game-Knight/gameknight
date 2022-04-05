@@ -254,6 +254,16 @@ public class FrontendCache {
         return gameNightList;
     }
 
+    public static List<User> getUsersBySearch(String query) {
+        List<User> result = new ArrayList<User>();
+        for (User user : getUserList()) {
+            if (user.getFullName().toLowerCase().contains(query.toLowerCase())) {
+                result.add(user);
+            }
+        }
+        return result;
+    }
+
     /**
      * The section below is for cache initialization methods.
      */
