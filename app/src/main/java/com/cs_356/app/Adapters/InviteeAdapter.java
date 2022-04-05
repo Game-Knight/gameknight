@@ -1,8 +1,7 @@
 package com.cs_356.app.Adapters;
 
 import android.content.Context;
-import android.content.Intent;
-import android.graphics.Bitmap;
+import android.graphics.drawable.Drawable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,19 +11,12 @@ import android.widget.TextView;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.cs_356.app.R;
-import com.cs_356.app.Utils.Image.PicassoTransformations;
-import com.cs_356.app.Views.AddGameActivity;
-import com.squareup.picasso.Picasso;
-import com.squareup.picasso.Transformation;
 
-import org.w3c.dom.Text;
-
+import java.util.Arrays;
 import java.util.List;
+import java.util.Random;
 
-import Entities.BoardGame;
 import Entities.User;
-import jp.wasabeef.picasso.transformations.BlurTransformation;
-import jp.wasabeef.picasso.transformations.CropSquareTransformation;
 
 public class InviteeAdapter extends RecyclerView.Adapter<InviteeAdapter.ViewHolder> {
 
@@ -37,14 +29,20 @@ public class InviteeAdapter extends RecyclerView.Adapter<InviteeAdapter.ViewHold
     public class ViewHolder extends RecyclerView.ViewHolder {
 
         private final TextView name;
+        private final ImageView icon;
 
         public ViewHolder(View itemView) {
             super(itemView);
             name = (TextView) itemView.findViewById(R.id.inviteeName);
+            icon = (ImageView) itemView.findViewById(R.id.inviteIcon);
         }
 
         public TextView getName() {
             return name;
+        }
+
+        public ImageView getIcon() {
+            return icon;
         }
     }
 
@@ -60,10 +58,23 @@ public class InviteeAdapter extends RecyclerView.Adapter<InviteeAdapter.ViewHold
     public void onBindViewHolder(InviteeAdapter.ViewHolder holder, int position) {
         User invitee = inviteeList.get(position);
         holder.getName().setText(invitee.getFullName());
+        holder.getIcon().setImageResource(getRandomIconId());
     }
 
     @Override
     public int getItemCount() {
         return inviteeList.size();
+    }
+
+    private int getRandomIconId() {
+        List<Integer> icons = Arrays.asList(
+                R.drawable.ic_bishop,
+                R.drawable.ic_king,
+                R.drawable.ic_knight,
+                R.drawable.ic_pawn,
+                R.drawable.ic_queen,
+                R.drawable.ic_rook);
+        Random rand = new Random();
+        return icons.get(rand.nextInt(icons.size()));
     }
 }

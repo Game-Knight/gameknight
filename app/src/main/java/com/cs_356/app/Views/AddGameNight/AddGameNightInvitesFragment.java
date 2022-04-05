@@ -11,22 +11,20 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 
-import com.cs_356.app.Adapters.GameCardAdapter;
 import com.cs_356.app.Adapters.InviteeAdapter;
 import com.cs_356.app.Cache.FrontendCache;
 import com.cs_356.app.R;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import Entities.User;
 
-public class AddGameNightFriendsFragment extends Fragment {
+public class AddGameNightInvitesFragment extends Fragment {
 
     public RecyclerView recyclerView;
     public Button addGameNightFinishButton;
 
-    public AddGameNightFriendsFragment() {
+    public AddGameNightInvitesFragment() {
         // Required empty public constructor
     }
 
@@ -39,7 +37,7 @@ public class AddGameNightFriendsFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View rootView = inflater.inflate(R.layout.fragment_add_game_night_friends, container, false);
+        View rootView = inflater.inflate(R.layout.fragment_add_game_night_invites, container, false);
 
         // Set on click for finish button
         addGameNightFinishButton = rootView.findViewById(R.id.add_game_night_finish_button);

@@ -5,7 +5,6 @@ import androidx.fragment.app.DialogFragment;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
 
 import com.cs_356.app.R;
 import com.cs_356.app.Views.GameNightsActivity;
@@ -56,7 +55,7 @@ public class AddGameNightActivity extends AppCompatActivity {
 
     public void onClickNextButton() {
         getSupportFragmentManager().beginTransaction()
-                .replace(R.id.addGameNightFragment, AddGameNightFriendsFragment.class, null)
+                .replace(R.id.addGameNightFragment, AddGameNightInvitesFragment.class, null)
                 .setReorderingAllowed(true)
                 .addToBackStack(null)
                 .commit();
