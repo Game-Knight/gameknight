@@ -10,19 +10,18 @@ import android.os.Handler;
 import android.os.Looper;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.ProgressBar;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.navigation.ui.AppBarConfiguration;
-import androidx.recyclerview.widget.RecyclerView;
 
 import com.cs_356.app.Adapters.GameNightCardAdapter;
 import com.cs_356.app.Cache.FrontendCache;
 import com.cs_356.app.R;
 import com.cs_356.app.Utils.ActivityUtils;
 import com.cs_356.app.Utils.Constants;
+import com.cs_356.app.Views.GameNightView.GameNightActivity;
 import com.cs_356.app.databinding.ActivityHomeBinding;
 import com.google.android.material.navigation.NavigationView;
 
@@ -30,7 +29,6 @@ import java.util.Comparator;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
-import Entities.BoardGame;
 import Entities.GameNight;
 
 /**

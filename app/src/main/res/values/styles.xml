@@ -8,7 +8,7 @@
         <item name="android:textColor">@color/black</item>
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
-        <item name="materialButtonStyle">@style/Button</item>
+        <item name="materialButtonStyle">@style/ButtonPrimary</item>
         <item name="android:fontFamily">@font/lato</item>
     </style>
 
@@ -27,18 +27,38 @@
         <item name="android:textColor">@color/black</item>
     </style>
 
+    <style name="PrimaryTabStyle" parent="Theme.Material3.Light">
+        <!-- Customize your theme here. -->
+        <item name="tabBackground">@drawable/tabs_selector</item>
+        <item name="tabSelectedTextColor">@color/black</item>
+        <item name="tabTextColor">@color/white</item>
+        <item name="tabTextAppearance">@style/Subtitle</item>
+        <item name="tabIndicatorColor">?attr/tabSelectedTextColor</item>
+    </style>
+
     <style name="Widget.AppTheme.ButtonBar.Fullscreen" parent="">
         <item name="android:background">@color/black_overlay</item>
         <item name="android:buttonBarStyle">?android:attr/buttonBarStyle</item>
     </style>
 
-    <style name="Button" parent="Widget.Material3.Button">
+    <style name="ButtonPrimary" parent="Widget.Material3.Button">
         <item name="android:backgroundTint">@color/shade</item>
         <item name="android:gravity">center</item>
         <item name="iconGravity">textStart</item>
         <item name="fontFamily">@font/lato_bold</item>
         <item name="android:textSize">20sp</item>
         <item name="iconSize">32dp</item>
+    </style>
+
+    <style name="SecondaryButtonTheme" parent="ThemeOverlay.Material3.Light">
+        <item name="materialButtonStyle">@style/ButtonSecondary</item>
+    </style>
+
+    <style name="ButtonSecondary" parent="ButtonPrimary">
+        <item name="android:backgroundTint">@color/white</item>
+        <item name="android:textColor">@color/shade</item>
+        <item name="strokeColor">@color/shade</item>
+        <item name="strokeWidth">2dp</item>
     </style>
 
     <style name="Title" parent="Widget.MaterialComponents.TextView">
