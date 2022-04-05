@@ -37,7 +37,7 @@ public class FrontendCache {
     private final static String LOG_TAG = "FRONTEND_CACHE";
 
     private static final User authenticatedUser = new User(
-            "123-456-7890", "Test", "User", "test");
+            "123-456-7890", "Jacob", "Smith", "test");
     private static List<BoardGame> gamesListForAuthenticatedUser = null;
     /* This is also only for the authenticatedUser since we have no need for seeing
      * other game nights */
@@ -47,6 +47,29 @@ public class FrontendCache {
     /**
      * This section is for cache getters
      */
+
+    public static boolean isHostedByAuthenticatedUser(GameNight gameNight) {
+        return gameNight.getHostId().equals(authenticatedUser.getPhoneNumber());
+    }
+
+    public static List<User> getGameNightGuestList(String gameNightId) {
+        Set<User> guests = new TreeSet<>();
+        if (getGameNightMap() != null
+            && getGameNightMap().get(gameNightId) != null
+            && Objects.requireNonNull(getGameNightMap().get(gameNightId)).getGuestList() != null) {
+
+            Map<String, RSVP> guestListMap =
+                    Objects.requireNonNull(getGameNightMap().get(gameNightId)).getGuestList();
+            for (Map.Entry<String, RSVP> entry : guestListMap.entrySet()) {
+                User guest = getUserMap().get(entry.getKey());
+                if (guest != null) {
+                    guests.add(guest);
+                }
+            }
+        }
+
+        return new ArrayList<>(guests);
+    }
 
     public static List<BoardGame> getGamesAssignedToAuthenticatedUser(GameNight gameNight) {
         List<String> bggIds = gameNight.getAssignmentsForUser(authenticatedUser.getPhoneNumber());

@@ -15,7 +15,6 @@ import android.os.Handler;
 import android.os.Looper;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.Button;
 
 import com.cs_356.app.Adapters.GameNightCardAdapter;
 import com.cs_356.app.Cache.FrontendCache;
@@ -23,6 +22,7 @@ import com.cs_356.app.R;
 import com.cs_356.app.Utils.ActivityUtils;
 import com.cs_356.app.Utils.Constants;
 import com.cs_356.app.Views.AddGameNight.AddGameNightActivity;
+import com.cs_356.app.Views.GameNightView.GameNightActivity;
 import com.cs_356.app.databinding.ActivityGameNightsBinding;
 import com.google.android.material.navigation.NavigationView;
 

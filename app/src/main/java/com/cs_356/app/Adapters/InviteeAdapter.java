@@ -59,7 +59,7 @@ public class InviteeAdapter extends RecyclerView.Adapter<InviteeAdapter.ViewHold
     @Override
     public void onBindViewHolder(InviteeAdapter.ViewHolder holder, int position) {
         User invitee = inviteeList.get(position);
-        holder.getName().setText(invitee.getFirstName());
+        holder.getName().setText(invitee.getFullName());
     }
 
     @Override

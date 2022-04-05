@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/tint"
-    tools:context=".Views.GameNightActivity">
+    tools:context=".Views.GameNightView.GameNightActivity">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/game_night_header"
@@ -31,12 +31,13 @@
             app:tint="@color/white" />
 
         <LinearLayout
+            android:id="@+id/game_night_info"
             android:layout_width="280dp"
             android:layout_height="wrap_content"
             android:gravity="center"
             android:orientation="vertical"
-            android:paddingVertical="24dp"
-            app:layout_constraintBottom_toBottomOf="parent"
+            android:paddingTop="24dp"
+            android:paddingBottom="8dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
@@ -67,58 +68,51 @@
 
         </LinearLayout>
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/game_night_info">
+
+            <com.google.android.material.tabs.TabLayout
+                android:id="@+id/tabs"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/primary"
+                app:tabBackground="@drawable/tabs_selector"
+                app:tabIndicatorColor="@color/black"
+                app:tabSelectedTextColor="@color/black"
+                app:tabTextAppearance="@style/Subtitle"
+                app:tabTextColor="@color/white" />
+
+        </LinearLayout>
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 
-    <TextView
-        android:id="@+id/available_games_title"
-        android:layout_width="wrap_content"
+    <androidx.viewpager.widget.ViewPager
+        android:id="@+id/view_pager"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:paddingTop="16dp"
-        android:text="@string/available_games"
-        android:theme="@style/Subtitle"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/game_night_header" />
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/game_night_recycler_view"
-        android:layout_width="357dp"
-        android:layout_height="0dp"
-        android:clipToPadding="false"
-        android:paddingBottom="50dp"
-        app:layoutManager="GridLayoutManager"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/available_games_title"
-        app:layout_constraintVertical_bias="0.0"
-        app:spanCount="2"
-        tools:listitem="@layout/game_card">
-
-    </androidx.recyclerview.widget.RecyclerView>
-
-    <ProgressBar
-        android:id="@+id/progressSpinner"
-        style="?android:attr/progressBarStyle"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:layout_marginBottom="100dp"
-        android:indeterminateDrawable="@drawable/progress_dice_anim"
-        android:progressDrawable="@drawable/progress_dice_anim"
-        android:visibility="gone"
-        app:layout_constraintBottom_toBottomOf="@id/game_night_recycler_view"
-        app:layout_constraintEnd_toEndOf="@id/game_night_recycler_view"
-        app:layout_constraintStart_toStartOf="@id/game_night_recycler_view"
-        app:layout_constraintTop_toTopOf="@id/game_night_recycler_view" />
-
-    <Button
-        android:id="@+id/invite_list_button"
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/edit_fab"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_margin="10dp"
-        android:elevation="2dp"
-        android:text="@string/invite_list"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
+        android:clickable="true"
+        android:contentDescription="@string/edit_game_night"
+        android:visibility="gone"
+        app:backgroundTint="@color/shade"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:srcCompat="@drawable/ic_baseline_edit_note_24"
+        app:tint="@color/white" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
