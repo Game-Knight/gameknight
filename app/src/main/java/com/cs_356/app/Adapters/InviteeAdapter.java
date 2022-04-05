@@ -21,9 +21,11 @@ import Entities.User;
 public class InviteeAdapter extends RecyclerView.Adapter<InviteeAdapter.ViewHolder> {
 
     private final List<User> inviteeList;
+    private final boolean interactable;
 
-    public InviteeAdapter(List<User> inviteeList) {
+    public InviteeAdapter(List<User> inviteeList, boolean interactable) {
         this.inviteeList = inviteeList;
+        this.interactable = interactable;
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {
@@ -58,7 +60,7 @@ public class InviteeAdapter extends RecyclerView.Adapter<InviteeAdapter.ViewHold
     public void onBindViewHolder(InviteeAdapter.ViewHolder holder, int position) {
         User invitee = inviteeList.get(position);
         holder.getName().setText(invitee.getFullName());
-        holder.getIcon().setImageResource(getRandomIconId());
+        holder.getIcon().setImageResource(getIconId(invitee.getFirstName()));
     }
 
     @Override
@@ -66,15 +68,23 @@ public class InviteeAdapter extends RecyclerView.Adapter<InviteeAdapter.ViewHold
         return inviteeList.size();
     }
 
-    private int getRandomIconId() {
-        List<Integer> icons = Arrays.asList(
-                R.drawable.ic_bishop,
-                R.drawable.ic_king,
-                R.drawable.ic_knight,
-                R.drawable.ic_pawn,
-                R.drawable.ic_queen,
-                R.drawable.ic_rook);
-        Random rand = new Random();
-        return icons.get(rand.nextInt(icons.size()));
+    private int getIconId(String name) {
+        String lowerName = name.toLowerCase();
+        char firstLetter = lowerName.charAt(0);
+        switch ((firstLetter - 96) % 6) {
+            case 0:
+                return R.drawable.ic_bishop;
+            case 1:
+                return R.drawable.ic_king;
+            case 2:
+                return R.drawable.ic_rook;
+            case 3:
+                return R.drawable.ic_knight;
+            case 4:
+                return R.drawable.ic_pawn;
+            case 5:
+                return R.drawable.ic_queen;
+        }
+        return 0;
     }
 }

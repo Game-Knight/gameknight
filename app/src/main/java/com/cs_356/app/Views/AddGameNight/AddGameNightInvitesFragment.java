@@ -60,7 +60,7 @@ public class AddGameNightInvitesFragment extends Fragment {
         recyclerView = rootView.findViewById(R.id.inviteeRecyclerView);
         // Set up adapter for recycler view
         List<User> invitees = FrontendCache.getUserList();
-        InviteeAdapter adapter = new InviteeAdapter(invitees);
+        InviteeAdapter adapter = new InviteeAdapter(invitees, false);
         recyclerView.setAdapter(adapter);
         recyclerView.setVisibility(View.VISIBLE);
 
