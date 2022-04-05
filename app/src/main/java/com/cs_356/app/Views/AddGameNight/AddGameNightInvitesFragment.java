@@ -14,6 +14,7 @@ import android.widget.Button;
 import com.cs_356.app.Adapters.InviteeAdapter;
 import com.cs_356.app.Cache.FrontendCache;
 import com.cs_356.app.R;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.util.List;
 
@@ -23,6 +24,7 @@ public class AddGameNightInvitesFragment extends Fragment {
 
     public RecyclerView recyclerView;
     public Button addGameNightFinishButton;
+    public FloatingActionButton backButton;
 
     public AddGameNightInvitesFragment() {
         // Required empty public constructor
@@ -57,6 +59,13 @@ public class AddGameNightInvitesFragment extends Fragment {
         DividerItemDecoration dividerItemDecoration = new DividerItemDecoration(recyclerView.getContext(),
                 DividerItemDecoration.VERTICAL);
         recyclerView.addItemDecoration(dividerItemDecoration);
+
+        backButton = rootView.findViewById(R.id.addGameNightBackFAB);
+        backButton.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                requireActivity().onBackPressed();
+            }
+        });
 
         return rootView;
     }
