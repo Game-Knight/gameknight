@@ -1,5 +1,6 @@
 package com.cs_356.app.Views.AddGameNight;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.DialogFragment;
 
@@ -38,6 +39,11 @@ public class AddGameNightActivity extends AppCompatActivity {
     public void showTimePickerDialog() {
         DialogFragment newFragment = new TimePickerFragment();
         newFragment.show(getSupportFragmentManager(), "datePicker");
+    }
+
+    public void showAddInviteeDialog() {
+        DialogFragment newFragment = new AddInviteesDialog();
+        newFragment.show(getSupportFragmentManager(), "game");
     }
 
     public void setSelectDateTextView(String date) {

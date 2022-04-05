@@ -38,11 +38,21 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Invite List"
+                android:text="@string/invite_list"
                 android:textSize="22dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <Button
+                android:id="@+id/addInviteeButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/plus_sign"
+                android:layout_marginRight="10dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
@@ -52,19 +62,10 @@
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:paddingHorizontal="30dp"
-            app:layout_constraintBottom_toTopOf="@+id/add_game_night_finish_button"
+            app:layout_constraintBottom_toTopOf="@+id/finishButton"
             app:layout_constraintTop_toBottomOf="@+id/constraintLayout"
             app:layout_constraintVertical_bias="0.0"
             tools:layout_editor_absoluteX="-54dp">
-            <!--            <SearchView-->
-            <!--                android:id="@+id/addGameNightSearchView"-->
-            <!--                android:layout_width="wrap_content"-->
-            <!--                android:layout_height="wrap_content"-->
-            <!--                android:focusedByDefault="true"-->
-            <!--                android:iconifiedByDefault="false"-->
-            <!--                app:layout_constraintEnd_toEndOf="parent"-->
-            <!--                app:layout_constraintStart_toStartOf="parent"-->
-            <!--                app:layout_constraintTop_toTopOf="parent"/>-->
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/inviteeRecyclerView"
@@ -76,12 +77,12 @@
                 app:layout_constraintHorizontal_bias="1.0"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                tools:listitem="@layout/invitee_item"></androidx.recyclerview.widget.RecyclerView>
+                tools:listitem="@layout/invitee_item"/>
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
         <Button
-            android:id="@+id/add_game_night_finish_button"
+            android:id="@+id/finishButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="10dp"

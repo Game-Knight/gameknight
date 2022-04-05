@@ -62,5 +62,7 @@
     <string name="edit_game_night">Edit Game Night</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="invite_list">Invite List</string>
+    <string name="plus_sign">+</string>
 
 </resources>
