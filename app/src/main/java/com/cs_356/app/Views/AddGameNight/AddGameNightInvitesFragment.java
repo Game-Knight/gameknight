@@ -23,6 +23,7 @@ public class AddGameNightInvitesFragment extends Fragment {
 
     public RecyclerView recyclerView;
     public Button addGameNightFinishButton;
+    public Button addInviteeButton;
 
     public AddGameNightInvitesFragment() {
         // Required empty public constructor
@@ -40,10 +41,17 @@ public class AddGameNightInvitesFragment extends Fragment {
         View rootView = inflater.inflate(R.layout.fragment_add_game_night_invites, container, false);
 
         // Set on click for finish button
-        addGameNightFinishButton = rootView.findViewById(R.id.add_game_night_finish_button);
+        addGameNightFinishButton = rootView.findViewById(R.id.finishButton);
         addGameNightFinishButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 ((AddGameNightActivity)getActivity()).onClickFinishButton();
+            }
+        });
+
+        addInviteeButton = rootView.findViewById(R.id.addInviteeButton);
+        addInviteeButton.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                ((AddGameNightActivity)getActivity()).showAddInviteeDialog();
             }
         });
 
