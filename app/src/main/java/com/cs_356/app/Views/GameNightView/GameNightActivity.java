@@ -14,7 +14,9 @@ import android.os.Handler;
 import android.os.Looper;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.ViewTreeObserver;
 import android.widget.ProgressBar;
+import android.widget.Toast;
 
 import com.cs_356.app.Adapters.GameCardAdapter;
 import com.cs_356.app.Cache.FrontendCache;
@@ -39,7 +41,6 @@ import Entities.GameNight;
  * the game night, you'll be able to manage the invite list. This display
  * should show the user which games will be played. It should also allow the
  * user to vote for the games they want to play.
- * TODO: Add a fragment for managing the invite list.
  */
 public class GameNightActivity extends AppCompatActivity {
 
@@ -62,14 +63,32 @@ public class GameNightActivity extends AppCompatActivity {
             }
         });
 
+        if (FrontendCache.isHostedByAuthenticatedUser(gameNight)) {
+            binding.editFab.setVisibility(View.VISIBLE);
+            binding.editFab.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    // TODO: Launch EditGameNightActivity!
+                    Toast.makeText(view.getContext(), "Not yet implemented!", Toast.LENGTH_SHORT).show();
+                }
+            });
+        }
+
         binding.gameNightTitle.setText(gameNight.getName());
         binding.gameNightLocation.setText(gameNight.getLocation());
         binding.gameNightDateTime.setText(DateUtils.formatDate(gameNight.getDate()));
 
         SectionsPagerAdapter sectionsPagerAdapter = new SectionsPagerAdapter(this, getSupportFragmentManager());
-        ViewPager viewPager = binding.viewPager;
-        viewPager.setAdapter(sectionsPagerAdapter);
-        TabLayout tabs = binding.tabs;
-        tabs.setupWithViewPager(viewPager);
+        binding.viewPager.setAdapter(sectionsPagerAdapter);
+        binding.tabs.setupWithViewPager(binding.viewPager);
+
+        binding.getRoot().getViewTreeObserver().addOnGlobalLayoutListener(
+                new ViewTreeObserver.OnGlobalLayoutListener() {
+
+                    @Override
+                    public void onGlobalLayout() {
+                        binding.viewPager.setPadding(0, 0, 0, binding.gameNightHeader.getHeight());
+                    }
+                });
     }
 }

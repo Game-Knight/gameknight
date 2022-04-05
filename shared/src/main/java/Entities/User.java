@@ -5,7 +5,7 @@ import java.util.Map;
 
 import Utils.EntityUtils;
 
-public class User implements Serializable {
+public class User implements Serializable, Comparable<User> {
 
     private String phoneNumber; // though not very secure, this can act as the username and user id
     private String firstName;
@@ -69,9 +69,18 @@ public class User implements Serializable {
         }
     }
 
+    public String getFullName() {
+        return this.firstName + " " + this.lastName;
+    }
+
     @Override
     public String toString() {
         return "First Name: " + this.firstName + "\nLast Name: " + this.lastName +
                 "\nPhone Number (used as id): " + this.phoneNumber + "\n";
+    }
+
+    @Override
+    public int compareTo(User user) {
+        return this.getFullName().compareTo(user.getFullName());
     }
 }

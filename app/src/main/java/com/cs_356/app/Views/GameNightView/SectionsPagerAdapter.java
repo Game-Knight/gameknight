@@ -31,6 +31,8 @@ public class SectionsPagerAdapter extends FragmentPagerAdapter {
         // Return a PlaceholderFragment (defined as a static inner class below).
         // return AvailableGamesFragment.newInstance(position + 1);
         switch (position) {
+            case 1:
+                return new InviteListFragment();
             default:
             case 0:
                 return new AvailableGamesFragment();

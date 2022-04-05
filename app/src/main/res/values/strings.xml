@@ -60,5 +60,7 @@
     <string name="available_games_tab">Available Games</string>
     <string name="invite_list_tab">Invite List</string>
     <string name="edit_game_night">Edit Game Night</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 
 </resources>
