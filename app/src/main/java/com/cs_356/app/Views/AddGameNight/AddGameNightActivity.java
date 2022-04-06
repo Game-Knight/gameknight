@@ -10,6 +10,8 @@ import android.os.Bundle;
 import com.cs_356.app.R;
 import com.cs_356.app.Views.GameNightsActivity;
 
+import Entities.User;
+
 /**
  * This activity allows a user to schedule a new game night.
  * This should be a tabbed / fragmented activity, where the date
@@ -52,6 +54,10 @@ public class AddGameNightActivity extends AppCompatActivity {
 
     public void setSelectTimeTextView(String time) {
         ((AddGameNightInfoFragment)getSupportFragmentManager().findFragmentById(R.id.addGameNightFragment)).setSelectTimeTextView(time);
+    }
+
+    public void addInvitee(User invitee) {
+        ((AddGameNightInvitesFragment)getSupportFragmentManager().findFragmentById(R.id.addGameNightFragment)).addInvitee(invitee);
     }
 
     public void onClickBackButton() {

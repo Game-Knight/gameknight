@@ -81,7 +81,7 @@ public class InviteListFragment extends Fragment {
                     public void run() {
                         binding.progressSpinner.setVisibility(View.GONE);
                         List<User> invitees = FrontendCache.getGameNightGuestList(gameNight.getId());
-                        InviteeAdapter adapter = new InviteeAdapter(invitees, false);
+                        InviteeAdapter adapter = new InviteeAdapter(invitees, null);
                         binding.inviteeTabRecyclerView.setAdapter(adapter);
                         mExecutor.shutdown();
                     }

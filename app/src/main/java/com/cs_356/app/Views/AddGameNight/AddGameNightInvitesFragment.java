@@ -16,6 +16,7 @@ import com.cs_356.app.Cache.FrontendCache;
 import com.cs_356.app.R;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import Entities.User;
@@ -26,6 +27,8 @@ public class AddGameNightInvitesFragment extends Fragment {
     public Button addGameNightFinishButton;
     public FloatingActionButton backButton;
     public Button addInviteeButton;
+
+    private List<User> addedInvitees;
 
     public AddGameNightInvitesFragment() {
         // Required empty public constructor
@@ -59,8 +62,8 @@ public class AddGameNightInvitesFragment extends Fragment {
 
         recyclerView = rootView.findViewById(R.id.inviteeRecyclerView);
         // Set up adapter for recycler view
-        List<User> invitees = FrontendCache.getUserList();
-        InviteeAdapter adapter = new InviteeAdapter(invitees, false);
+        addedInvitees = new ArrayList<>();
+        InviteeAdapter adapter = new InviteeAdapter(addedInvitees, null);
         recyclerView.setAdapter(adapter);
         recyclerView.setVisibility(View.VISIBLE);
 
@@ -76,5 +79,10 @@ public class AddGameNightInvitesFragment extends Fragment {
         });
 
         return rootView;
+    }
+
+    public void addInvitee(User invitee) {
+        addedInvitees.add(invitee);
+        recyclerView.getAdapter().notifyItemInserted(addedInvitees.size() - 1);
     }
 }
