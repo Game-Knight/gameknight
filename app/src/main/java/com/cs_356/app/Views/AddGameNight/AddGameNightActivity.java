@@ -60,6 +60,10 @@ public class AddGameNightActivity extends AppCompatActivity {
         ((AddGameNightInvitesFragment)getSupportFragmentManager().findFragmentById(R.id.addGameNightFragment)).addInvitee(invitee);
     }
 
+    public void removeInvitee(User invitee) {
+        ((AddGameNightInvitesFragment)getSupportFragmentManager().findFragmentById(R.id.addGameNightFragment)).removeInvitee(invitee);
+    }
+
     public void onClickBackButton() {
         Intent intent = new Intent(this, GameNightsActivity.class);
         startActivity(intent);
