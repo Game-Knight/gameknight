@@ -62,14 +62,14 @@ public class AddInviteesDialog extends DialogFragment {
                 int position = Integer.parseInt(String.valueOf(positionTextView.getText()));
                 User invitee = searchResults.get(position);
 
-                ((AddGameNightActivity)getActivity()).addInvitee(invitee);
-
                 ImageView checkmark = (ImageView) v.findViewById(R.id.checkmark);
                 if (checkmark.getVisibility() == View.INVISIBLE) {
                     checkmark.setVisibility(View.VISIBLE);
+                    ((AddGameNightActivity)getActivity()).addInvitee(invitee);
                 }
                 else {
                     checkmark.setVisibility(View.INVISIBLE);
+                    ((AddGameNightActivity)getActivity()).removeInvitee(invitee);
                 }
             }
         };

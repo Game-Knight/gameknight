@@ -82,7 +82,17 @@ public class AddGameNightInvitesFragment extends Fragment {
     }
 
     public void addInvitee(User invitee) {
-        addedInvitees.add(invitee);
-        recyclerView.getAdapter().notifyItemInserted(addedInvitees.size() - 1);
+        if (!addedInvitees.contains(invitee)) {
+            addedInvitees.add(invitee);
+            recyclerView.getAdapter().notifyItemInserted(addedInvitees.size() - 1);
+        }
+    }
+
+    public void removeInvitee(User invitee) {
+        int position = addedInvitees.indexOf(invitee);
+        if (position >= 0) {
+            addedInvitees.remove(position);
+            recyclerView.getAdapter().notifyItemRemoved(position);
+        }
     }
 }
