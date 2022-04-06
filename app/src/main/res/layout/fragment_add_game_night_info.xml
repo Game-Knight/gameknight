@@ -38,7 +38,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="New Game Night"
+                android:text="@string/new_game_night"
                 android:textSize="22dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -80,7 +80,8 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="10dp"
-                        android:text="Select Date" />
+                        android:textColor="@color/white"
+                        android:text="@string/select_date" />
 
                     <TextView
                         android:id="@+id/selectDateTextView"
@@ -89,23 +90,26 @@
                         android:layout_marginBottom="20dp"
                         android:background="@drawable/date_time_picker_input"
                         android:gravity="center_vertical"
-                        android:text="mm/dd/yyyy"
+                        android:textColor="@color/white"
+                        android:text="@string/mm_dd_yyyy"
                         android:textSize="18sp" />
 
                     <TextView
                         android:id="@+id/timeTextView"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:textColor="@color/white"
                         android:layout_marginBottom="10dp"
-                        android:text="Select Time" />
+                        android:text="@string/select_time" />
 
                     <TextView
                         android:id="@+id/selectTimeTextView"
                         android:layout_width="200dp"
                         android:layout_height="41dp"
                         android:background="@drawable/date_time_picker_input"
+                        android:textColor="@color/white"
                         android:gravity="center_vertical"
-                        android:text="hh:mm"
+                        android:text="@string/hh_mm"
                         android:textSize="18sp" />
                 </LinearLayout>
 
@@ -128,12 +132,15 @@
                         android:id="@+id/gameNightNameTextView"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Game Night Title" />
+                        android:textColor="@color/white"
+                        android:text="@string/game_night_title" />
 
                     <EditText
                         android:id="@+id/gameNightNameEditText"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
+                        android:textColor="@color/white"
+                        android:backgroundTint="@color/white"
                         android:layout_marginBottom="20dp"
                         android:gravity="center_vertical" />
 
@@ -141,12 +148,15 @@
                         android:id="@+id/gameNightDescriptionTextView"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Description" />
+                        android:textColor="@color/white"
+                        android:text="@string/description" />
 
                     <EditText
                         android:id="@+id/gameNightDescriptionEditText"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
+                        android:textColor="@color/white"
+                        android:backgroundTint="@color/white"
                         android:layout_marginBottom="20dp"
                         android:gravity="center_vertical" />
 
@@ -154,13 +164,16 @@
                         android:id="@+id/locationTextView"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Location" />
+                        android:textColor="@color/white"
+                        android:text="@string/location" />
 
                     <EditText
                         android:id="@+id/locationEditText"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_marginBottom="20dp"
+                        android:textColor="@color/white"
+                        android:backgroundTint="@color/white"
                         android:gravity="center_vertical"
                         android:inputType="textPostalAddress" />
 
@@ -168,13 +181,16 @@
                         android:id="@+id/durationTextView"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Duration (hours)" />
+                        android:textColor="@color/white"
+                        android:text="@string/duration_hours" />
 
                     <EditText
                         android:id="@+id/durationEditText"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:gravity="center_vertical"
+                        android:textColor="@color/white"
+                        android:backgroundTint="@color/white"
                         android:inputType="time" />
                 </LinearLayout>
 

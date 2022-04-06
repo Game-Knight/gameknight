@@ -7,10 +7,13 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import androidx.appcompat.view.menu.MenuView;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.cs_356.app.R;
+import com.cs_356.app.Views.AddGameNight.AddGameNightActivity;
 
 import java.util.Arrays;
 import java.util.List;
@@ -21,11 +24,11 @@ import Entities.User;
 public class InviteeAdapter extends RecyclerView.Adapter<InviteeAdapter.ViewHolder> {
 
     private final List<User> inviteeList;
-    private final boolean interactable;
+    private final View.OnClickListener onClickListener;
 
-    public InviteeAdapter(List<User> inviteeList, boolean interactable) {
+    public InviteeAdapter(List<User> inviteeList, View.OnClickListener onClickListener) {
         this.inviteeList = inviteeList;
-        this.interactable = interactable;
+        this.onClickListener = onClickListener;
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {
@@ -33,10 +36,16 @@ public class InviteeAdapter extends RecyclerView.Adapter<InviteeAdapter.ViewHold
         private final TextView name;
         private final ImageView icon;
 
+        private TextView inviteePosition;
+
         public ViewHolder(View itemView) {
             super(itemView);
             name = (TextView) itemView.findViewById(R.id.inviteeName);
             icon = (ImageView) itemView.findViewById(R.id.inviteIcon);
+            inviteePosition = (TextView) itemView.findViewById(R.id.inviteePosition);
+            if (onClickListener != null) {
+                itemView.setOnClickListener(onClickListener);
+            }
         }
 
         public TextView getName() {
@@ -46,14 +55,18 @@ public class InviteeAdapter extends RecyclerView.Adapter<InviteeAdapter.ViewHold
         public ImageView getIcon() {
             return icon;
         }
+
+        public TextView getInviteePosition() {
+            return inviteePosition;
+        }
     }
 
     @Override
     public InviteeAdapter.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         Context context = parent.getContext();
         LayoutInflater inflater = LayoutInflater.from(context);
-        View gameView = inflater.inflate(R.layout.invitee_item, parent, false);
-        return new ViewHolder(gameView);
+        View itemView = inflater.inflate(R.layout.invitee_item, parent, false);
+        return new ViewHolder(itemView);
     }
 
     @Override
@@ -61,6 +74,7 @@ public class InviteeAdapter extends RecyclerView.Adapter<InviteeAdapter.ViewHold
         User invitee = inviteeList.get(position);
         holder.getName().setText(invitee.getFullName());
         holder.getIcon().setImageResource(getIconId(invitee.getFirstName()));
+        holder.getInviteePosition().setText(String.valueOf(position));
     }
 
     @Override

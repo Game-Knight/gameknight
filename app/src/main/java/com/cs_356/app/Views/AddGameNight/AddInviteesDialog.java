@@ -11,7 +11,10 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.LayoutInflater;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.SearchView;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import com.cs_356.app.Adapters.InviteeAdapter;
 import com.cs_356.app.Cache.FrontendCache;
@@ -52,10 +55,29 @@ public class AddInviteesDialog extends DialogFragment {
 
         // Set up recycler view
         searchResults = new ArrayList<User>();
+        View.OnClickListener itemOnClickListener = new View.OnClickListener() {
+            public void onClick(View v) {
+                TextView positionTextView = (TextView) v.findViewById(R.id.inviteePosition);
+
+                int position = Integer.parseInt(String.valueOf(positionTextView.getText()));
+                User invitee = searchResults.get(position);
+
+                ((AddGameNightActivity)getActivity()).addInvitee(invitee);
+
+                ImageView checkmark = (ImageView) v.findViewById(R.id.checkmark);
+                if (checkmark.getVisibility() == View.INVISIBLE) {
+                    checkmark.setVisibility(View.VISIBLE);
+                }
+                else {
+                    checkmark.setVisibility(View.INVISIBLE);
+                }
+            }
+        };
         recyclerView = rootView.findViewById(R.id.inviteeSearchRecyclerView);
-        InviteeAdapter adapter = new InviteeAdapter(searchResults, true);
+        InviteeAdapter adapter = new InviteeAdapter(searchResults, itemOnClickListener);
         recyclerView.setAdapter(adapter);
         recyclerView.setVisibility(View.VISIBLE);
+
 
         DividerItemDecoration dividerItemDecoration = new DividerItemDecoration(recyclerView.getContext(),
                 DividerItemDecoration.VERTICAL);
