@@ -28,7 +28,7 @@ import jp.wasabeef.picasso.transformations.CropSquareTransformation;
 public class GameCardAdapter extends RecyclerView.Adapter<GameCardAdapter.ViewHolder> {
 
     private List<BoardGame> gamesList;
-    private OnGameCardClickListener onGameCardClickListener;
+    protected OnGameCardClickListener onGameCardClickListener;
     private Context context;
 
     public List<BoardGame> getGamesList() {
@@ -50,7 +50,9 @@ public class GameCardAdapter extends RecyclerView.Adapter<GameCardAdapter.ViewHo
         this.position = position;
     }
 
-    public GameCardAdapter(List<BoardGame> gamesList, OnGameCardClickListener onGameCardClickListener, Context context) {
+    public GameCardAdapter(List<BoardGame> gamesList,
+                           OnGameCardClickListener onGameCardClickListener,
+                           Context context) {
         this.gamesList = gamesList;
         this.context = context;
 
@@ -59,7 +61,9 @@ public class GameCardAdapter extends RecyclerView.Adapter<GameCardAdapter.ViewHo
         }
     }
 
-    public class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener, View.OnCreateContextMenuListener {
+    public class ViewHolder
+            extends RecyclerView.ViewHolder
+            implements View.OnClickListener, View.OnCreateContextMenuListener {
         // Your holder should contain a member variable
         // for any view that will be set as you render a row
         public ImageView gameImg;
