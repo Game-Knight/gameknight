@@ -16,6 +16,7 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 
 import com.cs_356.app.Adapters.GameCardAdapter;
+import com.cs_356.app.Adapters.VotableGameCardAdapter;
 import com.cs_356.app.Cache.FrontendCache;
 import com.cs_356.app.Utils.Constants;
 import com.cs_356.app.Views.GameViewActivity;
@@ -89,7 +90,7 @@ public class AvailableGamesFragment extends Fragment implements GameCardAdapter.
                     @Override
                     public void run() {
                         binding.progressSpinner.setVisibility(View.GONE);
-                        GameCardAdapter adapter = new GameCardAdapter(
+                        GameCardAdapter adapter = new VotableGameCardAdapter(
                                 FrontendCache.getGamesAvailableForGameNight(gameNight.getId()),
                                 cardClickListener,
                                 context

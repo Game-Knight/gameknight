@@ -1,39 +1,17 @@
 package com.cs_356.app.Views.GameNightView;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.viewpager.widget.ViewPager;
-
-import android.content.Context;
-import android.content.Intent;
-import android.graphics.drawable.Animatable2;
-import android.graphics.drawable.AnimatedVectorDrawable;
-import android.graphics.drawable.Drawable;
 import android.os.Bundle;
-import android.os.Handler;
-import android.os.Looper;
-import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewTreeObserver;
-import android.widget.ProgressBar;
 import android.widget.Toast;
 
-import com.cs_356.app.Adapters.GameCardAdapter;
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.cs_356.app.Cache.FrontendCache;
-import com.cs_356.app.R;
 import com.cs_356.app.Utils.Constants;
 import com.cs_356.app.Utils.DateUtils;
-import com.cs_356.app.Views.GameViewActivity;
-import com.cs_356.app.databinding.ActivityGameLibraryBinding;
 import com.cs_356.app.databinding.ActivityGameNightBinding;
-import com.google.android.material.navigation.NavigationView;
-import com.google.android.material.tabs.TabLayout;
 
-import java.util.Comparator;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
-
-import Entities.BoardGame;
 import Entities.GameNight;
 
 /**
@@ -69,7 +47,11 @@ public class GameNightActivity extends AppCompatActivity {
                 @Override
                 public void onClick(View view) {
                     // TODO: Launch EditGameNightActivity!
-                    Toast.makeText(view.getContext(), "Not yet implemented!", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(
+                            view.getContext(),
+                            "Not yet implemented!",
+                            Toast.LENGTH_SHORT
+                    ).show();
                 }
             });
         }
@@ -78,7 +60,9 @@ public class GameNightActivity extends AppCompatActivity {
         binding.gameNightLocation.setText(gameNight.getLocation());
         binding.gameNightDateTime.setText(DateUtils.formatDate(gameNight.getDate()));
 
-        SectionsPagerAdapter sectionsPagerAdapter = new SectionsPagerAdapter(this, getSupportFragmentManager());
+        SectionsPagerAdapter sectionsPagerAdapter = new SectionsPagerAdapter(
+                this,
+                getSupportFragmentManager());
         binding.viewPager.setAdapter(sectionsPagerAdapter);
         binding.tabs.setupWithViewPager(binding.viewPager);
 
@@ -87,7 +71,11 @@ public class GameNightActivity extends AppCompatActivity {
 
                     @Override
                     public void onGlobalLayout() {
-                        binding.viewPager.setPadding(0, 0, 0, binding.gameNightHeader.getHeight());
+                        binding.viewPager.setPadding(
+                                0,
+                                0,
+                                0,
+                                binding.gameNightHeader.getHeight());
                     }
                 });
     }
