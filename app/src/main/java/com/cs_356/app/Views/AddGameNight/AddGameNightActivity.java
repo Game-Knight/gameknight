@@ -7,10 +7,19 @@ import androidx.fragment.app.DialogFragment;
 import android.content.Intent;
 import android.os.Bundle;
 
+import com.cs_356.app.Cache.FrontendCache;
 import com.cs_356.app.R;
 import com.cs_356.app.Views.GameNightsActivity;
 
+import java.time.LocalDateTime;
+import java.util.Calendar;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+import Entities.GameNight;
 import Entities.User;
+import Enums.RSVP;
 
 /**
  * This activity allows a user to schedule a new game night.
@@ -20,6 +29,8 @@ import Entities.User;
  * TODO: Add two fragments, one for scheduling the time and one for adding invites.
  */
 public class AddGameNightActivity extends AppCompatActivity {
+
+    private GameNight gameNight;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,6 +42,37 @@ public class AddGameNightActivity extends AppCompatActivity {
                     .add(R.id.addGameNightFragment, AddGameNightInfoFragment.class, null)
                     .commit();
         }
+
+        gameNight = new GameNight(null, FrontendCache.getAuthenticatedUserId(), null, null, null, null);
+    }
+
+    public void saveInfoData(String name, String date, String time, String location) {
+        gameNight.setName(name);
+
+        Calendar cal = Calendar.getInstance();
+        cal.set(Calendar.DAY_OF_MONTH, 7);
+        cal.set(Calendar.HOUR, 7);
+        cal.set(Calendar.MINUTE, 7);
+        cal.set(Calendar.SECOND, 0);
+        cal.set(Calendar.MILLISECOND, 0);
+        LocalDateTime dateTime = LocalDateTime.ofInstant(
+                cal.toInstant(),
+                cal.getTimeZone().toZoneId());
+        gameNight.setDate(dateTime);
+
+        gameNight.setLocation(location);
+    }
+
+    public void saveInviteData(List<User> invitees) {
+        Map<String, RSVP> guestList = new HashMap<>();
+        for (User invitee : invitees) {
+            guestList.put(invitee.getPhoneNumber(), RSVP.NOT_YET_RESPONDED);
+        }
+        gameNight.setGuestList(guestList);
+    }
+
+    public void saveGameNightData() {
+        FrontendCache.addGameNight(gameNight);
     }
 
     public void showDatePickerDialog() {

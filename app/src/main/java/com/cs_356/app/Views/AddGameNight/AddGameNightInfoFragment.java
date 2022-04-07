@@ -22,6 +22,10 @@ public class AddGameNightInfoFragment extends Fragment {
     public TextView selectTimeTextView;
     public FloatingActionButton backButton;
     public Button nextButton;
+    public EditText nameEditText;
+    public EditText descriptionEditText;
+    public EditText locationEditText;
+    public EditText durationEditText;
 
     public AddGameNightInfoFragment() {
         // Required empty public constructor
@@ -38,6 +42,11 @@ public class AddGameNightInfoFragment extends Fragment {
         // Inflate the layout for this fragment
         View rootView = inflater.inflate(R.layout.fragment_add_game_night_info, container, false);
 
+        nameEditText = rootView.findViewById(R.id.gameNightNameEditText);
+        descriptionEditText = rootView.findViewById(R.id.gameNightDescriptionEditText);
+        locationEditText = rootView.findViewById(R.id.locationEditText);
+        durationEditText = rootView.findViewById(R.id.durationEditText);
+
         backButton = rootView.findViewById(R.id.addGameNightBackFAB);
         backButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
@@ -48,6 +57,10 @@ public class AddGameNightInfoFragment extends Fragment {
         nextButton = rootView.findViewById(R.id.add_game_night_next_button);
         nextButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
+                ((AddGameNightActivity)getActivity()).saveInfoData(
+                    nameEditText.getText().toString(), selectDateTextView.getText().toString(),
+                        selectTimeTextView.getText().toString(), locationEditText.getText().toString()
+                );
                 ((AddGameNightActivity)getActivity()).onClickNextButton();
             }
         });

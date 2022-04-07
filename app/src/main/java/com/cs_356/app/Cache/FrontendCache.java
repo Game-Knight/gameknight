@@ -48,6 +48,16 @@ public class FrontendCache {
      * This section is for cache getters
      */
 
+    public static String getAuthenticatedUserId() {
+        return authenticatedUser.getPhoneNumber();
+    }
+
+    public static void addGameNight(GameNight gameNight) {
+        gameNight.setBringingAssignments(new HashMap<>());
+        getGameNightList().add(gameNight);
+        getGameNightMap().put(gameNight.getId(), gameNight);
+    }
+
     public static boolean isHostedByAuthenticatedUser(GameNight gameNight) {
         return gameNight.getHostId().equals(authenticatedUser.getPhoneNumber());
     }

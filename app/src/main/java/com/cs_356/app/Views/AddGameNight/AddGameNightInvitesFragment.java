@@ -49,6 +49,8 @@ public class AddGameNightInvitesFragment extends Fragment {
         addGameNightFinishButton = rootView.findViewById(R.id.finishButton);
         addGameNightFinishButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
+                ((AddGameNightActivity)getActivity()).saveInviteData(addedInvitees);
+                ((AddGameNightActivity)getActivity()).saveGameNightData();
                 ((AddGameNightActivity)getActivity()).onClickFinishButton();
             }
         });
