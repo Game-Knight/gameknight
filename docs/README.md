@@ -5,20 +5,21 @@
 ## To Do
 
 #### 🔴 High Priority
-- [ ] add AddGameNightActivity (Brayden)
-- [ ] voting for games
 
 #### 🟠 Medium Priority
 - [ ] overflow (3 dots) menu in GameView
-- [ ] mark games as borrowable
-- [ ] view other users' borrowable games
 - [ ] speed up AddGameManually search
+- [ ] center text in NavBar
+- [ ] make menu title smaller
+- [ ] show inactive voting button as translucent (Jake)
+- [ ] add "Delete Game Library" button to Settings
 
 #### 🟡 Low Priority
 - [ ] use APIs instead of local data (*partially implemented*)
 - [ ] improve search result ordering in AddGameManually
 - [ ] search, sort, and filter game library
 - [ ] change FABs to Material2 style
+- [ ] add background to menu bar?
 
 #### 🟢 Completed
 - [X] add AddGameManuallyActivity
@@ -26,6 +27,7 @@
     - [X] add super sick custom loading animation
     - [X] tap game to add to library
     - [X] scroll to added game
+- [X] add AddGameNightActivity
 - [X] add GameLibraryActivity
     - [X] scale images for faster loading
     - [X] long press to delete game
@@ -42,6 +44,7 @@
 - [X] speed up cache initialization
 - [X] add GameNightsActivity
 - [X] add GameNightActivity
+	- [X] voting for games
 - [X] fix clicking board game on game night card
 - [X] fix context clicking on games on game night card
 - [X] fix being able to add a game multiple times
@@ -49,3 +52,5 @@
 #### ⚫️ Backlog
 - [ ] make SettingsActivity functional
 - [ ] create recurring game nights
+- [ ] mark games as borrowable
+- [ ] view other users' borrowable games
