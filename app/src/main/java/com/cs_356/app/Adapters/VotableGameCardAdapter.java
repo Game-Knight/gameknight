@@ -1,13 +1,11 @@
 package com.cs_356.app.Adapters;
 
 import android.content.Context;
-import android.graphics.Color;
 import android.graphics.drawable.Drawable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageButton;
-import android.widget.Toast;
 
 import androidx.core.content.res.ResourcesCompat;
 
@@ -48,58 +46,42 @@ public class VotableGameCardAdapter extends GameCardAdapter {
             // TODO: make these onClick actions actually do something, other than just change the ui
             upvote.setOnClickListener(new View.OnClickListener() {
                 public void onClick(View v) {
-                    Drawable background = ResourcesCompat.getDrawable(
-                            itemView.getContext().getResources(),
-                            R.drawable.roundcorner,
-                            null);
-                    assert background != null;
-                    int green = ResourcesCompat.getColor(
-                            itemView.getContext().getResources(),
-                            R.color.green,
-                            null);
-                    int shade = ResourcesCompat.getColor(
-                            itemView.getContext().getResources(),
-                            R.color.shade,
-                            null);
                     if (upvoteSelected) {
-                        background.setTint(shade);
-                        upvote.setBackground(background);
-                        downvote.setVisibility(View.VISIBLE);
+                        upvote.setBackground(getRoundedBackground(v, R.color.shade));
+                        downvote.setBackground(getRoundedBackground(v, R.color.shade));
                     } else {
-                        background.setTint(green);
-                        upvote.setBackground(background);
-                        downvote.setVisibility(View.GONE);
+                        upvote.setBackground(getRoundedBackground(v, R.color.green));
+                        downvote.setBackground(getRoundedBackground(v, R.color.gray));
                     }
                     upvoteSelected = !upvoteSelected;
                 }
             });
             downvote.setOnClickListener(new View.OnClickListener() {
                 public void onClick(View v) {
-                    Drawable background = ResourcesCompat.getDrawable(
-                            itemView.getContext().getResources(),
-                            R.drawable.roundcorner,
-                            null);
-                    assert background != null;
-                    int red = ResourcesCompat.getColor(
-                            itemView.getContext().getResources(),
-                            R.color.red,
-                            null);
-                    int shade = ResourcesCompat.getColor(
-                            itemView.getContext().getResources(),
-                            R.color.shade,
-                            null);
                     if (downvoteSelected) {
-                        background.setTint(shade);
-                        downvote.setBackground(background);
-                        upvote.setVisibility(View.VISIBLE);
+                        upvote.setBackground(getRoundedBackground(v, R.color.shade));
+                        downvote.setBackground(getRoundedBackground(v, R.color.shade));
                     } else {
-                        background.setTint(red);
-                        downvote.setBackground(background);
-                        upvote.setVisibility(View.GONE);
+                        upvote.setBackground(getRoundedBackground(v, R.color.gray));
+                        downvote.setBackground(getRoundedBackground(v, R.color.red));
                     }
                     downvoteSelected = !downvoteSelected;
                 }
             });
+        }
+
+        private Drawable getRoundedBackground(View v, int colorId) {
+            Drawable background = ResourcesCompat.getDrawable(
+                    v.getContext().getResources(),
+                    R.drawable.roundcorner,
+                    null);
+            assert background != null;
+            int green = ResourcesCompat.getColor(
+                    itemView.getContext().getResources(),
+                    colorId,
+                    null);
+            background.setTint(green);
+            return background;
         }
     }
 }
