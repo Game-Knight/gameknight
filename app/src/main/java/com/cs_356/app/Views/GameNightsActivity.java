@@ -68,8 +68,8 @@ public class GameNightsActivity
             }
         });
 
+        binding.toolbarGameNights.setTitle("");
         setSupportActionBar(binding.toolbarGameNights);
-        Objects.requireNonNull(getSupportActionBar()).setTitle(R.string.game_nights);
 
         drawerLayout = ActivityUtils.setupDrawerLayout(
                 this,

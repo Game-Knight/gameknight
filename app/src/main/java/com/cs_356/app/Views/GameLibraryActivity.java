@@ -84,8 +84,8 @@ public class GameLibraryActivity extends AppCompatActivity implements Navigation
         binding = ActivityGameLibraryBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
+        binding.toolbarGameLibrary.setTitle("");
         setSupportActionBar(binding.toolbarGameLibrary);
-        Objects.requireNonNull(getSupportActionBar()).setTitle(R.string.game_library);
 
         drawerLayout = ActivityUtils.setupDrawerLayout(
                 this,

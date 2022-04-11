@@ -32,8 +32,8 @@ public class SettingsActivity extends AppCompatActivity implements NavigationVie
         binding = ActivitySettingsBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
+        binding.toolbarSettings.setTitle("");
         setSupportActionBar(binding.toolbarSettings);
-        Objects.requireNonNull(getSupportActionBar()).setTitle(R.string.settings);
 
         drawerLayout = ActivityUtils.setupDrawerLayout(
                 this,

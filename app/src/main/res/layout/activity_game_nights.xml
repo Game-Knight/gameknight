@@ -42,7 +42,16 @@
                 android:layout_height="?attr/actionBarSize"
                 android:elevation="0dp"
                 android:theme="@style/TintToolbarStyle"
-                app:popupTheme="@style/ThemeOverlay.PopupTheme" />
+                app:popupTheme="@style/ThemeOverlay.PopupTheme">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="@string/game_nights"
+                    android:theme="@style/Title" />
+
+            </androidx.appcompat.widget.Toolbar>
 
         </com.google.android.material.appbar.AppBarLayout>
 

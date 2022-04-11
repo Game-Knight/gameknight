@@ -57,6 +57,7 @@ public class HomeActivity
         binding = ActivityHomeBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
+        binding.toolbarHome.setTitle("");
         setSupportActionBar(binding.toolbarHome);
 
         drawerLayout = ActivityUtils.setupDrawerLayout(
