@@ -1,12 +1,18 @@
 package com.cs_356.app.Views;
 
+import androidx.activity.result.ActivityResult;
+import androidx.activity.result.ActivityResultCallback;
+import androidx.activity.result.ActivityResultLauncher;
+import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.navigation.ui.AppBarConfiguration;
+import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.drawable.Animatable2;
@@ -15,6 +21,7 @@ import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
+import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
@@ -32,6 +39,7 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.navigation.NavigationView;
 
 import java.util.Comparator;
+import java.util.List;
 import java.util.Objects;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
@@ -44,6 +52,8 @@ import Entities.BoardGame;
  * TODO: Launch GameViewActivity when a card is clicked.
  */
 public class GameLibraryActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener, GameCardAdapter.OnGameCardClickListener {
+
+    public static final String SCROLL_TO_EXTRA = "SCROLL_TO";
 
     private AppBarConfiguration appBarConfiguration;
     private ActivityGameLibraryBinding binding;
@@ -59,6 +69,11 @@ public class GameLibraryActivity extends AppCompatActivity implements Navigation
 
     private RecyclerView recycler;
     private static ProgressBar progressSpinner;
+
+    private String scrollToId;
+    private int scrollToPosition;
+
+    private Context activityContext;
 
     @Override
     public boolean onContextItemSelected(MenuItem item) {
@@ -166,6 +181,43 @@ public class GameLibraryActivity extends AppCompatActivity implements Navigation
 //                    }
 //                });
 
+        activityContext = this;
+        ActivityResultLauncher<Intent> addGameManuallyLauncher = registerForActivityResult(
+                new ActivityResultContracts.StartActivityForResult(),
+                new ActivityResultCallback<ActivityResult>() {
+                    @Override
+                    public void onActivityResult(ActivityResult result) {
+                        if (result.getResultCode() == Activity.RESULT_OK) {
+                            // There are no request codes
+                            Intent data = result.getData();
+                            scrollToId = data.getStringExtra(SCROLL_TO_EXTRA);
+
+                            progressSpinner.setVisibility(View.VISIBLE);
+                            FrontendCache.getGamesForAuthenticatedUser().sort(Comparator.comparing(BoardGame::getName));
+                            List<BoardGame> gameList = FrontendCache.getGamesForAuthenticatedUser();
+
+                            for (int i = 0; i < gameList.size(); i++) {
+                                if (gameList.get(i).getBggId().equals(scrollToId)) {
+                                    scrollToPosition = i;
+                                    break;
+                                }
+                            }
+                            Log.d("ADD_MANUALLY", scrollToId + ", " + scrollToPosition);
+
+                            progressSpinner.setVisibility(View.GONE);
+                            GameCardAdapter adapter = new GameCardAdapter(
+                                    FrontendCache.getGamesForAuthenticatedUser(), (GameCardAdapter.OnGameCardClickListener) activityContext, activityContext);
+                            recycler.setAdapter(adapter);
+
+                            if (scrollToPosition != 0) {
+                                ((LinearLayoutManager)recycler.getLayoutManager()).scrollToPositionWithOffset(scrollToPosition, 0);
+//                                recycler.smoothScrollToPosition(scrollToPosition);
+                            }
+                            rotatingAddButton.callOnClick();
+                        }
+                    }
+                });
+
         scanBarcodeButton.setOnClickListener(
                 new View.OnClickListener() {
                     @Override
@@ -181,8 +233,7 @@ public class GameLibraryActivity extends AppCompatActivity implements Navigation
                     @Override
                     public void onClick(View view) {
                         Intent intent = new Intent(view.getContext(), AddGameManuallyActivity.class);
-                        startActivity(intent);
-                        finish();
+                        addGameManuallyLauncher.launch(intent);
                     }
                 });
 

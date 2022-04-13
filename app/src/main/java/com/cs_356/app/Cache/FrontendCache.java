@@ -94,7 +94,7 @@ public class FrontendCache {
         return boardGames;
     }
 
-    public static void addGameOwnershipForAuthUser(BoardGame game) {
+    public static String addGameOwnershipForAuthUser(BoardGame game) {
         getOwnershipSet().add(new Ownership(authenticatedUser.getPhoneNumber(), game.getBggId()));
         if (getGamesMap().get(game.getBggId()) == null) {
             getGamesList().add(game);
@@ -109,6 +109,8 @@ public class FrontendCache {
         if (!getGamesForAuthenticatedUser().contains(gameToAdd)) {
             getGamesForAuthenticatedUser().add(gameToAdd);
         }
+
+        return game.getBggId();
     }
 
     public static Set<Ownership> getOwnershipSet() {

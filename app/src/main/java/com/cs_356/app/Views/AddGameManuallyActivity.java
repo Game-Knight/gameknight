@@ -52,6 +52,7 @@ public class AddGameManuallyActivity extends AppCompatActivity implements GameCa
     private GameCardBinding gameCardBinding;
 
     private Context context;
+    private String lastGameAdddedId;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -106,7 +107,14 @@ public class AddGameManuallyActivity extends AppCompatActivity implements GameCa
         backFAB.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(view.getContext(), GameLibraryActivity.class));
+                Intent intent = getIntent();
+                if (lastGameAdddedId != null) {
+                    setResult(RESULT_OK, intent);
+                    intent.putExtra(GameLibraryActivity.SCROLL_TO_EXTRA, lastGameAdddedId);
+                }
+                else {
+                    setResult(RESULT_CANCELED, intent);
+                }
                 finish();
             }
         });
@@ -117,7 +125,7 @@ public class AddGameManuallyActivity extends AppCompatActivity implements GameCa
 
     @Override
     public void onGameCardClick(int position) {
-        FrontendCache.addGameOwnershipForAuthUser(results.get(position));
+        lastGameAdddedId = FrontendCache.addGameOwnershipForAuthUser(results.get(position));
         Toast.makeText(this, "Game added!", Toast.LENGTH_SHORT).show();
     }
 
