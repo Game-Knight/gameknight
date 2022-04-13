@@ -266,6 +266,9 @@ public class FrontendCache {
 
     public static List<User> getUsersBySearch(String query) {
         List<User> result = new ArrayList<User>();
+        if (query.equals("")) {
+            return getUserList();
+        }
         for (User user : getUserList()) {
             if (user.getFullName().toLowerCase().contains(query.toLowerCase())) {
                 result.add(user);

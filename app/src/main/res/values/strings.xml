@@ -71,5 +71,6 @@
     <string name="description">Description</string>
     <string name="location">Location</string>
     <string name="duration_hours">Duration (hours)</string>
+    <string name="no_one_is_invited_yet">No one is invited yet!</string>
 
 </resources>

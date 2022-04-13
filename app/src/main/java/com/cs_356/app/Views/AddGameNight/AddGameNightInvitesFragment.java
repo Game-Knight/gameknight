@@ -10,6 +10,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.TextView;
 
 import com.cs_356.app.Adapters.InviteeAdapter;
 import com.cs_356.app.Cache.FrontendCache;
@@ -27,6 +28,7 @@ public class AddGameNightInvitesFragment extends Fragment {
     public Button addGameNightFinishButton;
     public FloatingActionButton backButton;
     public Button addInviteeButton;
+    public TextView noInviteesTextView;
 
     private List<User> addedInvitees;
 
@@ -80,6 +82,8 @@ public class AddGameNightInvitesFragment extends Fragment {
             }
         });
 
+        noInviteesTextView = rootView.findViewById(R.id.emptyListTextView);
+
         return rootView;
     }
 
@@ -87,6 +91,10 @@ public class AddGameNightInvitesFragment extends Fragment {
         if (!addedInvitees.contains(invitee)) {
             addedInvitees.add(invitee);
             recyclerView.getAdapter().notifyItemInserted(addedInvitees.size() - 1);
+
+            if (addedInvitees.size() > 0) {
+                noInviteesTextView.setVisibility(View.INVISIBLE);
+            }
         }
     }
 
@@ -95,6 +103,10 @@ public class AddGameNightInvitesFragment extends Fragment {
         if (position >= 0) {
             addedInvitees.remove(position);
             recyclerView.getAdapter().notifyItemRemoved(position);
+        }
+
+        if (addedInvitees.size() == 0) {
+            noInviteesTextView.setVisibility(View.VISIBLE);
         }
     }
 }
