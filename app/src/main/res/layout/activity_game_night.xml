@@ -46,6 +46,7 @@
                 android:id="@+id/game_night_title"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:textAlignment="center"
                 android:text="@string/game_night_title"
                 android:textColor="@color/white"
                 android:theme="@style/Title" />
@@ -54,6 +55,7 @@
                 android:id="@+id/game_night_location"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:textAlignment="center"
                 android:text="@string/game_night_location"
                 android:textColor="@color/white"
                 android:theme="@style/Subtitle" />
@@ -62,6 +64,7 @@
                 android:id="@+id/game_night_date_time"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:textAlignment="center"
                 android:text="@string/game_night_date_time"
                 android:textColor="@color/white"
                 android:theme="@style/Subtitle" />
