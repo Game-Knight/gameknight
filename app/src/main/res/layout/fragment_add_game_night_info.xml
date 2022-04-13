@@ -90,8 +90,9 @@
                         android:layout_marginBottom="20dp"
                         android:background="@drawable/date_time_picker_input"
                         android:gravity="center_vertical"
-                        android:textColor="@color/white"
+                        android:padding="10dp"
                         android:text="@string/mm_dd_yyyy"
+                        android:textColor="@color/white"
                         android:textSize="18sp" />
 
                     <TextView
@@ -107,9 +108,10 @@
                         android:layout_width="200dp"
                         android:layout_height="41dp"
                         android:background="@drawable/date_time_picker_input"
-                        android:textColor="@color/white"
                         android:gravity="center_vertical"
+                        android:padding="10dp"
                         android:text="@string/hh_mm"
+                        android:textColor="@color/white"
                         android:textSize="18sp" />
                 </LinearLayout>
 
@@ -188,10 +190,10 @@
                         android:id="@+id/durationEditText"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:gravity="center_vertical"
-                        android:textColor="@color/white"
                         android:backgroundTint="@color/white"
-                        android:inputType="time" />
+                        android:gravity="center_vertical"
+                        android:inputType="numberDecimal"
+                        android:textColor="@color/white" />
                 </LinearLayout>
 
             </androidx.constraintlayout.widget.ConstraintLayout>
