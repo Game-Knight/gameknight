@@ -132,7 +132,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
                 android:text="@string/clear_stored_contact_data"
-                app:icon="@drawable/ic_baseline_delete_forever_24" />
+                app:icon="@drawable/ic_baseline_sync_disabled_24" />
 
             <Space
                 android:layout_width="match_parent"
@@ -169,6 +169,15 @@
                 android:layout_marginTop="8dp"
                 android:text="@string/import_library"
                 app:icon="@drawable/ic_baseline_file_download_24" />
+
+            <Button
+                android:id="@+id/button3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:backgroundTint="@color/red"
+                android:text="@string/delete_library"
+                app:icon="@drawable/ic_baseline_delete_forever_24" />
 
         </LinearLayout>
 
