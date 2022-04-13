@@ -67,6 +67,18 @@
             app:layout_constraintVertical_bias="0.0"
             tools:layout_editor_absoluteX="-54dp">
 
+            <TextView
+                android:id="@+id/emptyListTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/no_one_is_invited_yet"
+                android:textColor="@color/gray"
+                android:layout_marginTop="30dp"
+                android:textSize="15sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/inviteeRecyclerView"
                 android:layout_width="match_parent"

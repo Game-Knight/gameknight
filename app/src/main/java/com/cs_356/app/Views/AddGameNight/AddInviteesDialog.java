@@ -84,6 +84,7 @@ public class AddInviteesDialog extends DialogFragment {
         recyclerView.addItemDecoration(dividerItemDecoration);
 
         // Set up search view
+        updateResultList("");
         searchView = rootView.findViewById(R.id.addGameNightSearchView);
         searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
             @Override
