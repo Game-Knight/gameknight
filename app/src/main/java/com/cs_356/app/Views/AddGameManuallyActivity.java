@@ -5,6 +5,8 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Color;
+import android.graphics.PorterDuff;
 import android.graphics.drawable.Animatable2;
 import android.graphics.drawable.AnimatedVectorDrawable;
 import android.graphics.drawable.Drawable;
@@ -34,6 +36,7 @@ import com.squareup.picasso.Picasso;
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
+import java.util.Random;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
@@ -68,6 +71,15 @@ public class AddGameManuallyActivity extends AppCompatActivity implements GameCa
         diceAnimation.registerAnimationCallback(new Animatable2.AnimationCallback(){
             public void onAnimationEnd(Drawable drawable){
                 diceAnimation.start();
+            }
+        });
+
+        binding.progressSpinner.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Random rand = new Random();
+                diceAnimation.setTint(Color.argb(255, rand.nextInt(129)+128, rand.nextInt(129)+128, rand.nextInt(129)+128));
+                diceAnimation.setTintMode(PorterDuff.Mode.MULTIPLY);
             }
         });
 
