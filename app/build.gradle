@@ -4,7 +4,7 @@ android {
     compileSdkVersion 32
 
     defaultConfig {
-        applicationId "com.cs_356.app"
+        applicationId "com.game_knight.app"
         minSdkVersion 30
         targetSdkVersion 32
         versionCode 1

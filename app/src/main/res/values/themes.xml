@@ -9,7 +9,7 @@
 
     <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 
-    <style name="ThemeOverlay.CS_356_App.FullscreenContainer" parent="">
+    <style name="ThemeOverlay.Game_Knight_App.FullscreenContainer" parent="">
         <item name="fullscreenBackgroundColor">@color/light_blue_600</item>
         <item name="fullscreenTextColor">@color/light_blue_A200</item>
     </style>

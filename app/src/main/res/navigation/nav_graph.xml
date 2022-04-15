@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/BarcodeScannerFragment"
-        android:name="com.cs_356.app.Views.BarcodeScannerFragment"
+        android:name="com.game_knight.app.Views.BarcodeScannerFragment"
         android:label="Barcode Scanner Fragment"
         tools:layout="@layout/fragment_barcode_scanner">
 
@@ -17,7 +17,7 @@
     </fragment>
     <fragment
         android:id="@+id/GameScannedFragment"
-        android:name="com.cs_356.app.Views.GameScannedFragment"
+        android:name="com.game_knight.app.Views.GameScannedFragment"
         android:label="@string/game_scanned_fragment_label"
         tools:layout="@layout/fragment_game_scanned">
 
