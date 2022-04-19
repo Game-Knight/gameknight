@@ -1,4 +1,2 @@
-include ':backend'
 include ':app'
 rootProject.name = "Game_Knight_App"
-include ':shared'
