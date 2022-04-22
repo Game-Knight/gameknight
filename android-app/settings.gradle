@@ -1,2 +1,8 @@
 include ':app'
 rootProject.name = "Game_Knight_App"
+
+include ":shared"
+project(":shared").projectDir = new File("../shared")
+
+include ":server"
+project(":server").projectDir = new File("../server")
