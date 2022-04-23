@@ -16,7 +16,10 @@
 .idea/
 android-app/.idea/
 android-app/.gradle/
+android-app/build/
 server/.idea/
 server/.gradle/
+server/build/
 shared/.idea/
 shared/.gradle/
+shared/build/
