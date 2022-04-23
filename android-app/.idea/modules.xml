@@ -4,8 +4,8 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/Game_Knight_App.iml" filepath="$PROJECT_DIR$/.idea/modules/Game_Knight_App.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/Game_Knight_App.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/Game_Knight_App.app.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/-2043047325/Game_Knight_App.server.iml" filepath="$PROJECT_DIR$/.idea/modules/-2043047325/Game_Knight_App.server.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/-2040787067/Game_Knight_App.shared.iml" filepath="$PROJECT_DIR$/.idea/modules/-2040787067/Game_Knight_App.shared.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/-2136860103/Game_Knight_App.server.iml" filepath="$PROJECT_DIR$/.idea/modules/-2136860103/Game_Knight_App.server.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/-2134599845/Game_Knight_App.shared.iml" filepath="$PROJECT_DIR$/.idea/modules/-2134599845/Game_Knight_App.shared.iml" />
     </modules>
   </component>
 </project>

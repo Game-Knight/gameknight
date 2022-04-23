@@ -13,3 +13,10 @@
 /captures
 .externalNativeBuild
 .cxx
+.idea/
+android-app/.idea/
+android-app/.gradle/
+server/.idea/
+server/.gradle/
+shared/.idea/
+shared/.gradle/
