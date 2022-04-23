@@ -13,7 +13,7 @@ public class BackendStartup {
     private static final int MAX_WAITING_CONNECTIONS = 12;
 
     private void run() {
-        System.out.println("Running Game Night Backend...");
+        System.out.println("Running Game Night Server...");
 
         try {
             System.out.println("Initializing InMemoryDB...");
