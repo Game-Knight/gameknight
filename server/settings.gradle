@@ -1,2 +1,5 @@
 rootProject.name = 'server'
 
+include ":shared"
+project(":shared").projectDir = new File("../shared")
+
