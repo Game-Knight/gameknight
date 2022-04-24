@@ -17,9 +17,15 @@
 android-app/.idea/
 android-app/.gradle/
 android-app/build/
+android-app/.transforms/
+android-app/out/
 server/.idea/
 server/.gradle/
 server/build/
+server/.transforms/
+server/out/
 shared/.idea/
 shared/.gradle/
 shared/build/
+shared/.transforms/
+shared/out/
