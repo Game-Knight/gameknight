@@ -9,9 +9,9 @@ name: Java CI with Gradle
 
 on:
   push:
-    branches: [ master ]
+    branches: [ ** ]
   pull_request:
-    branches: [ master ]
+    branches: [ ** ]
 
 permissions:
   contents: read
@@ -35,7 +35,20 @@ jobs:
       with:
         arguments: build
     
+    - name: Run Shared Unit Tests
+      run: |
+        cd shared
+        gradle test
+        cd ..
+
     - name: Run Server Unit Tests
       run: |
         cd server
         gradle test
+        cd ..
+
+    - name: Run Android App Unit Tests
+      run: |
+        cd android-app
+        gradle test
+        cd ..
