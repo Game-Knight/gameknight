@@ -24,13 +24,13 @@ public class AddBoardGameServiceTest {
         Mockito.when(service.getUPCToBoardGameDAO()).thenReturn(dao);
     }
 
-//    @Test
-//    public void addBoardGame_success() {
-//        String validUPC = "681706711003";
-//        AddBoardGameRequest request = new AddBoardGameRequest(validUPC, "1");
-//        AddBoardGameResponse response = service.addBoardGame(request);
-//        assertTrue(response.isSuccess());
-//    }
+    @Test
+    public void addBoardGame_success() {
+        String validUPC = "681706711003";
+        AddBoardGameRequest request = new AddBoardGameRequest(validUPC, "1");
+        AddBoardGameResponse response = service.addBoardGame(request);
+        assertTrue(response.isSuccess());
+    }
 
     @Test
     public void addBoardGame_failure() {
