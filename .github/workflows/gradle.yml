@@ -30,25 +30,20 @@ jobs:
         java-version: '11'
         distribution: 'temurin'
     
-    - name: Build with Gradle
-      uses: gradle/gradle-build-action@0d13054264b0bb894ded474f08ebb30921341cee
-      with:
-        arguments: build
-    
-    - name: Run Shared Unit Tests
+    - name: Build Shared and Run Unit Tests
       run: |
         cd shared
-        gradle test
+        gradle build
         cd ..
 
-    - name: Run Server Unit Tests
+    - name: Build Server and Run Unit Tests
       run: |
         cd server
-        gradle test
+        gradle build
         cd ..
 
-    - name: Run Android App Unit Tests
+    - name: Build Android App and Run Unit Tests
       run: |
         cd android-app
-        gradle test
+        gradle build
         cd ..
