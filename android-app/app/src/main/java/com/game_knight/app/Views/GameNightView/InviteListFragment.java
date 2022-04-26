@@ -76,7 +76,14 @@ public class InviteListFragment extends Fragment {
                 mHandler.post(new Runnable() {
                     @Override
                     public void run() {
-                        binding.progressSpinner.setVisibility(View.GONE);
+
+                        requireActivity().runOnUiThread(new Runnable() {
+                            @Override
+                            public void run() {
+                                binding.progressSpinner.setVisibility(View.GONE);
+                            }
+                        });
+
                         List<User> invitees = FrontendCache.getGameNightGuestList(gameNight.getId());
                         InviteeAdapter adapter = new InviteeAdapter(invitees, null);
                         binding.inviteeTabRecyclerView.setAdapter(adapter);
@@ -89,7 +96,14 @@ public class InviteListFragment extends Fragment {
         Runnable backgroundRunnable = new Runnable() {
             @Override
             public void run() {
-                binding.progressSpinner.setVisibility(View.VISIBLE);
+
+                requireActivity().runOnUiThread(new Runnable() {
+                    @Override
+                    public void run() {
+                        binding.progressSpinner.setVisibility(View.VISIBLE);
+                    }
+                });
+
                 FrontendCache.getGameNightGuestList(gameNight.getId())
                         .sort(Comparator.comparing(User::getFullName));
 

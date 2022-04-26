@@ -9,9 +9,9 @@ name: Java CI with Gradle
 
 on:
   push:
-    branches: [ master ]
+    branches: "**"
   pull_request:
-    branches: [ master ]
+    branches: "**"
 
 permissions:
   contents: read
@@ -30,12 +30,20 @@ jobs:
         java-version: '11'
         distribution: 'temurin'
     
-    - name: Build with Gradle
-      uses: gradle/gradle-build-action@0d13054264b0bb894ded474f08ebb30921341cee
-      with:
-        arguments: build
-    
-    - name: Run Server Unit Tests
+    - name: Build Shared and Run Unit Tests
+      run: |
+        cd shared
+        gradle build
+        cd ..
+
+    - name: Build Server and Run Unit Tests
       run: |
         cd server
-        gradle test
+        gradle build
+        cd ..
+
+    - name: Build Android App and Run Unit Tests
+      run: |
+        cd android-app
+        gradle build
+        cd ..

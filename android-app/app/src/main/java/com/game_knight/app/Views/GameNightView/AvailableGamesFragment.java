@@ -18,6 +18,7 @@ import androidx.fragment.app.Fragment;
 import com.game_knight.app.Adapters.GameCardAdapter;
 import com.game_knight.app.Adapters.VotableGameCardAdapter;
 import com.game_knight.app.Cache.FrontendCache;
+import com.game_knight.app.R;
 import com.game_knight.app.Utils.Constants;
 import com.game_knight.app.Views.GameViewActivity;
 import com.game_knight.app.databinding.FragmentAvailableGamesBinding;
@@ -89,7 +90,14 @@ public class AvailableGamesFragment extends Fragment implements GameCardAdapter.
                 mHandler.post(new Runnable() {
                     @Override
                     public void run() {
-                        binding.progressSpinner.setVisibility(View.GONE);
+
+                        requireActivity().runOnUiThread(new Runnable() {
+                            @Override
+                            public void run() {
+                                binding.progressSpinner.setVisibility(View.GONE);
+                            }
+                        });
+
                         GameCardAdapter adapter = new VotableGameCardAdapter(
                                 FrontendCache.getGamesAvailableForGameNight(gameNight.getId()),
                                 cardClickListener,
@@ -105,7 +113,14 @@ public class AvailableGamesFragment extends Fragment implements GameCardAdapter.
         Runnable backgroundRunnable = new Runnable() {
             @Override
             public void run() {
-                binding.progressSpinner.setVisibility(View.VISIBLE);
+
+                requireActivity().runOnUiThread(new Runnable() {
+                    @Override
+                    public void run() {
+                        binding.progressSpinner.setVisibility(View.VISIBLE);
+                    }
+                });
+
                 FrontendCache.getGamesForAuthenticatedUser().sort(Comparator.comparing(BoardGame::getName));
 
                 listener.onProcessed(true);
